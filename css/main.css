@@ -1,30 +1,16 @@
 /*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
-/*
-Template Name: comingwa
-Author: Riyad
-Version: 1.0.0
-
- */
 /**
  * ============================================================================
  * Table of Contents
  * -----------------------------------------------------------------------
- * #Base styles: opinionated defaults
- * #Author Custom Style
- *      1.Author Custom Global Style
- *         2.Intro Section
- *         2.1.FullScreen Image
- *         2.2.Intro Content
- *         2.2.1.Logo
- *         2.2.2.Intro Main Heading
- *         2.2.6.Social Links
- *         3.Trigger After Content
- *         3.1.Trigger Notify
- *         3.2.Our Service
- *         3.3.Our Awesome Team
- *         3.4.Contact Form
- *         3.5.Google Map
- *         3.6.Footer
+ *     1.Base Styles
+ *     2.Global Style
+ *     3.Intro Section
+ *       3.1.FullScreen Image
+ *       3.2.Intro Content
+ *         3.2.1.Logo
+ *         3.2.2.Intro Main Heading
+ *         3.2.3.Social Links
  *     #Helper classes
  *     #Responsive Style
  *     #Screen loader
@@ -32,9 +18,11 @@ Version: 1.0.0
  *
  * ============================================================================
  */
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+/*
+   ==========================================================================
+   1.Base styles
+   ==========================================================================
+*/
 html {
     color: #222;
     font-size: 1em;
@@ -99,10 +87,9 @@ textarea { resize: vertical }
     padding: 0.2em 0;
 }
 /*
-* ==========================================================================
-   Author's custom styles
-  ================= 1.Author Custom Global Style ===========================
-* ==========================================================================
+   ==========================================================================
+   2.Global Style
+   ==========================================================================
 */
 @font-face {
     font-family: 'BeonMedium';
@@ -219,9 +206,9 @@ p {
 .margin-btm-2x { margin-bottom: 60px }
 .margin-btm-x { margin-bottom: 20px }
 /*
-* ==========================================================================
-    =========+++++++++++++++ 2.Intro Section +++++++++++++++=============
-* ==========================================================================
+   ==========================================================================
+   3.Intro Section
+   ==========================================================================
 */
 .center-content {
     display: table;
@@ -252,9 +239,9 @@ p {
     transform: translate3d(0, -100%, 0) translate3d(0, 200px, 0);
 }
 /*
-* ==========================================================================
-        2.1.FullScreen Image
-* ==========================================================================
+   ==========================================================================
+   3.1.FullScreen Image
+   ==========================================================================
 */
 .intro-image {
     background-color: rgba(0,0,0,0.7);
@@ -277,9 +264,9 @@ p {
     transform: translate3d(0, 20%, 0);
 }
 /*
-* ==========================================================================
-                +++++++++++++++ 2.2.Intro Content +++++++++++++++
-* ==========================================================================
+   ==========================================================================
+   3.2.Intro Content
+   ==========================================================================
 */
 .intro-content {
     display: table-cell;
@@ -299,7 +286,7 @@ p {
 
 .half-intro-section {
   width: 50%;
-  text-align: left;
+  text-align: center;
   display: inline-block;
 }
 
@@ -333,11 +320,10 @@ p {
 @keyframes play {
    100% { background-position: -300px; }
 }
-
 /*
-* ==========================================================================
-        2.2.1.Logo
-* ==========================================================================
+   ==========================================================================
+   3.2.1.Logo
+   ==========================================================================
 */
 .logo {
     width: 100%;
@@ -354,9 +340,9 @@ p {
     font-size: 3em;
 }
 /*
-* ==========================================================================
-        2.2.2.Intro Main Heading
-* ==========================================================================
+   ==========================================================================
+   3.2.2.Intro Main Heading
+   ==========================================================================
 */
 .intro-title {
     font-family: latobold;
@@ -373,20 +359,14 @@ a {
 a:hover { text-decoration: underline }
 .content-div { width: 100% }
 
-.web-development-hours {
-  /*margin-top: 10px;*/
-}
-
 span.api-data {
   font-size: 2em;
   padding-right: 10px;
 }
-
 /*
-/*
-* ==========================================================================
-        2.2.6.Social Links
-* ==========================================================================
+   ==========================================================================
+   3.2.3.Social Links
+   ==========================================================================
 */
 .social {
     bottom: 0;
@@ -406,248 +386,6 @@ span.api-data {
 .fa-social:hover {
     color: #2098f5;
     background: #fff;
-}
-/*
-* ==========================================================================
-*     =======+++++++++++++++ 3.Trigger After Content +++++++++++++++========
-* ==========================================================================
-*/
-.content-wrapper {
-    position: relative;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding: 250px 0 0;
-    background-color: #F0F1F5;
-    overflow: hidden;
-}
-.content-wrapper::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #2a2e39;
-    content: '';
-    opacity: 1;
-    -webkit-transition: opacity 0.6s;
-    transition: opacity 0.6s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    pointer-events: none;
-}
-.container-open .content-wrapper::after { opacity: 0 }
-/*
-* ==========================================================================
-        3.1.Trigger Notify
-* ==========================================================================
-*/
-.container-open .center-content { opacity: 0 }
-.notify-after { visibility: hidden }
-.container-open .notify-after {
-    visibility: visible;
-    position: absolute;
-    bottom: 0;
-    left: 40%;
-}
-.subscribe-form { width: 100% }
-.input-notify-after {
-    width: 80% !important;
-    float: left;
-    background: transparent;
-    border-right: none;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
-.btn-notify-after {
-    width: 20% !important;
-    float: left;
-    color: #ddd;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-    margin-left: -4px;
-    background: transparent;
-}
-.btn-notify-after:hover,
-.btn-notify-after:focus,
-.btn-notify-after:active {
-    background: #2098f5;
-    color: #fff;
-    border-color: #2098f5;
-}
-/*
-* ==========================================================================
-        3.2.Our Service
-* ==========================================================================
-*/
-.fa-service {
-    border: 1px solid #2098f5;
-    color: #2098f5;
-    font-size: 2em !important;
-    height: 40px;
-    line-height: 40px !important;
-    text-align: center;
-    width: 40px;
-}
-.service-title { color: #2098f5 }
-.fa-mbr { padding: 0 5px }
-.fa-mbr:hover { color: #31B0E0 }
-/*
-* ==========================================================================
-        3.3.Our Awesome Team
-* ==========================================================================
-*/
-.team-member {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px 0;
-    margin: 10px 0;
-}
-.team-member h2 {
-    color: #585858;
-    font-family: latolight;
-    font-size: 1.2em;
-}
-.member-img {
-    display: table;
-    height: 200px;
-    margin: 0 auto;
-    width: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-/*
-* ==========================================================================
-        3.4.Contact Form
-* ==========================================================================
-*/
-.contact {
-    background-color: #2098f5;
-    color: #fff;
-}
-.contact-title { color: #fff }
-.contact-tag { color: #fff }
-#contact-form .form-group label {
-    display: none;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 100;
-    text-transform: uppercase;
-}
-#contact-form.no-placeholder .form-group label { display: block }
-#contact-form .controls {
-    padding: 0;
-    margin-top: 40px;
-}
-#contact-form.no-placeholder .controls { margin-top: 0 }
-#contact-form .form-control {
-    display: inline;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #fff;
-    border-radius: 0;
-    outline: none;
-    box-shadow: 0 0 0 rgba(0,0,0,0.05);
-    height: 52px;
-    font-size: 18px;
-    line-height: 32px;
-    color: #fff;
-    font-weight: 400;
-    padding-left: 38px;
-    vertical-align: top;
-}
-#contact-form .form-group.half-width {
-    width: 40%;
-    float: left;
-}
-#contact-form .form-group { position: relative }
-#contact-form .form-group [class*=fa] {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 5px;
-    color: #eee;
-    font-size: 24px;
-    line-height: 52px;
-    text-align: center;
-    font-weight: 300;
-    -webkit-transition: color .3s ease-out;
-    transition: color .3s ease-out;
-}
-#contact-form .form-group [class*=fa].active { color: #ccc }
-#contact-form.no-placeholder .form-group [class*=fa] { top: 30px }
-#contact-form textarea.form-control {
-    height: auto;
-    max-width: 100%;
-    min-width: 100%;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    padding-top: 14px;
-    vertical-align: top;
-}
-#contact-form .form-control:focus {
-    outline: none;
-    box-shadow: 0 0 0 rgba(0,0,0,0.05);
-}
-#contact-form .error-message {
-    padding: 5px 0;
-    position: absolute;
-    top: -35px;
-    right: 0;
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #ff3345;
-    z-index: 10;
-}
-#contact-form.no-placeholder .error-message { top: 0 }
-.form-control::-moz-placeholder {
-    color: #ddd;
-    opacity: 1;
-}
-.form-control::-webkit-input-placeholder {
-    color: #ddd;
-    opacity: 1;
-}
-.form-control::-ms-input-placeholder {
-    color: #ddd;
-    opacity: 1;
-}
-.btn-contact {
-    background-color: #2080f5;
-    border-color: #2080f5;
-    color: #fff !important;
-    margin: 30px 0 0;
-    padding: 12px 0;
-}
-.btn-contact:hover {
-    border: 1px solid #fff;
-    background-color: transparent;
-}
-/*
-* ==========================================================================
-        3.5.Google Map
-* ==========================================================================
-*/
-#map-wrapper { height: 440px }
-/*
-* ==========================================================================
-        3.6.Footer
-* ==========================================================================
-*/
-#footer {
-    background-color: #2098f5;
-    padding: 20px 0;
-    overflow: hidden;
-}
-.copyright p {
-    color: #fff;
-    display: block;
-    padding-top: 25px;
-    font-size: 1.1em;
 }
 /*
 * ==========================================================================

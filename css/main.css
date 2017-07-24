@@ -17,9 +17,6 @@ Version: 1.0.0
  *         2.2.Intro Content
  *         2.2.1.Logo
  *         2.2.2.Intro Main Heading
- *         2.2.3.Countdown *Removed*
- *         2.2.4.Intro Sub Heading *Removed*
- *         2.2.5.Trigger Button with SVG *Removed*
  *         2.2.6.Social Links
  *         3.Trigger After Content
  *         3.1.Trigger Notify
@@ -331,6 +328,16 @@ a {
 }
 a:hover { text-decoration: underline }
 .content-div { width: 100% }
+
+.web-development-hours {
+  margin-top: 40px;
+}
+
+span.hours {
+  font-size: 2em;
+  padding: 10px;
+}
+
 /*
 /*
 * ==========================================================================

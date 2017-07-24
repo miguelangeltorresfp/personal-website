@@ -99,7 +99,6 @@ $.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DF
 		};
 	};
 	total_hours_distracted = total_hours_distracted.toFixed(2);
-	console.log(total_hours_distracted);
 	$(".distracted-hours").html("<span class='api-data'>" + total_hours_distracted + "</span> hours on social media and other non productive things.");
 });
 
@@ -112,6 +111,14 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 			var distance_meters = data[i]["distance"];
 			var distance_km = distance_meters/1000;
 			distance_km = distance_km.toFixed(2);
+			var date_string = data[i]["start_date_local"];
+			var date = new Date(date_string);
+			// var day = date.getDate();
+			// var year = date.getFullYear();
+			// var month = date.getMonth()+1;
+			var dateStr = date.toLocaleDateString();
+			console.log(dateStr);
+			$(".running-date").html("<span class='api-data'>" + dateStr + "</span> is the date of my last run.");
 			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>km ran.");
 			$(".running-duration").html("<span class='api-data'>" + converted_duration + "</span> in duration.");
 			break;

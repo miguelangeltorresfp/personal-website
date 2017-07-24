@@ -282,12 +282,19 @@ p {
   max-width: 1200px;
   margin: auto;
   margin-top: 60px;
+  padding: 0px 20px;
 }
 
 .half-intro-section {
   width: 50%;
   text-align: center;
   display: inline-block;
+}
+
+.half-intro-section .left-align {
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0px;
 }
 
 .half-intro-section p {

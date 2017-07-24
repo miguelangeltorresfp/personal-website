@@ -112,7 +112,7 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 			var distance_meters = data[i]["distance"];
 			var distance_km = distance_meters/1000;
 			distance_km = distance_km.toFixed(2);
-			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>kms ran.");
+			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>km ran.");
 			$(".running-duration").html("<span class='api-data'>" + converted_duration + "</span> in duration.");
 			break;
 		}

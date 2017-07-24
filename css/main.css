@@ -290,6 +290,50 @@ p {
     min-height: 100%;
     vertical-align: middle;
 }
+
+.max-width-container {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.half-intro-section {
+  width: 50%;
+  text-align: left;
+  display: inline-block;
+}
+
+.half-intro-section p {
+  color: #fff;
+}
+
+.half-intro-section h3 {
+  display: inline-block;
+}
+
+.fa-clock-o {
+  margin-right: 20px;
+}
+
+.more-info {
+  font-size: .8em;
+  margin-top: 20px;
+}
+
+.running-man {
+  width: 30px;
+  height: 30px;
+  background: url('../img/running-man.png') left center;
+  background-size: cover;
+  animation: play 1s steps(2) infinite;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@keyframes play {
+   100% { background-position: -300px; }
+}
+
 /*
 * ==========================================================================
         2.2.1.Logo
@@ -316,7 +360,7 @@ p {
 */
 .intro-title {
     font-family: latobold;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: normal;
     margin: 15px 0;
     text-transform: uppercase;
@@ -330,12 +374,12 @@ a:hover { text-decoration: underline }
 .content-div { width: 100% }
 
 .web-development-hours {
-  margin-top: 40px;
+  /*margin-top: 10px;*/
 }
 
-span.hours {
+span.api-data {
   font-size: 2em;
-  padding: 10px;
+  padding-right: 10px;
 }
 
 /*

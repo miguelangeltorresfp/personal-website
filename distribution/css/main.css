@@ -145,7 +145,7 @@ h6 { font-weight: normal }
 h2 {
     font-family: latoregular;
     font-size: 2em;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 img {
@@ -285,7 +285,7 @@ p {
 }
 
 .fa-clock-o {
-  margin-right: 20px;
+  margin: 0px 20px;
 }
 
 .more-info {
@@ -294,17 +294,18 @@ p {
 }
 
 .running-man {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: url('../img/running-man.png') left center;
   background-size: cover;
   animation: play 1s steps(2) infinite;
   display: inline-block;
-  margin-right: 20px;
+  margin: 0px 20px;
+  margin-bottom: -3px;
 }
 
 @keyframes play {
-   100% { background-position: -300px; }
+   100% { background-position: -250px; }
 }
 /*
    ==========================================================================
@@ -483,12 +484,11 @@ span.api-data {
       width: 100%;
       text-align: center;
       display: block;
-      padding-bottom: 40px;
+      padding-bottom: 60px;
     }
 }
 
 @media only screen and (max-width: 480px) {
-    /*.intro { position: absolute }*/
     .logo { margin: -55px 0 25px }
     .text-logo {
         font-size: 2em;
@@ -498,7 +498,6 @@ span.api-data {
         font-size: 1.5em;
         margin: 8px 0;
     }
-    .fa-clock-spin { font-size: 1.5em !important }
     .countdown { margin: -18px 0 0 }
     .countdown li span { font-size: 3em }
     .countdown li p { margin: -15px 0 5px }
@@ -530,7 +529,6 @@ span.api-data {
         font-size: 1.3em;
         margin: 5px 0 10px;
     }
-    .fa-clock-spin { font-size: 2em !important }
     .countdown { margin: -10px 0 10px }
     .countdown li span { font-size: 3em }
     .countdown li p { margin: -15px 0 5px }
@@ -553,7 +551,6 @@ span.api-data {
         font-size: 1em;
         margin: -25px 0 5px;
     }
-    .fa-clock-spin { font-size: 2em !important }
     .countdown { margin: 10px 0 }
     .countdown li { margin: -25px 0 0 }
     .countdown li span { font-size: 1.5em }
@@ -586,8 +583,6 @@ span.api-data {
         font-size: 2em;
         margin: -30px 0 5px;
     }
-
-    .fa-clock-spin { font-size: 1.5em !important }
     .countdown { margin: -18px 0 0 }
     .countdown li span { font-size: 3em }
     .countdown li p { margin: -15px 0 10px }
@@ -610,7 +605,6 @@ span.api-data {
         font-size: 2em;
         margin: -25px 0 5px;
     }
-    .fa-clock-spin { font-size: 2em !important }
     .countdown li span { font-size: 2em }
     .countdown li p {
         font-size: 12px;
@@ -623,21 +617,9 @@ span.api-data {
     }
     .countdown li { margin: -40px 0 0px }
     .intro-subtitle { margin: -15px 0 0 }
-    .container-open .notify-after {
-        bottom: 60px;
-        left: 30%;
-    }
-    .notify-after .form-group { float: left }
 }
 @media only screen and (min-width: 768px) and (max-width:991px) {
     .intro-title { font-size: 3em }
-    .container-open .notify-after { left: 34% }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .container-open .notify-after { left: 39% }
-}
-@media (min-width: 1200px) {
-
 }
 @media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */

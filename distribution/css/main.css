@@ -141,11 +141,13 @@ h3,
 h4,
 h5,
 h6 { font-weight: normal }
+
 h2 {
     font-family: latoregular;
-    font-size: 1.5em;
+    font-size: 2em;
     text-transform: capitalize;
 }
+
 img {
     width: 100%;
     height: auto;

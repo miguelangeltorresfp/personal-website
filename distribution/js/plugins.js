@@ -20,11 +20,3 @@
         }
     }
 }());
-
-/**
- * MAILCHIMP
- */
-$('#mc-form').ajaxChimp({
-    url: 'http://doelit.us10.list-manage.com/subscribe/post?u=b02e4f21e264536eff4820875&amp;id=4d57faf2cb'
-    /* Replace Your AjaxChimp Subscription Link */
-});

@@ -74,6 +74,7 @@ $(document).ready(function() {
 // niceScroll || scrollbars resize
 $("body").getNiceScroll().resize();
 
+
 $.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', function(data) {
 		var hours = 0;
 		for (i = 0; i < data["rows"].length; i++) {
@@ -113,15 +114,11 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 			distance_km = distance_km.toFixed(2);
 			var date_string = data[i]["start_date_local"];
 			var date = new Date(date_string);
-			// var day = date.getDate();
-			// var year = date.getFullYear();
-			// var month = date.getMonth()+1;
 			var dateStr = date.toLocaleDateString();
-			console.log(dateStr);
 			$(".running-date").html("<span class='api-data'>" + dateStr + "</span> is the date of my last run.");
 			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>km ran.");
 			$(".running-duration").html("<span class='api-data'>" + converted_duration + "</span> in duration.");
 			break;
 		}
 	}
-});
+}, "jsonp");

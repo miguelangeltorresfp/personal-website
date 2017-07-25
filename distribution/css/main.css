@@ -399,6 +399,7 @@ span.api-data {
   width: 50%;
   text-align: center;
   display: table-cell;
+  padding: 0px 20px;
 }
 
 .half-section .left-align {
@@ -476,11 +477,16 @@ span.api-data {
 */
 @media only screen and (max-width: 767px) {
     .text-justify { text-align: center }
+    .half-section {
+      width: 100%;
+      text-align: center;
+      display: block;
+      padding-bottom: 40px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    /* body{background:#69C238} */
-    .intro { position: absolute }
+    /*.intro { position: absolute }*/
     .logo { margin: -55px 0 25px }
     .text-logo {
         font-size: 2em;
@@ -507,8 +513,6 @@ span.api-data {
     .notify-after .form-group { float: left }
 }
 @media only screen and (max-width: 304px) {
-    /* body{background:#69C238} */
-    .intro { position: absolute }
     .container-open .notify-after {
         bottom: 60px;
         left: 5%;
@@ -541,7 +545,6 @@ span.api-data {
     .notify-after .form-group { float: left }
 }
 @media only screen and (min-width: 238px) and (max-width: 319px) {
-    .intro { position: absolute }
     .logo { margin: -60px 0 25px }
     .text-logo { margin: -60px 0 0 }
     .intro-title {
@@ -571,7 +574,6 @@ span.api-data {
     .notify-after .form-group { float: left }
 }
 @media only screen and (min-width: 481px) and (max-width: 568px) {
-    .intro { position: absolute }
     .intro-content { padding: 2% }
     .logo { margin: -45px 0 25px;}
     .text-logo {
@@ -600,7 +602,6 @@ span.api-data {
     .notify-after .form-group { float: left }
 }
 @media only screen and (min-width: 569px) and (max-width: 736px) {
-    .intro { position: absolute }
     .logo { margin: 0 0 20px }
     .text-logo { margin: -60px 0 0 }
     .intro-title {

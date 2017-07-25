@@ -76,7 +76,7 @@ $("body").getNiceScroll().resize();
 
 // API Calls
 
-$.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', function(data) {
+$.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', function(data) {
 		var hours = 0;
 		for (i = 0; i < data["rows"].length; i++) {
 			if (data["rows"][i][3] == "Software Development") {
@@ -90,7 +90,7 @@ $.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DF
 		$(".web-development-hours").html("<span class='api-data'>" + hours + "</span> hours on web development.");
 });
 
-$.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', function(data) {
+$.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', function(data) {
 	var total_hours_distracted = 0;
 	for (i = 0; i < data["rows"].length; i++) {
 		if (data["rows"][i][3] == -1 | data["rows"][i][3] == -2 ) {

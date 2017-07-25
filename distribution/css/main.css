@@ -227,7 +227,7 @@ p {
     margin-top: 40vh;
 }
 .intro {
-    background-image: url(../img/background.jpg); /* Fullscreen Background Image */
+    background-image: url(../img/background-optimized.jpg); /* Fullscreen Background Image */
     background-size: cover;
     background-position: center;
     background-color: #2a2e39;

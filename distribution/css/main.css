@@ -380,7 +380,11 @@ span.api-data {
 }
 
 .statistics p {
-  color: #ffffff;
+  color: #043663;
+}
+
+.statistics a {
+  color: #7cceec;
 }
 
 .title-section {

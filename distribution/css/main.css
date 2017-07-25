@@ -283,12 +283,14 @@ p {
   margin: auto;
   margin-top: 60px;
   padding: 0px 20px;
+  display: table;
+  width: 100%;
 }
 
 .half-intro-section {
   width: 50%;
   text-align: center;
-  display: inline-block;
+  display: table-cell;
 }
 
 .half-intro-section .left-align {

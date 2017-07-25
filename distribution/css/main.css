@@ -283,30 +283,6 @@ p {
     min-height: 100%;
     vertical-align: middle;
 }
-
-.fa-clock-o {
-  margin: 0px 20px;
-}
-
-.more-info {
-  font-size: .8em;
-  margin-top: 20px;
-}
-
-.running-man {
-  width: 25px;
-  height: 25px;
-  background: url('../img/running-man.png') left center;
-  background-size: cover;
-  animation: play 1s steps(2) infinite;
-  display: inline-block;
-  margin: 0px 20px;
-  margin-bottom: -3px;
-}
-
-@keyframes play {
-   100% { background-position: -250px; }
-}
 /*
    ==========================================================================
    3.2.1.Logo
@@ -378,24 +354,49 @@ span.api-data {
 /* Statistics Section */
 
 .statistics {
-  background-color: #0099ff;
+  background-color: #CCDBDC;
   padding: 80px 0px;
 }
 
-.statistics p {
-  color: #043663;
+.statistics p,
+.fa-clock-o {
+  color: #2A2A72;
 }
 
 .statistics a {
-  color: #7cceec;
+  color: #5386E4;
 }
 
 .title-section {
-  color: #fff;
+  color: #0099FF;
+}
+
+.title-section .fa-clock-o {
+  margin: 0px 20px;
 }
 
 .title-section h2 {
   display: inline-block;
+}
+
+.more-info {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.running-man {
+  width: 25px;
+  height: 25px;
+  background: url('../img/running-man.png') left center;
+  background-size: cover;
+  animation: play 1s steps(2) infinite;
+  display: inline-block;
+  margin: 0px 20px;
+  margin-bottom: -3px;
+}
+
+@keyframes play {
+   100% { background-position: -250px; }
 }
 
 .half-section {

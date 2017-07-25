@@ -205,6 +205,15 @@ p {
 .margin-top-x { margin-top: 20px }
 .margin-btm-2x { margin-bottom: 60px }
 .margin-btm-x { margin-bottom: 20px }
+
+.max-width-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0px 20px;
+  display: table;
+  width: 100%;
+}
+
 /*
    ==========================================================================
    3.Intro Section
@@ -215,7 +224,7 @@ p {
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 25vh;
+    margin-top: 40vh;
 }
 .intro {
     background-image: url(../img/background.jpg); /* Fullscreen Background Image */
@@ -271,31 +280,6 @@ p {
     min-width: 100%;
     min-height: 100%;
     vertical-align: middle;
-}
-
-.max-width-container {
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 60px;
-  padding: 0px 20px;
-  display: table;
-  width: 100%;
-}
-
-.half-intro-section {
-  width: 50%;
-  text-align: center;
-  display: table-cell;
-}
-
-.half-intro-section .left-align {
-  display: inline-block;
-  text-align: left;
-  margin: 20px 0px;
-}
-
-.half-intro-section p {
-  color: #fff;
 }
 
 .fa-clock-o {
@@ -391,16 +375,32 @@ span.api-data {
 /* Statistics Section */
 
 .statistics {
-  height: 400px;
   background-color: #0099ff;
+  padding: 80px 0px;
 }
 
 .statistics p {
   color: #ffffff;
 }
 
+.title-section {
+  color: #fff;
+}
+
 .title-section h2 {
   display: inline-block;
+}
+
+.half-section {
+  width: 50%;
+  text-align: center;
+  display: table-cell;
+}
+
+.half-section .left-align {
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0px;
 }
 
 /*

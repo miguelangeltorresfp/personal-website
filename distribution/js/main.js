@@ -75,7 +75,13 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 		if (data[i]["type"] == "Run") {
 			var duration = new Date(null);
 			duration.setSeconds(data[i]["moving_time"]);
-			var converted_duration = duration.toISOString().substr(11, 8);
+			duration = duration.toISOString().substr(11, 8);
+      // Remove leading zeros from run duration
+      if (duration.startsWith("00:")) {
+        duration = duration.slice(3);
+      } else if (duration.startsWith("0")) {
+        duration = duration.slice(2);
+      }
 			var distance_meters = data[i]["distance"];
 			var distance_km = distance_meters/1000;
 			distance_km = distance_km.toFixed(2);
@@ -84,7 +90,7 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 			var dateStr = date.toLocaleDateString();
 			$(".running-date").html("<span class='api-data'>" + dateStr + "</span> is the date of my last run.");
 			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>km ran.");
-			$(".running-duration").html("<span class='api-data'>" + converted_duration + "</span> in duration.");
+			$(".running-duration").html("<span class='api-data'>" + duration + "</span> in duration.");
 			break;
 		}
 	}

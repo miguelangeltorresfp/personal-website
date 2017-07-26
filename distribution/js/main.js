@@ -52,8 +52,9 @@ $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data
 				break;
 			};
 		};
-		hours = hours.toFixed(2);
-		$(".web-development-hours").html("<span class='api-data'>" + hours + "</span> hours on web development.");
+    minutes = Math.round((hours-parseInt(hours)) * 60);
+    hours = parseInt(hours);
+		$(".web-development-hours").html("<span class='api-data'>" + hours + ":" + minutes + "</span> on web development.");
 });
 
 $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', function(data) {
@@ -66,8 +67,9 @@ $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data
 			total_hours_distracted += hours;
 		};
 	};
-	total_hours_distracted = total_hours_distracted.toFixed(2);
-	$(".distracted-hours").html("<span class='api-data'>" + total_hours_distracted + "</span> hours on social media and other non productive things.");
+  minutes = Math.round((total_hours_distracted-parseInt(total_hours_distracted)) * 60);
+  hours = parseInt(total_hours_distracted);
+	$(".distracted-hours").html("<span class='api-data'>" + hours + ":" + minutes + "</span> on social media and other non productive things.");
 });
 
 $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce73011107949166d10ea05e522443eab24c2', function(data) {

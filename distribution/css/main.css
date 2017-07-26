@@ -371,8 +371,14 @@ span.api-data {
   color: #0099FF;
 }
 
-.title-section .fa-clock-o {
-  margin: 0px 20px;
+.title-section .fa-clock-o.left,
+.title-section .running-man.left {
+  margin-right: 20px;
+}
+
+.title-section .fa-clock-o.right,
+.title-section .running-man.right {
+  margin-left: 20px;
 }
 
 .title-section h2 {
@@ -391,7 +397,6 @@ span.api-data {
   background-size: cover;
   animation: play 1s steps(2) infinite;
   display: inline-block;
-  margin: 0px 20px;
   margin-bottom: -3px;
 }
 

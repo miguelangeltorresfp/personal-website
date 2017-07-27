@@ -51,7 +51,6 @@ $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data
 	};
   minutes = Math.round((total_hours_distracted-parseInt(total_hours_distracted)) * 60);
   minutes = ("0" + minutes).slice(-2);
-  console.log(minutes);
   hours = parseInt(total_hours_distracted);
 	$(".distracted-hours").html("<span class='api-data'>" + hours + ":" + minutes + "</span> on social media and other non productive things.");
 });

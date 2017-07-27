@@ -14,7 +14,6 @@
  *     #Helper classes
  *     #Responsive Style
  *     #Screen loader
- *     #Preloader
  *
  * ============================================================================
  */
@@ -635,90 +634,6 @@ span.api-data {
 }
 @media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
-}
-/*
-* ==========================================================================
-    Screen Loader
-* ==========================================================================
-*/
-.screen-loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    background: #fff url(../img/Preloader.gif) no-repeat center center;
-    z-index: 10000;
-}
-/*
-* ==========================================================================
-    Preloader
-* ==========================================================================
-*/
-#preload {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    background: #000;
-    display: none;
-    z-index: 10000;
-}
-#preload-status {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    padding: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    background: #fff url(../img/Preloader.gif) no-repeat center center;
-    opacity: 1;
-    -moz-opacity: 1;
-    -webkit-opacity: 1;
-    filter: alpha(opacity=1);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-}
-/* preload content */
-.preload-content {
-    position: fixed;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #000;
-    opacity: 0.6;
-    -moz-opacity: 0.6;
-    -webkit-opacity: 0.6;
-    filter: alpha(opacity=1);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-}
-.preload-content-rain {
-    position: fixed;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #000;
-    opacity: 0.4;
-    -moz-opacity: 0.4;
-    -webkit-opacity: 0.4;
-    filter: alpha(opacity=1);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
 }
 /* ==========================================================================
    Print styles.

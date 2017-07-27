@@ -4,25 +4,6 @@ $(window).load(function() {
     $('.screen-loader').fadeOut('slow');
 });
 
-// preload
-// $(document).ready(function() {
-//     "use strict";
-//     $('#preload').css({
-//         display: 'table'
-//     });
-// });
-
-
-// preload function
-// $(window).load(preLoader);
-// "use strict";
-//
-// function preLoader() {
-//     setTimeout(function() {
-//         $('#preload').fadeOut(1500);
-//     });
-// };
-
 // niceScroll
 $(document).ready(function() {
     "use strict";

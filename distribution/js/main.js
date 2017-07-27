@@ -5,23 +5,23 @@ $(window).load(function() {
 });
 
 // preload
-$(document).ready(function() {
-    "use strict";
-    $('#preload').css({
-        display: 'table'
-    });
-});
+// $(document).ready(function() {
+//     "use strict";
+//     $('#preload').css({
+//         display: 'table'
+//     });
+// });
 
 
 // preload function
-$(window).load(preLoader);
-"use strict";
-
-function preLoader() {
-    setTimeout(function() {
-        $('#preload').fadeOut(1500);
-    });
-};
+// $(window).load(preLoader);
+// "use strict";
+//
+// function preLoader() {
+//     setTimeout(function() {
+//         $('#preload').fadeOut(1500);
+//     });
+// };
 
 // niceScroll
 $(document).ready(function() {

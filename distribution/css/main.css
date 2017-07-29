@@ -215,6 +215,21 @@ p {
   width: 100%;
 }
 
+.button {
+  background-color: #0099ff;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #0099ff;
+  text-decoration: none;
+}
+
 /*
    ==========================================================================
    3.Intro Section

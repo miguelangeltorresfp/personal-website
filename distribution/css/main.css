@@ -365,11 +365,23 @@ span.api-data {
     background: #fff;
 }
 
+/* Row Sections */
+
+section.row {
+  padding: 80px 0px;
+}
+
+/* About Section */
+
+img.headshot {
+  border-radius: 100%;
+  border: 10px solid #0099ff;
+}
+
 /* Statistics Section */
 
 .statistics {
   background-color: #CCDBDC;
-  padding: 80px 0px;
 }
 
 .statistics p,

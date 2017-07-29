@@ -230,6 +230,12 @@ p {
   text-decoration: none;
 }
 
+.left-align {
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0px;
+}
+
 /*
    ==========================================================================
    3.Intro Section
@@ -373,9 +379,19 @@ section.row {
 
 /* About Section */
 
+section.about {
+  background-color: #2A2A72;
+}
+
+.about p {
+  color: #fff;
+}
+
 img.headshot {
   border-radius: 100%;
   border: 10px solid #0099ff;
+  width: auto;
+  max-width: 100%;
 }
 
 /* Statistics Section */
@@ -428,19 +444,6 @@ img.headshot {
 
 @keyframes play {
    100% { background-position: -250px; }
-}
-
-.half-section {
-  width: 50%;
-  text-align: center;
-  display: table-cell;
-  padding: 0px 20px;
-}
-
-.half-section .left-align {
-  display: inline-block;
-  text-align: left;
-  margin: 20px 0px;
 }
 
 /*
@@ -512,12 +515,6 @@ img.headshot {
 */
 @media only screen and (max-width: 767px) {
     .text-justify { text-align: center }
-    .half-section {
-      width: 100%;
-      text-align: center;
-      display: block;
-      padding-bottom: 60px;
-    }
     .social {
       width: 100%;
       text-align: center;

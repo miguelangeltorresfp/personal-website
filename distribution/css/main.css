@@ -243,6 +243,12 @@ a:hover {
 a { text-decoration: none;}
 a:hover { text-decoration: underline }
 
+/* Fixes width of page being larger than viewport */
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 /*
    ==========================================================================
    3.Intro Section
@@ -542,11 +548,17 @@ img.headshot {
     }
     img.headshot {
       width: 250px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
     .statistics-column {
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    .about-container {
+      text-align: center;
+    }
+    .about-container p {
+      text-align: justify;
     }
 }
 

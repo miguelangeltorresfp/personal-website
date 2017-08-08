@@ -1,9 +1,3 @@
-// screen loader
-$(window).load(function() {
-    "use strict";
-    $('.screen-loader').fadeOut('slow');
-});
-
 // API Calls
 
 $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', function(data) {

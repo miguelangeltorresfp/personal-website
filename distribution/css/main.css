@@ -277,6 +277,10 @@ a:hover { text-decoration: underline }
 .intro-title {
   color: #fff;
 }
+
+.obak {
+  color: #0099ff;
+}
 /*
    ==========================================================================
    3.2.1.Logo
@@ -329,7 +333,7 @@ span.api-data {
     text-align: center;
 }
 .fa-social {
-    background: #2098f5;
+    background: none repeat scroll 0 0 #0099ff;
     border: 0px solid #2098f5;
     color: rgb(255, 255, 255);
     height: 42px;
@@ -340,6 +344,10 @@ span.api-data {
 .fa-social:hover {
     color: #2098f5;
     background: #fff;
+}
+.icon rect, .icon line {
+  fill: #0099ff;
+  stroke: #0099ff;
 }
 
 /* Row Sections */

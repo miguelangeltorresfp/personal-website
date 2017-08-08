@@ -454,17 +454,17 @@ img.headshot {
 }
 
 .running-man {
-  width: 25px;
-  height: 25px;
-  background: url('../img/running-man.png') left center;
+  width: 30px;
+  height: 30px;
+  background: url('../img/running-man-animation.png') left center;
   background-size: cover;
-  animation: play 1s steps(2) infinite;
+  animation: play .4s steps(5) infinite;
   display: inline-block;
   margin-bottom: -3px;
 }
 
 @keyframes play {
-   100% { background-position: -250px; }
+   100% { background-position: -150px; }
 }
 
 /*

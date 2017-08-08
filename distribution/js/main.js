@@ -4,23 +4,6 @@ $(window).load(function() {
     $('.screen-loader').fadeOut('slow');
 });
 
-// niceScroll
-$(document).ready(function() {
-    "use strict";
-    $("body").niceScroll({
-        cursorcolor: "#fff",
-        cursorwidth: "5px",
-        cursorborder: "1px solid #fff",
-        cursorborderradius: "0px",
-        zindex: "9999",
-        scrollspeed: "60",
-        mousescrollstep: "40"
-    });
-});
-
-// niceScroll || scrollbars resize
-$("body").getNiceScroll().resize();
-
 // API Calls
 
 $.get('https://cors-anywhere.herokuapp.com/https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', function(data) {

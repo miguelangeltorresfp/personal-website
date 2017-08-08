@@ -178,6 +178,7 @@ p {
   text-transform: uppercase;
   margin-top: 20px;
   display: inline-block;
+  font-family: latoregular;
 }
 
 .button:hover {

@@ -424,6 +424,14 @@ img.headshot {
 
 /* Statistics Section */
 
+.statistics h2 {
+  border-bottom: 3px solid #2A2A72;
+  padding-bottom: 5px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
 .statistics p,
 .fa-clock-o,
 .statistics h3 {
@@ -432,6 +440,14 @@ img.headshot {
 
 .statistics a {
   color: #5386E4;
+}
+
+.statics-column-wrapper {
+  max-width: 440px;
+  margin: auto;
+  padding: 30px 20px;
+  border: 3px solid #2A2A72;
+  border-radius: 4px;
 }
 
 .title-section .fa-clock-o.left,

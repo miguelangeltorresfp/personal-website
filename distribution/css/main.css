@@ -167,7 +167,6 @@ p {
   max-width: 1200px;
   margin: auto;
   padding: 0px 20px;
-  display: table;
   width: 100%;
 }
 
@@ -211,18 +210,13 @@ a:hover { text-decoration: underline }
    3.Intro Section
    ==========================================================================
 */
-.center-content {
-    display: table;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-top: 40vh;
-}
-.intro {
+section.intro {
     background-image: url(../img/background-optimized.jpg); /* Fullscreen Background Image */
     background-size: cover;
     background-position: center;
     background-color: #2a2e39;
+    display: flex;
+    align-items: center;
     position: relative;
     z-index: 10;
     overflow: hidden;
@@ -271,7 +265,7 @@ a:hover { text-decoration: underline }
     padding: 0;
     min-width: 100%;
     min-height: 100%;
-    vertical-align: middle;
+    z-index: 10;
 }
 
 .intro-title {
@@ -360,6 +354,10 @@ section.row .title-section h2 {
   margin-bottom: 20px;
 }
 
+.section-title {
+  text-align: center;
+}
+
 /* About Section */
 
 section.about {
@@ -390,8 +388,23 @@ img.headshot {
 
 /* Statistics Section */
 
-.statistics {
+section.statistics {
   background-color: #eaeaea;
+}
+
+.statistics-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.statistics-column {
+  max-width: 440px;
+  padding: 30px 20px;
+  border: 3px solid #2A2A72;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px;
 }
 
 .statistics h2 {
@@ -410,14 +423,6 @@ img.headshot {
 
 .statistics a {
   color: #5386E4;
-}
-
-.statics-column-wrapper {
-  max-width: 440px;
-  margin: auto;
-  padding: 30px 20px;
-  border: 3px solid #2A2A72;
-  border-radius: 4px;
 }
 
 .title-section .fa-clock-o.left,
@@ -539,6 +544,7 @@ img.headshot {
     .statistics-column {
       padding-top: 10px;
       padding-bottom: 10px;
+      width: 360px;
     }
     .about-container {
       text-align: center;

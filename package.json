@@ -1,0 +1,25 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start index.js -i max — name=\”My-App\”",
+    "restart": "pm2 restart all",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Engineering-Robert/personal-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Engineering-Robert/personal-website/issues"
+  },
+  "homepage": "https://github.com/Engineering-Robert/personal-website#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "nodemon": "^1.11.0"
+  }
+}

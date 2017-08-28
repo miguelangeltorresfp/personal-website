@@ -57,3 +57,12 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 		}
 	}
 });
+
+// Medium Posts
+// $.get( {
+// 	url: 'https://medium.com/@@robertcooper_18384/latest',
+// 	headers: {'Accept': 'application/json'},
+// 	success: () => {
+// 		console.log("Medium GET request successful");
+// 	}
+// });

@@ -3,13 +3,17 @@ const app = express();
 const router = express.Router();
 const path = require('path');
 
-app.use(express.static('public'));
-app.use('/css', express.static('/public/css'));
-app.use('/js', express.static('/public/js'));
-app.use('/img', express.static('/public/img'));
+app.use('/css', express.static('public/css'));
+app.use('/js', express.static('public/js'));
+app.use('/img', express.static('public/img'));
+
+app.set('views');
+app.set('view engine', 'pug');
+
+app.use(router);
 
 router.get('/', (req, res) => {
-  res.sendFile('index.html');
+  res.render('index');
 });
 
 app.use((req, res, next) => {
@@ -19,10 +23,9 @@ app.use((req, res, next) => {
 });
 
 app.use( (err, req, res, next) => {
-  res.locals.error = err;
   res.status(err.status);
   console.error(err.stack);
-  res.send("There is an error");
+  res.send(err.stack);
 });
 
 app.listen(8080, () => {

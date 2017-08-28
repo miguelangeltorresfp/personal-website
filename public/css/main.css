@@ -334,6 +334,8 @@ span.api-data {
     line-height: 45px;
     text-align: center;
     width: 42px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 .fa-social:hover {
     color: #2098f5;

@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start index.js -i max — name=\”My-App\”",
-    "restart": "pm2 restart all",
+    "start": "pm2 start app.js",
+    "restart": "pm2 restart all"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Engineering-Robert/personal-website#readme",
   "dependencies": {
     "express": "^4.15.4",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "pm2": "^2.6.1"
   }
 }

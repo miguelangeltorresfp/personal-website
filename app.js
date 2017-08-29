@@ -16,14 +16,21 @@ app.set('view engine', 'pug');
 app.use(router);
 
 router.get('/', (req, res) => {
-  getStravaData( (stravaData) => {
-    res.render('index', {
-      stravaDistance: stravaData.distance,
-      stravaDate: stravaData.date,
-      stravaDuration: stravaData.duration,
-    });
-    console.log(stravaData);
-  });
+  getRescuetimeDistractedData( (rescuetimeData) => {
+      res.render('index', {
+        rescuetimeDistractedHours: rescuetimeData.hours,
+        rescuetimeDistractedMinutes: rescuetimeData.minutes
+      });
+      console.log(rescuetimeData);
+    }
+  );
+  // getStravaData( (stravaData) => {
+  //   res.render('index', {
+  //     stravaDistance: stravaData.distance,
+  //     stravaDate: stravaData.date,
+  //     stravaDuration: stravaData.duration,
+  //   });
+  // });
 });
 
 app.use((req, res, next) => {
@@ -41,6 +48,106 @@ app.use( (err, req, res, next) => {
 app.listen(8080, () => {
   console.log("The application is running on localhost:8080!");
 });
+
+function getRescuetimeWebData(callback) {
+  let rescuetimeData = {};
+  https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', (res) => {
+    const { statusCode } = res;
+    const contentType = res.headers['content-type'];
+    let error;
+    if (statusCode !== 200) {
+     error = new Error('Request Failed.\n' +
+                       `Status Code: ${statusCode}`);
+    } else if (!/^application\/json/.test(contentType)) {
+     error = new Error('Invalid content-type.\n' +
+                       `Expected application/json but received ${contentType}`);
+    }
+    if (error) {
+     console.error(error.message);
+     // consume response data to free up memory
+     res.resume();
+     return;
+    }
+
+    res.setEncoding('utf8');
+    let rawData = '';
+    res.on('data', (chunk) => { rawData += chunk; });
+    res.on('end', () => {
+      try {
+        const parsedData = JSON.parse(rawData);
+        var hours = 0;
+    		for (i = 0; i < parsedData["rows"].length; i++) {
+    			if (parsedData["rows"][i][3] == "Software Development") {
+    				var seconds = parsedData["rows"][i][1];
+    				var minutes = seconds/60;
+    				var hours = minutes/60;
+    				break;
+    			};
+    		};
+        minutes = Math.round((hours-parseInt(hours)) * 60);
+        minutes = ("0" + minutes).slice(-2);
+        hours = parseInt(hours);
+        rescuetimeData.hours = hours;
+        rescuetimeData.minutes = minutes;
+      } catch (e) {
+       console.error(e.message);
+      }
+      callback(rescuetimeData);
+    });
+  }).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
+  });
+}
+
+function getRescuetimeDistractedData(callback) {
+  let rescuetimeData = {};
+  https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', (res) => {
+    const { statusCode } = res;
+    const contentType = res.headers['content-type'];
+    let error;
+    if (statusCode !== 200) {
+     error = new Error('Request Failed.\n' +
+                       `Status Code: ${statusCode}`);
+    } else if (!/^application\/json/.test(contentType)) {
+     error = new Error('Invalid content-type.\n' +
+                       `Expected application/json but received ${contentType}`);
+    }
+    if (error) {
+     console.error(error.message);
+     // consume response data to free up memory
+     res.resume();
+     return;
+    }
+
+    res.setEncoding('utf8');
+    let rawData = '';
+    res.on('data', (chunk) => { rawData += chunk; });
+    res.on('end', () => {
+      try {
+        const parsedData = JSON.parse(rawData);
+        var total_hours_distracted = 0;
+      	for (i = 0; i < parsedData["rows"].length; i++) {
+      		if (parsedData["rows"][i][3] == -1 | parsedData["rows"][i][3] == -2 ) {
+      			var seconds = parsedData["rows"][i][1];
+      			var minutes = seconds/60;
+      			var hours = minutes/60;
+      			total_hours_distracted += hours;
+      		};
+      	};
+        minutes = Math.round((total_hours_distracted-parseInt(total_hours_distracted)) * 60);
+        minutes = ("0" + minutes).slice(-2);
+        hours = parseInt(total_hours_distracted);
+        rescuetimeData.hours = hours;
+        rescuetimeData.minutes = minutes;
+      } catch (e) {
+       console.error(e.message);
+      }
+      callback(rescuetimeData);
+    });
+  }).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
+  });
+}
 
 function getStravaData(callback) {
   https.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce73011107949166d10ea05e522443eab24c2', (res) => {
@@ -95,7 +202,6 @@ function getStravaData(callback) {
       } catch (e) {
        console.error(e.message);
       }
-      console.log("My last run was " + stravaData.distance + " kms")
       callback(stravaData);
     });
   }).on('error', (e) => {

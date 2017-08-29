@@ -140,7 +140,11 @@ html(lang='en')
                 i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
               .left-align
                 p.web-development-hours
-                p.distracted-hours
+                  span.api-data #{rescuetimeWebHours}:#{rescuetimeWebMinutes}
+                  span on web development.
+                p.distracted-hours 
+                  span.api-data #{rescuetimeDistractedHours}:#{rescuetimeDistractedMinutes}
+                  span on social media and other non productive things.
               p.more-info
                 | Data gathered from the
                 a(href='http://rescuetime.com', target='_blank') Rescue Time

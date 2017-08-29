@@ -9,6 +9,7 @@ app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
 app.use('/js', express.static('public/js'));
 app.use('/img', express.static('public/img'));
+app.use('/public', express.static('public'));
 
 app.set('views');
 app.set('view engine', 'pug');
@@ -16,21 +17,17 @@ app.set('view engine', 'pug');
 app.use(router);
 
 router.get('/', (req, res) => {
-  getRescuetimeDistractedData( (rescuetimeData) => {
-      res.render('index', {
-        rescuetimeDistractedHours: rescuetimeData.hours,
-        rescuetimeDistractedMinutes: rescuetimeData.minutes
-      });
-      console.log(rescuetimeData);
-    }
-  );
-  // getStravaData( (stravaData) => {
-  //   res.render('index', {
-  //     stravaDistance: stravaData.distance,
-  //     stravaDate: stravaData.date,
-  //     stravaDuration: stravaData.duration,
-  //   });
-  // });
+  getApiData( (apiData) => {
+    res.render('index', {
+      stravaDate: apiData.stravaDate,
+      stravaDuration: apiData.stravaDuration,
+      stravaDistance: apiData.stravaDistance,
+      rescuetimeWebHours: apiData.rescuetimeWebHours,
+      rescuetimeWebMinutes: apiData.rescuetimeWebMinutes,
+      rescuetimeDistractedHours: apiData.rescuetimeDistractedHours,
+      rescuetimeDistractedMinutes: apiData.rescuetimeDistractedMinutes
+    });
+  });
 });
 
 app.use((req, res, next) => {
@@ -49,6 +46,23 @@ app.listen(8080, () => {
   console.log("The application is running on localhost:8080!");
 });
 
+function getApiData(callback) {
+  let apiData = {}
+  getRescuetimeDistractedData( (rescuetimeData) => {
+    apiData.rescuetimeDistractedHours = rescuetimeData.hours;
+    apiData.rescuetimeDistractedMinutes = rescuetimeData.minutes;
+    getRescuetimeWebData( (rescuetimeData) => {
+      apiData.rescuetimeWebHours = rescuetimeData.hours;
+      apiData.rescuetimeWebMinutes = rescuetimeData.minutes;
+      getStravaData( (stravaData) => {
+        apiData.stravaDate = stravaData.date;
+        apiData.stravaDistance = stravaData.distance;
+        apiData.stravaDuration = stravaData.duration;
+        callback(apiData);
+      })
+    });
+  });
+}
 function getRescuetimeWebData(callback) {
   let rescuetimeData = {};
   https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', (res) => {

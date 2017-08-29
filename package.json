@@ -21,8 +21,10 @@
   "homepage": "https://github.com/Engineering-Robert/personal-website#readme",
   "dependencies": {
     "express": "^4.15.4",
+    "https": "^1.0.0",
     "nodemon": "^1.11.0",
     "pm2": "^2.6.1",
-    "pug": "^2.0.0-rc.3"
+    "pug": "^2.0.0-rc.3",
+    "querystring": "^0.2.0"
   }
 }

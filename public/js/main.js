@@ -50,9 +50,6 @@ $.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce730111
 			var date_string = data[i]["start_date_local"];
 			var date = new Date(date_string);
 			var dateStr = date.toLocaleDateString();
-			$(".running-date").html("<span class='api-data'>" + dateStr + "</span> is the date of my last run.");
-			$(".running-distance").html("<span class='api-data'>" + distance_km + "</span>km ran.");
-			$(".running-duration").html("<span class='api-data'>" + duration + "</span> in duration.");
 			break;
 		}
 	}

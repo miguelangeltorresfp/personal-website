@@ -116,7 +116,7 @@ function getMediumData(callback) {
           let post = posts[Object.keys(posts)[i-1]];
           mediumData['title' + i] = post['title'];
           mediumData['excerpt' + i] = post['content']['subtitle'];
-          mediumData['url' + i] = '' + post['slug']
+          mediumData['url' + i] = 'https://medium.com/@robertcooper_18384/' + post['uniqueSlug']
         }
       } catch (e) {
        console.error(e.message);

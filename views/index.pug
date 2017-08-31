@@ -112,7 +112,7 @@ html(lang='en')
             img.headshot(src='/img/headshot.jpeg')
       section.statistics.row
         .max-width-container
-          h2.section-title My Stats
+          h2.section-title Stats
           .statistics-columns
             .col-sm-6.statistics-column
               .title-section
@@ -155,27 +155,27 @@ html(lang='en')
             .title-section
               h2 Blog Articles
             p
-              | Here are my 3 most recent articles that i've writen on
-              a(href='https://medium.com/@robertcooper_18384') Medium 
+              | Here are my 3 most recent articles that i've writen on 
+              a(href='https://medium.com/@robertcooper_18384') Medium
               | .
-            div#first-post
+            div#first-post.post
               h3 
                 a(href='' target='_blank') 
               p= mediumExcerpt1
               p
-                a(href='' target='_blank') Read More
-            div#second-post
+                a(href='' target='_blank' class="button") Read More
+            div#second-post.post
               h3 
                 a(href='' target='_blank') 
               p= mediumExcerpt2
               p
-                a(href='' target='_blank') Read More 
-            div#third-post
+                a(href='' target='_blank' class="button") Read More 
+            div#third-post.post
               h3 
                 a(href='' target='_blank') 
               p= mediumExcerpt3
               p
-                a(href='' target='_blank') Read More  
+                a(href='' target='_blank' class="button") Read More  
     // jQuery Library
     script.
       window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.2.min.js"><\\/script>')

@@ -1,5 +1,4 @@
 $(document).ready( () => {
-  console.log('Document is loaded :D');
   $.get( '/apiData', (result) => {
     $('.running-date .api-data').text(result.stravaDate);
     $('.running-distance .api-data').text(result.stravaDistance);

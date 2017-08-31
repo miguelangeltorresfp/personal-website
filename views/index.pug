@@ -121,13 +121,13 @@ html(lang='en')
                 .running-man.right
               .left-align
                 p.running-date
-                  span.api-data= stravaDate 
+                  span.api-data
                   span is the date of my last run.
                 p.running-distance
-                  span.api-data= stravaDistance
+                  span.api-data
                   span km ran.
                 p.running-duration
-                  span.api-data= stravaDuration
+                  span.api-data
                   span in duration.
               p.more-info
                 | Data gathered from the 
@@ -140,10 +140,10 @@ html(lang='en')
                 i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
               .left-align
                 p.web-development-hours
-                  span.api-data #{rescuetimeWebHours}:#{rescuetimeWebMinutes}
+                  span.api-data
                   span on web development.
                 p.distracted-hours 
-                  span.api-data #{rescuetimeDistractedHours}:#{rescuetimeDistractedMinutes}
+                  span.api-data
                   span on social media and other non productive things.
               p.more-info
                 | Data gathered from the 
@@ -158,21 +158,24 @@ html(lang='en')
               | Here are my 3 most recent articles that i've writen on
               a(href='https://medium.com/@robertcooper_18384') Medium 
               | .
-            h3 
-              a(href=`${mediumUrl1}` target='_blank') #{mediumTitle1}
-            p= mediumExcerpt1
-            p
-              a(href=`${mediumUrl1}` target='_blank') Read More
-            h3 
-              a(href=`${mediumUrl2}` target='_blank') #{mediumTitle2}
-            p= mediumExcerpt2
-            p
-              a(href=`${mediumUrl2}` target='_blank') Read More 
-            h3 
-              a(href=`${mediumUrl3}` target='_blank') #{mediumTitle3}
-            p= mediumExcerpt3
-            p
-              a(href=`${mediumUrl3}` target='_blank') Read More  
+            div#first-post
+              h3 
+                a(href='' target='_blank') 
+              p= mediumExcerpt1
+              p
+                a(href='' target='_blank') Read More
+            div#second-post
+              h3 
+                a(href='' target='_blank') 
+              p= mediumExcerpt2
+              p
+                a(href='' target='_blank') Read More 
+            div#third-post
+              h3 
+                a(href='' target='_blank') 
+              p= mediumExcerpt3
+              p
+                a(href='' target='_blank') Read More  
     // jQuery Library
     script.
       window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.2.min.js"><\\/script>')

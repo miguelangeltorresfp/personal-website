@@ -37,7 +37,7 @@ gulp.task('compileSass', () => {
       .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('concatCss', () => {
+gulp.task('concatCss', ['compileSass'], () => {
   return gulp.src([
     'public/css/normalize.css',
     'public/css/font-awesome.css',
@@ -49,7 +49,7 @@ gulp.task('concatCss', () => {
       .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('minifyCss', ['compileSass', 'concatCss'], () => {
+gulp.task('minifyCss', ['concatCss'], () => {
   return gulp.src('public/css/main.css')
       .pipe(minify())
       .pipe(rename('main.min.css'))
@@ -58,13 +58,13 @@ gulp.task('minifyCss', ['compileSass', 'concatCss'], () => {
 
 gulp.task('watchFiles', () => {
   gulp.watch('scss/application.scss', ['minifyCss']);
-  gulp.watch('js/main.js', ['concatScripts']);
+  gulp.watch('public/js/main.js', ['minifyScripts']);
 });
 
 gulp.task('serve', ['watchFiles'], () => {
   nodemon({ script: 'app.js', env: { 'NODE_ENV': 'development' }});
 });
 
-gulp.task('build', ['minifyScripts', 'compileSass']);
+gulp.task('build', ['minifyScripts', 'minifyCss']);
 
 gulp.task('default', ['build']);

@@ -9340,13 +9340,12 @@ button.close {
  *     Base Styles
  *     Global Style
  *     Intro Section
- *       FullScreen Image
- *       Intro Content
- *         Logo
- *         Intro Main Heading
- *         Social Links
- *     Helper classes
- *     Responsive Style
+ *     Social Links
+ *     Row Sections
+ *     About Section
+ *     Stats Section
+ *     Blog Section
+ *     Responsive Design
  *     Screen loader
  *
  * ============================================================================
@@ -9367,7 +9366,7 @@ html {
 
 /*
    ==========================================================================
-   2.Global Style
+   Global Style
    ==========================================================================
 */
 @font-face {
@@ -9424,12 +9423,6 @@ ul {
 a {
   text-decoration: none; }
 
-.padding-big {
-  padding: 60px 0; }
-
-p {
-  color: #787878; }
-
 #container {
   margin: 0;
   padding: 0; }
@@ -9471,7 +9464,7 @@ a:hover {
 
 /*
    ==========================================================================
-   3.Intro Section
+   Intro Section
    ==========================================================================
 */
 section.intro {
@@ -9557,7 +9550,7 @@ span.api-data {
 
 /*
    ==========================================================================
-   3.2.3.Social Links
+   Social Links
    ==========================================================================
 */
 .social {
@@ -9587,7 +9580,11 @@ span.api-data {
   fill: #0099ff;
   stroke: #0099ff; }
 
-/* Row Sections */
+/*
+   ==========================================================================
+   Row Sections
+   ==========================================================================
+*/
 section.row {
   padding: 80px 0px; }
 
@@ -9609,7 +9606,11 @@ section.about p,
 section.blog p {
   color: #fff; }
 
-/* About Section */
+/*
+   ==========================================================================
+   About Section
+   ==========================================================================
+*/
 .about-container {
   display: table; }
 
@@ -9625,9 +9626,13 @@ img.headshot {
   width: auto;
   max-width: 100%; }
 
-/* Statistics Section */
+/*
+   ==========================================================================
+   Stats Section
+   ==========================================================================
+*/
 section.statistics {
-  /*background-color: #fff;*/ }
+  background-color: #fff; }
 
 .statistics-columns {
   display: flex;
@@ -9662,7 +9667,7 @@ section.statistics {
   color: #2A2A72; }
 
 .statistics a {
-  color: #5386E4; }
+  color: #2A2A72; }
 
 .title-section .fa-clock-o.left,
 .title-section .running-man.left {
@@ -9692,7 +9697,49 @@ section.statistics {
   100% {
     background-position: -150px; } }
 
-/* Blog Section */
+.api-data-section > *:not(.loader) {
+  display: none; }
+
+@keyframes loader {
+  50% {
+    transform: translateY(-16px);
+    background-color: #99d6ff; } }
+
+.loader {
+  filter: url("#goo");
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(40px); }
+  .loader > div {
+    float: left;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background-color: #0099ff;
+    animation: loader 0.8s infinite; }
+
+.loader > div:nth-child(1) {
+  animation-delay: 0.16s; }
+
+.loader > div:nth-child(2) {
+  animation-delay: 0.32s; }
+
+.loader > div:nth-child(3) {
+  animation-delay: 0.48s; }
+
+.loader > div:nth-child(4) {
+  animation-delay: 0.64s; }
+
+.loader > div:nth-child(5) {
+  animation-delay: 0.8s; }
+
+/*
+   ==========================================================================
+   Blog Section
+   ==========================================================================
+*/
 section.blog a.button {
   padding: 5px 10px;
   margin-top: 0px; }
@@ -9705,80 +9752,10 @@ section.blog .post h3 a {
 
 /*
 * ==========================================================================
-       Helper classes
-* ==========================================================================
-*/
-/*
- * Hide visually and from screen readers:
- * http://juicystudio.com/article/screen-readers-display-none.php
- */
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px; }
-
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto; }
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-.invisible {
-  visibility: hidden; }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-
-.clearfix:after {
-  clear: both; }
-
-/*
-* ==========================================================================
     Responsive Design
 * ==========================================================================
 */
 @media only screen and (max-width: 767px) {
-  .text-justify {
-    text-align: center; }
   .social {
     width: 100%;
     text-align: center;
@@ -9811,28 +9788,7 @@ section.blog .post h3 a {
     margin: 0; }
   .intro-title {
     font-size: 1.5em;
-    margin: 8px 0; }
-  .countdown {
-    margin: -18px 0 0; }
-  .countdown li span {
-    font-size: 3em; }
-  .countdown li p {
-    margin: -15px 0 5px; }
-  .countdown li.seperator {
-    font-size: 9px;
-    line-height: normal;
-    margin-top: 28px;
-    vertical-align: top; }
-  .container-open .notify-after {
-    bottom: 60px;
-    left: 22%; }
-  .notify-after .form-group {
-    float: left; } }
-
-@media only screen and (max-width: 304px) {
-  .container-open .notify-after {
-    bottom: 60px;
-    left: 5%; } }
+    margin: 8px 0; } }
 
 @media only screen and (max-width: 320px) {
   .intro {
@@ -9860,38 +9816,6 @@ section.blog .post h3 a {
   .notify-after .form-group {
     float: left; } }
 
-@media only screen and (min-width: 238px) and (max-width: 319px) {
-  .logo {
-    margin: -60px 0 25px; }
-  .text-logo {
-    margin: -60px 0 0; }
-  .intro-title {
-    font-size: 1em;
-    margin: -25px 0 5px; }
-  .countdown {
-    margin: 10px 0; }
-  .countdown li {
-    margin: -25px 0 0; }
-  .countdown li span {
-    font-size: 1.5em; }
-  .countdown li p {
-    font-size: 12px;
-    margin: -25px 0 0; }
-  .countdown li.seperator {
-    font-size: 8px;
-    line-height: 12px;
-    margin-top: 0; }
-  .countdown li {
-    margin: -30px 0 0px; }
-  .intro-subtitle {
-    margin: -5px 0 0; }
-  .fa-social {
-    height: 38px;
-    line-height: 38px;
-    width: 35px; }
-  .notify-after .form-group {
-    float: left; } }
-
 @media only screen and (min-width: 481px) and (max-width: 568px) {
   .intro-content {
     padding: 2%; }
@@ -9902,23 +9826,7 @@ section.blog .post h3 a {
     margin: 0; }
   .intro-title {
     font-size: 2em;
-    margin: -30px 0 5px; }
-  .countdown {
-    margin: -18px 0 0; }
-  .countdown li span {
-    font-size: 3em; }
-  .countdown li p {
-    margin: -15px 0 10px; }
-  .countdown li.seperator {
-    font-size: 9px;
-    line-height: normal;
-    margin-top: 28px;
-    vertical-align: top; }
-  .container-open .notify-after {
-    bottom: 60px;
-    left: 30%; }
-  .notify-after .form-group {
-    float: left; } }
+    margin: -30px 0 5px; } }
 
 @media only screen and (min-width: 569px) and (max-width: 736px) {
   .logo {
@@ -9927,79 +9835,10 @@ section.blog .post h3 a {
     margin: -60px 0 0; }
   .intro-title {
     font-size: 2em;
-    margin: -25px 0 5px; }
-  .countdown li span {
-    font-size: 2em; }
-  .countdown li p {
-    font-size: 12px;
-    margin: -20px 0 0; }
-  .countdown li.seperator {
-    font-size: 10px;
-    line-height: 15px;
-    margin-top: -15px; }
-  .countdown li {
-    margin: -40px 0 0px; }
-  .intro-subtitle {
-    margin: -15px 0 0; } }
+    margin: -25px 0 5px; } }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .intro-title {
     font-size: 3em; } }
-
-@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */ }
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster: ;
-        http: //www.sanbeiji.com/archives/953 */
-    box-shadow: none !important;
-    text-shadow: none !important; }
-  a,
-  a:visited {
-    text-decoration: underline; }
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-  /*
-         * Don't show links that are fragment identifiers,
-         * or use the `javascript:` pseudo protocol
-         */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: ""; }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid; }
-  /*
-         * Printing Tables:
-         * http://css-discuss.incutio.com/wiki/Printing_Tables
-         */
-  thead {
-    display: table-header-group; }
-  tr,
-  img {
-    page-break-inside: avoid; }
-  img {
-    max-width: 100% !important; }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-  h2,
-  h3 {
-    page-break-after: avoid; } }
 
 /*# sourceMappingURL=main.css.map */

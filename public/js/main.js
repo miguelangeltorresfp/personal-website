@@ -3,6 +3,7 @@ $(document).ready( () => {
     $('.running-date .api-data').text(result.stravaDate);
     $('.running-distance .api-data').text(result.stravaDistance);
     $('.running-duration .api-data').text(result.stravaDuration);
+
     $('.web-development-hours .api-data').text(result.rescuetimeWebHours + ':' + result.rescuetimeWebMinutes);
     $('.distracted-hours .api-data').text(result.rescuetimeDistractedHours + ':' + result.rescuetimeDistractedMinutes);
 
@@ -17,5 +18,9 @@ $(document).ready( () => {
     $('#third-post h3 a').text(result.mediumTitle3).attr('href', result.mediumUrl3);
     $('#third-post p:first-of-type').text(result.mediumExcerpt3);
     $('#third-post p:nth-of-type(2) a').attr('href', result.mediumUrl3);
+
+    $('.loader').fadeOut(500, () => {
+      $('.api-data-section > *:not(.loader)').fadeIn(500);
+    });
   });
 });

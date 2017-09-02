@@ -1,89 +1,42 @@
-/*! HTML5 Boilerplate v5.0.0 | MIT License | http://h5bp.com/ */
-/**
+
+/*
  * ============================================================================
  * Table of Contents
  * -----------------------------------------------------------------------
- *     1.Base Styles
- *     2.Global Style
- *     3.Intro Section
- *       3.1.FullScreen Image
- *       3.2.Intro Content
- *         3.2.1.Logo
- *         3.2.2.Intro Main Heading
- *         3.2.3.Social Links
- *     #Helper classes
- *     #Responsive Style
- *     #Screen loader
+ *     Variables
+ *     Base Styles
+ *     Global Style
+ *     Intro Section
+ *       FullScreen Image
+ *       Intro Content
+ *         Logo
+ *         Intro Main Heading
+ *         Social Links
+ *     Helper classes
+ *     Responsive Style
+ *     Screen loader
  *
  * ============================================================================
  */
+ /*
+    ==========================================================================
+    Variables
+    ==========================================================================
+ */
+
+$text-color: #222;
+$font-body: 'open_sanslight';
+$font-heading: 'latoregular';
 /*
    ==========================================================================
-   1.Base styles
+   Base styles
    ==========================================================================
 */
+
 html {
-    color: #222;
+    color: $text-color;
     font-size: 1em;
     line-height: 1.4;
-}
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-/*
- * A better looking default horizontal rule
- */
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video { vertical-align: middle }
-/*
- * Remove default fieldset styles.
- */
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-/*
- * Allow only vertical resizing of textareas.
- */
-textarea { resize: vertical }
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
 }
 /*
    ==========================================================================
@@ -115,7 +68,7 @@ html,
 body {
     width: 100%;
     height: 100%;
-    font-family: open_sanslight, sans-serif;
+    font-family: $font-body, sans-serif;
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -126,8 +79,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal; color: #0099FF;
-  font-family: latoregular;
+  font-weight: normal;
+  color: #0099FF;
+  font-family: $font-heading;
 }
 
 h2 {

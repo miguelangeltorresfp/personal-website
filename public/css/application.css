@@ -1,0 +1,692 @@
+@charset "UTF-8";
+/*
+ * ============================================================================
+ * Table of Contents
+ * -----------------------------------------------------------------------
+ *     Variables
+ *     Base Styles
+ *     Global Style
+ *     Intro Section
+ *       FullScreen Image
+ *       Intro Content
+ *         Logo
+ *         Intro Main Heading
+ *         Social Links
+ *     Helper classes
+ *     Responsive Style
+ *     Screen loader
+ *
+ * ============================================================================
+ */
+/*
+    ==========================================================================
+    Variables
+    ==========================================================================
+ */
+/*
+   ==========================================================================
+   Base styles
+   ==========================================================================
+*/
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+/*
+   ==========================================================================
+   2.Global Style
+   ==========================================================================
+*/
+@font-face {
+  font-family: 'BeonMedium';
+  src: url("/css/fonts/beon-webfont.eot");
+  src: local("☺"), url("/css/fonts/beon-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/beon-webfont.woff") format("woff"), url("/css/fonts/beon-webfont.ttf") format("truetype"), url("/css/fonts/beon-webfont.svg#BeonMedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'latoregular';
+  src: url("/css/fonts/Lato-Regular-webfont.eot");
+  src: url("/css/fonts/Lato-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/Lato-Regular-webfont.woff2") format("woff2"), url("/css/fonts/Lato-Regular-webfont.woff") format("woff"), url("/css/fonts/Lato-Regular-webfont.ttf") format("truetype"), url("/css/fonts/Lato-Regular-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("/css/fonts/OpenSans-Light-webfont.eot");
+  src: url("/css/fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/OpenSans-Light-webfont.woff") format("woff"), url("/css/fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("/css/fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "open_sanslight", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  color: #0099FF;
+  font-family: "latoregular"; }
+
+h2 {
+  font-size: 2em;
+  text-transform: uppercase; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.padding-big {
+  padding: 60px 0; }
+
+p {
+  color: #787878; }
+
+#container {
+  margin: 0;
+  padding: 0; }
+
+.max-width-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0px 20px;
+  width: 100%; }
+
+.button {
+  background-color: #0099ff;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  display: inline-block;
+  font-family: latoregular; }
+
+.button:hover {
+  background-color: #fff;
+  color: #0099ff;
+  text-decoration: none; }
+
+.left-align {
+  display: inline-block;
+  text-align: left;
+  margin: 20px 0px; }
+
+a,
+a:hover {
+  color: #76949F; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+/* Fixes width of page being larger than viewport */
+.row {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+/*
+   ==========================================================================
+   3.Intro Section
+   ==========================================================================
+*/
+section.intro {
+  background-image: url(../img/background-optimized.jpg);
+  /* Fullscreen Background Image */
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2e39;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+
+/*
+   ==========================================================================
+   3.1.FullScreen Image
+   ==========================================================================
+*/
+.intro-image {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 120%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+  transition: transform 0.6s, opacity 0.6s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
+
+.container-open .intro-image {
+  background-color: #2a2e39;
+  -webkit-transform: translate3d(0, 20%, 0);
+  transform: translate3d(0, 20%, 0); }
+
+/*
+   ==========================================================================
+   3.2.Intro Content
+   ==========================================================================
+*/
+.intro-content {
+  display: table-cell;
+  font-size: 1.15em;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 10; }
+
+.intro-title {
+  color: #fff; }
+
+.obak {
+  color: #0099ff; }
+
+/*
+   ==========================================================================
+   3.2.1.Logo
+   ==========================================================================
+*/
+.logo {
+  width: 100%;
+  margin: -30px 0 25px; }
+
+.logo img {
+  width: 200px;
+  height: auto; }
+
+.text-logo {
+  color: #2098f5;
+  font-family: BeonMedium;
+  font-weight: bold;
+  font-size: 3em; }
+
+/*
+   ==========================================================================
+   3.2.2.Intro Main Heading
+   ==========================================================================
+*/
+.intro-title {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 15px 0;
+  text-transform: uppercase; }
+
+.obak {
+  color: #2098f5; }
+
+.content-div {
+  width: 100%; }
+
+span.api-data {
+  font-size: 2em;
+  padding-right: 10px; }
+
+/*
+   ==========================================================================
+   3.2.3.Social Links
+   ==========================================================================
+*/
+.social {
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  position: absolute;
+  width: 100%;
+  text-align: center; }
+
+.fa-social {
+  background: none repeat scroll 0 0 #0099ff;
+  border: 0px solid #2098f5;
+  color: white;
+  height: 42px;
+  line-height: 45px;
+  text-align: center;
+  width: 42px;
+  margin-left: 2px;
+  margin-right: 2px; }
+
+.fa-social:hover {
+  color: #2098f5;
+  background: #fff; }
+
+.icon rect, .icon line {
+  fill: #0099ff;
+  stroke: #0099ff; }
+
+/* Row Sections */
+section.row {
+  padding: 80px 0px; }
+
+section.row .title-section h2 {
+  margin-bottom: 20px; }
+
+.section-title {
+  text-align: center; }
+
+section.about,
+section.blog {
+  background-color: #2A2A72; }
+
+section.about a:not(.button),
+section.blog a:not(.button) {
+  color: #59D2FE; }
+
+section.about p,
+section.blog p {
+  color: #fff; }
+
+/* About Section */
+.about-container {
+  display: table; }
+
+.description-column,
+.headshot-column {
+  float: none;
+  display: table-cell;
+  vertical-align: middle; }
+
+img.headshot {
+  border-radius: 100%;
+  border: 10px solid #0099ff;
+  width: auto;
+  max-width: 100%; }
+
+/* Statistics Section */
+section.statistics {
+  /*background-color: #fff;*/ }
+
+.statistics-columns {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
+
+.statistics-column {
+  max-width: 440px;
+  padding: 30px 20px;
+  border: 3px solid #2A2A72;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px; }
+
+.statistics h2 {
+  border-bottom: 3px solid #2A2A72;
+  padding-bottom: 5px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 50px; }
+
+.statistics p,
+.fa-clock-o,
+.statistics h3 {
+  color: #2A2A72; }
+
+.statistics a {
+  color: #5386E4; }
+
+.title-section .fa-clock-o.left,
+.title-section .running-man.left {
+  margin-right: 20px; }
+
+.title-section .fa-clock-o.right,
+.title-section .running-man.right {
+  margin-left: 20px; }
+
+.title-section h3 {
+  display: inline-block; }
+
+.more-info {
+  font-size: .8em;
+  font-style: italic; }
+
+.running-man {
+  width: 30px;
+  height: 30px;
+  background: url("../img/running-man-animation.png") left center;
+  background-size: cover;
+  animation: play 0.4s steps(5) infinite;
+  display: inline-block;
+  margin-bottom: -3px; }
+
+@keyframes play {
+  100% {
+    background-position: -150px; } }
+
+/* Blog Section */
+section.blog a.button {
+  padding: 5px 10px;
+  margin-top: 0px; }
+
+section.blog .post {
+  margin: 30px 0; }
+
+section.blog .post h3 a {
+  color: #0099ff; }
+
+/*
+* ==========================================================================
+       Helper classes
+* ==========================================================================
+*/
+/*
+ * Hide visually and from screen readers:
+ * http://juicystudio.com/article/screen-readers-display-none.php
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/*
+* ==========================================================================
+    Responsive Design
+* ==========================================================================
+*/
+@media only screen and (max-width: 767px) {
+  .text-justify {
+    text-align: center; }
+  .social {
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px; }
+  .description-column,
+  .headshot-column {
+    display: block; }
+  img.headshot {
+    width: 250px;
+    margin-top: 40px; }
+  .statistics-column {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 360px; }
+  .about-container {
+    text-align: center; }
+  .about-container p {
+    text-align: justify; }
+  section.blog p {
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto 20px; } }
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    margin: -55px 0 25px; }
+  .text-logo {
+    font-size: 2em;
+    margin: 0; }
+  .intro-title {
+    font-size: 1.5em;
+    margin: 8px 0; }
+  .countdown {
+    margin: -18px 0 0; }
+  .countdown li span {
+    font-size: 3em; }
+  .countdown li p {
+    margin: -15px 0 5px; }
+  .countdown li.seperator {
+    font-size: 9px;
+    line-height: normal;
+    margin-top: 28px;
+    vertical-align: top; }
+  .container-open .notify-after {
+    bottom: 60px;
+    left: 22%; }
+  .notify-after .form-group {
+    float: left; } }
+
+@media only screen and (max-width: 304px) {
+  .container-open .notify-after {
+    bottom: 60px;
+    left: 5%; } }
+
+@media only screen and (max-width: 320px) {
+  .intro {
+    position: absolute; }
+  .text-logo {
+    font-size: 3em;
+    margin: 0; }
+  .intro-title {
+    font-size: 1.3em;
+    margin: 5px 0 10px; }
+  .countdown {
+    margin: -10px 0 10px; }
+  .countdown li span {
+    font-size: 3em; }
+  .countdown li p {
+    margin: -15px 0 5px; }
+  .countdown li.seperator {
+    font-size: 9px;
+    line-height: normal;
+    margin-top: 28px;
+    vertical-align: top; }
+  .container-open .notify-after {
+    bottom: 60px;
+    left: 10%; }
+  .notify-after .form-group {
+    float: left; } }
+
+@media only screen and (min-width: 238px) and (max-width: 319px) {
+  .logo {
+    margin: -60px 0 25px; }
+  .text-logo {
+    margin: -60px 0 0; }
+  .intro-title {
+    font-size: 1em;
+    margin: -25px 0 5px; }
+  .countdown {
+    margin: 10px 0; }
+  .countdown li {
+    margin: -25px 0 0; }
+  .countdown li span {
+    font-size: 1.5em; }
+  .countdown li p {
+    font-size: 12px;
+    margin: -25px 0 0; }
+  .countdown li.seperator {
+    font-size: 8px;
+    line-height: 12px;
+    margin-top: 0; }
+  .countdown li {
+    margin: -30px 0 0px; }
+  .intro-subtitle {
+    margin: -5px 0 0; }
+  .fa-social {
+    height: 38px;
+    line-height: 38px;
+    width: 35px; }
+  .notify-after .form-group {
+    float: left; } }
+
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+  .intro-content {
+    padding: 2%; }
+  .logo {
+    margin: -45px 0 25px; }
+  .text-logo {
+    font-size: 2em;
+    margin: 0; }
+  .intro-title {
+    font-size: 2em;
+    margin: -30px 0 5px; }
+  .countdown {
+    margin: -18px 0 0; }
+  .countdown li span {
+    font-size: 3em; }
+  .countdown li p {
+    margin: -15px 0 10px; }
+  .countdown li.seperator {
+    font-size: 9px;
+    line-height: normal;
+    margin-top: 28px;
+    vertical-align: top; }
+  .container-open .notify-after {
+    bottom: 60px;
+    left: 30%; }
+  .notify-after .form-group {
+    float: left; } }
+
+@media only screen and (min-width: 569px) and (max-width: 736px) {
+  .logo {
+    margin: 0 0 20px; }
+  .text-logo {
+    margin: -60px 0 0; }
+  .intro-title {
+    font-size: 2em;
+    margin: -25px 0 5px; }
+  .countdown li span {
+    font-size: 2em; }
+  .countdown li p {
+    font-size: 12px;
+    margin: -20px 0 0; }
+  .countdown li.seperator {
+    font-size: 10px;
+    line-height: 15px;
+    margin-top: -15px; }
+  .countdown li {
+    margin: -40px 0 0px; }
+  .intro-subtitle {
+    margin: -15px 0 0; } }
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .intro-title {
+    font-size: 3em; } }
+
+@media print, (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */ }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: ;
+        http: //www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+         * Don't show links that are fragment identifiers,
+         * or use the `javascript:` pseudo protocol
+         */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  /*
+         * Printing Tables:
+         * http://css-discuss.incutio.com/wiki/Printing_Tables
+         */
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }

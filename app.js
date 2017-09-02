@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const getApiData = require('./getApiData');
-const path = require('path');
 
 app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
@@ -14,7 +13,6 @@ app.set('views');
 app.set('view engine', 'pug');
 
 app.use(router);
-
 
 router.get('/apiData', (request, response) => {
   let apiResult = {};
@@ -37,29 +35,25 @@ router.get('/apiData', (request, response) => {
     apiResult.mediumUrl3 = apiData.mediumUrl3;
     response.send(apiData);
   });
-
 });
 
 router.get('/', (req, res) => {
-
   getApiData( (apiData) => {
     res.render('index');
   });
-
-  console.log("The page has beeen rendered, Rob!");
 });
 
-app.use((req, res, next) => {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
-});
-
-app.use( (err, req, res, next) => {
-  res.status(err.status);
-  console.error(err.stack);
-  res.send(err.stack);
-});
+// app.use((req, res, next) => {
+//   const err = new Error("Not Found");
+//   err.status = 404;
+//   next(err);
+// });
+//
+// app.use( (err, req, res, next) => {
+//   res.status(err.status);
+//   console.error(err.stack);
+//   res.send(err.stack);
+// });
 
 app.listen(8080, () => {
   console.log("The application is running on localhost:8080!");

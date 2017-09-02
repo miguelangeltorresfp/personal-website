@@ -4,6 +4,7 @@ const gulp = require('gulp'),
     concat = require('gulp-concat'),
      babel = require('gulp-babel'),
     uglify = require('gulp-uglify'),
+    minify = require('gulp-minify-css'),
     rename = require('gulp-rename'),
      gutil = require('gulp-util'),
       sass = require('gulp-sass'),
@@ -36,8 +37,27 @@ gulp.task('compileSass', () => {
       .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('concatCss', () => {
+  return gulp.src([
+    'public/css/normalize.css',
+    'public/css/font-awesome.css',
+    'public/css/bootstrap.css',
+    'public/css/application.css'])
+      .pipe(maps.init())
+      .pipe(concat('main.css'))
+      .pipe(maps.write('./'))
+      .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('minifyCss', ['compileSass', 'concatCss'], () => {
+  return gulp.src('public/css/main.css')
+      .pipe(minify())
+      .pipe(rename('main.min.css'))
+      .pipe(gulp.dest('public/css'));
+});
+
 gulp.task('watchFiles', () => {
-  gulp.watch('scss/application.scss', ['compileSass']);
+  gulp.watch('scss/application.scss', ['minifyCss']);
   gulp.watch('js/main.js', ['concatScripts']);
 });
 

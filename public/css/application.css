@@ -29,7 +29,6 @@
    ==========================================================================
 */
 html {
-  color: #222;
   font-size: 1em;
   line-height: 1.4; }
 
@@ -75,7 +74,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  color: #0099FF;
+  color: #0099ff;
   font-family: "latoregular"; }
 
 h2 {
@@ -122,11 +121,6 @@ p {
   color: #0099ff;
   text-decoration: none; }
 
-.left-align {
-  display: inline-block;
-  text-align: left;
-  margin: 20px 0px; }
-
 a,
 a:hover {
   color: #76949F; }
@@ -166,11 +160,6 @@ section.intro {
   -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); }
 
-/*
-   ==========================================================================
-   3.1.FullScreen Image
-   ==========================================================================
-*/
 .intro-image {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -191,11 +180,6 @@ section.intro {
   -webkit-transform: translate3d(0, 20%, 0);
   transform: translate3d(0, 20%, 0); }
 
-/*
-   ==========================================================================
-   3.2.Intro Content
-   ==========================================================================
-*/
 .intro-content {
   display: table-cell;
   font-size: 1.15em;
@@ -208,14 +192,9 @@ section.intro {
 .intro-title {
   color: #fff; }
 
-.obak {
+.period {
   color: #0099ff; }
 
-/*
-   ==========================================================================
-   3.2.1.Logo
-   ==========================================================================
-*/
 .logo {
   width: 100%;
   margin: -30px 0 25px; }
@@ -225,24 +204,16 @@ section.intro {
   height: auto; }
 
 .text-logo {
-  color: #2098f5;
+  color: #0099ff;
   font-family: BeonMedium;
   font-weight: bold;
   font-size: 3em; }
 
-/*
-   ==========================================================================
-   3.2.2.Intro Main Heading
-   ==========================================================================
-*/
 .intro-title {
   font-size: 2em;
   font-weight: normal;
   margin: 15px 0;
   text-transform: uppercase; }
-
-.obak {
-  color: #2098f5; }
 
 .content-div {
   width: 100%; }
@@ -336,7 +307,9 @@ section.statistics {
   border: 3px solid #2A2A72;
   border-radius: 4px;
   text-align: center;
-  margin: 10px; }
+  margin: 10px;
+  display: flex;
+  flex-direction: row; }
 
 .statistics h2 {
   border-bottom: 3px solid #2A2A72;
@@ -344,6 +317,11 @@ section.statistics {
   width: 200px;
   margin: auto;
   margin-bottom: 50px; }
+
+.api-data-section {
+  text-align: left;
+  margin: 20px 0;
+  flex-grow: 1; }
 
 .statistics p,
 .fa-clock-o,

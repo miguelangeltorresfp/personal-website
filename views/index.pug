@@ -21,16 +21,8 @@ html(lang='en')
     link(rel='apple-touch-icon', href='/img/ios-icon.png')
     // iOS Saved Website App Title
     meta(name='apple-mobile-web-app-title', content='RC Website')
-    // Animate.CSS
-    link(rel='stylesheet', href='/css/animate.css')
-    // Font Awesome Style
-    link(rel='stylesheet', href='/css/font-awesome.min.css?v=4.7.0')
-    // Bootstrap Style
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    // Reset Style
-    link(rel='stylesheet', href='/css/normalize.css')
     // Main Style
-    link(rel='stylesheet', href='/css/application.css?v=1.9')
+    link(rel='stylesheet', href='/css/main.min.css')
   body
     // === Header Section ===
     #container.container-fluid
@@ -47,15 +39,15 @@ html(lang='en')
           // ==== Main Heading ====
           h1.intro-title
             | Web Development
-            span.obak .
+            span.period .
             |  Design
-            span.obak .
+            span.period .
             |  Business
-            span.obak .
+            span.period .
             |  Fitness
-            span.obak .
+            span.period .
             |  Coffee
-            span.obak .
+            span.period .
         // /End Intro Section Content
         | \
         // ==== Intro Section Bottom Content ====
@@ -102,7 +94,7 @@ html(lang='en')
                 .running-man.left
                 h3 Last Run
                 .running-man.right
-              .left-align
+              .api-data-section
                 p.running-date
                   span.api-data
                   span is the date of my last run.
@@ -121,7 +113,7 @@ html(lang='en')
                 i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
                 h3 Daily Hours
                 i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
-              .left-align
+              .api-data-section
                 p.web-development-hours
                   span.api-data
                   span on web development.

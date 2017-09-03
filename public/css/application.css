@@ -407,6 +407,12 @@ section.statistics {
    Blog Section
    ==========================================================================
 */
+#blog-posts {
+  display: none; }
+
+.blog .loader {
+  transform: translateY(80px); }
+
 section.blog a.button {
   padding: 5px 10px;
   margin-top: 0px; }

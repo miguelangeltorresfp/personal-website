@@ -450,6 +450,14 @@ $c3: lighten($primary-color, 30);
    ==========================================================================
 */
 
+#blog-posts {
+  display: none;
+}
+
+.blog .loader {
+  transform: translateY(80px);
+}
+
 section.blog a.button {
   padding: 5px 10px;
   margin-top: 0px;

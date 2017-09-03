@@ -12582,6 +12582,9 @@ $(document).ready( () => {
       $postDiv.append($title, $excerpt, $url);
       $('#blog-posts').append($postDiv);
     }
+    $('.blog .loader').fadeOut(500, () => {
+      $('#blog-posts').fadeIn(500);
+    });
   });
   $.get('/stravaData', (result) => {
     $('.running-date .api-data').text(result.date);

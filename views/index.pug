@@ -89,7 +89,7 @@ html(lang='en')
         .max-width-container
           h2.section-title Stats
           .statistics-columns
-            .col-sm-6.statistics-column
+            .col-sm-6.statistics-column#strava
               .title-section
                 .running-man.left
                 h3 Last Run
@@ -114,7 +114,7 @@ html(lang='en')
                 | Data gathered from the 
                 a(href='http://strava.com', target='_blank') Strava
                 |  API.
-            .col-sm-6.statistics-column
+            .col-sm-6.statistics-column#rescuetime 
               .title-section
                 i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
                 h3 Daily Hours
@@ -138,31 +138,13 @@ html(lang='en')
                 |  API.
       section.blog.row
         .max-width-container.about-container
-          .col-sm-12
+          .col-sm-12#blog-posts
             .title-section
               h2 Blog Articles
             p
               | Here are my 3 most recent articles that i've writen on 
               a(href='https://medium.com/@robertcooper_18384') Medium
               | .
-            div#first-post.post
-              h3 
-                a(href='' target='_blank') 
-              p= mediumExcerpt1
-              p
-                a(href='' target='_blank' class="button") Read More
-            div#second-post.post
-              h3 
-                a(href='' target='_blank') 
-              p= mediumExcerpt2
-              p
-                a(href='' target='_blank' class="button") Read More 
-            div#third-post.post
-              h3 
-                a(href='' target='_blank') 
-              p= mediumExcerpt3
-              p
-                a(href='' target='_blank' class="button") Read More  
     // Concatenated JS Files
     script(src='/js/index.min.js?v=1.0')
     // Google Analytics

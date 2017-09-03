@@ -1,26 +1,41 @@
 $(document).ready( () => {
-  $.get( '/apiData', (result) => {
-    $('.running-date .api-data').text(result.stravaDate);
-    $('.running-distance .api-data').text(result.stravaDistance);
-    $('.running-duration .api-data').text(result.stravaDuration);
-
-    $('.web-development-hours .api-data').text(result.rescuetimeWebHours + ':' + result.rescuetimeWebMinutes);
-    $('.distracted-hours .api-data').text(result.rescuetimeDistractedHours + ':' + result.rescuetimeDistractedMinutes);
-
-    $('#first-post h3 a').text(result.mediumTitle1).attr('href', result.mediumUrl1);
-    $('#first-post p:first-of-type').text(result.mediumExcerpt1);
-    $('#first-post p:nth-of-type(2) a').attr('href', result.mediumUrl1);
-
-    $('#second-post h3 a').text(result.mediumTitle2).attr('href', result.mediumUrl2);
-    $('#second-post p:first-of-type').text(result.mediumExcerpt2);
-    $('#second-post p:nth-of-type(2) a').attr('href', result.mediumUrl2);
-
-    $('#third-post h3 a').text(result.mediumTitle3).attr('href', result.mediumUrl3);
-    $('#third-post p:first-of-type').text(result.mediumExcerpt3);
-    $('#third-post p:nth-of-type(2) a').attr('href', result.mediumUrl3);
-
-    $('.loader').fadeOut(500, () => {
+  $.get('/mediumData', (result) => {
+    for (let i=1; i <= 3; i++) {
+      let postId = '#post' + i;
+      let title = 'title' + i;
+      let excerpt = 'excerpt' + i;
+      let url = 'url' + i;
+      let $postDiv = $('<div>')
+                      .addClass('post')
+                      .attr('id', postId);
+      let $title = $('<a>')
+                    .attr('href', result[url])
+                    .append($('<h3>').text(result[title]));
+      let $excerpt = $('<p>')
+                      .text(result[excerpt]);
+      let $url = $('<a>')
+                .text('Read More')
+                .attr('href', result[url])
+                .attr('target', '_blank')
+                .addClass('button');
+      $postDiv.append($title, $excerpt, $url);
+      $('#blog-posts').append($postDiv);
+    }
+  });
+  $.get('/stravaData', (result) => {
+    $('.running-date .api-data').text(result.date);
+    $('.running-distance .api-data').text(result.distance);
+    $('.running-duration .api-data').text(result.duration);
+    $('#strava .loader').fadeOut(500, () => {
       $('.api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
+  $.get( '/rescuetimeData', (result) => {
+    $('.web-development-hours .api-data').text(result.webHours + ':' + result.webMinutes);
+    $('.distracted-hours .api-data').text(result.distractedHours + ':' + result.distractedMinutes);
+    $('#rescuetime .loader').fadeOut(500, () => {
+      $('.api-data-section > *:not(.loader)').fadeIn(500);
+    });
+  });
+
 });

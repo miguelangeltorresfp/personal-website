@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const getApiData = require('./getApiData');
+const getStravaData = require('./getApiData').getStravaData;
+const getMediumData = require('./getApiData').getMediumData;
+const getRescuetimeData = require('./getApiData').getRescuetimeData;
 
 app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
@@ -14,26 +16,35 @@ app.set('view engine', 'pug');
 
 app.use(router);
 
-router.get('/apiData', (request, response) => {
-  let apiResult = {};
-  getApiData( (apiData) => {
-    apiResult.stravaDate = apiData.stravaDate;
-    apiResult.stravaDuration = apiData.stravaDuration;
-    apiResult.stravaDistance = apiData.stravaDistance;
-    apiResult.rescuetimeWebHours = apiData.rescuetimeWebHours;
-    apiResult.rescuetimeWebMinutes = apiData.rescuetimeWebMinutes;
-    apiResult.rescuetimeDistractedHours = apiData.rescuetimeDistractedHours;
-    apiResult.rescuetimeDistractedMinutes = apiData.rescuetimeDistractedMinutes;
-    apiResult.mediumTitle1 = apiData.mediumTitle1;
-    apiResult.mediumExcerpt1 = apiData.mediumExcerpt1;
-    apiResult.mediumUrl1 = apiData.mediumUrl1;
-    apiResult.mediumTitle2 = apiData.mediumTitle2;
-    apiResult.mediumExcerpt2 = apiData.mediumExcerpt2;
-    apiResult.mediumUrl2 = apiData.mediumUrl2;
-    apiResult.mediumTitle3 = apiData.mediumTitle3;
-    apiResult.mediumExcerpt3 = apiData.mediumExcerpt3;
-    apiResult.mediumUrl3 = apiData.mediumUrl3;
-    response.send(apiData);
+// router.get('/apiData', (request, response) => {
+//   let apiResult = {};
+//   getStravaData( (apiData) => {
+//     apiResult.stravaDate = apiData.stravaDate;
+//     apiResult.stravaDuration = apiData.stravaDuration;
+//     apiResult.stravaDistance = apiData.stravaDistance;
+//     apiResult.rescuetimeWebHours = apiData.rescuetimeWebHours;
+//     apiResult.rescuetimeWebMinutes = apiData.rescuetimeWebMinutes;
+//     apiResult.rescuetimeDistractedHours = apiData.rescuetimeDistractedHours;
+//     apiResult.rescuetimeDistractedMinutes = apiData.rescuetimeDistractedMinutes;
+//     response.send(apiData);
+//   });
+// });
+
+router.get('/stravaData', (request, response) => {
+  getStravaData( (stravaData) => {
+    response.send(stravaData);
+  });
+});
+
+router.get('/mediumData', (request, response) => {
+  getMediumData( (mediumData) => {
+    response.send(mediumData);
+  });
+});
+
+router.get('/rescuetimeData', (request, response) => {
+  getRescuetimeData( (rescuetimeData) => {
+    response.send(rescuetimeData);
   });
 });
 
@@ -48,22 +59,20 @@ router.all(/.*/, function(req, res, next) {
 });
 
 router.get('/', (req, res) => {
-  getApiData( (apiData) => {
-    res.render('index');
-  });
+  res.render('index');
 });
 
-// app.use((req, res, next) => {
-//   const err = new Error("Not Found");
-//   err.status = 404;
-//   next(err);
-// });
-//
-// app.use( (err, req, res, next) => {
-//   res.status(err.status);
-//   console.error(err.stack);
-//   res.send(err.stack);
-// });
+app.use((req, res, next) => {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
+});
+
+app.use( (err, req, res, next) => {
+  res.status(err.status);
+  console.error(err.stack);
+  res.send(err.stack);
+});
 
 app.listen(8080, () => {
   console.log("The application is running on localhost:8080!");

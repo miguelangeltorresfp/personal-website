@@ -1,99 +1,28 @@
 const https = require('https');
 
-function getApiData(callback) {
-  let apiData = {}
-  getRescuetimeDistractedData( (rescuetimeData) => {
-    apiData.rescuetimeDistractedHours = rescuetimeData.hours;
-    apiData.rescuetimeDistractedMinutes = rescuetimeData.minutes;
-    getRescuetimeWebData( (rescuetimeData) => {
-      apiData.rescuetimeWebHours = rescuetimeData.hours;
-      apiData.rescuetimeWebMinutes = rescuetimeData.minutes;
-      getStravaData( (stravaData) => {
-        apiData.stravaDate = stravaData.date;
-        apiData.stravaDistance = stravaData.distance;
-        apiData.stravaDuration = stravaData.duration;
-        getMediumData( (mediumData) => {
-          for (let i=1; i <= 3; i++) {
-            apiData['mediumTitle' + i] = mediumData['title' + i],
-            apiData['mediumExcerpt' + i] = mediumData['excerpt' + i],
-            apiData['mediumUrl' + i] = mediumData['url' + i]
-          }
-          callback(apiData);
-        });
-      });
-    });
-  });
-}
-
-function getMediumData(callback) {
-  let mediumData = {};
-  https.get( {
-      host: 'medium.com',
-      path: '/@robertcooper_18384/latest',
-      headers: {
-        Accept: 'application/json'
-      }
-    }, (res) => {
-    const { statusCode } = res;
-    const contentType = res.headers['content-type'];
-    let error;
-    if (statusCode !== 200) {
-     error = new Error('Request Failed.\n' +
-                       `Status Code: ${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-     error = new Error('Invalid content-type.\n' +
-                       `Expected application/json but received ${contentType}`);
-    }
-    if (error) {
-     console.error(error.message);
-     // consume response data to free up memory
-     res.resume();
-     return;
-    }
-    res.setEncoding('utf8');
-    let rawData = '';
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      rawData = rawData.replace('])}while(1);</x>', '');
-      try {
-        const parsedData = JSON.parse(rawData);
-        const posts = parsedData['payload']['references']['Post']
-        for (let i = 1; i <= 3; i++) {
-          let post = posts[Object.keys(posts)[i-1]];
-          mediumData['title' + i] = post['title'];
-          mediumData['excerpt' + i] = post['content']['subtitle'];
-          mediumData['url' + i] = 'https://medium.com/@robertcooper_18384/' + post['uniqueSlug']
-        }
-      } catch (e) {
-       console.error(e.message);
-      }
-      callback(mediumData);
-    });
-  }).on('error', (e) => {
-    console.error(`Got error: ${e.message}`);
-  });
+function apiErrorHandling(res) {
+  const { statusCode } = res;
+  const contentType = res.headers['content-type'];
+  let error;
+  if (statusCode !== 200) {
+   error = new Error('Request Failed.\n' +
+                     `Status Code: ${statusCode}`);
+  } else if (!/^application\/json/.test(contentType)) {
+   error = new Error('Invalid content-type.\n' +
+                     `Expected application/json but received ${contentType}`);
+  }
+  if (error) {
+   console.error(error.message);
+   // consume response data to free up memory
+   res.resume();
+   return;
+  }
 }
 
 function getRescuetimeWebData(callback) {
   let rescuetimeData = {};
   https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', (res) => {
-    const { statusCode } = res;
-    const contentType = res.headers['content-type'];
-    let error;
-    if (statusCode !== 200) {
-     error = new Error('Request Failed.\n' +
-                       `Status Code: ${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-     error = new Error('Invalid content-type.\n' +
-                       `Expected application/json but received ${contentType}`);
-    }
-    if (error) {
-     console.error(error.message);
-     // consume response data to free up memory
-     res.resume();
-     return;
-    }
-
+    apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';
     res.on('data', (chunk) => { rawData += chunk; });
@@ -125,23 +54,7 @@ function getRescuetimeWebData(callback) {
 function getRescuetimeDistractedData(callback) {
   let rescuetimeData = {};
   https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', (res) => {
-    const { statusCode } = res;
-    const contentType = res.headers['content-type'];
-    let error;
-    if (statusCode !== 200) {
-     error = new Error('Request Failed.\n' +
-                       `Status Code: ${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-     error = new Error('Invalid content-type.\n' +
-                       `Expected application/json but received ${contentType}`);
-    }
-    if (error) {
-     console.error(error.message);
-     // consume response data to free up memory
-     res.resume();
-     return;
-    }
-
+    apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';
     res.on('data', (chunk) => { rawData += chunk; });
@@ -172,27 +85,24 @@ function getRescuetimeDistractedData(callback) {
   });
 }
 
+function getRescuetimeData(callback) {
+  let rescuetimeData = {};
+  getRescuetimeWebData((rescuetimeWebData) => {
+    rescuetimeData.webMinutes = rescuetimeWebData.minutes;
+    rescuetimeData.webHours = rescuetimeWebData.hours;
+    getRescuetimeDistractedData((rescuetimeDistractedData) => {
+      rescuetimeData.distractedMinutes = rescuetimeDistractedData.minutes;
+      rescuetimeData.distractedHours = rescuetimeDistractedData.hours;
+      callback(rescuetimeData);
+    });
+  });
+
+}
+
 function getStravaData(callback) {
   let stravaData = {};
   https.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce73011107949166d10ea05e522443eab24c2', (res) => {
-    const { statusCode } = res;
-    const contentType = res.headers['content-type'];
-
-    let error;
-    if (statusCode !== 200) {
-     error = new Error('Request Failed.\n' +
-                       `Status Code: ${statusCode}`);
-    } else if (!/^application\/json/.test(contentType)) {
-     error = new Error('Invalid content-type.\n' +
-                       `Expected application/json but received ${contentType}`);
-    }
-    if (error) {
-     console.error(error.message);
-     // consume response data to free up memory
-     res.resume();
-     return;
-    }
-
+    apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';
     res.on('data', (chunk) => { rawData += chunk; });
@@ -232,4 +142,42 @@ function getStravaData(callback) {
   });
 }
 
-module.exports = getApiData;
+module.exports = {
+  getMediumData: getMediumData,
+  getStravaData: getStravaData,
+  getRescuetimeData: getRescuetimeData
+}
+
+function getMediumData(callback) {
+  let mediumData = {};
+  https.get( {
+      host: 'medium.com',
+      path: '/@robertcooper_18384/latest',
+      headers: {
+        Accept: 'application/json'
+      }
+    }, (res) => {
+    apiErrorHandling(res);
+    res.setEncoding('utf8');
+    let rawData = '';
+    res.on('data', (chunk) => { rawData += chunk; });
+    res.on('end', () => {
+      rawData = rawData.replace('])}while(1);</x>', '');
+      try {
+        const parsedData = JSON.parse(rawData);
+        const posts = parsedData['payload']['references']['Post']
+        for (let i = 1; i <= 3; i++) {
+          let post = posts[Object.keys(posts)[i-1]];
+          mediumData['title' + i] = post['title'];
+          mediumData['excerpt' + i] = post['content']['subtitle'];
+          mediumData['url' + i] = 'https://medium.com/@robertcooper_18384/' + post['uniqueSlug']
+        }
+      } catch (e) {
+       console.error(e.message);
+      }
+      callback(mediumData);
+    });
+  }).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
+  });
+}

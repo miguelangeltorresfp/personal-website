@@ -37,6 +37,16 @@ router.get('/apiData', (request, response) => {
   });
 });
 
+// Make sure all URLs use www.
+router.all(/.*/, function(req, res, next) {
+  var host = req.header("host");
+  if (host.match(/^www\..*/i)) {
+    next();
+  } else {
+    res.redirect(301, "http://www." + host);
+  }
+});
+
 router.get('/', (req, res) => {
   getApiData( (apiData) => {
     res.render('index');

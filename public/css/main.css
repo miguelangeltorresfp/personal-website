@@ -9702,13 +9702,13 @@ section.statistics {
   display: inline-block;
   margin-bottom: -3px; }
 
-#github h3 {
-  margin-left: 10px;
-  margin-right: 10px; }
-
 @keyframes playKeyboard {
   100% {
     background-position: -625px; } }
+
+#github h3 {
+  margin-left: 10px;
+  margin-right: 10px; }
 
 .api-data-section > *:not(.loader) {
   display: none; }

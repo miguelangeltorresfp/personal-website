@@ -284,8 +284,7 @@ section.blog {
   background-color: $dark-color;
 }
 
-section.about a:not(.button),
-section.blog a:not(.button) {
+section a:not(.button) {
   color: #59D2FE;
 }
 
@@ -365,10 +364,6 @@ section.statistics {
   color: $dark-color;
 }
 
-.statistics a {
-  color: $dark-color;
-}
-
 .title-section .fa-clock-o.left,
 .title-section .running-man.left {
   margin-right: 20px;
@@ -400,6 +395,25 @@ section.statistics {
 
 @keyframes play {
    100% { background-position: -150px; }
+}
+
+.keyboard {
+  width: 62.5px;
+  height: 25px;
+  background: url('../img/keyboard-pattern.png') left center;
+  background-size: cover;
+  animation: playKeyboard 1.5s steps(10) infinite;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+#github h3 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@keyframes playKeyboard {
+   100% { background-position: -625px; }
 }
 
 .api-data-section > *:not(.loader) {
@@ -506,6 +520,16 @@ section.blog .post h3 a {
       text-align: center;
       max-width: 550px;
       margin: 0 auto 20px;
+    }
+    .title-section .right {
+      display: none;
+    }
+    .title-section .left {
+      display: block;
+      margin: 10px auto 0 !important;
+    }
+    .title-section h3 {
+      margin-top: 10px;
     }
 }
 

@@ -138,9 +138,9 @@ html(lang='en')
                 |  API.
             .col-sm-6.statistics-column#github 
               .title-section
-                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
-                h3 Today's Github Commits
-                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
+                .keyboard.left
+                h3 Github Commits
+                .keyboard.right
               .api-data-section
                 .loader
                   div
@@ -150,7 +150,7 @@ html(lang='en')
                   div
                 p
                   span.api-data
-                  | total commits.
+                  | total commits today.
               p.more-info
                 | Data gathered from the 
                 a(href='https://developer.github.com/v3/', target='_blank') Github 

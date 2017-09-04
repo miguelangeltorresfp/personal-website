@@ -68,7 +68,6 @@ function getGithubData(callback) {
       repositoryName = repositories[i];
       githubCommits(repositoryName, (commits) => {
         count--;
-        console.log(count);
         totalCommits += commits;
         if (count === 0) {
           let githubData = {

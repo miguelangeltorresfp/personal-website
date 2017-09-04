@@ -1,6 +1,9 @@
 $(document).ready( () => {
   $.get('/githubData', (result) => {
-    console.log(result.commits);
+    $('#github .api-data').text(result.commits);
+    $('#github .loader').fadeOut(500, () => {
+      $('.api-data-section > *:not(.loader)').fadeIn(500);
+    });
   });
   $.get('/mediumData', (result) => {
     for (let i=1; i <= 3; i++) {

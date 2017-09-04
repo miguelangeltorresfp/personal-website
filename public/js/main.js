@@ -1,4 +1,7 @@
 $(document).ready( () => {
+  $.get('/githubData', (result) => {
+    console.log(result.commits);
+  });
   $.get('/mediumData', (result) => {
     for (let i=1; i <= 3; i++) {
       let postId = '#post' + i;

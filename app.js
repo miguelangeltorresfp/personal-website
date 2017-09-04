@@ -4,6 +4,7 @@ const router = express.Router();
 const getStravaData = require('./getApiData').getStravaData;
 const getMediumData = require('./getApiData').getMediumData;
 const getRescuetimeData = require('./getApiData').getRescuetimeData;
+const getGithubData = require('./getApiData').getGithubData;
 
 app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
@@ -16,23 +17,15 @@ app.set('view engine', 'pug');
 
 app.use(router);
 
-// router.get('/apiData', (request, response) => {
-//   let apiResult = {};
-//   getStravaData( (apiData) => {
-//     apiResult.stravaDate = apiData.stravaDate;
-//     apiResult.stravaDuration = apiData.stravaDuration;
-//     apiResult.stravaDistance = apiData.stravaDistance;
-//     apiResult.rescuetimeWebHours = apiData.rescuetimeWebHours;
-//     apiResult.rescuetimeWebMinutes = apiData.rescuetimeWebMinutes;
-//     apiResult.rescuetimeDistractedHours = apiData.rescuetimeDistractedHours;
-//     apiResult.rescuetimeDistractedMinutes = apiData.rescuetimeDistractedMinutes;
-//     response.send(apiData);
-//   });
-// });
-
 router.get('/stravaData', (request, response) => {
   getStravaData( (stravaData) => {
     response.send(stravaData);
+  });
+});
+
+router.get('/githubData', (request, response) => {
+  getGithubData( (githubData) => {
+    response.send(githubData);
   });
 });
 

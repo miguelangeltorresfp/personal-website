@@ -1,5 +1,86 @@
 const https = require('https');
 
+function githubRecentRepos(callback) {
+  https.get( {
+    host: 'api.github.com',
+    path: '/users/engineering-robert/repos?sort=pushed&client_id=3f5aa7e51ab02b6d5d8b&client_secret=e4910aca21430393b7e585712fdaa3da8f29e23f',
+    headers: {
+      'Accept': 'application/vnd.github.v3+json',
+      'User-Agent': 'Engineering-Robert'
+    }
+    }, (res) => {
+      apiErrorHandling(res);
+      let rawData = '';
+      res.on('data', (chunk) => { rawData += chunk; });
+      res.on('end', () => {
+        try {
+          let recentRepos = [];
+          const parsedData = JSON.parse(rawData);
+          for (let i=0; i < 5; i++) {
+            recentRepos.push(parsedData[i].full_name);
+          }
+          callback(recentRepos);
+        } catch (e) {
+         console.error(e.message);
+        }
+      });
+    }
+  ).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
+  });
+}
+
+function githubCommits(repositoryName, callback) {
+  let date = new Date();
+  let dateString = date.toISOString().substring(0,11) + '00:00:00.000Z';
+  https.get( {
+    host: 'api.github.com',
+    path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=3f5aa7e51ab02b6d5d8b&client_secret=e4910aca21430393b7e585712fdaa3da8f29e23f',
+    headers: {
+      'Accept': 'application/vnd.github.v3+json',
+      'User-Agent': 'Engineering-Robert'
+    }
+    }, (res) => {
+      apiErrorHandling(res);
+      let rawData = '';
+      res.on('data', (chunk) => { rawData += chunk; });
+      res.on('end', () => {
+        try {
+          let parsedData = JSON.parse(rawData);
+          let commitCount = parsedData.length;
+          return callback(commitCount);
+        } catch (e) {
+         console.error(e.message);
+        }
+      });
+    }
+  ).on('error', (e) => {
+    console.error(`Got error: ${e.message}`);
+  });
+}
+
+// totalCommits()
+function getGithubData(callback) {
+  githubRecentRepos((repositories) => {
+    let totalCommits = 0;
+    count = repositories.length;
+    for (let i=0; i < repositories.length; i++) {
+      repositoryName = repositories[i];
+      githubCommits(repositoryName, (commits) => {
+        count--;
+        console.log(count);
+        totalCommits += commits;
+        if (count === 0) {
+          let githubData = {
+            'commits': totalCommits
+          };
+          callback(githubData);
+        }
+      });
+    }
+  });
+}
+
 function apiErrorHandling(res) {
   const { statusCode } = res;
   const contentType = res.headers['content-type'];
@@ -142,12 +223,6 @@ function getStravaData(callback) {
   });
 }
 
-module.exports = {
-  getMediumData: getMediumData,
-  getStravaData: getStravaData,
-  getRescuetimeData: getRescuetimeData
-}
-
 function getMediumData(callback) {
   let mediumData = {};
   https.get( {
@@ -180,4 +255,11 @@ function getMediumData(callback) {
   }).on('error', (e) => {
     console.error(`Got error: ${e.message}`);
   });
+}
+
+module.exports = {
+  getMediumData: getMediumData,
+  getStravaData: getStravaData,
+  getRescuetimeData: getRescuetimeData,
+  getGithubData: getGithubData
 }

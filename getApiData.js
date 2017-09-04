@@ -3,6 +3,7 @@ const apiKeys = require('./apiKeys.json');
 const githubId = apiKeys.github.id;
 const githubSecret = apiKeys.github.secret;
 const rescuetimeKey = apiKeys.rescuetime.key;
+const stravaToken = apiKeys.strava.token;
 
 function githubRecentRepos(callback) {
   https.get( {
@@ -185,7 +186,7 @@ function getRescuetimeData(callback) {
 
 function getStravaData(callback) {
   let stravaData = {};
-  https.get('https://www.strava.com/api/v3/athlete/activities?access_token=6f1ce73011107949166d10ea05e522443eab24c2', (res) => {
+  https.get('https://www.strava.com/api/v3/athlete/activities?access_token=' + stravaToken, (res) => {
     apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';

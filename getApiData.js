@@ -1,9 +1,13 @@
 const https = require('https');
+const apiKeys = require('./apiKeys.json');
+const githubId = apiKeys.github.id;
+const githubSecret = apiKeys.github.secret;
+const rescuetimeKey = apiKeys.rescuetime.key;
 
 function githubRecentRepos(callback) {
   https.get( {
     host: 'api.github.com',
-    path: '/users/engineering-robert/repos?sort=pushed&client_id=3f5aa7e51ab02b6d5d8b&client_secret=e4910aca21430393b7e585712fdaa3da8f29e23f',
+    path: '/users/engineering-robert/repos?sort=pushed&client_id=' + githubId + '&client_secret=' + githubSecret,
     headers: {
       'Accept': 'application/vnd.github.v3+json',
       'User-Agent': 'Engineering-Robert'
@@ -35,7 +39,7 @@ function githubCommits(repositoryName, callback) {
   let dateString = date.toISOString().substring(0,11) + '00:00:00.000Z';
   https.get( {
     host: 'api.github.com',
-    path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=3f5aa7e51ab02b6d5d8b&client_secret=e4910aca21430393b7e585712fdaa3da8f29e23f',
+    path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret,
     headers: {
       'Accept': 'application/vnd.github.v3+json',
       'User-Agent': 'Engineering-Robert'
@@ -101,7 +105,7 @@ function apiErrorHandling(res) {
 
 function getRescuetimeWebData(callback) {
   let rescuetimeData = {};
-  https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=overview', (res) => {
+  https.get('https://www.rescuetime.com/anapi/data?key=' + rescuetimeKey + '&format=json&restrict_kind=overview', (res) => {
     apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';
@@ -133,7 +137,7 @@ function getRescuetimeWebData(callback) {
 
 function getRescuetimeDistractedData(callback) {
   let rescuetimeData = {};
-  https.get('https://www.rescuetime.com/anapi/data?key=B63Yw5IF3RFY5pSxa4fnMnQS5adF_DFK4GWzPUOb&format=json&restrict_kind=productivity', (res) => {
+  https.get('https://www.rescuetime.com/anapi/data?key=' + rescuetimeKey + '&format=json&restrict_kind=productivity', (res) => {
     apiErrorHandling(res);
     res.setEncoding('utf8');
     let rawData = '';

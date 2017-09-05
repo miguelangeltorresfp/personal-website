@@ -357,6 +357,9 @@ section.statistics {
   text-align: center;
   margin: 20px 0;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .statistics p,
@@ -458,6 +461,46 @@ $c3: lighten($primary-color, 30);
     animation-delay: $i * $d;
   }
 }
+
+// Heart Rate
+
+.heart {
+  animation: heartbeat 1s linear infinite both;
+  display: inline-block;
+}
+
+.heart.left {
+  margin-right: 10px;
+}
+
+.heart.right {
+  margin-left: 10px;
+}
+
+.heart svg {
+  height: 35px;
+}
+
+
+/* Generated with Bounce.js. Edit at https://goo.gl/h05rSW */
+
+@keyframes heartbeat {
+    0% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
+    2.1% { transform:matrix3d(1.022,0,0,0,0,1.022,0,0,0,0,1,0,0,0,0,1); }
+    4.1% { transform:matrix3d(1.036,0,0,0,0,1.036,0,0,0,0,1,0,0,0,0,1); }
+    8.21% { transform:matrix3d(1.046,0,0,0,0,1.046,0,0,0,0,1,0,0,0,0,1); }
+    11.41% { transform:matrix3d(1.042,0,0,0,0,1.042,0,0,0,0,1,0,0,0,0,1); }
+    14.51% { transform:matrix3d(1.032,0,0,0,0,1.032,0,0,0,0,1,0,0,0,0,1); }
+    20.72% { transform:matrix3d(1.011,0,0,0,0,1.011,0,0,0,0,1,0,0,0,0,1); }
+    27.03% { transform:matrix3d(0.997,0,0,0,0,0.997,0,0,0,0,1,0,0,0,0,1); }
+    33.23% { transform:matrix3d(0.993,0,0,0,0,0.993,0,0,0,0,1,0,0,0,0,1); }
+    45.75% { transform:matrix3d(0.998,0,0,0,0,0.998,0,0,0,0,1,0,0,0,0,1); }
+    58.26% { transform:matrix3d(1.001,0,0,0,0,1.001,0,0,0,0,1,0,0,0,0,1); }
+    83.28% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
+    100% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
+}
+
+
 
 /*
    ==========================================================================

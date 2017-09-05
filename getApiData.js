@@ -42,7 +42,6 @@ function getHeartAndStepsData(callback) {
         const parsedData = JSON.parse(rawData);
         heartAndStepsData.heartRate = parsedData.heartRate.value;
         heartAndStepsData.steps = parsedData.activitySummary.steps;
-        console.log(heartAndStepsData);
       } catch (e) {
        console.error(e.message);
       }

@@ -4,13 +4,13 @@ $(document).ready( () => {
     $('#health #steps.api-data').text(result.steps);
     $('#health #sleep.api-data').text(result.hoursSlept);
     $('#health .loader').fadeOut(500, () => {
-      $('.api-data-section > *:not(.loader)').fadeIn(500);
+      $('#health .api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
   $.get('/githubData', (result) => {
     $('#github .api-data').text(result.commits);
     $('#github .loader').fadeOut(500, () => {
-      $('.api-data-section > *:not(.loader)').fadeIn(500);
+      $('#github .api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
   $.get('/mediumData', (result) => {
@@ -44,14 +44,14 @@ $(document).ready( () => {
     $('.running-distance .api-data').text(result.distance);
     $('.running-duration .api-data').text(result.duration);
     $('#strava .loader').fadeOut(500, () => {
-      $('.api-data-section > *:not(.loader)').fadeIn(500);
+      $('#strava .api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
   $.get( '/rescuetimeData', (result) => {
     $('.web-development-hours .api-data').text(result.webHours + ':' + result.webMinutes);
     $('.distracted-hours .api-data').text(result.distractedHours + ':' + result.distractedMinutes);
     $('#rescuetime .loader').fadeOut(500, () => {
-      $('.api-data-section > *:not(.loader)').fadeIn(500);
+      $('#rescuetime .api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
 

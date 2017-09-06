@@ -84,7 +84,6 @@ if (Number.isInteger(offsetString)) {
   offsetString = "-05:00";
 }
 let dateString = date.toISOString().substring(0,11) + '00:00:00.000' + offsetString;
-console.log(dateString);
 
 function githubRecentRepos(callback) {
   https.get( {

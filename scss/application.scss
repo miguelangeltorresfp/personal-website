@@ -11,6 +11,7 @@
  *     About Section
  *     Stats Section
  *     Blog Section
+ *     Portfolio Section
  *     Responsive Design
  *     Screen loader
  *
@@ -95,7 +96,7 @@ img {
     width: 100%;
     height: auto;
 }
-ul { list-style: none }
+ul { list-style: none; margin:0; padding: 0; }
 a { text-decoration: none }
 #container {
     margin: 0;
@@ -280,17 +281,21 @@ section.row .title-section h2 {
   text-align: center;
 }
 
-section.about,
-section.blog {
+section:nth-child(even) {
   background-color: $dark-color;
+}
+
+section:nth-child(odd) h3,
+section:nth-child(odd) p, {
+  color: $dark-color;
 }
 
 section a:not(.button) {
   color: #59D2FE;
 }
 
-section.about p,
-section.blog p {
+section#about p,
+section#blog p {
   color: #fff;
 }
 
@@ -300,7 +305,7 @@ section.blog p {
    ==========================================================================
 */
 
-.about-container {
+#about-container {
   display: table;
 }
 
@@ -324,7 +329,7 @@ img.headshot {
    ==========================================================================
 */
 
-section.statistics {
+section#statistics {
   background-color: $light-background;
 }
 
@@ -345,7 +350,7 @@ section.statistics {
   flex-direction: column;
 }
 
-.statistics h2 {
+#statistics h2 {
   border-bottom: 3px solid $dark-color;
   padding-bottom: 5px;
   width: 200px;
@@ -362,9 +367,7 @@ section.statistics {
   justify-content: center;
 }
 
-.statistics p,
-.fa-clock-o,
-.statistics h3 {
+.fa-clock-o {
   color: $dark-color;
 }
 
@@ -512,21 +515,63 @@ $c3: lighten($primary-color, 30);
   display: none;
 }
 
-.blog .loader {
+#blog .loader {
   transform: translateY(80px);
 }
 
-section.blog a.button {
+section#blog a.button {
   padding: 5px 10px;
   margin-top: 0px;
 }
 
-section.blog .post {
+section#blog .post {
   margin: 30px 0;
 }
 
-section.blog .post h3 a {
+section#blog .post h3 a {
   color: $primary-color;
+}
+
+/*
+* ==========================================================================
+    Responsive Design
+* ==========================================================================
+*/
+
+#portfolio .portfolio-tags span {
+  background-color: $dark-color;
+  color: white;
+  padding: 2px 8px 3px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+#portfolio ul,
+#portfolio li {
+  display: flex;
+}
+
+#portfolio li {
+  flex-direction: column;
+}
+
+#portfolio li p {
+  margin-top: 10px;
+}
+
+#portfolio .portfolio-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#portfolio .button {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+#portfolio li img {
+  margin-top: 15px;
 }
 
 /*
@@ -554,13 +599,13 @@ section.blog .post h3 a {
       padding-bottom: 10px;
       width: 360px;
     }
-    .about-container {
+    #about-container {
       text-align: center;
     }
-    .about-container p {
+    #about-container p {
       text-align: justify;
     }
-    section.blog p {
+    section#blog p {
       text-align: center;
       max-width: 550px;
       margin: 0 auto 20px;

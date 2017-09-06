@@ -12596,7 +12596,7 @@ $(document).ready( () => {
       $postDiv.append($title, $excerpt, $url);
       $('#blog-posts').append($postDiv);
     }
-    $('.blog .loader').fadeOut(500, () => {
+    $('#blog .loader').fadeOut(500, () => {
       $('#blog-posts').fadeIn(500);
     });
   });

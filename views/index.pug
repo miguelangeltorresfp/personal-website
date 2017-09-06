@@ -71,8 +71,8 @@ html(lang='en')
           // /End Social Links
         // /End Intro Section Bottom Content
       // /end intro section
-      section.about.row
-        .max-width-container.about-container
+      section#about.row
+        .max-width-container#about-container
           .col-sm-8.description-column
             .title-section
               h2 About
@@ -85,7 +85,7 @@ html(lang='en')
             a.button(href='/documents/Resume.pdf', target='_blank') View my Resume
           .col-sm-4.text-center.headshot-column
             img.headshot(src='/img/headshot.jpeg')
-      section.statistics.row
+      section#statistics.row
         .max-width-container
           h2.section-title Stats
           .statistics-columns
@@ -184,14 +184,14 @@ html(lang='en')
                 | Data gathered from the 
                 a(href='https://developer.github.com/v3/', target='_blank') Github 
                 |  API.
-      section.blog.row
+      section#blog.row
         .max-width-container.about-container
           .col-sm-12
             .title-section
               h2 Blog Articles
             p
               | Here are my 3 most recent articles that i've writen on 
-              a(href='https://medium.com/@robertcooper_18384') Medium
+              a(href='https://medium.com/@robertcooper_18384', target='_blank') Medium
               | .
             #blog-posts
             .loader
@@ -200,7 +200,56 @@ html(lang='en')
               div
               div
               div
-    // Concatenated JS Files
+      section#portfolio.row
+        .max-width-container.about-container
+          .col-sm-12
+            .title-section
+              h2 Portfolio
+            p
+              | Here is a list of some of the projects i've worked on. For additional projects I've participated in, please have a look at my 
+              a(href='https://github.com/Engineering-Robert', target="_blank") GitHub profile 
+              | or my 
+              a(href='https://codepen.io/robert-engineer/', target="_blank") CodePen profile
+              | .
+            // Create a cool slider using this tutorial as a guide: https://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
+            ul
+              li.col-sm-6
+                h3 Lorem Ipsum Generator
+                .portfolio-tags
+                  span node.js
+                  span javascript
+                  span css
+                p A simple Lorem Ipsum generator that generates paragraphs of text using technology-related words.
+                .portfolio-buttons
+                  a(href='http://lorem-ipsum.robertcooper.me/', target='_blank').button.demo Live Demo
+                  a(href='#', target='_blank').button.screenshots Screenshots
+                  a(href='https://github.com/Engineering-Robert/lorem-ipsum-generator', target='_blank').button.github Github
+                img(src='/img/lorem-ipsum-screenshot.png')
+              li.col-sm-6
+                h3 CUTC 2017 Website
+                .portfolio-tags
+                  span javascript
+                  span html
+                  span css
+                p The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.
+                .portfolio-buttons
+                  a(href='http://2017.cutc.ca/', target='_blank').button.demo Live Demo
+                  a(href='#', target='_blank').button.screenshots Screenshots
+                  a(href='https://github.com/Engineering-Robert/elevate.cutc.ca', target='_blank').button.github Github
+                img(src='/img/cutc-screenshot.png')
+              li.col-sm-6
+                h3 Queen's Engineering Forum 
+                .portfolio-tags
+                  span node.js
+                  span javscript
+                  span pug
+                p An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen's University. The project wasn't completed and I continued working on the project on my own after the 2016/2017 school year.
+                .portfolio-buttons
+                  a(href='#', target='_blank').button.demo Live Demo
+                  a(href='#', target='_blank').button.screenshots Screenshots
+                  a(href='#', target='_blank').button.github Github
+                img(src='/img/cutc-screenshot.png')
+    // Concatenated and Minified JS Files
     script(src='/js/index.min.js?v=1.0')
     // Google Analytics
     script.

@@ -12615,7 +12615,21 @@ $(document).ready( () => {
       $('#rescuetime .api-data-section > *:not(.loader)').fadeIn(500);
     });
   });
-
 });
+
+// .carousel-wrapper to display: flex; on click of screenshots button
+$('a.button.screenshots').click( (e) => {
+  e.preventDefault();
+  $(e.target).parent().siblings('.carousel-wrapper').css('display', 'flex');
+});
+
+$('.carousel-wrapper').click( (e) => {
+  if ($(e.target).hasClass('carousel-wrapper'))
+    $(e.target).hide();
+})
+
+$('.carousel').carousel({
+  interval: false
+})
 
 //# sourceMappingURL=index.js.map

@@ -11,6 +11,7 @@ app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
 app.use('/js', express.static('public/js'));
 app.use('/img', express.static('public/img'));
+app.use('/fonts', express.static('public/fonts'));
 app.use('/public', express.static('public'));
 
 app.set('views');

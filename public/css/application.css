@@ -279,6 +279,9 @@ section#about p,
 section#blog p {
   color: #fff; }
 
+section:nth-child(odd):not(:first-child) h2 {
+  border-bottom: 3px solid #2A2A72; }
+
 /*
    ==========================================================================
    About Section
@@ -307,6 +310,15 @@ img.headshot {
 section#statistics {
   background-color: #fff; }
 
+#statistics .max-width-container {
+  text-align: center; }
+
+#statistics h2 {
+  padding: 0 10px;
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 40px; }
+
 .statistics-columns {
   display: flex;
   justify-content: space-around;
@@ -321,13 +333,6 @@ section#statistics {
   margin: 10px;
   display: flex;
   flex-direction: column; }
-
-#statistics h2 {
-  border-bottom: 3px solid #2A2A72;
-  padding-bottom: 5px;
-  width: 200px;
-  margin: auto;
-  margin-bottom: 50px; }
 
 .api-data-section {
   text-align: center;
@@ -488,7 +493,7 @@ section#blog .post h3 a {
 
 /*
 * ==========================================================================
-    Responsive Design
+    Portfolio Section
 * ==========================================================================
 */
 #portfolio .portfolio-tags span {
@@ -499,18 +504,28 @@ section#blog .post h3 a {
   font-size: 12px;
   margin-right: 10px; }
 
-#portfolio .row {
-  display: flex; }
+.portfolio-item {
+  width: 50%;
+  display: inline-block; }
 
-#portfolio .row > div {
-  display: flex;
-  flex-direction: column; }
+.portfolio-item:nth-child(odd) {
+  padding-right: 20px; }
 
-#portfolio .row {
-  margin-bottom: 20px; }
+.portfolio-item:nth-child(even) {
+  padding-left: 20px; }
 
-#portfolio .row p {
+.portfolio-item {
+  margin-bottom: 40px; }
+
+.portfolio-item p {
   margin-top: 10px; }
+
+#portfolio p.description {
+  margin-bottom: 40px; }
+
+#portfolio h2 {
+  display: inline-block;
+  padding-right: 10px; }
 
 #portfolio .button {
   margin: 0;
@@ -520,6 +535,29 @@ section#blog .post h3 a {
 
 #portfolio img {
   margin-top: auto; }
+
+.carousel-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.carousel-caption {
+  width: 100%;
+  left: 0;
+  right: unset;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 40px;
+  bottom: 0; }
+
+.carousel-indicators {
+  bottom: 0; }
 
 /*
 * ==========================================================================
@@ -556,7 +594,10 @@ section#blog .post h3 a {
     display: block;
     margin: 10px auto 0 !important; }
   .title-section h3 {
-    margin-top: 10px; } }
+    margin-top: 10px; }
+  .portfolio-item {
+    width: 100%;
+    padding: 0 !important; } }
 
 @media only screen and (max-width: 480px) {
   .logo {

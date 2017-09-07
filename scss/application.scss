@@ -547,31 +547,32 @@ section#blog .post h3 a {
   margin-right: 10px;
 }
 
-#portfolio ul,
-#portfolio li {
+#portfolio .row {
   display: flex;
 }
 
-#portfolio li {
+#portfolio .row > div {
+  display: flex;
   flex-direction: column;
 }
 
-#portfolio li p {
-  margin-top: 10px;
+#portfolio .row {
+  margin-bottom: 20px;
 }
 
-#portfolio .portfolio-buttons {
-  display: flex;
-  justify-content: space-around;
+#portfolio .row p {
+  margin-top: 10px;
 }
 
 #portfolio .button {
   margin: 0;
+  margin-right: 10px;
+  margin-bottom: 20px;
   padding: 5px 10px;
 }
 
-#portfolio li img {
-  margin-top: 15px;
+#portfolio img {
+  margin-top: auto;
 }
 
 /*

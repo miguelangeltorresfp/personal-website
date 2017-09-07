@@ -212,8 +212,8 @@ html(lang='en')
               a(href='https://codepen.io/robert-engineer/', target="_blank") CodePen profile
               | .
             // Create a cool slider using this tutorial as a guide: https://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
-            ul
-              li.col-sm-6
+            .row
+              .col-sm-6
                 h3 Lorem Ipsum Generator
                 .portfolio-tags
                   span node.js
@@ -225,7 +225,7 @@ html(lang='en')
                   a(href='#', target='_blank').button.screenshots Screenshots
                   a(href='https://github.com/Engineering-Robert/lorem-ipsum-generator', target='_blank').button.github Github
                 img(src='/img/lorem-ipsum-screenshot.png')
-              li.col-sm-6
+              .col-sm-6
                 h3 CUTC 2017 Website
                 .portfolio-tags
                   span javascript
@@ -237,18 +237,32 @@ html(lang='en')
                   a(href='#', target='_blank').button.screenshots Screenshots
                   a(href='https://github.com/Engineering-Robert/elevate.cutc.ca', target='_blank').button.github Github
                 img(src='/img/cutc-screenshot.png')
-              li.col-sm-6
+            .row
+              .col-sm-6
                 h3 Queen's Engineering Forum 
                 .portfolio-tags
                   span node.js
                   span javscript
-                  span pug
+                  span mysql
                 p An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen's University. The project wasn't completed and I continued working on the project on my own after the 2016/2017 school year.
                 .portfolio-buttons
-                  a(href='#', target='_blank').button.demo Live Demo
                   a(href='#', target='_blank').button.screenshots Screenshots
-                  a(href='#', target='_blank').button.github Github
-                img(src='/img/cutc-screenshot.png')
+                  a(href='https://github.com/Engineering-Robert/engineering-forum-mysql', target='_blank').button.github Github
+                img(src='/img/forum-screenshot.png')
+              .col-sm-6
+                h3 Medium API Calls
+                .portfolio-tags
+                  span node.js
+                  span html
+                  span css
+                p
+                  | An application that demonstrates how you get information related to Medium articles written different authors. Medium doesn't have formal API documentation for GET requests, so I wrote 
+                  a(href='https://medium.com/@robertcooper_18384/using-node-js-to-display-recent-medium-articles-f88143df2084', target="_blank") an article 
+                  | explaining how you can retrieve this data along this project code.
+                .portfolio-buttons
+                  a(href='#', target='_blank').button.screenshots Screenshots
+                  a(href='https://github.com/Engineering-Robert/medium-posts', target='_blank').button.github Github
+                img(src='/img/medium-api-screenshot.png')
     // Concatenated and Minified JS Files
     script(src='/js/index.min.js?v=1.0')
     // Google Analytics

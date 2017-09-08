@@ -19,15 +19,25 @@ app.set('view engine', 'pug');
 
 app.use(router);
 
-router.get('/healthData', (request, response) => {
-  getHealthData( (healthData) => {
-    response.send(healthData);
-  });
+router.get('/', (req, res) => {
+  res.render('index');
 });
 
 router.get('/stravaData', (request, response) => {
   getStravaData( (stravaData) => {
     response.send(stravaData);
+  });
+});
+
+router.get('/rescuetimeData', (request, response) => {
+  getRescuetimeData( (rescuetimeData) => {
+    response.send(rescuetimeData);
+  });
+});
+
+router.get('/healthData', (request, response) => {
+  getHealthData( (healthData) => {
+    response.send(healthData);
   });
 });
 
@@ -43,12 +53,6 @@ router.get('/mediumData', (request, response) => {
   });
 });
 
-router.get('/rescuetimeData', (request, response) => {
-  getRescuetimeData( (rescuetimeData) => {
-    response.send(rescuetimeData);
-  });
-});
-
 // Make sure all URLs use www.
 router.all(/.*/, function(req, res, next) {
   var host = req.header("host");
@@ -57,10 +61,6 @@ router.all(/.*/, function(req, res, next) {
   } else {
     res.redirect(301, "https://www." + host);
   }
-});
-
-router.get('/', (req, res) => {
-  res.render('index');
 });
 
 app.use((req, res, next) => {

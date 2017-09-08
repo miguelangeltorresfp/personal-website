@@ -25,11 +25,13 @@
  */
 
 $primary-color: #0099ff;
+$dark-color: #2A2A72;
+$light-color: #59D2FE;
 $heading-font: 'latoregular';
 $heading-weight: normal;
 $body-font: 'open_sanslight', sans-serif;
-$dark-color: #2A2A72;
 $light-background: #fff;
+$gutter-width: 20px;
 
 /*
    ==========================================================================
@@ -97,7 +99,20 @@ img {
     height: auto;
 }
 ul { list-style: none; margin:0; padding: 0; }
-a { text-decoration: none }
+a {
+  color: $light-color;
+  text-decoration: underline;
+}
+a:hover {
+  color: $light-color;
+}
+a:focus {
+  color: $dark-color;
+  text-decoration: none;
+}
+a.button {
+  text-decoration: none;
+}
 #container {
     margin: 0;
     padding: 0;
@@ -125,13 +140,6 @@ a { text-decoration: none }
   color: $primary-color;
   text-decoration: none;
 }
-
-a,
-a:hover {
-    color: #76949F;
-}
-a { text-decoration: none;}
-a:hover { text-decoration: underline }
 
 /* Fixes width of page being larger than viewport */
 .row {
@@ -288,10 +296,6 @@ section:nth-child(even) {
 section:nth-child(odd) h3,
 section:nth-child(odd) p, {
   color: $dark-color;
-}
-
-section a:not(.button) {
-  color: #59D2FE;
 }
 
 section#about p,
@@ -526,6 +530,11 @@ $c3: lighten($primary-color, 30);
   transform: translateY(80px);
 }
 
+#blog a,
+#blog a:hover {
+  text-decoration: none;
+}
+
 section#blog a.button {
   padding: 5px 10px;
   margin-top: 0px;
@@ -545,36 +554,6 @@ section#blog .post h3 a {
 * ==========================================================================
 */
 
-#portfolio .portfolio-tags span {
-  background-color: $dark-color;
-  color: white;
-  padding: 2px 8px 3px;
-  border-radius: 10px;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.portfolio-item {
-  width: 50%;
-  display: inline-block;
-}
-
-.portfolio-item:nth-child(odd) {
-  padding-right: 20px;
-}
-
-.portfolio-item:nth-child(even) {
-  padding-left: 20px;
-}
-
-.portfolio-item {
-  margin-bottom: 40px;
-}
-
-.portfolio-item p {
-  margin-top: 10px;
-}
-
 #portfolio p.description {
   margin-bottom: 40px;
 }
@@ -584,15 +563,65 @@ section#blog .post h3 a {
   padding-right: 10px;
 }
 
-#portfolio .button {
-  margin: 0;
+.portfolio-tags span {
+  background-color: rgba($dark-color, .6);
+  color: white;
+  padding: 2px 8px 3px;
+  border-radius: 5px;
+  font-size: 12px;
   margin-right: 10px;
-  margin-bottom: 20px;
-  padding: 5px 10px;
 }
 
-#portfolio img {
-  margin-top: auto;
+.portfolio-tags {
+  margin-bottom: 20px;
+}
+
+#portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.portfolio-item:nth-child(odd) {
+  padding-right: $gutter-width;
+}
+
+.portfolio-item:nth-child(even) {
+  padding-left: $gutter-width;
+}
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.portfolio-buttons {
+  width: 100%;
+  background: $dark-color;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.portfolio-buttons .button {
+  margin: 0;
+  padding: 5px 10px;
 }
 
 .carousel-wrapper {
@@ -652,8 +681,10 @@ section#blog .post h3 a {
     #about-container p {
       text-align: justify;
     }
-    section#blog p {
+    section {
       text-align: center;
+    }
+    section#blog p {
       max-width: 550px;
       margin: 0 auto 20px;
     }

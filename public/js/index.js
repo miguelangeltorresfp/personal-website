@@ -12620,7 +12620,7 @@ $(document).ready( () => {
 // .carousel-wrapper to display: flex; on click of screenshots button
 $('a.button.screenshots').click( (e) => {
   e.preventDefault();
-  $(e.target).parent().siblings('.carousel-wrapper').css('display', 'flex');
+  $(e.target).parent().parent().siblings('.carousel-wrapper').css('display', 'flex');
 });
 
 $('.carousel-wrapper').click( (e) => {
@@ -12629,7 +12629,7 @@ $('.carousel-wrapper').click( (e) => {
 })
 
 $('.carousel').carousel({
-  interval: false
+  interval: false;
 })
 
 //# sourceMappingURL=index.js.map

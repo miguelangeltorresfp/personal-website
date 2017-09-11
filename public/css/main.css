@@ -9902,10 +9902,11 @@ section#blog .post h3 a {
   background-color: rgba(0, 0, 0, 0.8); }
 
 .carousel-caption {
+  position: relative;
   width: 100%;
   left: 0;
   right: unset;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #2A2A72;
   padding-bottom: 40px;
   bottom: 0; }
 

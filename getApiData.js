@@ -64,27 +64,6 @@ function getHealthData(callback) {
   });
 }
 
-// Get today's date in local UTC format for Github commit data retrieval
-let date = new Date();
-let offset = new Date().getTimezoneOffset();
-let offsetString = (offset/60);
-if (Number.isInteger(offsetString)) {
-  if (offsetString < 10 && offsetString > 0) {
-    offsetString = "-0" + offsetString + ":00";
-  } else if (offsetString >= 10) {
-    offsetString = "-" + offsetString + ":00";
-  } else if (offsetString === 0) {
-    offsetString = "Z";
-  } else if (offsetString < 0 && offsetString > -10) {
-    offsetString = "+0" + offsetString + ":00";
-  } else if (offsetString <= 10) {
-    offsetString = "+" + offsetString + ":00";
-  }
-} else {
-  offsetString = "-05:00";
-}
-let dateString = date.toISOString().substring(0,11) + '00:00:00.000' + offsetString;
-
 function githubRecentRepos(callback) {
   https.get( {
     host: 'api.github.com',
@@ -116,6 +95,26 @@ function githubRecentRepos(callback) {
 }
 
 function githubCommits(repositoryName, callback) {
+  // Get today's date in local UTC format for Github commit data retrieval
+  let date = new Date();
+  let offset = new Date().getTimezoneOffset();
+  let offsetString = (offset/60);
+  if (Number.isInteger(offsetString)) {
+    if (offsetString < 10 && offsetString > 0) {
+      offsetString = "-0" + offsetString + ":00";
+    } else if (offsetString >= 10) {
+      offsetString = "-" + offsetString + ":00";
+    } else if (offsetString === 0) {
+      offsetString = "Z";
+    } else if (offsetString < 0 && offsetString > -10) {
+      offsetString = "+0" + offsetString + ":00";
+    } else if (offsetString <= 10) {
+      offsetString = "+" + offsetString + ":00";
+    }
+  } else {
+    offsetString = "-05:00";
+  }
+  let dateString = date.toISOString().substring(0,11) + '00:00:00.000' + offsetString;
   https.get( {
     host: 'api.github.com',
     path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret,

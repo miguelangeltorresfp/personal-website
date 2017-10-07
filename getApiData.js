@@ -307,7 +307,7 @@ function getMediumData(callback) {
   let mediumData = {};
   https.get( {
       host: 'medium.com',
-      path: '/@robertcooper_18384/latest',
+      path: '/@robertcooper_rc/latest',
       headers: {
         Accept: 'application/json'
       }

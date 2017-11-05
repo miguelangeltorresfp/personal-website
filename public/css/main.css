@@ -9638,7 +9638,7 @@ img.headshot {
    Stats Section
    ==========================================================================
 */
-section#statistics {
+#statistics {
   background-color: #fff; }
 
 #statistics .max-width-container {
@@ -9653,7 +9653,8 @@ section#statistics {
 .statistics-columns {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  clear: both; }
 
 .statistics-column {
   max-width: 440px;

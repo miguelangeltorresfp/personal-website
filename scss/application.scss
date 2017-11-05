@@ -337,7 +337,7 @@ img.headshot {
    ==========================================================================
 */
 
-section#statistics {
+#statistics {
   background-color: $light-background;
 }
 
@@ -356,6 +356,7 @@ section#statistics {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  clear: both;
 }
 
 .statistics-column {

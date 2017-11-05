@@ -86,72 +86,73 @@ html(lang='en')
       section#statistics.row
         .max-width-container
           h2.col-sm-12.section-title Stats
-          .col-sm-6.statistics-column#rescuetime 
-            .title-section
-              i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
-              h3 Daily Hours
-              i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
-            .api-data-section
-              .loader
-                div
-                div
-                div
-                div
-                div
-              p.web-development-hours
-                span.api-data
-                span on web development.
-              p.distracted-hours 
-                span.api-data
-                span on social media and other non productive things.
-            p.more-info
-              | Data gathered from the 
-              a(href='http://rescuetime.com', target='_blank') Rescue Time
-              |  API.
-          .col-sm-6.statistics-column#github 
-            .title-section
-              .keyboard.left
-              h3 Github Commits
-              .keyboard.right
-            .api-data-section
-              .loader
-                div
-                div
-                div
-                div
-                div
-              p
-                span.api-data
-                | total commits today.
-            p.more-info
-              | Data gathered from the 
-              a(href='https://developer.github.com/v3/', target='_blank') Github 
-              |  API.
-          .statistics-columns.col-sm-6.statistics-column#strava
-            .title-section
-              .running-man.left
-              h3 Last Run
-              .running-man.right
-            .api-data-section
-              .loader
-                div
-                div
-                div
-                div
-                div
-              p.running-date
-                span.api-data
-                span is the date of my last run.
-              p.running-distance
-                span.api-data
-                span km ran.
-              p.running-duration
-                span.api-data
-                span in duration.
-            p.more-info
-              | Data gathered from the 
-              a(href='http://strava.com', target='_blank') Strava
-              |  API.
+          .statistics-columns
+            .col-sm-6.statistics-column#rescuetime 
+              .title-section
+                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
+                h3 Daily Hours
+                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
+              .api-data-section
+                .loader
+                  div
+                  div
+                  div
+                  div
+                  div
+                p.web-development-hours
+                  span.api-data
+                  span on web development.
+                p.distracted-hours 
+                  span.api-data
+                  span on social media and other non productive things.
+              p.more-info
+                | Data gathered from the 
+                a(href='http://rescuetime.com', target='_blank') Rescue Time
+                |  API.
+            .col-sm-6.statistics-column#github 
+              .title-section
+                .keyboard.left
+                h3 Github Commits
+                .keyboard.right
+              .api-data-section
+                .loader
+                  div
+                  div
+                  div
+                  div
+                  div
+                p
+                  span.api-data
+                  | total commits today.
+              p.more-info
+                | Data gathered from the 
+                a(href='https://developer.github.com/v3/', target='_blank') Github 
+                |  API.
+            .col-sm-6.statistics-column#strava
+              .title-section
+                .running-man.left
+                h3 Last Run
+                .running-man.right
+              .api-data-section
+                .loader
+                  div
+                  div
+                  div
+                  div
+                  div
+                p.running-date
+                  span.api-data
+                  span is the date of my last run.
+                p.running-distance
+                  span.api-data
+                  span km ran.
+                p.running-duration
+                  span.api-data
+                  span in duration.
+              p.more-info
+                | Data gathered from the 
+                a(href='http://strava.com', target='_blank') Strava
+                |  API.
       section#blog.row
         .max-width-container#blog-container
           .col-sm-12

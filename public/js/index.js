@@ -12560,14 +12560,6 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 $(document).ready( () => {
-  $.get('/healthData', (result) => {
-    $('#health #heart-rate.api-data').text(result.heartRate);
-    $('#health #steps.api-data').text(result.steps);
-    $('#health #sleep.api-data').text(result.hoursSlept);
-    $('#health .loader').fadeOut(500, () => {
-      $('#health .api-data-section > *:not(.loader)').fadeIn(500);
-    });
-  });
   $.get('/githubData', (result) => {
     $('#github .api-data').text(result.commits);
     $('#github .loader').fadeOut(500, () => {
@@ -12629,7 +12621,7 @@ $('.carousel-wrapper').click( (e) => {
 })
 
 $('.carousel').carousel({
-  interval: false;
+  interval: false
 })
 
 //# sourceMappingURL=index.js.map

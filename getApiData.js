@@ -4,65 +4,6 @@ const githubId = apiKeys.github.id;
 const githubSecret = apiKeys.github.secret;
 const rescuetimeKey = apiKeys.rescuetime.key;
 const stravaToken = apiKeys.strava.token;
-const healthToken = apiKeys.health.token;
-
-function getSleepData(callback) {
-  let sleepData = {};
-  https.get('https://api.humanapi.co/v1/human/sleeps?access_token=' + healthToken, (res) => {
-    apiErrorHandling(res);
-    res.setEncoding('utf8');
-    let rawData = '';
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      try {
-        const parsedData = JSON.parse(rawData);
-        let minutesSlept = parsedData[0].timeAsleep;
-        let hoursSlept =  minutesSlept/60;
-        hoursSlept = Math.round( hoursSlept * 10 ) / 10;
-        sleepData.hours = hoursSlept;
-      } catch (e) {
-       console.error(e.message);
-      }
-      callback(sleepData);
-    });
-  }).on('error', (e) => {
-    console.error(`Got error: ${e.message}`);
-  });
-}
-
-function getHeartAndStepsData(callback) {
-  let heartAndStepsData = {};
-  https.get('https://api.humanapi.co/v1/human?access_token=' + healthToken, (res) => {
-    apiErrorHandling(res);
-    res.setEncoding('utf8');
-    let rawData = '';
-    res.on('data', (chunk) => { rawData += chunk; });
-    res.on('end', () => {
-      try {
-        const parsedData = JSON.parse(rawData);
-        heartAndStepsData.heartRate = parsedData.heartRate.value;
-        heartAndStepsData.steps = parsedData.activitySummary.steps;
-      } catch (e) {
-       console.error(e.message);
-      }
-      callback(heartAndStepsData);
-    });
-  }).on('error', (e) => {
-    console.error(`Got error: ${e.message}`);
-  });
-}
-
-function getHealthData(callback) {
-  let healthData = {};
-  getSleepData((sleepData) => {
-    healthData.hoursSlept = sleepData.hours;
-    getHeartAndStepsData((heartAndStepsData) => {
-      healthData.heartRate = heartAndStepsData.heartRate;
-      healthData.steps = heartAndStepsData.steps;
-      callback(healthData);
-    });
-  });
-}
 
 function githubRecentRepos(callback) {
   https.get( {
@@ -341,6 +282,5 @@ module.exports = {
   getMediumData: getMediumData,
   getStravaData: getStravaData,
   getRescuetimeData: getRescuetimeData,
-  getGithubData: getGithubData,
-  getHealthData: getHealthData
+  getGithubData: getGithubData
 }

@@ -5,7 +5,6 @@ const getStravaData = require('./getApiData').getStravaData;
 const getMediumData = require('./getApiData').getMediumData;
 const getRescuetimeData = require('./getApiData').getRescuetimeData;
 const getGithubData = require('./getApiData').getGithubData;
-const getHealthData = require('./getApiData').getHealthData;
 
 app.use('/documents', express.static('public/documents'));
 app.use('/css', express.static('public/css'));
@@ -32,12 +31,6 @@ router.get('/stravaData', (request, response) => {
 router.get('/rescuetimeData', (request, response) => {
   getRescuetimeData( (rescuetimeData) => {
     response.send(rescuetimeData);
-  });
-});
-
-router.get('/healthData', (request, response) => {
-  getHealthData( (healthData) => {
-    response.send(healthData);
   });
 });
 

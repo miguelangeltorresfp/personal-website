@@ -1,5 +1,5 @@
 # Personal Website
-My own personal website used to showcase my resume and other things I so choose.
+My own personal website used to showcase my portfolio and other neat things.
 
 ## Local Development
 When working on the repository locally, make sure to run `gulp serve` in order to watch for changes to files. When certain files get changed, the server will restart, Sass will be compiled, or JavaScript files will be concatenated.

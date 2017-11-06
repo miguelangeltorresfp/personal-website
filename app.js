@@ -18,6 +18,20 @@ app.set('view engine', 'pug');
 
 app.use(router);
 
+// Make sure all URLs use www.
+router.all(/.*/, function(req, res, next) {
+  var host = req.get("host");
+  console.log(host);
+  next();
+  if (host !== 'localhost:8080') {
+    if (host.match(/^www\..*/i)) {
+      next();
+    } else {
+      res.redirect(301, "https://www." + host);
+    }
+  }
+});
+
 router.get('/', (req, res) => {
   res.render('index');
 });
@@ -44,16 +58,6 @@ router.get('/mediumData', (request, response) => {
   getMediumData( (mediumData) => {
     response.send(mediumData);
   });
-});
-
-// Make sure all URLs use www.
-router.all(/.*/, function(req, res, next) {
-  var host = req.header("host");
-  if (host.match(/^www\..*/i)) {
-    next();
-  } else {
-    res.redirect(301, "https://www." + host);
-  }
 });
 
 app.use((req, res, next) => {

@@ -38,24 +38,12 @@ function githubRecentRepos(callback) {
 function githubCommits(repositoryName, callback) {
   // Get today's date in local UTC format for Github commit data retrieval
   let date = new Date();
-  let offset = new Date().getTimezoneOffset();
-  let offsetString = (offset/60);
-  if (Number.isInteger(offsetString)) {
-    if (offsetString < 10 && offsetString > 0) {
-      offsetString = "-0" + offsetString + ":00";
-    } else if (offsetString >= 10) {
-      offsetString = "-" + offsetString + ":00";
-    } else if (offsetString === 0) {
-      offsetString = "Z";
-    } else if (offsetString < 0 && offsetString > -10) {
-      offsetString = "+0" + offsetString + ":00";
-    } else if (offsetString <= 10) {
-      offsetString = "+" + offsetString + ":00";
-    }
-  } else {
-    offsetString = "-05:00";
-  }
-  let dateString = date.toISOString().substring(0,11) + '00:00:00.000' + offsetString;
+  let easternUTC = date.getTime() - (5 * 60 * 60 * 1000);
+  let localDate = new Date(easternUTC);
+
+  let dateString = localDate.toISOString().substring(0,11) + '00:00:00Z';
+  console.log('/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret);
+  // console.log('/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret);
   https.get( {
     host: 'api.github.com',
     path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret,
@@ -86,9 +74,9 @@ function githubCommits(repositoryName, callback) {
 function getGithubData(callback) {
   githubRecentRepos((repositories) => {
     let totalCommits = 0;
-    count = repositories.length;
+    let count = repositories.length;
     for (let i=0; i < repositories.length; i++) {
-      repositoryName = repositories[i];
+      let repositoryName = repositories[i];
       githubCommits(repositoryName, (commits) => {
         count--;
         totalCommits += commits;
@@ -266,7 +254,8 @@ function getMediumData(callback) {
           let post = posts[Object.keys(posts)[i-1]];
           mediumData['title' + i] = post['title'];
           mediumData['excerpt' + i] = post['content']['subtitle'];
-          mediumData['url' + i] = 'https://medium.com/@robertcooper_18384/' + post['uniqueSlug']
+          mediumData['url' + i] = 'https://medium.com/@robertcooper_18384/' + post['uniqueSlug'];
+          mediumData['claps' + i] = post['virtuals']['totalClapCount'];
         }
       } catch (e) {
        console.error(e.message);

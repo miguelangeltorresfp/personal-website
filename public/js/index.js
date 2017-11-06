@@ -12572,12 +12572,14 @@ $(document).ready( () => {
       let title = 'title' + i;
       let excerpt = 'excerpt' + i;
       let url = 'url' + i;
+      let claps = 'claps' + i;
       let $postDiv = $('<div>')
                       .addClass('post')
                       .attr('id', postId);
       let $title = $('<a>')
                     .attr('href', result[url])
-                    .append($('<h3>').text(result[title]));
+                    .append($('<h3>').text(result[title]))
+                    .addClass('blog-title');
       let $excerpt = $('<p>')
                       .text(result[excerpt]);
       let $url = $('<a>')
@@ -12585,7 +12587,10 @@ $(document).ready( () => {
                 .attr('href', result[url])
                 .attr('target', '_blank')
                 .addClass('button');
-      $postDiv.append($title, $excerpt, $url);
+      let $claps = $('<span>')
+                    .text('👏 ' + result[claps] + ' 👏')
+                    .addClass('claps')
+      $postDiv.append($claps, $title, $excerpt, $url);
       $('#blog-posts').append($postDiv);
     }
     $('#blog .loader').fadeOut(500, () => {

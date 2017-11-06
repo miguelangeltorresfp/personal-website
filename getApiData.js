@@ -40,10 +40,7 @@ function githubCommits(repositoryName, callback) {
   let date = new Date();
   let easternUTC = date.getTime() - (5 * 60 * 60 * 1000);
   let localDate = new Date(easternUTC);
-
   let dateString = localDate.toISOString().substring(0,11) + '00:00:00Z';
-  console.log('/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret);
-  // console.log('/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret);
   https.get( {
     host: 'api.github.com',
     path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret,

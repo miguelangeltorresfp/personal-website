@@ -21,7 +21,7 @@ app.use(router);
 // Make sure all URLs use www.
 router.all(/.*/, function(req, res, next) {
   var host = req.get("host");
-  if (host !== 'localhost:8080') {
+  if (host === 'robertcooper.me') {
     if (host.match(/^www\..*/i)) {
       next();
     } else {

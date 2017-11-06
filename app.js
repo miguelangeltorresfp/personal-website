@@ -21,8 +21,6 @@ app.use(router);
 // Make sure all URLs use www.
 router.all(/.*/, function(req, res, next) {
   var host = req.get("host");
-  console.log(host);
-  next();
   if (host !== 'localhost:8080') {
     if (host.match(/^www\..*/i)) {
       next();
@@ -30,6 +28,7 @@ router.all(/.*/, function(req, res, next) {
       res.redirect(301, "https://www." + host);
     }
   }
+  next();
 });
 
 router.get('/', (req, res) => {

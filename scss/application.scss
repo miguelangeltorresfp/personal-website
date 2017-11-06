@@ -26,7 +26,6 @@
 
 $primary-color: #0099ff;
 $dark-color: #2A2A72;
-$light-color: #59D2FE;
 $heading-font: 'latoregular';
 $heading-weight: normal;
 $body-font: 'open_sanslight', sans-serif;
@@ -93,18 +92,19 @@ h2 {
     font-size: 2em;
     text-transform: uppercase;
 }
-
+p {
+  line-height: 1.8;
+}
 img {
     width: 100%;
     height: auto;
 }
 ul { list-style: none; margin:0; padding: 0; }
-a {
-  color: $light-color;
-  text-decoration: underline;
-}
+a,
 a:hover {
-  color: $light-color;
+  color: $primary-color;
+  text-decoration: underline;
+  font-weight: bold;
 }
 a:focus {
   color: $dark-color;
@@ -237,6 +237,7 @@ section.intro {
 span.api-data {
   font-size: 2em;
   padding-right: 10px;
+  font-weight: bold;
 }
 /*
    ==========================================================================
@@ -315,6 +316,18 @@ section:nth-child(odd):not(:first-child) h2 {
 
 #about-container {
   display: table;
+
+  a,
+  a:hover {
+    // text-decoration: none;
+  }
+
+  a:not(.button),
+  .keyword {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 16px;
+  }
 }
 
 .description-column,
@@ -330,6 +343,11 @@ img.headshot {
   width: auto;
   max-width: 100%;
 }
+
+.last-updated {
+  font-size: 12px;
+}
+
 
 /*
    ==========================================================================
@@ -534,11 +552,6 @@ $c3: lighten($primary-color, 30);
 
 #blog .loader {
   transform: translateY(80px);
-}
-
-#blog a,
-#blog a:hover {
-  text-decoration: none;
 }
 
 section#blog a.button {

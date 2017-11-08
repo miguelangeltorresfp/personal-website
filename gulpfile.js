@@ -1,16 +1,17 @@
 'use strict';
 
-const gulp = require('gulp'),
-    concat = require('gulp-concat'),
-     babel = require('gulp-babel'),
-    uglify = require('gulp-uglify'),
-    minify = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-     gutil = require('gulp-util'),
-      sass = require('gulp-sass'),
-      maps = require('gulp-sourcemaps'),
-   nodemon = require('nodemon');
-
+    const  gulp = require('gulp'),
+         concat = require('gulp-concat'),
+          babel = require('gulp-babel'),
+         uglify = require('gulp-uglify'),
+         minify = require('gulp-minify-css'),
+         rename = require('gulp-rename'),
+          gutil = require('gulp-util'),
+           sass = require('gulp-sass'),
+           maps = require('gulp-sourcemaps'),
+        nodemon = require('nodemon'),
+        postcss = require('gulp-postcss'),
+   autoprefixer = require('autoprefixer');
 
 gulp.task('concatScripts', () => {
   return gulp.src([
@@ -49,7 +50,15 @@ gulp.task('concatCss', ['compileSass'], () => {
       .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('minifyCss', ['concatCss'], () => {
+gulp.task('autoprefixer', ['concatCss'], () => {
+  return gulp.src('public/css/*.css')
+      .pipe(maps.init())
+      .pipe(postcss([ autoprefixer() ]))
+      .pipe(maps.write('./'))
+      .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('minifyCss', ['autoprefixer'], () => {
   return gulp.src('public/css/main.css')
       .pipe(minify())
       .pipe(rename('main.min.css'))
@@ -65,6 +74,4 @@ gulp.task('serve', ['watchFiles'], () => {
   nodemon({ script: 'app.js', env: { 'NODE_ENV': 'development' }});
 });
 
-gulp.task('build', ['minifyScripts', 'minifyCss']);
-
-gulp.task('default', ['build']);
+gulp.task('default', ['minifyScripts', 'minifyCss']);

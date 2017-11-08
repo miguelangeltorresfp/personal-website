@@ -152,41 +152,48 @@ a.button {
    Intro Section
    ==========================================================================
 */
-section.intro {
-    background-image: url(../img/background-optimized.jpg); /* Fullscreen Background Image */
-    background-size: cover;
-    background-position: center;
-    background-color: #2a2e39;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-    overflow: hidden;
-    width: 100%;
-    min-height: 100vh;
-    color: #fff;
-    -webkit-transition: -webkit-transform 0.6s;
-    transition: transform 0.6s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+.intro {
+  background-size: cover;
+  background-position: center;
+  background-color: #2a2e39;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  transition: transform 0.6s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .intro-image {
-    background-color: rgba(0,0,0,0.7);
+    background-image: url(../img/background-image.png);
+    background-size: 800px;
+    background-color: rgba(0,0,0,0.2);
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     min-width: 100%;
     min-height: 120%;
     width: auto;
-    height: auto;
-    -webkit-transform: translate3d(0, 0, 0);
+    height: 300%;
     transform: translate3d(0, 0, 0);
-    -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
     transition: transform 0.6s, opacity 0.6s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    animation: scrolling-background 8s linear infinite;
 }
+
+@keyframes scrolling-background {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(0,-400px,0);
+  }
+}
+
 .container-open .intro-image {
     background-color: #2a2e39;
     -webkit-transform: translate3d(0, 20%, 0);
@@ -202,21 +209,10 @@ section.intro {
     z-index: 10;
 }
 
-.intro-title {
-  color: #fff;
-}
-
-.period {
-  color: $primary-color;
-}
-
 .logo {
     width: 100%;
     margin: -30px 0 25px;
-}
-.logo img {
-    width: 200px;
-    height: auto;
+    word-spacing: 3px;
 }
 .text-logo {
     color: $primary-color;
@@ -226,10 +222,12 @@ section.intro {
 }
 
 .intro-title {
-    font-size: 2em;
+    color: #fff;
+    font-size: 1.5em;
     font-weight: normal;
     margin: 15px 0;
     text-transform: uppercase;
+    word-spacing: 3px;
 }
 
 .content-div { width: 100% }

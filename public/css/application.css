@@ -190,16 +190,16 @@ a.button {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   100% {
-    -webkit-transform: translate3d(0, -400px, 0);
-            transform: translate3d(0, -400px, 0); } }
+    -webkit-transform: translate3d(0, -500px, 0);
+            transform: translate3d(0, -500px, 0); } }
 
 @keyframes scrolling-background {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   100% {
-    -webkit-transform: translate3d(0, -400px, 0);
-            transform: translate3d(0, -400px, 0); } }
+    -webkit-transform: translate3d(0, -500px, 0);
+            transform: translate3d(0, -500px, 0); } }
 
 .container-open .intro-image {
   background-color: #2a2e39;

@@ -432,6 +432,12 @@ th {
 
 /*# sourceMappingURL=normalize.css.map */
 
+/*# sourceMappingURL=normalize.css.map */
+
+/*# sourceMappingURL=normalize.css.map */
+
+/*# sourceMappingURL=normalize.css.map */
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2765,6 +2771,12 @@ th {
   overflow: visible;
   clip: auto;
 }
+
+/*# sourceMappingURL=font-awesome.css.map */
+
+/*# sourceMappingURL=font-awesome.css.map */
+
+/*# sourceMappingURL=font-awesome.css.map */
 
 /*# sourceMappingURL=font-awesome.css.map */
 
@@ -9303,6 +9315,12 @@ button.close {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
+/*# sourceMappingURL=bootstrap.css.map */
+
+/*# sourceMappingURL=bootstrap.css.map */
+
+/*# sourceMappingURL=bootstrap.css.map */
+
 @charset "UTF-8";
 /*
  * ============================================================================
@@ -9495,16 +9513,16 @@ a.button {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   100% {
-    -webkit-transform: translate3d(0, -400px, 0);
-            transform: translate3d(0, -400px, 0); } }
+    -webkit-transform: translate3d(0, -500px, 0);
+            transform: translate3d(0, -500px, 0); } }
 
 @keyframes scrolling-background {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0); }
   100% {
-    -webkit-transform: translate3d(0, -400px, 0);
-            transform: translate3d(0, -400px, 0); } }
+    -webkit-transform: translate3d(0, -500px, 0);
+            transform: translate3d(0, -500px, 0); } }
 
 .container-open .intro-image {
   background-color: #2a2e39;

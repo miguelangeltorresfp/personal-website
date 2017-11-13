@@ -191,18 +191,21 @@ html(lang='en')
             | .
           #portfolio-items
             .portfolio-item
-              h3 Lorem Ipsum Generator
-              p A simple Lorem Ipsum generator that generates paragraphs of text using technology-related words.
+              h3 Twitter Clone
+              p A similar application to Twitter that is build with Node.js. The styling of the app is based off of Twitter's night mode on desktop.
               .portfolio-tags
                 span node.js
+                span express
+                span yarn
                 span javascript
-                span css
+                span sass
+                span gulp
               .portfolio-image-wrapper
-                img(src='/img/lorem-ipsum-screenshot.png')
+                img(src='/img/twitter-clone.jpg')
                 .portfolio-buttons
-                  a(href='http://lorem-ipsum.robertcooper.me/', target='_blank').button.demo Live Demo
+                  a(href='http://nitter.herokuapp.com/', target='_blank').button.demo Live Demo
                   a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/Engineering-Robert/lorem-ipsum-generator', target='_blank').button.github Github
+                  a(href='https://github.com/vinitkumar/node-twitter', target='_blank').button.github Github
               .carousel-wrapper
                 #carousel-portfolio-1.carousel.slide(data-ride='carousel')
                   // Indicators
@@ -212,13 +215,43 @@ html(lang='en')
                   // Wrapper for slides
                   .carousel-inner(role='listbox')
                     .item.active
-                      img(src='/img/lorem-ipsum-screenshot.png', alt='...')
-                      .carousel-caption
-                        | Complete lorem ipsum application.
+                      img(src='/img/twitter-clone.jpg', alt='Twitter clone home page')
                     .item
-                      img(src='/img/lorem-ipsum-screenshot-2.png', alt='...')
-                      .carousel-caption
-                        | Overlay that appears when a user copies the text.
+                      img(src='/img/twitter-clone-2.jpg', alt='Twitter clone profile page')
+                  // Controls
+                  a.left.carousel-control(href='#carousel-portfolio-1', role='button', data-slide='prev')
+                    span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                    span.sr-only Previous
+                  a.right.carousel-control(href='#carousel-portfolio-1', role='button', data-slide='next')
+                    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                    span.sr-only Next
+            .portfolio-item
+              h3 Stranger Ipsum
+              p A lorem ipsum generator that generates paragraphs containing quotes from from the Netflix series Stranger Things.
+              .portfolio-tags
+                span node.js
+                span express
+                span javascript
+                span sass
+                span gulp
+              .portfolio-image-wrapper
+                img(src='/img/lorem-ipsum-screenshot.jpg')
+                .portfolio-buttons
+                  a(href='http://stranger-ipsum.robertcooper.me/', target='_blank').button.demo Live Demo
+                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                  a(href='https://github.com/Engineering-Robert/stranger-ipsum', target='_blank').button.github Github
+              .carousel-wrapper
+                #carousel-portfolio-1.carousel.slide(data-ride='carousel')
+                  // Indicators
+                  ol.carousel-indicators
+                    li.active(data-target='#carousel-portfolio-1', data-slide-to='0')
+                    li(data-target='#carousel-portfolio-1', data-slide-to='1')
+                  // Wrapper for slides
+                  .carousel-inner(role='listbox')
+                    .item.active
+                      img(src='/img/lorem-ipsum-screenshot.jpg', alt='...')
+                    .item
+                      img(src='/img/lorem-ipsum-screenshot-2.jpg', alt='...')
                   // Controls
                   a.left.carousel-control(href='#carousel-portfolio-1', role='button', data-slide='prev')
                     span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
@@ -250,16 +283,10 @@ html(lang='en')
                   .carousel-inner(role='listbox')
                     .item.active
                       img(src='/img/cutc-screenshot.png', alt='...')
-                      .carousel-caption
-                        | Upper header section of the website. This is a single page website.
                     .item
                       img(src='/img/cutc-screenshot-2.png', alt='...')
-                      .carousel-caption
-                        | Modal windows were used to display additional information for each speaker.
                     .item
                       img(src='/img/cutc-screenshot-3.png', alt='...')
-                      .carousel-caption
-                        | An embedded Google Map was used where you could easily navigate the map on both desktop and mobile devices.
                   // Controls
                   a.left.carousel-control(href='#carousel-portfolio-2', role='button', data-slide='prev')
                     span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
@@ -303,6 +330,54 @@ html(lang='en')
                     span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
                     span.sr-only Next
             .portfolio-item
+              h3 Kingston Young Professionals Website
+              p
+                | I built a brand new website for the 
+                a(href='https://www.kingstonyoungprofessionals.com/', target="_blank") Kingston Young Professionals
+                | , where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.
+              .portfolio-tags
+                span wordpress
+                span cms
+                span css
+              .portfolio-image-wrapper
+                img(src='/img/kyp-screenshot.jpg')
+                .portfolio-buttons
+                  a(href='https://www.kingstonyoungprofessionals.com/', target='_blank').button.github Website
+                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+              .carousel-wrapper
+                #carousel-portfolio-5.carousel.slide(data-ride='carousel')
+                  // Indicators
+                  ol.carousel-indicators
+                    li.active(data-target='#carousel-portfolio-5', data-slide-to='0')
+                    li(data-target='#carousel-portfolio-5', data-slide-to='1')
+                    li(data-target='#carousel-portfolio-5', data-slide-to='2')
+                    li(data-target='#carousel-portfolio-5', data-slide-to='3')
+                  // Wrapper for slides
+                  .carousel-inner(role='listbox')
+                    .item.active
+                      img(src='/img/kyp-screenshot.jpg', alt='...')
+                      .carousel-caption
+                        | The home page.
+                    .item
+                      img(src='/img/kyp-screenshot-2.jpg', alt='...')
+                      .carousel-caption
+                        | Newsletter sign up.
+                    .item
+                      img(src='/img/kyp-screenshot-3.jpg', alt='...')
+                      .carousel-caption
+                        | Young Professional Spotlight blog section.
+                    .item
+                      img(src='/img/kyp-screenshot-4.jpg', alt='...')
+                      .carousel-caption
+                        | Upcoming event listing.
+                  // Controls
+                  a.left.carousel-control(href='#carousel-portfolio-5', role='button', data-slide='prev')
+                    span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                    span.sr-only Previous
+                  a.right.carousel-control(href='#carousel-portfolio-5', role='button', data-slide='next')
+                    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                    span.sr-only Next
+            .portfolio-item
               h3 Medium API Calls
               p
                 | An application that demonstrates how you get information related to Medium articles written different authors. Medium doesn't have formal API documentation for GET requests, so I wrote 
@@ -335,54 +410,6 @@ html(lang='en')
                   a.right.carousel-control(href='#carousel-portfolio-4', role='button', data-slide='next')
                     span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
                     span.sr-only Next
-          .portfolio-item
-            h3 Kingston Young Professionals Website
-            p
-              | I built a brand new website for the 
-              a(href='https://www.kingstonyoungprofessionals.com/', target="_blank") Kingston Young Professionals
-              | , where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.
-            .portfolio-tags
-              span wordpress
-              span cms
-              span css
-            .portfolio-image-wrapper
-              img(src='/img/kyp-screenshot.jpg')
-              .portfolio-buttons
-                a(href='https://www.kingstonyoungprofessionals.com/', target='_blank').button.github Website
-                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-            .carousel-wrapper
-              #carousel-portfolio-5.carousel.slide(data-ride='carousel')
-                // Indicators
-                ol.carousel-indicators
-                  li.active(data-target='#carousel-portfolio-5', data-slide-to='0')
-                  li(data-target='#carousel-portfolio-5', data-slide-to='1')
-                  li(data-target='#carousel-portfolio-5', data-slide-to='2')
-                  li(data-target='#carousel-portfolio-5', data-slide-to='3')
-                // Wrapper for slides
-                .carousel-inner(role='listbox')
-                  .item.active
-                    img(src='/img/kyp-screenshot.jpg', alt='...')
-                    .carousel-caption
-                      | The home page.
-                  .item
-                    img(src='/img/kyp-screenshot-2.jpg', alt='...')
-                    .carousel-caption
-                      | Newsletter sign up.
-                  .item
-                    img(src='/img/kyp-screenshot-3.jpg', alt='...')
-                    .carousel-caption
-                      | Young Professional Spotlight blog section.
-                  .item
-                    img(src='/img/kyp-screenshot-4.jpg', alt='...')
-                    .carousel-caption
-                      | Upcoming event listing.
-                // Controls
-                a.left.carousel-control(href='#carousel-portfolio-5', role='button', data-slide='prev')
-                  span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                  span.sr-only Previous
-                a.right.carousel-control(href='#carousel-portfolio-5', role='button', data-slide='next')
-                  span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                  span.sr-only Next
     // Concatenated and Minified JS Files
     script(src='/js/index.min.js?v=1.0')
     // Google Analytics

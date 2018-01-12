@@ -31,6 +31,33 @@ $heading-weight: normal;
 $body-font: 'open_sanslight', sans-serif;
 $light-background: #fff;
 $gutter-width: 20px;
+$breakpoints: (
+        'small'  : ( min-width:  767px ),
+        'medium' : ( min-width:  992px ),
+        'large'  : ( min-width: 1200px )
+);
+
+/*
+    ==========================================================================
+    Mixins
+    ==========================================================================
+ */
+
+@mixin respond-to($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+    // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
 
 /*
    ==========================================================================
@@ -313,12 +340,10 @@ section:nth-child(odd):not(:first-child) h2 {
 */
 
 #about-container {
-  display: table;
-
-  a,
-  a:hover {
-    // text-decoration: none;
-  }
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
 
   a:not(.button),
   .keyword {
@@ -326,24 +351,49 @@ section:nth-child(odd):not(:first-child) h2 {
     font-weight: bold;
     font-size: 16px;
   }
+
+  @include respond-to('small') {
+    text-align: left;
+  }
 }
 
-.description-column,
-.headshot-column {
-  float: none;
-  display: table-cell;
-  vertical-align: middle;
+.about-description {
+  text-align: justify;
+  @include respond-to('small') {
+    text-align: left;
+  }
 }
 
-img.headshot {
+.headshot {
+  width: 250px;
+  margin-top: 40px;
   border-radius: 100%;
   border: 10px solid $primary-color;
-  width: auto;
   max-width: 100%;
+
+  @include respond-to('small') {
+    margin-top: 0;
+    width: auto;
+  }
 }
 
 .last-updated {
+  text-align: left;
   font-size: 12px;
+}
+
+.description-column {
+  width: 100%;
+  @include respond-to('small') {
+    width: 70%;
+  }
+}
+
+.headshot-column {
+  width: 100%;
+  @include respond-to('small') {
+    width: 30%;
+  }
 }
 
 
@@ -682,6 +732,11 @@ section#blog .post {
   bottom: 0;
 }
 
+.carousel-item {
+  width: 100%;
+  max-width: 800px;
+}
+
 /*
 * ==========================================================================
     Responsive Design
@@ -694,24 +749,10 @@ section#blog .post {
       margin-left: 0px;
       margin-right: 0px;
     }
-    .description-column,
-    .headshot-column {
-      display: block;
-    }
-    img.headshot {
-      width: 250px;
-      margin-top: 40px;
-    }
     .statistics-column {
       padding-top: 10px;
       padding-bottom: 10px;
       width: 360px;
-    }
-    #about-container {
-      text-align: center;
-    }
-    #about-container p {
-      text-align: justify;
     }
     section {
       text-align: center;
@@ -762,20 +803,6 @@ section#blog .post {
         font-size: 1.3em;
         margin: 5px 0 10px;
     }
-    .countdown { margin: -10px 0 10px }
-    .countdown li span { font-size: 3em }
-    .countdown li p { margin: -15px 0 5px }
-    .countdown li.seperator {
-        font-size: 9px;
-        line-height: normal;
-        margin-top: 28px;
-        vertical-align: top;
-    }
-    .container-open .notify-after {
-        bottom: 60px;
-        left: 10%;
-    }
-    .notify-after .form-group { float: left }
 }
 @media only screen and (min-width: 481px) and (max-width: 568px) {
   .intro-content { padding: 2% }

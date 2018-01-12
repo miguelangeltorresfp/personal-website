@@ -24,6 +24,11 @@
     ==========================================================================
  */
 /*
+    ==========================================================================
+    Mixins
+    ==========================================================================
+ */
+/*
    ==========================================================================
    Base styles
    ==========================================================================
@@ -308,27 +313,56 @@ section:nth-child(odd):not(:first-child) h2 {
    ==========================================================================
 */
 #about-container {
-  display: table; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center; }
   #about-container a:not(.button),
   #about-container .keyword {
     color: #0099ff;
     font-weight: bold;
     font-size: 16px; }
+  @media (min-width: 767px) {
+    #about-container {
+      text-align: left; } }
 
-.description-column,
-.headshot-column {
-  float: none;
-  display: table-cell;
-  vertical-align: middle; }
+.about-description {
+  text-align: justify; }
+  @media (min-width: 767px) {
+    .about-description {
+      text-align: left; } }
 
-img.headshot {
+.headshot {
+  width: 250px;
+  margin-top: 40px;
   border-radius: 100%;
   border: 10px solid #0099ff;
-  width: auto;
   max-width: 100%; }
+  @media (min-width: 767px) {
+    .headshot {
+      margin-top: 0;
+      width: auto; } }
 
 .last-updated {
+  text-align: left;
   font-size: 12px; }
+
+.description-column {
+  width: 100%; }
+  @media (min-width: 767px) {
+    .description-column {
+      width: 70%; } }
+
+.headshot-column {
+  width: 100%; }
+  @media (min-width: 767px) {
+    .headshot-column {
+      width: 30%; } }
 
 /*
    ==========================================================================
@@ -744,6 +778,10 @@ section#blog .post {
 .carousel-indicators {
   bottom: 0; }
 
+.carousel-item {
+  width: 100%;
+  max-width: 800px; }
+
 /*
 * ==========================================================================
     Responsive Design
@@ -755,20 +793,10 @@ section#blog .post {
     text-align: center;
     margin-left: 0px;
     margin-right: 0px; }
-  .description-column,
-  .headshot-column {
-    display: block; }
-  img.headshot {
-    width: 250px;
-    margin-top: 40px; }
   .statistics-column {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 360px; }
-  #about-container {
-    text-align: center; }
-  #about-container p {
-    text-align: justify; }
   section {
     text-align: center; }
   section#blog p {
@@ -807,23 +835,7 @@ section#blog .post {
     margin: 0; }
   .intro-title {
     font-size: 1.3em;
-    margin: 5px 0 10px; }
-  .countdown {
-    margin: -10px 0 10px; }
-  .countdown li span {
-    font-size: 3em; }
-  .countdown li p {
-    margin: -15px 0 5px; }
-  .countdown li.seperator {
-    font-size: 9px;
-    line-height: normal;
-    margin-top: 28px;
-    vertical-align: top; }
-  .container-open .notify-after {
-    bottom: 60px;
-    left: 10%; }
-  .notify-after .form-group {
-    float: left; } }
+    margin: 5px 0 10px; } }
 
 @media only screen and (min-width: 481px) and (max-width: 568px) {
   .intro-content {

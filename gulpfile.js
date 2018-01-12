@@ -16,7 +16,8 @@
 gulp.task('concatScripts', () => {
   return gulp.src([
     'public/js/jquery.js',
-    'public/js/bootstrap.js',
+    'public/js/util.js',
+    'public/js/carousel.js',
     'public/js/main.js'])
       .pipe(maps.init())
       .pipe(concat('index.js'))

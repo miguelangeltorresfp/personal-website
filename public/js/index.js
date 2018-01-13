@@ -10912,25 +10912,12 @@ $(document).ready( () => {
       let excerpt = 'excerpt' + i;
       let url = 'url' + i;
       let claps = 'claps' + i;
-      let $postDiv = $('<div>')
-                      .addClass('post')
-                      .attr('id', postId);
-      let $title = $('<a>')
-                    .attr('href', result[url])
-                    .append($('<h3>').text(result[title]))
-                    .addClass('blog-title');
-      let $excerpt = $('<p>')
-                      .text(result[excerpt]);
-      let $url = $('<a>')
-                .text('Read More')
-                .attr('href', result[url])
-                .attr('target', '_blank')
-                .addClass('button');
-      let $claps = $('<span>')
-                    .text('👏 ' + result[claps] + ' 👏')
-                    .addClass('claps')
-      $postDiv.append($claps, $title, $excerpt, $url);
-      $('#blog-posts').append($postDiv);
+
+      $(postId + ' .post__title-link').attr('href', result[url])
+      $(postId + ' .post__title').text(result[title])
+      $(postId + ' .post__excerpt').text(result[excerpt])
+      $(postId + ' .post__button').attr('href', result[url])
+      $(postId + ' .post__claps').text('👏 ' + result[claps] + ' 👏')
     }
     $('#blog .loader').fadeOut(500, () => {
       $('#blog-posts').fadeIn(500);

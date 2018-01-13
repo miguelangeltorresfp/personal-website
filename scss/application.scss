@@ -140,10 +140,6 @@ a:focus {
 a.button {
   text-decoration: none;
 }
-#container {
-    margin: 0;
-    padding: 0;
-}
 
 .max-width-container {
   max-width: 1200px;
@@ -195,7 +191,7 @@ a.button {
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-.intro-image {
+.intro__image {
     background-image: url(../img/background-image.png);
     background-size: 800px;
     background-color: rgba(0,0,0,0.2);
@@ -221,13 +217,8 @@ a.button {
   }
 }
 
-.container-open .intro-image {
-    background-color: #2a2e39;
-    -webkit-transform: translate3d(0, 20%, 0);
-    transform: translate3d(0, 20%, 0);
-}
-.intro-content {
-    display: table-cell;
+.intro__content {
+    text-align: center;
     font-size: 1.15em;
     margin: 0;
     padding: 0;
@@ -236,25 +227,28 @@ a.button {
     z-index: 10;
 }
 
-.logo {
-    width: 100%;
-    margin: -30px 0 25px;
-    word-spacing: 3px;
-}
-.text-logo {
+.intro__content-name {
     color: $primary-color;
     font-family: BeonMedium;
     font-weight: bold;
+    font-size: 2.4em;
+  
+  @include respond-to('small') {
     font-size: 3em;
+  }
 }
 
-.intro-title {
+.intro__title {
     color: #fff;
     font-size: 1.5em;
     font-weight: normal;
     margin: 15px 0;
     text-transform: uppercase;
     word-spacing: 3px;
+    
+  @include respond-to('small') {
+    font-size: 1.8em;
+  }
 }
 
 .content-div { width: 100% }
@@ -345,8 +339,7 @@ section:nth-child(odd):not(:first-child) h2 {
   flex-wrap: wrap;
   text-align: center;
 
-  a:not(.button),
-  .keyword {
+  a:not(.button) {
     color: $primary-color;
     font-weight: bold;
     font-size: 16px;
@@ -427,6 +420,7 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .statistics-column {
   max-width: 440px;
+  width: 100%;
   padding: 30px 20px;
   border: 3px solid $dark-color;
   border-radius: 4px;
@@ -607,26 +601,62 @@ section#blog a.button {
   margin-top: 0px;
 }
 
-section#blog .post {
+.post {
   margin: 30px 0;
-}
-
-.blog-title {
-  color: $primary-color;
-
-  h3 {
-    display: inline-block;
+  
+  .post__excerpt {
+    max-width: 550px;
+    margin: 0 auto 20px;
+    text-align: justify;
+    
+    @include respond-to('small') {
+      max-width: 100%;
+      text-align: left;
+    }
   }
 }
 
-.claps {
+.post__title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+
+  @include respond-to('small') {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.post__title-link {
+  color: $primary-color;
+}
+
+.post__title {
+  font-size: 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+
+  @include respond-to('small') {
+    font-size: 24px;
+    text-align: left;
+  }
+}
+
+.post__claps {
+  display: none;
   font-size: 18px;
   color: white;
   font-weight: bold;
   font-family: $heading-font;
-  margin-right: 10px;
-  position: relative;
   top: -1px;
+  white-space: nowrap;
+  margin-right: 15px;
+
+  @include respond-to('small') {
+    display: inline-block;
+  }
 }
 
 /*
@@ -655,6 +685,14 @@ section#blog .post {
 
 .portfolio-tags {
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  span {
+    margin-top: 5px;
+    white-space: nowrap;
+  }
 }
 
 #portfolio-items {
@@ -698,11 +736,21 @@ section#blog .post {
   padding: 10px 0;
   display: flex;
   justify-content: space-around;
-}
 
-.portfolio-buttons .button {
-  margin: 0;
-  padding: 5px 10px;
+  .button {
+    margin: 0;
+    padding: 5px 10px;
+    
+    &.screenshots {
+      display: none;
+      
+      @include respond-to('small') {
+        display: inline-block;
+      }
+    }
+  }
+  
+  
 }
 
 .carousel-wrapper {
@@ -718,6 +766,10 @@ section#blog .post {
   background-color: rgba(0,0,0,.8);
 }
 
+.carousel {
+  margin: 0 100px;
+}
+
 .carousel-caption {
   position: relative;
   width: 100%;
@@ -729,7 +781,26 @@ section#blog .post {
 }
 
 .carousel-indicators {
-  bottom: 0;
+  bottom: -43px;
+  margin: 0;
+  background-color: $dark-color;
+  width: 100%;
+  padding: 20px 0;
+
+  li:hover {
+    cursor: pointer;
+  }
+}
+
+.carousel-control {
+  &-prev {
+    width: 100px;
+    left: -100px;
+  }
+  &-next {
+    width: 100px;
+    right: -100px;
+  }
 }
 
 .carousel-item {
@@ -757,10 +828,6 @@ section#blog .post {
     section {
       text-align: center;
     }
-    section#blog p {
-      max-width: 550px;
-      margin: 0 auto 20px;
-    }
     .title-section .right {
       display: none;
     }
@@ -775,55 +842,5 @@ section#blog .post {
       width: 100%;
       padding: 0 !important;
     }
-    .claps {
-      display: block;
-      margin: 0;
-      margin-bottom: -10px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .logo { margin: -55px 0 25px }
-    .text-logo {
-        font-size: 2em;
-        margin: 0;
-    }
-    .intro-title {
-        font-size: 1.5em;
-        margin: 8px 0;
-    }
-}
-@media only screen and (max-width: 320px) {
-    .intro { position: absolute }
-    .text-logo {
-        font-size: 3em;
-        margin: 0;
-    }
-    .intro-title {
-        font-size: 1.3em;
-        margin: 5px 0 10px;
-    }
-}
-@media only screen and (min-width: 481px) and (max-width: 568px) {
-  .intro-content { padding: 2% }
-  .logo { margin: -45px 0 25px;}
-  .text-logo {
-      font-size: 2em;
-      margin: 0;
-  }
-  .intro-title {
-      font-size: 2em;
-      margin: -30px 0 5px;
-  }
-}
-@media only screen and (min-width: 569px) and (max-width: 736px) {
-  .logo { margin: 0 0 20px }
-  .text-logo { margin: -60px 0 0 }
-  .intro-title {
-      font-size: 2em;
-      margin: -25px 0 5px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width:991px) {
-  .intro-title { font-size: 3em }
+    
 }

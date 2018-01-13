@@ -24,388 +24,364 @@ html(lang='en')
     // Main Style
     link(rel='stylesheet', href='/css/main.min.css')
   body
-    // === Header Section ===
-    #container.container-fluid
-      // +++ Intro Section ++++
-      section.intro.row
-        // Intro Section Background-image
-        .intro-image
-        // ====+++ Intro Section Content +++====
-        .intro-content.text-center
-          // Logo
-          .logo
-            h2.text-logo Robert Cooper
-          // /End logo
-          // ==== Main Heading ====
-          h1.intro-title
-            | Web Developer
-        // /End Intro Section Content
-        // ==== Intro Section Bottom Content ====
-        .container-bottom-content
-          // ==== Social Links ====
-          .social
-            a(href='https://github.com/Engineering-Robert', target='_blank')
-              i.fa.fa-github.fa-2x.fa-social
-            a(href='https://codepen.io/robertcooper_rc/', target='_blank')
-              i.fa.fa-codepen.fa-2x.fa-social
-            a(href='https://medium.com/@robertcooper_rc', target='_blank')
-              i.fa.fa-medium.fa-2x.fa-social
-            a(href='https://twitter.com/RobertCooper_RC', target='_blank')
-              i.fa.fa-twitter.fa-2x.fa-social
-            a(href='https://www.linkedin.com/in/robert-cooper/', target='_blank')
-              i.fa.fa-linkedin.fa-2x.fa-social
-            a(href='mailto:hi@robertcooper.me')
-              i.fa.fa-envelope.fa-2x.fa-social
-          // /End Social Links
-        // /End Intro Section Bottom Content
-      // /end intro section
-      section#about.row
-        .max-width-container#about-container
-          .description-column
-            .title-section
-              h2 About
-            p.about-description
-              | Hi, I'm Robert Cooper, a
-              | &nbsp;
-              span(class='keyword') full stack web developer
-              | .
-            p.about-description
-              | I started teaching myself web development in 2016 at which time I was not enjoying the engineering work experience I had accumulated while still in university. I am now a working at
-              | &nbsp;
-              a(href='http://osedea.com', target='_blank') Osedea
-              |  as a junior full stack developer in Montreal, Canada.
-            p.last-updated 📅 Last updated January 11th, 2018
-            a.button(href='/documents/resume.pdf', target='_blank') View my Resume
-          .headshot-column
-            img.headshot(src='/img/headshot.jpeg')
-      section#statistics.row
-        .max-width-container
-          h2.section-title Stats
-          .statistics-columns
-            .col-sm-6.statistics-column#rescuetime
-              .title-section
-                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
-                h3 Daily Hours
-                i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
-              .api-data-section
-                .loader
-                  div
-                  div
-                  div
-                  div
-                  div
-                p.web-development-hours
-                  span.api-data
-                  span.api-data-description on web development.
-                p.distracted-hours
-                  span.api-data
-                  span.api-data-description on social media and other non productive things.
-              p.more-info
-                | Data gathered from the
-                a(href='http://rescuetime.com', target='_blank') Rescue Time
-                |  API.
-            .col-sm-6.statistics-column#github
-              .title-section
-                .keyboard.left
-                h3 Github Commits
-                .keyboard.right
-              .api-data-section
-                .loader
-                  div
-                  div
-                  div
-                  div
-                  div
-                p
-                  span.api-data
-                  span.api-data-description total commits today.
-              p.more-info
-                | Data gathered from the
-                a(href='https://developer.github.com/v3/', target='_blank') Github
-                |  API.
-            .col-sm-6.statistics-column#strava
-              .title-section
-                .running-man.left
-                h3 Last Run
-                .running-man.right
-              .api-data-section
-                .loader
-                  div
-                  div
-                  div
-                  div
-                  div
-                p.running-date
-                  span.api-data
-                  span.api-data-description is the date of my last run.
-                p.running-distance
-                  span.api-data
-                  span.api-data-description km ran.
-                p.running-duration
-                  span.api-data
-                  span.api-data-description in duration.
-              p.more-info
-                | Data gathered from the
-                a(href='http://strava.com', target='_blank') Strava
-                |  API.
-      section#blog.row
-        .max-width-container#blog-container
-          .col-sm-12
-            .title-section
-              h2 Blog Articles
-            p
-              | Here are my 3 most recent articles that i've written on
-              | &nbsp;
-              a(href='https://medium.com/@robertcooper_rc', target='_blank') Medium
-              | .
-            #blog-posts
-            .loader
-              div
-              div
-              div
-              div
-              div
-      section#portfolio.row
-        .max-width-container#portfolio-container
+    section.intro.row
+      .intro__image
+      .intro__content
+        h1.intro__content-name Robert Cooper
+        h2.intro__title
+          | Web Developer
+      .container-bottom-content
+        // ==== Social Links ====
+        .social
+          a(href='https://github.com/Engineering-Robert', target='_blank')
+            i.fa.fa-github.fa-2x.fa-social
+          a(href='https://codepen.io/robertcooper_rc/', target='_blank')
+            i.fa.fa-codepen.fa-2x.fa-social
+          a(href='https://medium.com/@robertcooper_rc', target='_blank')
+            i.fa.fa-medium.fa-2x.fa-social
+          a(href='https://twitter.com/RobertCooper_RC', target='_blank')
+            i.fa.fa-twitter.fa-2x.fa-social
+          a(href='https://www.linkedin.com/in/robert-cooper/', target='_blank')
+            i.fa.fa-linkedin.fa-2x.fa-social
+          a(href='mailto:hi@robertcooper.me')
+            i.fa.fa-envelope.fa-2x.fa-social
+        // /End Social Links
+      // /End Intro Section Bottom Content
+    // /end intro section
+    section#about.row
+      .max-width-container#about-container
+        .description-column
           .title-section
-            h2 Portfolio
-          p.description
-            | Here is a list of some of the projects i've worked on. For additional projects I've participated in, please have a look at my
-            | &nbsp;
-            a(href='https://github.com/Engineering-Robert', target="_blank") GitHub profile
-            | &nbsp;
-            | or my
-            | &nbsp;
-            a(href='https://codepen.io/robert-engineer/', target="_blank") CodePen profile
+            h2 About
+          p.about-description
+            | Hi, I'm Robert Cooper, a full stack web developer.
+          p.about-description
+            | I started teaching myself web development in 2016 at which time I was not enjoying the engineering work experience I had accumulated while still in university. I am now a working at 
+            a(href='http://osedea.com', target='_blank') Osedea
+            |  as a junior full stack developer in Montreal, Canada.
+          p.last-updated 📅 Last updated January 11th, 2018
+          a.button(href='/documents/resume.pdf', target='_blank') View my Resume
+        .headshot-column
+          img.headshot(src='/img/headshot.jpeg')
+    section#statistics.row
+      .max-width-container
+        h2.section-title Stats
+        .statistics-columns
+          .statistics-column#rescuetime
+            .title-section
+              i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.left
+              h3 Daily Hours
+              i.fa.fa-clock-o.fa-spin.fa-2x.fa-clock-spin.right
+            .api-data-section
+              .loader
+                div
+                div
+                div
+                div
+                div
+              p.web-development-hours
+                span.api-data
+                span.api-data-description on web development.
+              p.distracted-hours
+                span.api-data
+                span.api-data-description on social media and other non productive things.
+            p.more-info
+              | Data gathered from the 
+              a(href='http://rescuetime.com', target='_blank') Rescue Time
+              |  API.
+          .statistics-column#github
+            .title-section
+              .keyboard.left
+              h3 Github Commits
+              .keyboard.right
+            .api-data-section
+              .loader
+                div
+                div
+                div
+                div
+                div
+              p
+                span.api-data
+                span.api-data-description total commits today.
+            p.more-info
+              | Data gathered from the 
+              a(href='https://developer.github.com/v3/', target='_blank') Github
+              |  API.
+          .statistics-column#strava
+            .title-section
+              .running-man.left
+              h3 Last Run
+              .running-man.right
+            .api-data-section
+              .loader
+                div
+                div
+                div
+                div
+                div
+              p.running-date
+                span.api-data
+                span.api-data-description is the date of my last run.
+              p.running-distance
+                span.api-data
+                span.api-data-description km ran.
+              p.running-duration
+                span.api-data
+                span.api-data-description in duration.
+            p.more-info
+              | Data gathered from the 
+              a(href='http://strava.com', target='_blank') Strava
+              |  API.
+    section#blog.row
+      .max-width-container#blog-container
+        .col-sm-12
+          .title-section
+            h2 Blog Articles
+          p
+            | Here are my 3 most recent articles that i've written on 
+            a(href='https://medium.com/@robertcooper_rc', target='_blank') Medium
             | .
-          #portfolio-items
-            .portfolio-item
-              h3 Public Wifi Speeds
-              p
-                | An application that allows users to record the wifi speeds they encounter at public places and aggregates the data for others to see.
-              .portfolio-tags
-                span react
-                span firebase
-                span google maps api
-                span javascript
-                span sass
-                span authentication
-              .portfolio-image-wrapper
-                img(src='/img/wifi-speeds.jpg')
-                .portfolio-buttons
-                  a(href='https://publicwifispeeds.firebaseapp.com/', target='_blank').button.demo Website
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/Engineering-Robert/public-wifi-speeds', target='_blank').button.github Github
-              .carousel-wrapper
-                #carousel-portfolio-1.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-1', data-slide-to='0')
-                    li.active(data-target='#carousel-portfolio-1', data-slide-to='1')
-                    li.active(data-target='#carousel-portfolio-1', data-slide-to='2')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/wifi-speeds.jpg', alt='home page')
-                    .carousel-item
-                      img(src='/img/wifi-speeds-2.jpeg', alt='login page')
-                    .carousel-item
-                      img(src='/img/wifi-speeds-3.jpeg', alt='add entry modal')
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-1', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-1', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
-            .portfolio-item
-              h3 Twitter Clone
-              p A similar application to Twitter that is build with Node.js. The styling of the app is based off of Twitter's night mode on desktop.
-              .portfolio-tags
-                span node.js
-                span express
-                span yarn
-                span javascript
-                span sass
-                span gulp
-              .portfolio-image-wrapper
-                img(src='/img/twitter-clone.jpg')
-                .portfolio-buttons
-                  a(href='http://nitter.herokuapp.com/', target='_blank').button.demo Website
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/vinitkumar/node-twitter', target='_blank').button.github Github
-              .carousel-wrapper
-                #carousel-portfolio-2.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-1', data-slide-to='0')
-                    li(data-target='#carousel-portfolio-2', data-slide-to='1')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/twitter-clone.jpg', alt='Twitter clone home page')
-                    .carousel-item
-                      img(src='/img/twitter-clone-2.jpg', alt='Twitter clone profile page')
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-2', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-2', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
-            .portfolio-item
-              h3 Stranger Ipsum
-              p A lorem ipsum generator that generates paragraphs containing quotes from from the Netflix series Stranger Things.
-              .portfolio-tags
-                span node.js
-                span express
-                span javascript
-                span sass
-                span gulp
-              .portfolio-image-wrapper
-                img(src='/img/lorem-ipsum-screenshot.jpg')
-                .portfolio-buttons
-                  a(href='http://stranger-ipsum.robertcooper.me/', target='_blank').button.demo Website
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/Engineering-Robert/stranger-ipsum', target='_blank').button.github Github
-              .carousel-wrapper
-                #carousel-portfolio-3.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-3', data-slide-to='0')
-                    li(data-target='#carousel-portfolio-3', data-slide-to='1')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/lorem-ipsum-screenshot.jpg', alt='main page no text generated')
-                    .carousel-item
-                      img(src='/img/lorem-ipsum-screenshot-2.jpg', alt='main page with generated text')
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-3', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-3', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
-            .portfolio-item
-              h3 CUTC 2017 Website
-              p The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.
-              .portfolio-tags
-                span javascript
-                span html
-                span css
-              .portfolio-image-wrapper
-                img(src='/img/cutc-screenshot.png')
-                .portfolio-buttons
-                  a(href='http://2017.cutc.ca/', target='_blank').button.demo Website
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/Engineering-Robert/elevate.cutc.ca', target='_blank').button.github Github
-              .carousel-wrapper
-                #carousel-portfolio-4.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-4', data-slide-to='0')
-                    li(data-target='#carousel-portfolio-4', data-slide-to='1')
-                    li(data-target='#carousel-portfolio-4', data-slide-to='2')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/cutc-screenshot.png', alt='website\'s top section')
-                    .carousel-item
-                      img(src='/img/cutc-screenshot-2.png', alt='...')
-                    .carousel-item
-                      img(src='/img/cutc-screenshot-3.png', alt='...')
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-4', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-4', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
-            .portfolio-item
-              h3 Queen's Engineering Forum
-              p An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen's University. The project wasn't completed and I continued working on the project on my own after the 2016/2017 school year.
-              .portfolio-tags
-                span node.js
-                span javscript
-                span mysql
-              .portfolio-image-wrapper
-                img(src='/img/forum-screenshot.png')
-                .portfolio-buttons
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-                  a(href='https://github.com/Engineering-Robert/engineering-forum-mysql', target='_blank').button.github Github
-              .carousel-wrapper
-                #carousel-portfolio-5.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-3', data-slide-to='0')
-                    li(data-target='#carousel-portfolio-3', data-slide-to='1')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/forum-screenshot.png', alt='...')
-                      .carousel-caption
-                        | The forum's login page.
-                    .carousel-item
-                      img(src='/img/forum-screenshot-2.png', alt='...')
-                      .carousel-caption
-                        | The main forum landing page after a user has logged in. You can see the menu at the top right where a user can view their profile or log out.
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-5', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-5', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
-            .portfolio-item
-              h3 Kingston Young Professionals Website
-              p
-                | I built a brand new website for the
-                | &nbsp;
-                a(href='https://www.kingstonyoungprofessionals.com/', target="_blank") Kingston Young Professionals
-                | , where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.
-              .portfolio-tags
-                span wordpress
-                span cms
-                span css
-              .portfolio-image-wrapper
-                img(src='/img/kyp-screenshot.jpg')
-                .portfolio-buttons
-                  a(href='https://www.kingstonyoungprofessionals.com/', target='_blank').button.github Website
-                  a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
-              .carousel-wrapper
-                #carousel-portfolio-6.carousel.slide(data-ride='carousel')
-                  // Indicators
-                  ol.carousel-indicators
-                    li.active(data-target='#carousel-portfolio-5', data-slide-to='0')
-                    li(data-target='#carousel-portfolio-5', data-slide-to='1')
-                    li(data-target='#carousel-portfolio-5', data-slide-to='2')
-                    li(data-target='#carousel-portfolio-5', data-slide-to='3')
-                  // Wrapper for slides
-                  .carousel-inner(role='listbox')
-                    .carousel-item.active
-                      img(src='/img/kyp-screenshot.jpg', alt='...')
-                      .carousel-caption
-                        | The home page.
-                    .carousel-item
-                      img(src='/img/kyp-screenshot-2.jpg', alt='...')
-                      .carousel-caption
-                        | Newsletter sign up.
-                    .carousel-item
-                      img(src='/img/kyp-screenshot-3.jpg', alt='...')
-                      .carousel-caption
-                        | Young Professional Spotlight blog section.
-                    .carousel-item
-                      img(src='/img/kyp-screenshot-4.jpg', alt='...')
-                      .carousel-caption
-                        | Upcoming event listing.
-                  // Controls
-                  a.carousel-control-prev(href='#carousel-portfolio-6', role='button', data-slide='prev')
-                    span.carousel-control-prev-icon(aria-hidden='true')
-                    span.sr-only Previous
-                  a.carousel-control-next(href='#carousel-portfolio-6', role='button', data-slide='next')
-                    span.carousel-control-next-icon(aria-hidden='true')
-                    span.sr-only Next
+          .loader
+            div
+            div
+            div
+            div
+            div
+          #blog-posts
+            - for (var i = 1; i <= 3; i++)
+              .post(id = "post" + i)
+                .post__title-container
+                  span.post__claps
+                  a(target="_blank").post__title-link
+                    h3.post__title
+                p.post__excerpt
+                a(target="_blank").post__button.button Read More
+    section#portfolio.row
+      .max-width-container#portfolio-container
+        .title-section
+          h2 Portfolio
+        p.description
+          | Here is a list of some of the projects i've worked on. For additional projects I've participated in, please have a look at my 
+          a(href='https://github.com/Engineering-Robert', target="_blank") GitHub profile
+          |  or my 
+          a(href='https://codepen.io/robert-engineer/', target="_blank") CodePen profile
+          | .
+        #portfolio-items
+          .portfolio-item
+            h3 Public Wifi Speeds
+            p
+              | An application that allows users to record the wifi speeds they encounter at public places and aggregates the data for others to see.
+            .portfolio-tags
+              span react
+              span firebase
+              span google maps api
+              span javascript
+              span sass
+              span authentication
+            .portfolio-image-wrapper
+              img(src='/img/wifi-speeds.jpg')
+              .portfolio-buttons
+                a(href='https://publicwifispeeds.firebaseapp.com/', target='_blank').button.demo Website
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                a(href='https://github.com/Engineering-Robert/public-wifi-speeds', target='_blank').button.github Github
+            .carousel-wrapper
+              #carousel-portfolio-1.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-1', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-1', data-slide-to='1')
+                  li(data-target='#carousel-portfolio-1', data-slide-to='2')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/wifi-speeds.jpg', alt='home page')
+                  .carousel-item
+                    img(src='/img/wifi-speeds-2.jpeg', alt='login page')
+                  .carousel-item
+                    img(src='/img/wifi-speeds-3.jpeg', alt='add entry modal')
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-1', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-1', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+          .portfolio-item
+            h3 Twitter Clone
+            p A similar application to Twitter that is build with Node.js. The styling of the app is based off of Twitter's night mode on desktop.
+            .portfolio-tags
+              span node.js
+              span express
+              span yarn
+              span javascript
+              span sass
+              span gulp
+            .portfolio-image-wrapper
+              img(src='/img/twitter-clone.jpg')
+              .portfolio-buttons
+                a(href='http://nitter.herokuapp.com/', target='_blank').button.demo Website
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                a(href='https://github.com/vinitkumar/node-twitter', target='_blank').button.github Github
+            .carousel-wrapper
+              #carousel-portfolio-2.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-1', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-2', data-slide-to='1')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/twitter-clone.jpg', alt='Twitter clone home page')
+                  .carousel-item
+                    img(src='/img/twitter-clone-2.jpg', alt='Twitter clone profile page')
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-2', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-2', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+          .portfolio-item
+            h3 Stranger Ipsum
+            p A lorem ipsum generator that generates paragraphs containing quotes from from the Netflix series Stranger Things.
+            .portfolio-tags
+              span node.js
+              span express
+              span javascript
+              span sass
+              span gulp
+            .portfolio-image-wrapper
+              img(src='/img/lorem-ipsum-screenshot.jpg')
+              .portfolio-buttons
+                a(href='http://stranger-ipsum.robertcooper.me/', target='_blank').button.demo Website
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                a(href='https://github.com/Engineering-Robert/stranger-ipsum', target='_blank').button.github Github
+            .carousel-wrapper
+              #carousel-portfolio-3.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-3', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-3', data-slide-to='1')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/lorem-ipsum-screenshot.jpg', alt='main page no text generated')
+                  .carousel-item
+                    img(src='/img/lorem-ipsum-screenshot-2.jpg', alt='main page with generated text')
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-3', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-3', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+          .portfolio-item
+            h3 CUTC 2017 Website
+            p The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.
+            .portfolio-tags
+              span javascript
+              span html
+              span css
+            .portfolio-image-wrapper
+              img(src='/img/cutc-screenshot.png')
+              .portfolio-buttons
+                a(href='http://2017.cutc.ca/', target='_blank').button.demo Website
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                a(href='https://github.com/Engineering-Robert/elevate.cutc.ca', target='_blank').button.github Github
+            .carousel-wrapper
+              #carousel-portfolio-4.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-4', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-4', data-slide-to='1')
+                  li(data-target='#carousel-portfolio-4', data-slide-to='2')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/cutc-screenshot.png', alt="website's top section")
+                  .carousel-item
+                    img(src='/img/cutc-screenshot-2.png', alt="speaker's modal")
+                  .carousel-item
+                    img(src='/img/cutc-screenshot-3.png', alt="integrated google maps")
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-4', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-4', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+          .portfolio-item
+            h3 Queen's Engineering Forum
+            p An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen's University. The project wasn't completed and I continued working on the project on my own after the 2016/2017 school year.
+            .portfolio-tags
+              span node.js
+              span javscript
+              span mysql
+            .portfolio-image-wrapper
+              img(src='/img/forum-screenshot.png')
+              .portfolio-buttons
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+                a(href='https://github.com/Engineering-Robert/engineering-forum-mysql', target='_blank').button.github Github
+            .carousel-wrapper
+              #carousel-portfolio-5.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-5', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-5', data-slide-to='1')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/forum-screenshot.png', alt='login page')
+                  .carousel-item
+                    img(src='/img/forum-screenshot-2.png', alt='search page')
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-5', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-5', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+          .portfolio-item
+            h3 Kingston Young Professionals Website
+            p
+              | I built a brand new website for the 
+              a(href='https://www.kingstonyoungprofessionals.com/', target="_blank") Kingston Young Professionals
+              | , where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.
+            .portfolio-tags
+              span wordpress
+              span cms
+              span css
+            .portfolio-image-wrapper
+              img(src='/img/kyp-screenshot.jpg')
+              .portfolio-buttons
+                a(href='https://www.kingstonyoungprofessionals.com/', target='_blank').button.github Website
+                a(href='javascript:void(0)', target='_blank').button.screenshots Screenshots
+            .carousel-wrapper
+              #carousel-portfolio-6.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-portfolio-6', data-slide-to='0')
+                  li(data-target='#carousel-portfolio-6', data-slide-to='1')
+                  li(data-target='#carousel-portfolio-6', data-slide-to='2')
+                  li(data-target='#carousel-portfolio-6', data-slide-to='3')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img(src='/img/kyp-screenshot.jpg', alt='home page')
+                  .carousel-item
+                    img(src='/img/kyp-screenshot-2.jpg', alt='Newsletter sign up')
+                  .carousel-item
+                    img(src='/img/kyp-screenshot-3.jpg', alt='Young Professional Spotlight blog section')
+                  .carousel-item
+                    img(src='/img/kyp-screenshot-4.jpg', alt='upcoming event listing')
+                // Controls
+                a.carousel-control-prev(href='#carousel-portfolio-6', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#carousel-portfolio-6', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
     // Concatenated and Minified JS Files
     script(src='/js/index.min.js?v=1.0')
     // Google Analytics

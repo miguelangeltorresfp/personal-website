@@ -4,7 +4,7 @@
  * Table of Contents
  * -----------------------------------------------------------------------
  *     Variables
- *     Base Styles
+ *     Mixins
  *     Global Style
  *     Intro Section
  *     Social Links
@@ -30,15 +30,6 @@
  */
 /*
    ==========================================================================
-   Base styles
-   ==========================================================================
-*/
-html {
-  font-size: 1em;
-  line-height: 1.4; }
-
-/*
-   ==========================================================================
    Global Style
    ==========================================================================
 */
@@ -62,6 +53,10 @@ html {
   src: url("/css/fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/OpenSans-Light-webfont.woff") format("woff"), url("/css/fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("/css/fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+html {
+  font-size: 1em;
+  line-height: 1.4; }
 
 html,
 body {
@@ -244,7 +239,7 @@ span.api-data {
    Social Links
    ==========================================================================
 */
-.social {
+.intro__social {
   bottom: 0;
   left: 0;
   margin: 10px;
@@ -422,16 +417,27 @@ section:nth-child(odd):not(:first-child) h2 {
 .fa-clock-o {
   color: #2A2A72; }
 
-.title-section .fa-clock-o.left,
-.title-section .running-man.left {
-  margin-right: 20px; }
-
-.title-section .fa-clock-o.right,
-.title-section .running-man.right {
-  margin-left: 20px; }
-
 .title-section h3 {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.title-section .right {
+  display: none; }
+
+.title-section .left {
+  display: block;
+  margin: 10px auto; }
+
+@media (min-width: 767px) {
+  .title-section .right,
+  .title-section .left {
+    display: inline-block;
+    margin: 0; }
+  .title-section.fa-clock-o.left, .title-section.running-man.left {
+    margin-right: 20px; }
+  .title-section.fa-clock-o.right, .title-section.running-man.right {
+    margin-left: 20px; } }
 
 .more-info {
   font-size: .8em;
@@ -472,10 +478,6 @@ section:nth-child(odd):not(:first-child) h2 {
 @keyframes playKeyboard {
   100% {
     background-position: -625px; } }
-
-#github h3 {
-  margin-left: 10px;
-  margin-right: 10px; }
 
 .api-data-section > *:not(.loader) {
   display: none; }
@@ -529,102 +531,6 @@ section:nth-child(odd):not(:first-child) h2 {
 .loader > div:nth-child(5) {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s; }
-
-.heart {
-  -webkit-animation: heartbeat 1s linear infinite both;
-          animation: heartbeat 1s linear infinite both;
-  display: inline-block; }
-
-.heart.left {
-  margin-right: 10px; }
-
-.heart.right {
-  margin-left: 10px; }
-
-.heart svg {
-  height: 35px; }
-
-/* Generated with Bounce.js. Edit at https://goo.gl/h05rSW */
-@-webkit-keyframes heartbeat {
-  0% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  2.1% {
-    -webkit-transform: matrix3d(1.022, 0, 0, 0, 0, 1.022, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.022, 0, 0, 0, 0, 1.022, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  4.1% {
-    -webkit-transform: matrix3d(1.036, 0, 0, 0, 0, 1.036, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.036, 0, 0, 0, 0, 1.036, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  8.21% {
-    -webkit-transform: matrix3d(1.046, 0, 0, 0, 0, 1.046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.046, 0, 0, 0, 0, 1.046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  11.41% {
-    -webkit-transform: matrix3d(1.042, 0, 0, 0, 0, 1.042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.042, 0, 0, 0, 0, 1.042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  14.51% {
-    -webkit-transform: matrix3d(1.032, 0, 0, 0, 0, 1.032, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.032, 0, 0, 0, 0, 1.032, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  20.72% {
-    -webkit-transform: matrix3d(1.011, 0, 0, 0, 0, 1.011, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.011, 0, 0, 0, 0, 1.011, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  27.03% {
-    -webkit-transform: matrix3d(0.997, 0, 0, 0, 0, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.997, 0, 0, 0, 0, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  33.23% {
-    -webkit-transform: matrix3d(0.993, 0, 0, 0, 0, 0.993, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.993, 0, 0, 0, 0, 0.993, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  45.75% {
-    -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  58.26% {
-    -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  83.28% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
-@keyframes heartbeat {
-  0% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  2.1% {
-    -webkit-transform: matrix3d(1.022, 0, 0, 0, 0, 1.022, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.022, 0, 0, 0, 0, 1.022, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  4.1% {
-    -webkit-transform: matrix3d(1.036, 0, 0, 0, 0, 1.036, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.036, 0, 0, 0, 0, 1.036, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  8.21% {
-    -webkit-transform: matrix3d(1.046, 0, 0, 0, 0, 1.046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.046, 0, 0, 0, 0, 1.046, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  11.41% {
-    -webkit-transform: matrix3d(1.042, 0, 0, 0, 0, 1.042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.042, 0, 0, 0, 0, 1.042, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  14.51% {
-    -webkit-transform: matrix3d(1.032, 0, 0, 0, 0, 1.032, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.032, 0, 0, 0, 0, 1.032, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  20.72% {
-    -webkit-transform: matrix3d(1.011, 0, 0, 0, 0, 1.011, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.011, 0, 0, 0, 0, 1.011, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  27.03% {
-    -webkit-transform: matrix3d(0.997, 0, 0, 0, 0, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.997, 0, 0, 0, 0, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  33.23% {
-    -webkit-transform: matrix3d(0.993, 0, 0, 0, 0, 0.993, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.993, 0, 0, 0, 0, 0.993, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  45.75% {
-    -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  58.26% {
-    -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  83.28% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
-  100% {
-    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
 
 /*
    ==========================================================================
@@ -705,34 +611,12 @@ section#blog a.button {
     Portfolio Section
 * ==========================================================================
 */
-#portfolio p.description {
+#portfolio .description {
   margin-bottom: 40px; }
 
 #portfolio h2 {
   display: inline-block;
   padding-right: 10px; }
-
-.portfolio-tags span {
-  background-color: rgba(42, 42, 114, 0.6);
-  color: white;
-  padding: 2px 8px 3px;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-right: 10px; }
-
-.portfolio-tags {
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  .portfolio-tags span {
-    margin-top: 5px;
-    white-space: nowrap; }
 
 #portfolio-items {
   display: -webkit-box;
@@ -742,25 +626,48 @@ section#blog a.button {
       flex-wrap: wrap; }
 
 .portfolio-item {
-  width: 50%;
-  display: inline-block;
-  text-align: center; }
-
-.portfolio-item:nth-child(odd) {
-  padding-right: 20px; }
-
-.portfolio-item:nth-child(even) {
-  padding-left: 20px; }
-
-.portfolio-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  width: 100%;
+  padding: 0; }
+  @media (min-width: 767px) {
+    .portfolio-item {
+      width: 50%; }
+      .portfolio-item:nth-child(odd) {
+        padding-right: 20px; }
+      .portfolio-item:nth-child(even) {
+        padding-left: 20px; } }
+
+.portfolio-item__description {
+  text-align: justify; }
+
+.portfolio-item__tags {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.portfolio-item__tag {
+  background-color: rgba(42, 42, 114, 0.6);
+  color: white;
+  padding: 2px 8px 3px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 10px;
+  white-space: nowrap; }
 
 .portfolio-image-wrapper {
   position: relative;
@@ -853,7 +760,7 @@ section#blog a.button {
 * ==========================================================================
 */
 @media only screen and (max-width: 767px) {
-  .social {
+  .intro__social {
     width: 100%;
     text-align: center;
     margin-left: 0px;
@@ -863,16 +770,6 @@ section#blog a.button {
     padding-bottom: 10px;
     width: 360px; }
   section {
-    text-align: center; }
-  .title-section .right {
-    display: none; }
-  .title-section .left {
-    display: block;
-    margin: 10px auto 0 !important; }
-  .title-section h3 {
-    margin-top: 10px; }
-  .portfolio-item {
-    width: 100%;
-    padding: 0 !important; } }
+    text-align: center; } }
 
 /*# sourceMappingURL=application.css.map */

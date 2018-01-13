@@ -1,6 +1,5 @@
 doctype html
 html(lang='en')
-  // <![endif]
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -30,24 +29,19 @@ html(lang='en')
         h1.intro__content-name Robert Cooper
         h2.intro__title
           | Web Developer
-      .container-bottom-content
-        // ==== Social Links ====
-        .social
-          a(href='https://github.com/Engineering-Robert', target='_blank')
-            i.fa.fa-github.fa-2x.fa-social
-          a(href='https://codepen.io/robertcooper_rc/', target='_blank')
-            i.fa.fa-codepen.fa-2x.fa-social
-          a(href='https://medium.com/@robertcooper_rc', target='_blank')
-            i.fa.fa-medium.fa-2x.fa-social
-          a(href='https://twitter.com/RobertCooper_RC', target='_blank')
-            i.fa.fa-twitter.fa-2x.fa-social
-          a(href='https://www.linkedin.com/in/robert-cooper/', target='_blank')
-            i.fa.fa-linkedin.fa-2x.fa-social
-          a(href='mailto:hi@robertcooper.me')
-            i.fa.fa-envelope.fa-2x.fa-social
-        // /End Social Links
-      // /End Intro Section Bottom Content
-    // /end intro section
+      .intro__social
+        a(href='https://github.com/Engineering-Robert', target='_blank')
+          i.fa.fa-github.fa-2x.fa-social
+        a(href='https://codepen.io/robertcooper_rc/', target='_blank')
+          i.fa.fa-codepen.fa-2x.fa-social
+        a(href='https://medium.com/@robertcooper_rc', target='_blank')
+          i.fa.fa-medium.fa-2x.fa-social
+        a(href='https://twitter.com/RobertCooper_RC', target='_blank')
+          i.fa.fa-twitter.fa-2x.fa-social
+        a(href='https://www.linkedin.com/in/robert-cooper/', target='_blank')
+          i.fa.fa-linkedin.fa-2x.fa-social
+        a(href='mailto:hi@robertcooper.me')
+          i.fa.fa-envelope.fa-2x.fa-social
     section#about.row
       .max-width-container#about-container
         .description-column
@@ -157,6 +151,207 @@ html(lang='en')
                     h3.post__title
                 p.post__excerpt
                 a(target="_blank").post__button.button Read More
+    -
+      var portfolio = [
+      {
+      title: 'Public Wifi Speeds',
+      description: 'An application that allows users to record the wifi speeds they encounter at public places and aggregates the data for others to see.',
+      tags: ['react', 'firebase', 'google maps api', 'javascript', 'sass', 'authentication'],
+      images: [
+      {
+      url: '/img/wifi-speeds.jpg',
+      description: 'home page'
+      },
+      {
+      url: '/img/wifi-speeds-2.jpeg',
+      description: 'login page'
+      },
+      {
+      url: '/img/wifi-speeds-3.jpeg',
+      description: 'add entry modal'
+      }
+      ],
+      links: [
+      {
+      type: 'Website',
+      url: 'https://publicwifispeeds.firebaseapp.com/',
+      class: 'demo'
+      },
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      },
+      {
+      type: 'Github',
+      url: 'https://github.com/Engineering-Robert/public-wifi-speeds',
+      class: 'github'
+      },
+      ]
+      },
+      {
+      title: 'Twitter Clone',
+      description: 'A similar application to Twitter that is build with Node.js. The styling of the app is based off of Twitter\'s night mode on desktop.',
+      tags: ['node.js', 'express', 'yarn', 'javascript', 'sass', 'gulp'],
+      images: [
+      {
+      url: '/img/twitter-clone.jpg',
+      description: 'Twitter clone home page'
+      },
+      {
+      url: '/img/twitter-clone-2.jpg',
+      description: 'Twitter clone profile page'
+      }
+      ],
+      links: [
+      {
+      type: 'Website',
+      url: 'http://nitter.herokuapp.com/',
+      class: 'demo'
+      },
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      },
+      {
+      type: 'Github',
+      url: 'https://github.com/vinitkumar/node-twitter',
+      class: 'github'
+      }
+      ]
+      },
+      {
+      title: 'Stranger Ipsum',
+      description: 'A lorem ipsum generator that generates paragraphs containing quotes from from the Netflix series Stranger Things.',
+      tags: ['node.js', 'express', 'javascript', 'sass', 'gulp'],
+      images: [
+      {
+      url: '/img/lorem-ipsum-screenshot.jpg',
+      description: 'main page no text generated'
+      },
+      {
+      url: '/img/lorem-ipsum-screenshot-2.jpg',
+      description: 'main page with generated text'
+      }
+      ],
+      links: [
+      {
+      type: 'Website',
+      url: 'http://stranger-ipsum.robertcooper.me/',
+      class: 'demo'
+      },
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      },
+      {
+      type: 'Github',
+      url: 'https://github.com/Engineering-Robert/stranger-ipsum',
+      class: 'github'
+      }
+      ]
+      },
+      {
+      title: 'CUTC 2017 Website',
+      description: 'The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.',
+      tags: ['javascript', 'html', 'css'],
+      images: [
+      {
+      url: '/img/cutc-screenshot.png',
+      description: 'website\'s top section'
+      },
+      {
+      url: '/img/cutc-screenshot-2.png',
+      description: 'speaker\'s modal'
+      },
+      {
+      url: '/img/cutc-screenshot-3.png',
+      description: 'integrated google maps'
+      }
+      ],
+      links: [
+      {
+      type: 'Website',
+      url: 'http://2017.cutc.ca/',
+      class: 'demo'
+      },
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      },
+      {
+      type: 'Github',
+      url: 'https://github.com/Engineering-Robert/elevate.cutc.ca',
+      class: 'github'
+      }
+      ]
+      },
+      {
+      title: 'Queen\'s Engineering Forum',
+      description: 'An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen\'s University. The project wasn\'t completed and I continued working on the project on my own after the 2016/2017 school year.',
+      tags: ['node.js', 'javascript', 'mysql'],
+      images: [
+      {
+      url: '/img/forum-screenshot.png',
+      description: 'login page'
+      },
+      {
+      url: '/img/forum-screenshot-2.png',
+      description: 'search page'
+      }
+      ],
+      links: [
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      },
+      {
+      type: 'Github',
+      url: 'https://github.com/Engineering-Robert/engineering-forum-mysql',
+      class: 'github'
+      }
+      ]
+      },
+      {
+      title: 'Kingston Young Professionals Website',
+      description: 'I built a brand new website for the Kingston Young Professionals ,where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.',
+      tags: ['wordpress', 'cms', 'css'],
+      images: [
+      {
+      url: '/img/kyp-screenshot.jpg',
+      description: 'home page'
+      },
+      {
+      url: '/img/kyp-screenshot-2.jpg',
+      description: 'Newsletter sign up'
+      },
+      {
+      url: '/img/kyp-screenshot-3.jpg',
+      description: 'Young Professional Spotlight blog section'
+      },
+      {
+      url: '/img/kyp-screenshot-4.jpg',
+      description: 'upcoming event listing'
+      }
+      ],
+      links: [
+      {
+      type: 'Website',
+      url: 'https://www.kingstonyoungprofessionals.com/',
+      class: 'demo'
+      },
+      {
+      type: 'Screenshots',
+      url: 'javascript:void(0)',
+      class: 'screenshots'
+      }
+      ]
+      }
+      ]
     section#portfolio.row
       .max-width-container#portfolio-container
         .title-section
@@ -168,214 +363,13 @@ html(lang='en')
           a(href='https://codepen.io/robert-engineer/', target="_blank") CodePen profile
           | .
         #portfolio-items
-          - 
-            var portfolio = [
-              {
-                title: 'Public Wifi Speeds',
-                description: 'An application that allows users to record the wifi speeds they encounter at public places and aggregates the data for others to see.',
-                tags: ['react', 'firebase', 'google maps api', 'javascript', 'sass', 'authentication'],
-                images: [
-                  {
-                    url: '/img/wifi-speeds.jpg',
-                    description: 'home page'
-                  },
-                  {
-                    url: '/img/wifi-speeds-2.jpeg',
-                    description: 'login page'
-                  },
-                  {
-                    url: '/img/wifi-speeds-3.jpeg',
-                    description: 'add entry modal'
-                  }
-                ],
-                links: [
-                  {
-                    type: 'Website',
-                    url: 'https://publicwifispeeds.firebaseapp.com/',
-                    class: 'demo'
-                  },
-                  {
-                    type: 'Screenshots',
-                    url: 'javascript:void(0)',
-                    class: 'screenshots'
-                  },
-                  {
-                    type: 'Github',
-                    url: 'https://github.com/Engineering-Robert/public-wifi-speeds',
-                    class: 'github'
-                  },
-                ]
-              },
-              {
-                title: 'Twitter Clone',
-                description: 'A similar application to Twitter that is build with Node.js. The styling of the app is based off of Twitter\'s night mode on desktop.',
-                tags: ['node.js', 'express', 'yarn', 'javascript', 'sass', 'gulp'],
-                images: [
-                  {
-                    url: '/img/twitter-clone.jpg',
-                    description: 'Twitter clone home page'
-                  },
-                  {
-                    url: '/img/twitter-clone-2.jpg',
-                    description: 'Twitter clone profile page'
-                  }
-                ],
-                links: [
-                  {
-                    type: 'Website',
-                    url: 'http://nitter.herokuapp.com/',
-                    class: 'demo'
-                  },
-                  {
-                    type: 'Screenshots',
-                    url: 'javascript:void(0)',
-                    class: 'screenshots'
-                  },
-                  {
-                    type: 'Github',
-                    url: 'https://github.com/vinitkumar/node-twitter',
-                    class: 'github'
-                  }
-                ]
-              },
-              {
-                title: 'Stranger Ipsum',
-                description: 'A lorem ipsum generator that generates paragraphs containing quotes from from the Netflix series Stranger Things.',
-                tags: ['node.js', 'express', 'javascript', 'sass', 'gulp'],
-                images: [
-                  {
-                  url: '/img/lorem-ipsum-screenshot.jpg',
-                  description: 'main page no text generated'
-                  },
-                  {
-                  url: '/img/lorem-ipsum-screenshot-2.jpg',
-                  description: 'main page with generated text'
-                  }
-                ],
-                links: [
-                {
-                type: 'Website',
-                url: 'http://stranger-ipsum.robertcooper.me/',
-                class: 'demo'
-                },
-                {
-                type: 'Screenshots',
-                url: 'javascript:void(0)',
-                class: 'screenshots'
-                },
-                {
-                type: 'Github',
-                url: 'https://github.com/Engineering-Robert/stranger-ipsum',
-                class: 'github'
-                }
-                ]
-              },
-              {
-              title: 'CUTC 2017 Website',
-              description: 'The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.',
-              tags: ['javascript', 'html', 'css'],
-              images: [
-              {
-              url: '/img/cutc-screenshot.png',
-              description: 'website\'s top section'
-              },
-              {
-              url: '/img/cutc-screenshot-2.png',
-              description: 'speaker\'s modal'
-              },
-              {
-              url: '/img/cutc-screenshot-3.png',
-              description: 'integrated google maps'
-              }
-              ],
-              links: [
-              {
-              type: 'Website',
-              url: 'http://2017.cutc.ca/',
-              class: 'demo'
-              },
-              {
-              type: 'Screenshots',
-              url: 'javascript:void(0)',
-              class: 'screenshots'
-              },
-              {
-              type: 'Github',
-              url: 'https://github.com/Engineering-Robert/elevate.cutc.ca',
-              class: 'github'
-              }
-              ]
-              },
-              {
-              title: 'Queen\'s Engineering Forum',
-              description: 'An online forum that I helped to build as part of the Engineering Society I.T. Team at Queen\'s University. The project wasn\'t completed and I continued working on the project on my own after the 2016/2017 school year.',
-              tags: ['node.js', 'javascript', 'mysql'],
-              images: [
-              {
-              url: '/img/forum-screenshot.png',
-              description: 'login page'
-              },
-              {
-              url: '/img/forum-screenshot-2.png',
-              description: 'search page'
-              }
-              ],
-              links: [
-              {
-              type: 'Screenshots',
-              url: 'javascript:void(0)',
-              class: 'screenshots'
-              },
-              {
-              type: 'Github',
-              url: 'https://github.com/Engineering-Robert/engineering-forum-mysql',
-              class: 'github'
-              }
-              ]
-              },
-              {
-              title: 'Kingston Young Professionals Website',
-              description: 'I built a brand new website for the Kingston Young Professionals ,where they could post young professional spotlights, list their upcoming events, have site visitors sign up for their mailing list, and display any other information relevant to the organization.',
-              tags: ['wordpress', 'cms', 'css'],
-              images: [
-              {
-              url: '/img/kyp-screenshot.jpg',
-              description: 'home page'
-              },
-              {
-              url: '/img/kyp-screenshot-2.jpg',
-              description: 'Newsletter sign up'
-              },
-              {
-              url: '/img/kyp-screenshot-3.jpg',
-              description: 'Young Professional Spotlight blog section'
-              },
-              {
-              url: '/img/kyp-screenshot-4.jpg',
-              description: 'upcoming event listing'
-              }
-              ],
-              links: [
-              {
-              type: 'Website',
-              url: 'https://www.kingstonyoungprofessionals.com/',
-              class: 'demo'
-              },
-              {
-              type: 'Screenshots',
-              url: 'javascript:void(0)',
-              class: 'screenshots'
-              }
-              ]
-              }
-            ]
           each item, index in portfolio
             .portfolio-item
-              h3= item.title
-              p= item.description
-              .portfolio-tags
+              h3.portfolio-item__title= item.title
+              p.portfolio-item__description= item.description
+              .portfolio-item__tags
                 each tag in item.tags
-                  span= tag
+                  span.portfolio-item__tag= tag
               .portfolio-image-wrapper
                 img(src=item.images[0].url)
                 .portfolio-buttons

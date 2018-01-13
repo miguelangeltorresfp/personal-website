@@ -3,7 +3,7 @@
  * Table of Contents
  * -----------------------------------------------------------------------
  *     Variables
- *     Base Styles
+ *     Mixins
  *     Global Style
  *     Intro Section
  *     Social Links
@@ -61,16 +61,6 @@ $breakpoints: (
 
 /*
    ==========================================================================
-   Base styles
-   ==========================================================================
-*/
-
-html {
-    font-size: 1em;
-    line-height: 1.4;
-}
-/*
-   ==========================================================================
    Global Style
    ==========================================================================
 */
@@ -94,6 +84,10 @@ html {
     src: url('/css/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('/css/fonts/OpenSans-Light-webfont.woff') format('woff'), url('/css/fonts/OpenSans-Light-webfont.ttf') format('truetype'), url('/css/fonts/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+html {
+  font-size: 1em;
+  line-height: 1.4;
 }
 html,
 body {
@@ -263,7 +257,7 @@ span.api-data {
    Social Links
    ==========================================================================
 */
-.social {
+.intro__social {
     bottom: 0;
     left: 0;
     margin: 10px;
@@ -448,18 +442,34 @@ section:nth-child(odd):not(:first-child) h2 {
   color: $dark-color;
 }
 
-.title-section .fa-clock-o.left,
-.title-section .running-man.left {
-  margin-right: 20px;
-}
-
-.title-section .fa-clock-o.right,
-.title-section .running-man.right {
-  margin-left: 20px;
-}
-
-.title-section h3 {
-  display: inline-block;
+.title-section {
+  h3 {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .right {
+    display: none;
+  }
+  .left {
+    display: block;
+    margin: 10px auto;
+  }
+  @include respond-to('small') {
+    .right,
+    .left {
+      display: inline-block;
+      margin: 0;
+    }
+    &.fa-clock-o.left,
+    &.running-man.left {
+      margin-right: 20px;
+    }
+    &.fa-clock-o.right,
+    &.running-man.right {
+      margin-left: 20px;
+    }  
+  }
 }
 
 .more-info {
@@ -493,11 +503,6 @@ section:nth-child(odd):not(:first-child) h2 {
 
 @keyframes playKeyboard {
    100% { background-position: -625px; }
-}
-
-#github h3 {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .api-data-section > *:not(.loader) {
@@ -541,46 +546,6 @@ $c3: lighten($primary-color, 30);
     animation-delay: $i * $d;
   }
 }
-
-// Heart Rate
-
-.heart {
-  animation: heartbeat 1s linear infinite both;
-  display: inline-block;
-}
-
-.heart.left {
-  margin-right: 10px;
-}
-
-.heart.right {
-  margin-left: 10px;
-}
-
-.heart svg {
-  height: 35px;
-}
-
-
-/* Generated with Bounce.js. Edit at https://goo.gl/h05rSW */
-
-@keyframes heartbeat {
-    0% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
-    2.1% { transform:matrix3d(1.022,0,0,0,0,1.022,0,0,0,0,1,0,0,0,0,1); }
-    4.1% { transform:matrix3d(1.036,0,0,0,0,1.036,0,0,0,0,1,0,0,0,0,1); }
-    8.21% { transform:matrix3d(1.046,0,0,0,0,1.046,0,0,0,0,1,0,0,0,0,1); }
-    11.41% { transform:matrix3d(1.042,0,0,0,0,1.042,0,0,0,0,1,0,0,0,0,1); }
-    14.51% { transform:matrix3d(1.032,0,0,0,0,1.032,0,0,0,0,1,0,0,0,0,1); }
-    20.72% { transform:matrix3d(1.011,0,0,0,0,1.011,0,0,0,0,1,0,0,0,0,1); }
-    27.03% { transform:matrix3d(0.997,0,0,0,0,0.997,0,0,0,0,1,0,0,0,0,1); }
-    33.23% { transform:matrix3d(0.993,0,0,0,0,0.993,0,0,0,0,1,0,0,0,0,1); }
-    45.75% { transform:matrix3d(0.998,0,0,0,0,0.998,0,0,0,0,1,0,0,0,0,1); }
-    58.26% { transform:matrix3d(1.001,0,0,0,0,1.001,0,0,0,0,1,0,0,0,0,1); }
-    83.28% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
-    100% { transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); }
-}
-
-
 
 /*
    ==========================================================================
@@ -665,7 +630,7 @@ section#blog a.button {
 * ==========================================================================
 */
 
-#portfolio p.description {
+#portfolio .description {
   margin-bottom: 40px;
 }
 
@@ -674,50 +639,52 @@ section#blog a.button {
   padding-right: 10px;
 }
 
-.portfolio-tags span {
-  background-color: rgba($dark-color, .6);
-  color: white;
-  padding: 2px 8px 3px;
-  border-radius: 5px;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.portfolio-tags {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  span {
-    margin-top: 5px;
-    white-space: nowrap;
-  }
-}
-
 #portfolio-items {
   display: flex;
   flex-wrap: wrap;
 }
 
 .portfolio-item {
-  width: 50%;
-  display: inline-block;
-  text-align: center;
-}
-
-.portfolio-item:nth-child(odd) {
-  padding-right: $gutter-width;
-}
-
-.portfolio-item:nth-child(even) {
-  padding-left: $gutter-width;
-}
-
-.portfolio-item {
   display: flex;
+  text-align: center;
   flex-direction: column;
   margin-bottom: 40px;
+  width: 100%;
+  padding: 0;
+  
+  @include respond-to('small') {
+    width: 50%;
+
+    &:nth-child(odd) {
+      padding-right: $gutter-width;
+    }
+
+    &:nth-child(even) {
+      padding-left: $gutter-width;
+    }
+  }
+}
+
+.portfolio-item__description {
+  text-align: justify;
+}
+
+.portfolio-item__tags {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.portfolio-item__tag {
+  background-color: rgba($dark-color, .6);
+  color: white;
+  padding: 2px 8px 3px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 10px;
+  white-space: nowrap;
 }
 
 .portfolio-image-wrapper {
@@ -749,8 +716,6 @@ section#blog a.button {
       }
     }
   }
-  
-  
 }
 
 .carousel-wrapper {
@@ -814,7 +779,7 @@ section#blog a.button {
 * ==========================================================================
 */
 @media only screen and (max-width: 767px) {
-    .social {
+    .intro__social {
       width: 100%;
       text-align: center;
       margin-left: 0px;
@@ -828,19 +793,4 @@ section#blog a.button {
     section {
       text-align: center;
     }
-    .title-section .right {
-      display: none;
-    }
-    .title-section .left {
-      display: block;
-      margin: 10px auto 0 !important;
-    }
-    .title-section h3 {
-      margin-top: 10px;
-    }
-    .portfolio-item {
-      width: 100%;
-      padding: 0 !important;
-    }
-    
 }

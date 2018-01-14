@@ -35,28 +35,32 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
-router.get('/stravaData', (request, response) => {
-  getStravaData( (stravaData) => {
-    response.send(stravaData);
-  });
-});
-
 router.get('/rescuetimeData', (request, response) => {
-  getRescuetimeData( (rescuetimeData) => {
-    response.send(rescuetimeData);
-  });
+  getRescuetimeData
+      .then( (rescuetimeData) => {
+        response.send(rescuetimeData);
+      });
 });
 
 router.get('/githubData', (request, response) => {
-  getGithubData( (githubData) => {
-    response.send(githubData);
-  });
+  getGithubData
+    .then( (githubData) => {
+      response.send(githubData);
+    })
+});
+
+router.get('/stravaData', (request, response) => {
+    getStravaData
+        .then( (stravaData) => {
+            response.send(stravaData);
+        });
 });
 
 router.get('/mediumData', (request, response) => {
-  getMediumData( (mediumData) => {
-    response.send(mediumData);
-  });
+    getMediumData
+        .then( (mediumData) => {
+            response.send(mediumData);
+        });
 });
 
 app.use((req, res, next) => {

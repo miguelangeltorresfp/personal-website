@@ -1,5 +1,6 @@
 const https = require('https');
 const apiKeys = require('./apiKeys.json');
+const moment = require('moment-timezone');
 const githubId = apiKeys.github.id;
 const githubSecret = apiKeys.github.secret;
 const rescuetimeKey = apiKeys.rescuetime.key;
@@ -37,13 +38,11 @@ function githubRecentRepos(callback) {
 
 function githubCommits(repositoryName, callback) {
   // Get today's date in local UTC format for Github commit data retrieval
-  let date = new Date();
-  let easternUTC = date.getTime() - (5 * 60 * 60 * 1000);
-  let localDate = new Date(easternUTC);
-  let dateString = localDate.toISOString().substring(0,11) + '00:00:00Z';
+  let today = moment().tz("America/Toronto").hour(0).minute(0).second(0).format();
+  // let dateString = localDate.toISOString().substring(0,11) + '00:00:00Z';
   https.get( {
     host: 'api.github.com',
-    path: '/repos/' + repositoryName + '/commits?since=' + dateString + '&client_id=' + githubId  + '&client_secret=' + githubSecret,
+    path: '/repos/' + repositoryName + '/commits?since=' + today + '&client_id=' + githubId  + '&client_secret=' + githubSecret,
     headers: {
       'Accept': 'application/vnd.github.v3+json',
       'User-Agent': 'Engineering-Robert'

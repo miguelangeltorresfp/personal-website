@@ -361,7 +361,7 @@ section:nth-child(odd):not(:first-child) h2 {
   padding: 0 10px;
   display: inline-block;
   margin: auto;
-  margin-bottom: 40px; }
+  margin-bottom: 20px; }
 
 .statistics__columns {
   display: -webkit-box;
@@ -396,25 +396,6 @@ section:nth-child(odd):not(:first-child) h2 {
   margin-left: 10px;
   margin-right: 10px; }
 
-.statistics-column__icon_right {
-  display: none; }
-  @media (min-width: 767px) {
-    .statistics-column__icon_right {
-      display: inline-block;
-      margin: 0; }
-      .statistics-column__icon_right.fa-clock-o, .statistics-column__icon_right.running-man {
-        margin-left: 20px; } }
-
-.statistics-column__icon_left {
-  display: block;
-  margin: 10px auto; }
-  @media (min-width: 767px) {
-    .statistics-column__icon_left {
-      display: inline-block;
-      margin: 0; }
-      .statistics-column__icon_left.fa-clock-o, .statistics-column__icon_left.running-man {
-        margin-right: 20px; } }
-
 .statistics-column__icon.fa-clock-o {
   color: #2A2A72; }
 
@@ -424,9 +405,10 @@ section:nth-child(odd):not(:first-child) h2 {
   background: url("../img/running-man-animation.png") left center;
   background-size: cover;
   -webkit-animation: run 0.4s steps(5) infinite;
-          animation: run 0.4s steps(5) infinite;
-  display: inline-block;
-  margin-bottom: -3px; }
+          animation: run 0.4s steps(5) infinite; }
+  @media (min-width: 767px) {
+    .statistics-column__icon.running-man {
+      margin-bottom: -3px; } }
 
 .statistics-column__icon.keyboard {
   width: 62.5px;
@@ -434,9 +416,10 @@ section:nth-child(odd):not(:first-child) h2 {
   background: url("../img/keyboard-pattern.png") left center;
   background-size: cover;
   -webkit-animation: type 1.5s steps(10) infinite;
-          animation: type 1.5s steps(10) infinite;
-  display: inline-block;
-  margin-bottom: -3px; }
+          animation: type 1.5s steps(10) infinite; }
+  @media (min-width: 767px) {
+    .statistics-column__icon.keyboard {
+      margin-bottom: -3px; } }
 
 @-webkit-keyframes run {
   100% {
@@ -453,6 +436,25 @@ section:nth-child(odd):not(:first-child) h2 {
 @keyframes type {
   100% {
     background-position: -625px; } }
+
+.statistics-column__icon_left {
+  display: block;
+  margin: 10px auto; }
+  @media (min-width: 767px) {
+    .statistics-column__icon_left {
+      display: inline-block;
+      margin: 0; }
+      .statistics-column__icon_left.fa-clock-o, .statistics-column__icon_left.running-man {
+        margin-right: 20px; } }
+
+.statistics-column__icon_right {
+  display: none; }
+  @media (min-width: 767px) {
+    .statistics-column__icon_right {
+      display: inline-block;
+      margin: 0; }
+      .statistics-column__icon_right.fa-clock-o, .statistics-column__icon_right.running-man {
+        margin-left: 20px; } }
 
 .api {
   text-align: center;
@@ -539,6 +541,9 @@ section:nth-child(odd):not(:first-child) h2 {
 .blog__posts {
   display: none; }
 
+.blog__title {
+  margin-bottom: 20px; }
+
 .post {
   margin: 30px 0; }
 
@@ -609,7 +614,8 @@ section:nth-child(odd):not(:first-child) h2 {
 */
 .portfolio__title {
   display: inline-block;
-  padding-right: 10px; }
+  padding-right: 10px;
+  margin-bottom: 20px; }
 
 .portfolio__description {
   margin-bottom: 40px; }

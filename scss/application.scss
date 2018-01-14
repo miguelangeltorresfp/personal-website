@@ -31,6 +31,7 @@ $heading-weight: normal;
 $body-font: 'open_sanslight', sans-serif;
 $light-background: #fff;
 $gutter-width: 20px;
+$title-spacing: 20px;
 $breakpoints: (
         'small'  : ( min-width:  767px ),
         'medium' : ( min-width:  992px ),
@@ -343,7 +344,7 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .about__title {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: $title-spacing;
 }
 
 .about__description {
@@ -404,7 +405,7 @@ section:nth-child(odd):not(:first-child) h2 {
   padding: 0 10px;
   display: inline-block;
   margin: auto;
-  margin-bottom: 40px;
+  margin-bottom: $title-spacing;
 }
 
 .statistics__columns {
@@ -435,19 +436,44 @@ section:nth-child(odd):not(:first-child) h2 {
   margin-right: 10px;
 }
 
-.statistics-column__icon_right {
-  display: none;
+.statistics-column__icon {
+  &.fa-clock-o {
+    color: $dark-color;
+  }
 
-  @include respond-to('small') {
-    display: inline-block;
-    margin: 0;
-
-    &.fa-clock-o,
-    &.running-man {
-      margin-left: 20px;
+  &.running-man {
+    width: 30px;
+    height: 30px;
+    background: url('../img/running-man-animation.png') left center;
+    background-size: cover;
+    animation: run .4s steps(5) infinite;
+    
+    @include respond-to('small') {
+      margin-bottom: -3px;  
     }
   }
+
+  &.keyboard {
+    width: 62.5px;
+    height: 25px;
+    background: url('../img/keyboard-pattern.png') left center;
+    background-size: cover;
+    animation: type 1.5s steps(10) infinite;
+    
+    @include respond-to('small') {
+      margin-bottom: -3px;
+    }
+  }
+
+  @keyframes run {
+    100% { background-position: -150px; }
+  }
+
+  @keyframes type {
+    100% { background-position: -625px; }
+  }
 }
+
 .statistics-column__icon_left {
   display: block;
   margin: 10px auto;
@@ -463,37 +489,17 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
-.statistics-column__icon {
-  &.fa-clock-o {
-    color: $dark-color;
-  }
+.statistics-column__icon_right {
+  display: none;
 
-  &.running-man {
-    width: 30px;
-    height: 30px;
-    background: url('../img/running-man-animation.png') left center;
-    background-size: cover;
-    animation: run .4s steps(5) infinite;
+  @include respond-to('small') {
     display: inline-block;
-    margin-bottom: -3px;
-  }
+    margin: 0;
 
-  &.keyboard {
-    width: 62.5px;
-    height: 25px;
-    background: url('../img/keyboard-pattern.png') left center;
-    background-size: cover;
-    animation: type 1.5s steps(10) infinite;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-  @keyframes run {
-    100% { background-position: -150px; }
-  }
-
-  @keyframes type {
-    100% { background-position: -625px; }
+    &.fa-clock-o,
+    &.running-man {
+      margin-left: 20px;
+    }
   }
 }
 
@@ -562,6 +568,10 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .blog__posts {
   display: none;
+}
+
+.blog__title {
+  margin-bottom: $title-spacing;
 }
 
 .post {
@@ -636,6 +646,7 @@ section:nth-child(odd):not(:first-child) h2 {
 .portfolio__title {
   display: inline-block;
   padding-right: 10px;
+  margin-bottom: $title-spacing;
 }
 
 .portfolio__description {

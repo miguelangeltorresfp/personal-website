@@ -37,6 +37,13 @@ $breakpoints: (
         'large'  : ( min-width: 1200px )
 );
 
+// Loader
+$t: 0.8s;
+$d: $t / 5;
+$c1: darken($primary-color, 30);
+$c2: $primary-color;
+$c3: lighten($primary-color, 30);
+
 /*
     ==========================================================================
     Mixins
@@ -158,12 +165,6 @@ a.button {
   text-decoration: none;
 }
 
-/* Fixes width of page being larger than viewport */
-.row {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 /*
    ==========================================================================
    Intro Section
@@ -247,7 +248,7 @@ a.button {
 
 .content-div { width: 100% }
 
-span.api-data {
+.api__data {
   font-size: 2em;
   padding-right: 10px;
   font-weight: bold;
@@ -287,16 +288,12 @@ span.api-data {
 
 /*
    ==========================================================================
-   Row Sections
+   Sections
    ==========================================================================
 */
 
-section.row {
-  padding: 80px 0px;
-}
-
-section.row .title-section h2 {
-  margin-bottom: 20px;
+section:not(.intro) {
+  padding: 80px 0;
 }
 
 .section-title {
@@ -312,8 +309,8 @@ section:nth-child(odd) p, {
   color: $dark-color;
 }
 
-section#about p,
-section#blog p {
+.about p,
+.blog p {
   color: #fff;
 }
 
@@ -327,7 +324,7 @@ section:nth-child(odd):not(:first-child) h2 {
    ==========================================================================
 */
 
-#about-container {
+.about__container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -344,14 +341,19 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
-.about-description {
+.about__title {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about__description {
   text-align: justify;
   @include respond-to('small') {
     text-align: left;
   }
 }
 
-.headshot {
+.about__headshot {
   width: 250px;
   margin-top: 40px;
   border-radius: 100%;
@@ -364,19 +366,19 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
-.last-updated {
+.about__last-updated {
   text-align: left;
   font-size: 12px;
 }
 
-.description-column {
+.about__description-column {
   width: 100%;
   @include respond-to('small') {
     width: 70%;
   }
 }
 
-.headshot-column {
+.about__headshot-column {
   width: 100%;
   @include respond-to('small') {
     width: 30%;
@@ -390,26 +392,30 @@ section:nth-child(odd):not(:first-child) h2 {
    ==========================================================================
 */
 
-#statistics {
+.statistics {
   background-color: $light-background;
 }
 
-#statistics .max-width-container {
+.statistics .max-width-container {
   text-align: center;
 }
 
-#statistics h2 {
+.statistics__title {
   padding: 0 10px;
   display: inline-block;
   margin: auto;
   margin-bottom: 40px;
 }
 
-.statistics-columns {
+.statistics__columns {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   clear: both;
+}
+
+.statistics__column {
+  margin: 10px;
 }
 
 .statistics-column {
@@ -419,12 +425,79 @@ section:nth-child(odd):not(:first-child) h2 {
   border: 3px solid $dark-color;
   border-radius: 4px;
   text-align: center;
-  margin: 10px;
   display: flex;
   flex-direction: column;
 }
 
-.api-data-section {
+.statistics-column__title {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.statistics-column__icon_right {
+  display: none;
+
+  @include respond-to('small') {
+    display: inline-block;
+    margin: 0;
+
+    &.fa-clock-o,
+    &.running-man {
+      margin-left: 20px;
+    }
+  }
+}
+.statistics-column__icon_left {
+  display: block;
+  margin: 10px auto;
+
+  @include respond-to('small') {
+    display: inline-block;
+    margin: 0;
+
+    &.fa-clock-o,
+    &.running-man {
+      margin-right: 20px;
+    }
+  }
+}
+
+.statistics-column__icon {
+  &.fa-clock-o {
+    color: $dark-color;
+  }
+
+  &.running-man {
+    width: 30px;
+    height: 30px;
+    background: url('../img/running-man-animation.png') left center;
+    background-size: cover;
+    animation: run .4s steps(5) infinite;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+  &.keyboard {
+    width: 62.5px;
+    height: 25px;
+    background: url('../img/keyboard-pattern.png') left center;
+    background-size: cover;
+    animation: type 1.5s steps(10) infinite;
+    display: inline-block;
+    margin-bottom: -3px;
+  }
+
+  @keyframes run {
+    100% { background-position: -150px; }
+  }
+
+  @keyframes type {
+    100% { background-position: -625px; }
+  }
+}
+
+.api {
   text-align: center;
   margin: 20px 0;
   flex-grow: 1;
@@ -433,98 +506,11 @@ section:nth-child(odd):not(:first-child) h2 {
   justify-content: center;
 }
 
-.api-data-description {
-  position: relative;
-  top: -3px;
-}
-
-.fa-clock-o {
-  color: $dark-color;
-}
-
-.title-section {
-  h3 {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .right {
-    display: none;
-  }
-  .left {
-    display: block;
-    margin: 10px auto;
-  }
-  @include respond-to('small') {
-    .right,
-    .left {
-      display: inline-block;
-      margin: 0;
-    }
-    &.fa-clock-o.left,
-    &.running-man.left {
-      margin-right: 20px;
-    }
-    &.fa-clock-o.right,
-    &.running-man.right {
-      margin-left: 20px;
-    }  
-  }
-}
-
-.more-info {
-  font-size: .8em;
-  font-style: italic;
-}
-
-.running-man {
-  width: 30px;
-  height: 30px;
-  background: url('../img/running-man-animation.png') left center;
-  background-size: cover;
-  animation: play .4s steps(5) infinite;
-  display: inline-block;
-  margin-bottom: -3px;
-}
-
-@keyframes play {
-   100% { background-position: -150px; }
-}
-
-.keyboard {
-  width: 62.5px;
-  height: 25px;
-  background: url('../img/keyboard-pattern.png') left center;
-  background-size: cover;
-  animation: playKeyboard 1.5s steps(10) infinite;
-  display: inline-block;
-  margin-bottom: -3px;
-}
-
-@keyframes playKeyboard {
-   100% { background-position: -625px; }
-}
-
-.api-data-section > *:not(.loader) {
+.api > *:not(.api__loader) {
   display: none;
 }
 
-// Loader
-$t: 0.8s;
-$d: $t / 5;
-
-$c1: darken($primary-color, 30);
-$c2: $primary-color;
-$c3: lighten($primary-color, 30);
-
-@keyframes loader {
-  50% {
-    transform: translateY(-16px);
-    background-color: $c3;
-  }
-}
-
-.loader {
+.api__loader {
   filter: url('#goo');
   width: 100px;
   height: 100px;
@@ -539,12 +525,29 @@ $c3: lighten($primary-color, 30);
     background-color: $c2;
     animation: loader $t infinite;
   }
+
+  @for $i from 1 through 5 {
+    > div:nth-child(#{$i}) {
+      animation-delay: $i * $d;
+    }
+  }
+
+  @keyframes loader {
+    50% {
+      transform: translateY(-16px);
+      background-color: $c3;
+    }
+  }
 }
 
-@for $i from 1 through 5 {
-  .loader > div:nth-child(#{$i}) {
-    animation-delay: $i * $d;
-  }
+.api__data-description {
+  position: relative;
+  top: -3px;
+}
+
+.api__info {
+  font-size: .8em;
+  font-style: italic;
 }
 
 /*
@@ -553,31 +556,26 @@ $c3: lighten($primary-color, 30);
    ==========================================================================
 */
 
-#blog-posts {
-  display: none;
-}
-
-#blog .loader {
+.blog .api__loader {
   transform: translateY(80px);
 }
 
-section#blog a.button {
-  padding: 5px 10px;
-  margin-top: 0px;
+.blog__posts {
+  display: none;
 }
 
 .post {
   margin: 30px 0;
-  
-  .post__excerpt {
-    max-width: 550px;
-    margin: 0 auto 20px;
-    text-align: justify;
-    
-    @include respond-to('small') {
-      max-width: 100%;
-      text-align: left;
-    }
+}
+
+.post__excerpt {
+  max-width: 550px;
+  margin: 0 auto 20px;
+  text-align: justify;
+
+  @include respond-to('small') {
+    max-width: 100%;
+    text-align: left;
   }
 }
 
@@ -624,31 +622,39 @@ section#blog a.button {
   }
 }
 
+.post__button {
+  padding: 5px 10px;
+  margin-top: 0px;
+}
+
 /*
 * ==========================================================================
     Portfolio Section
 * ==========================================================================
 */
 
-#portfolio .description {
-  margin-bottom: 40px;
-}
-
-#portfolio h2 {
+.portfolio__title {
   display: inline-block;
   padding-right: 10px;
 }
 
-#portfolio-items {
+.portfolio__description {
+  margin-bottom: 40px;
+}
+
+.portfolio__items {
   display: flex;
   flex-wrap: wrap;
+}
+
+.portfolio__item {
+  margin-bottom: 40px;
 }
 
 .portfolio-item {
   display: flex;
   text-align: center;
   flex-direction: column;
-  margin-bottom: 40px;
   width: 100%;
   padding: 0;
   

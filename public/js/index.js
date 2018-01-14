@@ -10899,12 +10899,6 @@ var Carousel = function ($) {
 }($);
 //# sourceMappingURL=carousel.js.map
 $(document).ready( () => {
-  $.get('/githubData', (result) => {
-    $('#github .api-data').text(result.commits);
-    $('#github .loader').fadeOut(500, () => {
-      $('#github .api-data-section > *:not(.loader)').fadeIn(500);
-    });
-  });
   $.get('/mediumData', (result) => {
     for (let i=1; i <= 3; i++) {
       let postId = '#post' + i;
@@ -10919,23 +10913,29 @@ $(document).ready( () => {
       $(postId + ' .post__button').attr('href', result[url])
       $(postId + ' .post__claps').text('👏 ' + result[claps] + ' 👏')
     }
-    $('#blog .loader').fadeOut(500, () => {
-      $('#blog-posts').fadeIn(500);
+    $('.blog .api__loader').fadeOut(500, () => {
+      $('.blog__posts').fadeIn(500);
     });
   });
+  $.get('/githubData', (result) => {
+      $('#github .api__data').text(result.commits);
+      $('#github .api__loader').fadeOut(500, () => {
+          $('#github .api > *:not(.api__loader)').fadeIn(500);
+      });
+  });
   $.get('/stravaData', (result) => {
-    $('.running-date .api-data').text(result.date);
-    $('.running-distance .api-data').text(result.distance);
-    $('.running-duration .api-data').text(result.duration);
-    $('#strava .loader').fadeOut(500, () => {
-      $('#strava .api-data-section > *:not(.loader)').fadeIn(500);
+    $('.running-date .api__data').text(result.date);
+    $('.running-distance .api__data').text(result.distance);
+    $('.running-duration .api__data').text(result.duration);
+    $('#strava .api__loader').fadeOut(500, () => {
+      $('#strava .api > *:not(.api__loader)').fadeIn(500);
     });
   });
   $.get( '/rescuetimeData', (result) => {
-    $('.web-development-hours .api-data').text(result.webHours + ':' + result.webMinutes);
-    $('.distracted-hours .api-data').text(result.distractedHours + ':' + result.distractedMinutes);
-    $('#rescuetime .loader').fadeOut(500, () => {
-      $('#rescuetime .api-data-section > *:not(.loader)').fadeIn(500);
+    $('.web-development-hours .api__data').text(result.webHours + ':' + result.webMinutes);
+    $('.distracted-hours .api__data').text(result.distractedHours + ':' + result.distractedMinutes);
+    $('#rescuetime .api__loader').fadeOut(500, () => {
+      $('#rescuetime .api > *:not(.api__loader)').fadeIn(500);
     });
   });
 });

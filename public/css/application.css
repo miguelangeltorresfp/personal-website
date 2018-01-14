@@ -13,8 +13,6 @@
  *     Stats Section
  *     Blog Section
  *     Portfolio Section
- *     Responsive Design
- *     Screen loader
  *
  * ============================================================================
  */
@@ -237,7 +235,7 @@ a.button {
 .intro__social {
   bottom: 0;
   left: 0;
-  margin: 10px;
+  margin: 10px 0;
   position: absolute;
   width: 100%;
   text-align: center; }
@@ -266,6 +264,12 @@ a.button {
    Sections
    ==========================================================================
 */
+section {
+  text-align: center; }
+  @media (min-width: 767px) {
+    section {
+      text-align: inherit; } }
+
 section:not(.intro) {
   padding: 80px 0; }
 
@@ -378,8 +382,8 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .statistics-column {
   max-width: 440px;
-  width: 100%;
-  padding: 30px 20px;
+  padding: 10px 20px;
+  width: 360px;
   border: 3px solid #2A2A72;
   border-radius: 4px;
   text-align: center;
@@ -390,6 +394,10 @@ section:nth-child(odd):not(:first-child) h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  @media (min-width: 767px) {
+    .statistics-column {
+      padding: 30px 20px;
+      width: 100%; } }
 
 .statistics-column__title {
   display: inline-block;
@@ -757,23 +765,5 @@ section:nth-child(odd):not(:first-child) h2 {
 .carousel-item {
   width: 100%;
   max-width: 800px; }
-
-/*
-* ==========================================================================
-    Responsive Design
-* ==========================================================================
-*/
-@media only screen and (max-width: 767px) {
-  .intro__social {
-    width: 100%;
-    text-align: center;
-    margin-left: 0px;
-    margin-right: 0px; }
-  .statistics-column {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 360px; }
-  section {
-    text-align: center; } }
 
 /*# sourceMappingURL=application.css.map */

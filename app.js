@@ -36,31 +36,43 @@ router.get('/', (req, res) => {
 });
 
 router.get('/rescuetimeData', (request, response) => {
-  getRescuetimeData
+  getRescuetimeData()
       .then( (rescuetimeData) => {
         response.send(rescuetimeData);
-      });
+      })
+      .catch( (error) => {
+          response.send(error)
+      })
 });
 
 router.get('/githubData', (request, response) => {
-  getGithubData
+  getGithubData()
     .then( (githubData) => {
       response.send(githubData);
     })
+      .catch( (error) => {
+          response.send(error)
+      })
 });
 
 router.get('/stravaData', (request, response) => {
     getStravaData
         .then( (stravaData) => {
             response.send(stravaData);
-        });
+        })
+        .catch( (error) => {
+            response.send(error)
+        })
 });
 
 router.get('/mediumData', (request, response) => {
     getMediumData
         .then( (mediumData) => {
             response.send(mediumData);
-        });
+        })
+        .catch( (error) => {
+            response.send(error)
+        })
 });
 
 app.use((req, res, next) => {

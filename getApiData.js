@@ -26,12 +26,12 @@ const githubRecentRepos = new Promise((resolve, reject) => {
                     }
                     resolve(recentRepos);
                 } catch (e) {
-                    reject("Github API call fail.");
+                    reject({error: "Github API call fail."});
                 }
             });
         }
     ).on('error', (e) => {
-        reject("Github API call fail.")
+        reject({error: "Github API call fail."});
     });
 })
 
@@ -51,40 +51,41 @@ const githubCommits = repositoryName => new Promise((resolve, reject) => {
                 try {
                     let parsedData = JSON.parse(rawData);
                     let commitCount = parsedData.length;
-                    resolve(commitCount);
+                    if (commitCount === undefined) {
+                        reject({error: "Github API call fail."})
+                    } else {
+                        resolve(commitCount);
+                    }
                 } catch (e) {
-                    reject("Github API call fail.");
+                    reject({error: "Github API call fail."})
                 }
             });
         }
     ).on('error', (e) => {
-        reject("Github API call fail.");
+        reject({error: "Github API call fail."});
     });
 })
 
-const getGithubData = new Promise((resolve, reject) => {
-    githubRecentRepos
-        .then(repositories => {
-            let totalCommits = 0;
-            let count = repositories.length;
-            for (let i = 0; i < repositories.length; i++) {
-                let repositoryName = repositories[i];
-                githubCommits(repositoryName)
-                    .then(commits => {
-                        count--;
-                        totalCommits += commits;
-                        if (count === 0) {
-                            let githubData = {
-                                'commits': totalCommits
-                            };
-                            resolve(githubData);
-                        }
-                    })
-                    .catch(reason => console.log(reason))
+async function getGithubData() {
+    try {
+        let totalCommits = 0;
+        const repositories = await githubRecentRepos
+        let count = repositories.length;
+        for (let i = 0; i < repositories.length; i++) {
+            let repositoryName = repositories[i];
+            const commits = await githubCommits(repositoryName)
+            count--;
+            totalCommits += commits;
+            if (count === 0) {
+                return {
+                    'commits': totalCommits
+                }
             }
-        })
-        .catch(reason => console.log(reason))
-})
+        }
+    } catch (error) {
+        throw error
+    }
+}
 
 const getRescuetimeWebData = new Promise((resolve, reject) => {
     let rescuetimeData = {};
@@ -108,12 +109,12 @@ const getRescuetimeWebData = new Promise((resolve, reject) => {
                 rescuetimeData.minutes = ("0" + minutes).slice(-2);
                 rescuetimeData.hours = parseInt(hours);
             } catch (e) {
-                reject('Rescuetime Web Time Data API error.')
+                reject({error: 'Rescuetime Web Time Data API error.'})
             }
             resolve(rescuetimeData);
         });
     }).on('error', (e) => {
-        reject('Rescuetime Web Time Data API error.')
+        reject({error: 'Rescuetime Web Time Data API error.'})
     });
 })
 
@@ -141,29 +142,29 @@ const getRescuetimeDistractedData = new Promise((resolve, reject) => {
                 rescuetimeData.hours = hours;
                 rescuetimeData.minutes = minutes;
             } catch (e) {
-                reject('Rescuetime Distracted Time Data API error.')
+                reject({error: 'Rescuetime Distracted Time Data API error.'})
             }
             resolve(rescuetimeData);
         });
     }).on('error', (e) => {
-        reject('Rescuetime Distracted Time Data API error.')
+        reject({error: 'Rescuetime Distracted Time Data API error.'})
     });  
 })
 
-const getRescuetimeData = new Promise((resolve, rejct) => {
-    let rescuetimeData = {};
-    getRescuetimeWebData
-        .then((rescuetimeWebData) => {
-            rescuetimeData.webMinutes = rescuetimeWebData.minutes;
-            rescuetimeData.webHours = rescuetimeWebData.hours;
-            getRescuetimeDistractedData
-                .then((rescuetimeDistractedData) => {
-                    rescuetimeData.distractedMinutes = rescuetimeDistractedData.minutes;
-                    rescuetimeData.distractedHours = rescuetimeDistractedData.hours;
-                    resolve(rescuetimeData);
-                }).catch(reason => console.log(reason))
-        }).catch(reason => console.log(reason))
-})
+async function getRescuetimeData() {
+    try {
+        let rescuetimeData = {};
+        const rescuetimeWebData = await getRescuetimeWebData;
+        const rescuetimeDistractedData = await getRescuetimeDistractedData;
+        rescuetimeData.webMinutes = rescuetimeWebData.minutes;
+        rescuetimeData.webHours = rescuetimeWebData.hours;
+        rescuetimeData.distractedMinutes = rescuetimeDistractedData.minutes;
+        rescuetimeData.distractedHours = rescuetimeDistractedData.hours;
+        return rescuetimeData    
+    } catch (error) {
+        throw error
+    }
+}
 
 const getStravaData = new Promise((resolve, reject) => {
     let stravaData = {};
@@ -198,12 +199,12 @@ const getStravaData = new Promise((resolve, reject) => {
                     }
                 }
             } catch (e) {
-                reject('Strava API call error.')
+                reject({error: 'Strava API call error.'})
             }
             resolve(stravaData);
         });
     }).on('error', (e) => {
-        reject('Strava API call error.')
+        reject({error: 'Strava API call error.'})
     });
 })
 
@@ -232,12 +233,12 @@ const getMediumData = new Promise((resolve, reject) => {
                     mediumData['claps' + i] = post['virtuals']['totalClapCount'];
                 }
             } catch (e) {
-                reject('Medium API call error.')
+                reject({error: 'Medium API call error.'})
             }
             resolve(mediumData);
         });
     }).on('error', (e) => {
-        reject('Medium API call error.')
+        reject({error: 'Medium API call error.'})
     });  
 })
 

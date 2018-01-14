@@ -10918,25 +10918,46 @@ $(document).ready( () => {
     });
   });
   $.get('/githubData', (result) => {
-      $('#github .api__data').text(result.commits);
-      $('#github .api__loader').fadeOut(500, () => {
-          $('#github .api > *:not(.api__loader)').fadeIn(500);
-      });
+      if (result.error) {
+          $('#github .api__error').text('Github API Error 😢');
+          $('#github .api__loader').fadeOut(500, () => {
+              $('#github .api__error').fadeIn(500);
+          });
+      } else {
+          $('#github .api__data').text(result.commits);
+          $('#github .api__loader').fadeOut(500, () => {
+              $('#github .api > *:not(.api__loader)').fadeIn(500);
+          });    
+      }
   });
   $.get('/stravaData', (result) => {
-    $('.running-date .api__data').text(result.date);
-    $('.running-distance .api__data').text(result.distance);
-    $('.running-duration .api__data').text(result.duration);
-    $('#strava .api__loader').fadeOut(500, () => {
-      $('#strava .api > *:not(.api__loader)').fadeIn(500);
-    });
+      if (result.error) {
+          $('#strava .api__error').text('Strava API Error 😢');
+          $('#strava .api__loader').fadeOut(500, () => {
+              $('#strava .api__error').fadeIn(500);
+          });
+      } else {
+          $('.running-date .api__data').text(result.date);
+          $('.running-distance .api__data').text(result.distance);
+          $('.running-duration .api__data').text(result.duration);
+          $('#strava .api__loader').fadeOut(500, () => {
+              $('#strava .api > *:not(.api__loader)').fadeIn(500);
+          });    
+      }
   });
   $.get( '/rescuetimeData', (result) => {
-    $('.web-development-hours .api__data').text(result.webHours + ':' + result.webMinutes);
-    $('.distracted-hours .api__data').text(result.distractedHours + ':' + result.distractedMinutes);
-    $('#rescuetime .api__loader').fadeOut(500, () => {
-      $('#rescuetime .api > *:not(.api__loader)').fadeIn(500);
-    });
+      if (result.error) {
+          $('#rescuetime .api__error').text('Rescue Time API Error 😢');
+          $('#rescuetime .api__loader').fadeOut(500, () => {
+              $('#rescuetime .api__error').fadeIn(500);
+          });
+      } else {
+          $('.web-development-hours .api__data').text(result.webHours + ':' + result.webMinutes);
+          $('.distracted-hours .api__data').text(result.distractedHours + ':' + result.distractedMinutes);
+          $('#rescuetime .api__loader').fadeOut(500, () => {
+              $('#rescuetime .api > *:not(.api__loader)').fadeIn(500);
+          });
+      }
   });
 });
 

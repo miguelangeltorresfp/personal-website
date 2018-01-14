@@ -756,6 +756,8 @@ th {
 
 /*# sourceMappingURL=normalize.css.map */
 
+/*# sourceMappingURL=normalize.css.map */
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3089,6 +3091,8 @@ th {
   overflow: visible;
   clip: auto;
 }
+
+/*# sourceMappingURL=font-awesome.css.map */
 
 /*# sourceMappingURL=font-awesome.css.map */
 
@@ -12683,6 +12687,8 @@ a.text-dark:focus, a.text-dark:hover {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
+/*# sourceMappingURL=bootstrap.css.map */
+
 @charset "UTF-8";
 /*
  * ============================================================================
@@ -12798,7 +12804,7 @@ a.button {
 .button {
   background-color: #0099ff;
   color: #fff;
-  padding: 10px 20px;
+  padding: 5px 10px;
   text-transform: uppercase;
   margin-top: 20px;
   display: inline-block;

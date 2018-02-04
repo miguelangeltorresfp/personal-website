@@ -10899,7 +10899,9 @@ var Carousel = function ($) {
 }($);
 //# sourceMappingURL=carousel.js.map
 $(document).ready( () => {
+    console.log("Document is ready.")
   $.get('/mediumData', (result) => {
+      console.log("Fetching Medium results")
     for (let i=1; i <= 3; i++) {
       let postId = '#post' + i;
       let title = 'title' + i;
@@ -10918,6 +10920,7 @@ $(document).ready( () => {
     });
   });
   $.get('/githubData', (result) => {
+      console.log("Fetching Github results")
       if (result.error) {
           $('#github .api__error').text('Github API Error 😢');
           $('#github .api__loader').fadeOut(500, () => {
@@ -10931,6 +10934,7 @@ $(document).ready( () => {
       }
   });
   $.get('/stravaData', (result) => {
+      console.log("Fetching Strava results")
       if (result.error) {
           $('#strava .api__error').text('Strava API Error 😢');
           $('#strava .api__loader').fadeOut(500, () => {
@@ -10946,6 +10950,7 @@ $(document).ready( () => {
       }
   });
   $.get( '/rescuetimeData', (result) => {
+      console.log("Fetching RescueTime results")
       if (result.error) {
           $('#rescuetime .api__error').text('Rescue Time API Error 😢');
           $('#rescuetime .api__loader').fadeOut(500, () => {
@@ -10961,7 +10966,6 @@ $(document).ready( () => {
   });
 });
 
-// .carousel-wrapper to display: flex; on click of screenshots button
 $('a.button.screenshots').click( (e) => {
   e.preventDefault();
   $(e.target).parent().parent().siblings('.carousel-wrapper').css('display', 'flex');

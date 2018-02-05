@@ -7,6 +7,7 @@ const rescuetimeKey = apiKeys.rescuetime.key;
 const stravaToken = apiKeys.strava.token;
 
 const githubRecentRepos = new Promise((resolve, reject) => {
+    console.log("Getting Github API info!")
     https.get( {
             host: 'api.github.com',
             path: '/users/engineering-robert/repos?sort=pushed&client_id=' + githubId + '&client_secret=' + githubSecret,

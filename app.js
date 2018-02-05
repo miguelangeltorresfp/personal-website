@@ -16,6 +16,9 @@ app.use("/public", express.static("public"))
 app.set("views")
 app.set("view engine", "pug")
 
+// Fix issue with API data being cached: https://stackoverflow.com/questions/18811286/nodejs-express-cache-and-304-status-code
+app.disable('etag')
+
 app.use(router)
 
 // Make sure all URLs use www.
@@ -38,7 +41,6 @@ router.get("/", (req, res) => {
 router.get("/rescuetimeData", (request, response) => {
     getRescuetimeData()
         .then(rescuetimeData => {
-            console.log("RescueTime API data returned:", rescuetimeData)
             response.json(rescuetimeData)
         })
         .catch(error => {
@@ -49,7 +51,6 @@ router.get("/rescuetimeData", (request, response) => {
 router.get("/githubData", (request, response) => {
     getGithubData()
         .then(githubData => {
-            console.log("Github API data returned:", githubData)
             response.json(githubData)
         })
         .catch(error => {

@@ -39,7 +39,7 @@ router.get("/rescuetimeData", (request, response) => {
     getRescuetimeData()
         .then(rescuetimeData => {
             console.log("RescueTime API data returned:", rescuetimeData)
-            response.send(rescuetimeData)
+            response.json(rescuetimeData)
         })
         .catch(error => {
             response.send(error)
@@ -50,7 +50,7 @@ router.get("/githubData", (request, response) => {
     getGithubData()
         .then(githubData => {
             console.log("Github API data returned:", githubData)
-            response.send(githubData)
+            response.json(githubData)
         })
         .catch(error => {
             response.send(error)
@@ -60,7 +60,7 @@ router.get("/githubData", (request, response) => {
 router.get("/stravaData", (request, response) => {
     getStravaData
         .then(stravaData => {
-            response.send(stravaData)
+            response.json(stravaData)
         })
         .catch(error => {
             response.send(error)
@@ -70,7 +70,7 @@ router.get("/stravaData", (request, response) => {
 router.get("/mediumData", (request, response) => {
     getMediumData
         .then(mediumData => {
-            response.send(mediumData)
+            response.json(mediumData)
         })
         .catch(error => {
             response.send(error)

@@ -21,7 +21,10 @@ html(lang='en')
     // iOS Saved Website App Title
     meta(name='apple-mobile-web-app-title', content='Robert Cooper')
     // Main Style
-    link(rel='stylesheet', href='/css/main.min.css')
+    if (environment === "development")
+      link(rel='stylesheet', href='/css/main.css')
+    else if (environment === "production")
+      link(rel='stylesheet', href='/css/main.min.css')
   body
     section.intro
       .intro__image
@@ -400,7 +403,10 @@ html(lang='en')
                     span.carousel-control-next-icon(aria-hidden='true')
                     span.sr-only Next
     // Concatenated and Minified JS Files
-    script(src='/js/index.min.js?v=1.0')
+    if (environment === "development")
+      script(src='/js/index.js')
+    else if (environment === "production")
+      script(src='/js/index.min.js?v=1.0')
     // Google Analytics
     script.
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

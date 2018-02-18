@@ -6,18 +6,26 @@ const getMediumData = require("./getApiData").getMediumData
 const getRescuetimeData = require("./getApiData").getRescuetimeData
 const getGithubData = require("./getApiData").getGithubData
 
-app.use("/documents", express.static("public/documents"))
-app.use("/css", express.static("public/css"))
-app.use("/js", express.static("public/js"))
-app.use("/img", express.static("public/img"))
-app.use("/fonts", express.static("public/fonts"))
-app.use("/public", express.static("public"))
+console.log()
+
+let rootStaticPath
+if (process.env.NODE_ENV === "development") {
+    rootStaticPath = "app"
+} else if (process.env.NODE_ENV === "production") {
+    rootStaticPath = "public"
+}
+app.use("/documents", express.static(`${rootStaticPath}/documents`))
+app.use("/css", express.static(`${rootStaticPath}/css`))
+app.use("/js", express.static(`${rootStaticPath}/js`))
+app.use("/img", express.static(`${rootStaticPath}/img`))
+app.use("/fonts", express.static(`${rootStaticPath}/fonts`))
+app.use("/public", express.static(`${rootStaticPath}`))
 
 app.set("views")
 app.set("view engine", "pug")
 
 // Fix issue with API data being cached: https://stackoverflow.com/questions/18811286/nodejs-express-cache-and-304-status-code
-app.disable('etag')
+app.disable("etag")
 
 app.use(router)
 
@@ -35,7 +43,7 @@ router.all(/.*/, function(req, res, next) {
 })
 
 router.get("/", (req, res) => {
-    res.render("index")
+    res.render("index", { environment: process.env.NODE_ENV })
 })
 
 router.get("/rescuetimeData", (request, response) => {

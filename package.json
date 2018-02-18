@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Engineering-Robert/personal-website.git"
+    "url": "git+https://github.com/robertcoopercode/personal-website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Engineering-Robert/personal-website/issues"
+    "url": "https://github.com/robertcoopercode/personal-website/issues"
   },
   "engines": {
     "node": "9.x"
   },
-  "homepage": "https://github.com/Engineering-Robert/personal-website#readme",
+  "homepage": "https://github.com/robertcoopercode/personal-website#readme",
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "express": "^4.15.4",

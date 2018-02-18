@@ -9,10 +9,10 @@ const stravaToken = apiKeys.strava.token;
 const githubRecentRepos = new Promise((resolve, reject) => {
     https.get( {
             host: 'api.github.com',
-            path: '/users/engineering-robert/repos?sort=pushed&client_id=' + githubId + '&client_secret=' + githubSecret,
+            path: '/users/robertcoopercode/repos?sort=pushed&client_id=' + githubId + '&client_secret=' + githubSecret,
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'Engineering-Robert'
+                'User-Agent': 'robertcoopercode'
             }
         }, (res) => {
             let rawData = '';
@@ -42,7 +42,7 @@ const githubCommits = repositoryName => new Promise((resolve, reject) => {
             path: '/repos/' + repositoryName + '/commits?since=' + today + '&client_id=' + githubId  + '&client_secret=' + githubSecret,
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
-                'User-Agent': 'Engineering-Robert'
+                'User-Agent': 'robertcoopercode'
             }
         }, (res) => {
             let rawData = '';

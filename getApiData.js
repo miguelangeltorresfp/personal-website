@@ -24,7 +24,7 @@ const githubRecentRepos = new Promise((resolve, reject) => {
                      * @param {Object} repositories - List of recently used Github repositories
                      * @param {string} repositories.full_name - Full name of a repository
                      */
-                    const repositories = JSON.parse(rawData);
+                    let repositories = JSON.parse(rawData);
                     for (let i=0; i < 5; i++) {
                         recentRepos.push(repositories[i].full_name);
                     }
@@ -73,11 +73,11 @@ const githubCommits = repositoryName => new Promise((resolve, reject) => {
 async function getGithubData() {
     try {
         let totalCommits = 0;
-        const repositories = await githubRecentRepos
+        let repositories = await githubRecentRepos
         let count = repositories.length;
         for (let i = 0; i < repositories.length; i++) {
             let repositoryName = repositories[i];
-            const commits = await githubCommits(repositoryName)
+            let commits = await githubCommits(repositoryName)
             count--;
             totalCommits += commits;
             if (count === 0) {
@@ -99,7 +99,7 @@ const getRescuetimeWebData = new Promise((resolve, reject) => {
         res.on('data', (chunk) => { rawData += chunk; });
         res.on('end', () => {
             try {
-                const parsedData = JSON.parse(rawData);
+                let parsedData = JSON.parse(rawData);
                 let hours = 0;
                 for (let i = 0; i < parsedData["rows"].length; i++) {
                     if (parsedData["rows"][i][3] === "Software Development") {
@@ -130,7 +130,7 @@ const getRescuetimeDistractedData = new Promise((resolve, reject) => {
         res.on('data', (chunk) => { rawData += chunk; });
         res.on('end', () => {
             try {
-                const parsedData = JSON.parse(rawData);
+                let parsedData = JSON.parse(rawData);
                 let total_hours_distracted = 0;
                 for (i = 0; i < parsedData["rows"].length; i++) {
                     if (parsedData["rows"][i][3] === -1 || parsedData["rows"][i][3] === -2 ) {
@@ -156,10 +156,9 @@ const getRescuetimeDistractedData = new Promise((resolve, reject) => {
 
 async function getRescuetimeData() {
     try {
-        console.log("Getting the Rescuetime Date!")
         let rescuetimeData = {};
-        const rescuetimeWebData = await getRescuetimeWebData;
-        const rescuetimeDistractedData = await getRescuetimeDistractedData;
+        let rescuetimeWebData = await getRescuetimeWebData;
+        let rescuetimeDistractedData = await getRescuetimeDistractedData;
         rescuetimeData.webMinutes = rescuetimeWebData.minutes;
         rescuetimeData.webHours = rescuetimeWebData.hours;
         rescuetimeData.distractedMinutes = rescuetimeDistractedData.minutes;
@@ -178,7 +177,7 @@ const getStravaData = new Promise((resolve, reject) => {
         res.on('data', (chunk) => { rawData += chunk; });
         res.on('end', () => {
             try {
-                const parsedData = JSON.parse(rawData);
+                let parsedData = JSON.parse(rawData);
                 for (i=0; i < parsedData.length; i++) {
                     if (parsedData[i]["type"] === "Run") {
                         let duration = new Date(null);
@@ -227,8 +226,8 @@ const getMediumData = new Promise((resolve, reject) => {
         res.on('end', () => {
             rawData = rawData.replace('])}while(1);</x>', '');
             try {
-                const parsedData = JSON.parse(rawData);
-                const posts = parsedData['payload']['references']['Post']
+                let parsedData = JSON.parse(rawData);
+                let posts = parsedData['payload']['references']['Post']
                 for (let i = 1; i <= 3; i++) {
                     let post = posts[Object.keys(posts)[i-1]];
                     mediumData['title' + i] = post['title'];

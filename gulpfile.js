@@ -28,7 +28,7 @@ gulp.task("concatScripts", () => {
 
 gulp.task("minifyScripts", ["concatScripts"], () => {
     return gulp
-        .src("public/js/index.js")
+        .src("app/js/index.js")
         .pipe(babel({ presets: ["es2015"] }))
         .pipe(uglify())
         .pipe(rename("index.min.js"))

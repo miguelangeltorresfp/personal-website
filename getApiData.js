@@ -53,8 +53,9 @@ const githubCommits = repositoryName => new Promise((resolve, reject) => {
             res.on('data', (chunk) => { rawData += chunk; });
             res.on('end', () => {
                 try {
-                    let parsedData = JSON.parse(rawData);
-                    let commitCount = parsedData.length;
+                    let commits = JSON.parse(rawData);
+                    console.log(commits.length)
+                    let commitCount = commits.length;
                     if (commitCount === undefined) {
                         reject({error: "Github API call fail."})
                     } else {

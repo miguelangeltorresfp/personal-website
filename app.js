@@ -22,9 +22,6 @@ app.use("/public", express.static(`${rootStaticPath}`))
 app.set("views")
 app.set("view engine", "pug")
 
-// Fix issue with API data being cached: https://stackoverflow.com/questions/18811286/nodejs-express-cache-and-304-status-code
-app.disable("etag")
-
 app.use(router)
 
 // Make sure all URLs use www.

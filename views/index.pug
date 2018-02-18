@@ -23,7 +23,7 @@ html(lang='en')
     // Main Style
     if (environment === "development")
       link(rel='stylesheet', href='/css/main.css')
-    else if (environment === "production")
+    else
       link(rel='stylesheet', href='/css/main.min.css')
   body
     section.intro
@@ -405,7 +405,7 @@ html(lang='en')
     // Concatenated and Minified JS Files
     if (environment === "development")
       script(src='/js/index.js')
-    else if (environment === "production")
+    else
       script(src='/js/index.min.js?v=1.1')
     // Google Analytics
     script.

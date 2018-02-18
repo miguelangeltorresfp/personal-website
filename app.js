@@ -9,7 +9,7 @@ const getGithubData = require("./getApiData").getGithubData
 let rootStaticPath
 if (process.env.NODE_ENV === "development") {
     rootStaticPath = "app"
-} else if (process.env.NODE_ENV === "production") {
+} else {
     rootStaticPath = "public"
 }
 app.use("/documents", express.static(`${rootStaticPath}/documents`))

@@ -6,8 +6,6 @@ const getMediumData = require("./getApiData").getMediumData
 const getRescuetimeData = require("./getApiData").getRescuetimeData
 const getGithubData = require("./getApiData").getGithubData
 
-console.log()
-
 let rootStaticPath
 if (process.env.NODE_ENV === "development") {
     rootStaticPath = "app"
@@ -30,20 +28,20 @@ app.disable("etag")
 app.use(router)
 
 // Make sure all URLs use www.
-router.all(/.*/, function(req, res, next) {
-    var host = req.get("host")
+router.all(/.*/, function(request, response, next) {
+    const host = request.get("host")
     if (host === "robertcooper.me") {
         if (host.match(/^www\..*/i)) {
             next()
         } else {
-            res.redirect(301, "https://www." + host)
+            response.redirect(301, "https://www." + host)
         }
     }
     next()
 })
 
-router.get("/", (req, res) => {
-    res.render("index", { environment: process.env.NODE_ENV })
+router.get("/", (request, response) => {
+    response.render("index", { environment: process.env.NODE_ENV })
 })
 
 router.get("/rescuetimeData", (request, response) => {
@@ -86,18 +84,20 @@ router.get("/mediumData", (request, response) => {
         })
 })
 
-app.use((req, res, next) => {
+app.use((request, response, next) => {
     const err = new Error("Not Found")
     err.status = 404
     next(err)
 })
 
-app.use((err, req, res, next) => {
-    res.status(err.status)
+app.use((err, request, response) => {
+    response.status(err.status)
     console.error(err.stack)
-    res.send(err.stack)
+    response.send(err.stack)
 })
 
 app.listen(8080, () => {
-    console.log("The application is running on localhost:8080!")
+    process.env.NODE_ENV === "development"
+        ? console.log("The application is running on localhost:8080!")
+        : console.log("The application is running at www.robertcooper.me!")
 })

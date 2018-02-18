@@ -28,6 +28,7 @@
     "gulp-babel": "^7.0.0",
     "gulp-uglify": "^3.0.0",
     "https": "^1.0.0",
+    "moment": "^2.20.1",
     "moment-timezone": "^0.5.14",
     "node-sass": "^4.6.0",
     "nodemon": "^1.15.0",

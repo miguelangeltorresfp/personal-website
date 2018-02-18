@@ -20,9 +20,13 @@ const githubRecentRepos = new Promise((resolve, reject) => {
             res.on('end', () => {
                 try {
                     let recentRepos = [];
-                    const parsedData = JSON.parse(rawData);
+                    /**
+                     * @param {Object} repositories - List of recently used Github repositories
+                     * @param {string} repositories.full_name - Full name of a repository
+                     */
+                    const repositories = JSON.parse(rawData);
                     for (let i=0; i < 5; i++) {
-                        recentRepos.push(parsedData[i].full_name);
+                        recentRepos.push(repositories[i].full_name);
                     }
                     resolve(recentRepos);
                 } catch (e) {
@@ -96,16 +100,16 @@ const getRescuetimeWebData = new Promise((resolve, reject) => {
         res.on('end', () => {
             try {
                 const parsedData = JSON.parse(rawData);
-                var hours = 0;
-                for (i = 0; i < parsedData["rows"].length; i++) {
-                    if (parsedData["rows"][i][3] == "Software Development") {
-                        var seconds = parsedData["rows"][i][1];
-                        var minutes = seconds/60;
+                let hours = 0;
+                for (let i = 0; i < parsedData["rows"].length; i++) {
+                    if (parsedData["rows"][i][3] === "Software Development") {
+                        let seconds = parsedData["rows"][i][1];
+                        let minutes = seconds/60;
                         hours = minutes/60;
                         break;
                     };
                 };
-                minutes = Math.round((hours-parseInt(hours)) * 60);
+                let minutes = Math.round((hours-parseInt(hours)) * 60);
                 rescuetimeData.minutes = ("0" + minutes).slice(-2);
                 rescuetimeData.hours = parseInt(hours);
             } catch (e) {
@@ -127,18 +131,17 @@ const getRescuetimeDistractedData = new Promise((resolve, reject) => {
         res.on('end', () => {
             try {
                 const parsedData = JSON.parse(rawData);
-                var total_hours_distracted = 0;
+                let total_hours_distracted = 0;
                 for (i = 0; i < parsedData["rows"].length; i++) {
-                    if (parsedData["rows"][i][3] == -1 | parsedData["rows"][i][3] == -2 ) {
-                        var seconds = parsedData["rows"][i][1];
-                        var minutes = seconds/60;
-                        var hours = minutes/60;
-                        total_hours_distracted += hours;
+                    if (parsedData["rows"][i][3] === -1 || parsedData["rows"][i][3] === -2 ) {
+                        let seconds = parsedData["rows"][i][1];
+                        let minutes = seconds/60;
+                        total_hours_distracted += minutes/60;
                     };
                 };
-                minutes = Math.round((total_hours_distracted-parseInt(total_hours_distracted)) * 60);
+                let minutes = Math.round((total_hours_distracted-parseInt(total_hours_distracted)) * 60);
                 minutes = ("0" + minutes).slice(-2);
-                hours = parseInt(total_hours_distracted);
+                let hours = parseInt(total_hours_distracted);
                 rescuetimeData.hours = hours;
                 rescuetimeData.minutes = minutes;
             } catch (e) {
@@ -153,6 +156,7 @@ const getRescuetimeDistractedData = new Promise((resolve, reject) => {
 
 async function getRescuetimeData() {
     try {
+        console.log("Getting the Rescuetime Date!")
         let rescuetimeData = {};
         const rescuetimeWebData = await getRescuetimeWebData;
         const rescuetimeDistractedData = await getRescuetimeDistractedData;
@@ -176,7 +180,7 @@ const getStravaData = new Promise((resolve, reject) => {
             try {
                 const parsedData = JSON.parse(rawData);
                 for (i=0; i < parsedData.length; i++) {
-                    if (parsedData[i]["type"] == "Run") {
+                    if (parsedData[i]["type"] === "Run") {
                         let duration = new Date(null);
                         duration.setSeconds(parsedData[i]["moving_time"]);
                         duration = duration.toISOString().substr(11, 8);

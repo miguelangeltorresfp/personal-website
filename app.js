@@ -87,10 +87,10 @@ app.use((request, response, next) => {
     next(err)
 })
 
-app.use((err, request, response) => {
-    response.status(err.status)
-    console.error(err.stack)
-    response.send(err.stack)
+app.use((error, request, response) => {
+    response.status(error.status)
+    console.error(error.stack)
+    response.send(error.stack)
 })
 
 app.listen(8080, () => {

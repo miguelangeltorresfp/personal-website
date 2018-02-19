@@ -12862,12 +12862,20 @@ a.button {
   text-transform: uppercase;
   margin-top: 20px;
   display: inline-block;
-  font-family: latoregular; }
+  font-family: latoregular;
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease; }
 
 .button:hover {
-  background-color: #fff;
-  color: #0099ff;
-  text-decoration: none; }
+  background-color: #1aa3ff;
+  color: #fff;
+  text-decoration: none;
+  -webkit-box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px); }
 
 /*
    ==========================================================================

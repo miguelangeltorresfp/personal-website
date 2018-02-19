@@ -12,7 +12,7 @@ When the live website needs to be updated, follow these steps:
 2) Log in using ssh
 Go into terminal and type `ssh robert@159.203.4.207`.
 
-3) Run `git pull origin master` to get the most recent changes from the Github repository.
+3) Run `git pull` to get the most recent changes from the Github repository.
 
 4) Run `npm install` to install any new dependencies.
 

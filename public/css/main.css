@@ -12743,7 +12743,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 /*# sourceMappingURL=bootstrap.css.map */
 
-@charset "UTF-8";
 /*
  * ============================================================================
  * Table of Contents
@@ -12776,13 +12775,6 @@ a.text-dark:focus, a.text-dark:hover {
    Global Style
    ==========================================================================
 */
-@font-face {
-  font-family: 'BeonMedium';
-  src: url("/css/fonts/beon-webfont.eot");
-  src: local("☺"), url("/css/fonts/beon-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/beon-webfont.woff") format("woff"), url("/css/fonts/beon-webfont.ttf") format("truetype"), url("/css/fonts/beon-webfont.svg#BeonMedium") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 @font-face {
   font-family: 'latoregular';
   src: url("/css/fonts/Lato-Regular-webfont.eot");
@@ -12954,7 +12946,9 @@ a.button {
 
 .intro__content-name {
   color: #0099ff;
-  font-family: BeonMedium;
+  font-family: "latoregular";
+  letter-spacing: 2px;
+  text-transform: uppercase;
   font-weight: bold;
   font-size: 2.4em; }
   @media (min-width: 767px) {
@@ -13002,7 +12996,9 @@ a.button {
   text-align: center;
   width: 42px;
   margin-left: 2px;
-  margin-right: 2px; }
+  margin-right: 2px;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease; }
 
 .fa-social:hover {
   color: #2098f5;
@@ -13425,10 +13421,11 @@ section:nth-child(odd):not(:first-child) h2 {
           justify-content: center; }
 
 .portfolio-item__tag {
-  background-color: rgba(42, 42, 114, 0.6);
-  color: white;
+  font-family: "latoregular";
+  background-color: rgba(42, 42, 114, 0.25);
+  font-weight: bold;
+  color: #2A2A72;
   padding: 2px 8px 3px;
-  border-radius: 5px;
   font-size: 12px;
   margin-top: 5px;
   margin-right: 10px;

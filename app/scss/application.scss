@@ -71,13 +71,6 @@ $c3: lighten($primary-color, 30);
    ==========================================================================
 */
 @font-face {
-    font-family: 'BeonMedium';
-    src: url('/css/fonts/beon-webfont.eot');
-    src: local('☺'), url('/css/fonts/beon-webfont.eot?#iefix') format('embedded-opentype'), url('/css/fonts/beon-webfont.woff') format('woff'), url('/css/fonts/beon-webfont.ttf') format('truetype'), url('/css/fonts/beon-webfont.svg#BeonMedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'latoregular';
     src: url('/css/fonts/Lato-Regular-webfont.eot');
     src: url('/css/fonts/Lato-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('/css/fonts/Lato-Regular-webfont.woff2') format('woff2'), url('/css/fonts/Lato-Regular-webfont.woff') format('woff'), url('/css/fonts/Lato-Regular-webfont.ttf') format('truetype'), url('/css/fonts/Lato-Regular-webfont.svg#latoregular') format('svg');
@@ -228,7 +221,9 @@ a.button {
 
 .intro__content-name {
     color: $primary-color;
-    font-family: BeonMedium;
+    font-family: $heading-font;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 2.4em;
   
@@ -281,6 +276,7 @@ a.button {
     width: 42px;
     margin-left: 2px;
     margin-right: 2px;
+    transition: all .15s ease;
 }
 .fa-social:hover {
     color: #2098f5;
@@ -711,10 +707,11 @@ section:nth-child(odd):not(:first-child) h2 {
 }
 
 .portfolio-item__tag {
-  background-color: rgba($dark-color, .6);
-  color: white;
+  font-family: $heading-font;
+  background-color: rgba($dark-color, .25);
+  font-weight: bold;
+  color: $dark-color;
   padding: 2px 8px 3px;
-  border-radius: 5px;
   font-size: 12px;
   margin-top: 5px;
   margin-right: 10px;

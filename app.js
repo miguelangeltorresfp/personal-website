@@ -3,7 +3,6 @@ const app = express()
 const router = express.Router()
 const getStravaData = require("./getApiData").getStravaData
 const getMediumData = require("./getApiData").getMediumData
-const getRescuetimeData = require("./getApiData").getRescuetimeData
 const getGithubData = require("./getApiData").getGithubData
 
 let rootStaticPath
@@ -39,16 +38,6 @@ router.all(/.*/, function(request, response, next) {
 
 router.get("/", (request, response) => {
     response.render("index", { environment: process.env.NODE_ENV })
-})
-
-router.get("/rescuetimeData", (request, response) => {
-    getRescuetimeData()
-        .then(rescuetimeData => {
-            response.json(rescuetimeData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
 })
 
 router.get("/githubData", (request, response) => {

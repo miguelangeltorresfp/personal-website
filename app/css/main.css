@@ -12887,7 +12887,7 @@ a.button {
 
 .intro__image {
   background-image: url(../img/background-image.png);
-  background-size: 800px;
+  background-size: 400px;
   background-color: rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 0;
@@ -12900,6 +12900,9 @@ a.button {
   transition: transform 0.6s, opacity 0.6s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   animation: scrolling-background 8s linear infinite; }
+  @media (min-width: 767px) {
+    .intro__image {
+      background-size: 800px; } }
 
 @keyframes scrolling-background {
   0% {
@@ -13116,7 +13119,7 @@ section:nth-child(odd):not(:first-child) h2 {
   animation: run 0.4s steps(5) infinite; }
   @media (min-width: 767px) {
     .statistics-column__icon.running-man {
-      margin-bottom: -3px; } }
+      margin-bottom: -5px; } }
 
 .statistics-column__icon.keyboard {
   width: 60px;
@@ -13126,7 +13129,7 @@ section:nth-child(odd):not(:first-child) h2 {
   animation: type 1.5s steps(10) infinite; }
   @media (min-width: 767px) {
     .statistics-column__icon.keyboard {
-      margin-bottom: -3px; } }
+      margin-bottom: -7px; } }
 
 @keyframes run {
   100% {
@@ -13142,6 +13145,9 @@ section:nth-child(odd):not(:first-child) h2 {
   background: url("../img/book.png") center bottom;
   background-size: contain;
   background-repeat: no-repeat; }
+  @media (min-width: 767px) {
+    .statistics-column__icon.book {
+      margin-bottom: -4px; } }
 
 .statistics-column__icon_left {
   display: block;

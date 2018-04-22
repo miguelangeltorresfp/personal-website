@@ -26,4 +26,4 @@ Go into terminal and type `ssh robert@159.203.4.207`.
 
 5) Run `pm2 restart all`.
 
-The website should now be updated!
+The website should now be updated! Congratulations.

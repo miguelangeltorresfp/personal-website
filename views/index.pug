@@ -78,10 +78,26 @@ html(lang='en')
               p.api__data-container
                 span.api__data
                 span.api__data-description total commits today.
-              p.api__error
             p.api__info
               | Data gathered from the 
               a(href='https://developer.github.com/v3/', target='_blank') Github
+              |  API.
+          .statistics-column.statistics__column#goodreads
+            .statistics-column__title-container
+              .book.statistics-column__icon.statistics-column__icon_left
+              h3.statistics-column__title Currently Reading
+              .book.statistics-column__icon.statistics-column__icon_right
+            .api
+              .api__loader
+                div
+                div
+                div
+                div
+                div
+              ul.api__data-container.api__data-container--list
+            p.api__info
+              | Data gathered from the 
+              a(href='https://www.goodreads.com/api', target='_blank') Goodreads
               |  API.
           .statistics-column.statistics__column#strava
             .statistics-column__title-container
@@ -104,7 +120,6 @@ html(lang='en')
               p.api__data-container.running-duration
                 span.api__data
                 span.api__data-description in duration.
-              p.api__error
             p.api__info
               | Data gathered from the 
               a(href='http://strava.com', target='_blank') Strava

@@ -34,7 +34,8 @@
     "nodemon": "^1.15.0",
     "pm2": "^2.6.1",
     "pug": "^2.0.0-rc.3",
-    "querystring": "^0.2.0"
+    "querystring": "^0.2.0",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

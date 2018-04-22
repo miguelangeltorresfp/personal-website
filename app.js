@@ -4,6 +4,7 @@ const router = express.Router()
 const getStravaData = require("./getApiData").getStravaData
 const getMediumData = require("./getApiData").getMediumData
 const getGithubData = require("./getApiData").getGithubData
+const getGoodreadsData = require("./getApiData").getGoodreadsData
 
 let rootStaticPath
 if (process.env.NODE_ENV === "development") {
@@ -38,6 +39,16 @@ router.all(/.*/, function(request, response, next) {
 
 router.get("/", (request, response) => {
     response.render("index", { environment: process.env.NODE_ENV })
+})
+
+router.get("/goodreadsData", (request, response) => {
+    getGoodreadsData
+        .then(goodreadsData => {
+            response.json(goodreadsData)
+        })
+        .catch(error => {
+            response.send(error)
+        })
 })
 
 router.get("/githubData", (request, response) => {

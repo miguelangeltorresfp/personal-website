@@ -246,12 +246,6 @@ a.button {
 }
 
 .content-div { width: 100% }
-
-.api__data {
-  font-size: 2em;
-  padding-right: 10px;
-  font-weight: bold;
-}
 /*
    ==========================================================================
    Social Links
@@ -467,8 +461,8 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 
   &.keyboard {
-    width: 62.5px;
-    height: 25px;
+    width: 60px;
+    height: 30px;
     background: url('../img/keyboard-pattern.png') left center;
     background-size: cover;
     animation: type 1.5s steps(10) infinite;
@@ -483,8 +477,16 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 
   @keyframes type {
-    100% { background-position: -625px; }
+    100% { background-position: -600px; }
   }
+
+    &.book {
+        height: 30px;
+        width: 40px;
+        background: url('../img/book.png') center bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
 .statistics-column__icon_left {
@@ -559,6 +561,31 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
+.api__data-container {
+    &--list {
+        padding-left: 40px;
+        list-style: disc;
+    }
+}
+
+.api__data {
+    font-size: 2em;
+    padding-right: 10px;
+    font-weight: bold;
+    color: $dark-color;
+    
+    &--book {
+        font-size: 1.2em;
+        padding: 0;
+        text-align: left;
+        margin-bottom: 12px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 .api__data-description {
   position: relative;
   top: -3px;
@@ -567,6 +594,10 @@ section:nth-child(odd):not(:first-child) h2 {
 .api__info {
   font-size: .8em;
   font-style: italic;
+}
+
+.api__error {
+    margin: 0;
 }
 
 /*

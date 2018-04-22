@@ -4,6 +4,42 @@ const moment = require("moment-timezone");
 const githubId = apiKeys.github.id;
 const githubSecret = apiKeys.github.secret;
 const stravaToken = apiKeys.strava.token;
+const goodreadsKey = apiKeys.goodreads.key;
+
+
+
+const getGoodreadsData = new Promise((resolve, reject) => {
+    https
+        .get(
+            {
+                host: "www.goodreads.com",
+                path: `/review/list/62347534.xml?key=${goodreadsKey}&v=2&shelf=currently-reading`
+            },
+            res => {
+                let rawData = "";
+                res.on("data", chunk => {
+                    rawData += chunk
+                });
+                res.on("end", () => {
+                    try {
+                        // Get all the titles of the books i'm currently reading and add them to an array
+                        const parseXml = require('xml2js').parseString;
+                        let currentlyReadingBooks = [];
+                        parseXml(rawData, function (err, result) {
+                            result.GoodreadsResponse["reviews"][0].review.forEach( (book) => {
+                                currentlyReadingBooks.push(book.book[0].title[0])
+                            });
+                        });
+                        resolve(currentlyReadingBooks)
+                    } catch (e) {
+                        reject({ error: "Goodreads API call fail." })
+                    }
+                })
+            }
+        )
+});
+
+getGoodreadsData;
 
 const githubRecentRepos = new Promise((resolve, reject) => {
     https
@@ -214,4 +250,5 @@ module.exports = {
     getMediumData: getMediumData,
     getStravaData: getStravaData,
     getGithubData: getGithubData,
+    getGoodreadsData: getGoodreadsData
 };

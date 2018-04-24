@@ -1,20 +1,30 @@
 $(document).ready(() => {
     $.get("/mediumData", result => {
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 6; i++) {
             let postId = "#post" + i;
             let title = "title" + i;
             let excerpt = "excerpt" + i;
             let url = "url" + i;
             let claps = "claps" + i;
+            let readingTime = "readingTime" + i;
+            let tags = "tags" + i;
 
             $(postId + " .post__title-link").attr("href", result[url]);
             $(postId + " .post__title").text(result[title]);
             $(postId + " .post__excerpt").text(result[excerpt]);
             $(postId + " .post__button").attr("href", result[url]);
-            $(postId + " .post__claps").text("👏 " + result[claps] + " 👏")
+            $(postId + " .post__reading-time").text("🕘 " + result[readingTime] + " min.");
+            $(postId + " .post__claps").text("👏 " + result[claps]);
+            if (result[tags].length > 0) {
+                result[tags].forEach( (tag) => {
+                    $(postId + " .post__tags").append(
+                        "<span class='tags__tag  post__tag'>" + tag.name + "</span>"
+                    );
+                });
+            }
         }
         $(".blog .api__loader").fadeOut(500, () => {
-            $(".blog__posts").fadeIn(500)
+            $(".blog__posts").fadeIn(500).css('display', 'flex');
         })
     });
     $.get("/githubData", result => {

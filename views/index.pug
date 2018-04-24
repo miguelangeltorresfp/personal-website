@@ -128,7 +128,7 @@ html(lang='en')
       .max-width-container.blog__container
         h2.blog__title Blog Articles
         p.blog__description
-          | Here are my 3 most recent articles that i've written on 
+          | Here are my 6 most recent articles that i've written on 
           a(href='https://medium.com/@robertcooper_rc', target='_blank') Medium
           | .
         .api__loader
@@ -138,14 +138,16 @@ html(lang='en')
           div
           div
         .blog__posts
-          - for (var i = 1; i <= 3; i++)
+          - for (var i = 1; i <= 6; i++)
             .post(id = "post" + i)
               .post__title-container
-                span.post__claps
                 a(target="_blank").post__title-link
                   h3.post__title
+              .post__statistics
+                span.post__claps
+                span.post__reading-time
               p.post__excerpt
-              a(target="_blank").post__button.button Read More
+              .post__tags.tags
     -
       var portfolio = [
         {
@@ -361,9 +363,9 @@ html(lang='en')
             .portfolio-item.portfolio__item
               h3.portfolio-item__title= item.title
               p.portfolio-item__description= item.description
-              .portfolio-item__tags
+              .portfolio-item__tags.tags
                 each tag in item.tags
-                  span.portfolio-item__tag= tag
+                  span.portfolio-item__tag.tags__tag= tag
               .portfolio-image-wrapper
                 img(src=item.images[0].url)
                 .portfolio-buttons

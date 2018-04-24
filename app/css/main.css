@@ -13246,17 +13246,26 @@ section:nth-child(odd):not(:first-child) h2 {
   transform: translateY(80px); }
 
 .blog__posts {
-  display: none; }
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .blog__title {
   margin-bottom: 20px; }
 
 .post {
-  margin: 30px 0; }
+  margin: 40px 0; }
+  @media (min-width: 767px) {
+    .post {
+      width: 50%; }
+      .post:nth-child(even) {
+        padding-left: 20px; }
+      .post:nth-child(odd) {
+        padding-right: 20px; } }
 
 .post__excerpt {
   max-width: 550px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   text-align: justify; }
   @media (min-width: 767px) {
     .post__excerpt {
@@ -13267,7 +13276,7 @@ section:nth-child(odd):not(:first-child) h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px; }
+  margin-bottom: 0; }
   @media (min-width: 767px) {
     .post__title-container {
       flex-direction: row;
@@ -13286,22 +13295,27 @@ section:nth-child(odd):not(:first-child) h2 {
       font-size: 24px;
       text-align: left; } }
 
-.post__claps {
-  display: none;
-  font-size: 18px;
+.post__claps,
+.post__reading-time {
+  font-size: 14px;
   color: white;
   font-weight: bold;
   font-family: "latoregular";
-  top: -1px;
   white-space: nowrap;
   margin-right: 15px; }
   @media (min-width: 767px) {
-    .post__claps {
+    .post__claps,
+    .post__reading-time {
       display: inline-block; } }
 
-.post__button {
-  padding: 5px 10px;
-  margin-top: 0px; }
+.post__statistics {
+  margin: 10px 0; }
+
+.post__tags {
+  justify-content: center; }
+  @media (min-width: 767px) {
+    .post__tags {
+      justify-content: flex-start; } }
 
 /*
 * ==========================================================================
@@ -13342,13 +13356,15 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .portfolio-item__tags {
   margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center; }
 
-.portfolio-item__tag {
+.tags {
+  display: flex;
+  flex-wrap: wrap; }
+
+.tags__tag {
   font-family: "latoregular";
-  background-color: rgba(42, 42, 114, 0.25);
+  background-color: #cacadc;
   font-weight: bold;
   color: #2A2A72;
   padding: 2px 8px 3px;

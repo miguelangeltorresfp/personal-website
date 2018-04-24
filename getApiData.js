@@ -223,8 +223,15 @@ const getMediumData = new Promise((resolve, reject) => {
                     try {
                         let parsedData = JSON.parse(rawData);
                         let posts = parsedData["payload"]["references"]["Post"];
-                        for (let i = 1; i <= 3; i++) {
+                        for (let i = 1; i <= 6; i++) {
                             let post = posts[Object.keys(posts)[i - 1]];
+                            console.log(post["virtuals"]["readingTime"]);
+                            mediumData["readingTime" + i] = Math.ceil(post["virtuals"]["readingTime"]);
+                            let tags = [];
+                            post["virtuals"]["tags"].forEach( (tag) => {
+                                tags.push(tag);
+                            });
+                            mediumData["tags" + i] = tags;
                             mediumData["title" + i] = post["title"];
                             mediumData["excerpt" + i] =
                                 post["content"]["subtitle"];

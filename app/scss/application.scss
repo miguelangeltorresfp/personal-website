@@ -619,6 +619,8 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .blog__posts {
   display: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .blog__title {
@@ -626,12 +628,24 @@ section:nth-child(odd):not(:first-child) h2 {
 }
 
 .post {
-  margin: 30px 0;
+  margin: 40px 0;
+    
+    @include respond-to('small') {
+        width: 50%;
+
+        &:nth-child(even) {
+            padding-left: 20px;
+        }
+
+        &:nth-child(odd) {
+            padding-right: 20px;
+        }
+    }
 }
 
 .post__excerpt {
   max-width: 550px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   text-align: justify;
 
   @include respond-to('small') {
@@ -644,7 +658,7 @@ section:nth-child(odd):not(:first-child) h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 
   @include respond-to('small') {
     flex-direction: row;
@@ -668,13 +682,12 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
-.post__claps {
-  display: none;
-  font-size: 18px;
+.post__claps,
+.post__reading-time {
+  font-size: 14px;
   color: white;
   font-weight: bold;
   font-family: $heading-font;
-  top: -1px;
   white-space: nowrap;
   margin-right: 15px;
 
@@ -683,9 +696,16 @@ section:nth-child(odd):not(:first-child) h2 {
   }
 }
 
-.post__button {
-  padding: 5px 10px;
-  margin-top: 0px;
+.post__statistics {
+    margin: 10px 0;
+}
+
+.post__tags {
+    justify-content: center;
+    
+    @include respond-to('small') {
+        justify-content: flex-start;
+    }
 }
 
 /*
@@ -738,15 +758,18 @@ section:nth-child(odd):not(:first-child) h2 {
 }
 
 .portfolio-item__tags {
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
-.portfolio-item__tag {
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags__tag {
   font-family: $heading-font;
-  background-color: rgba($dark-color, .25);
+  background-color: #cacadc;
   font-weight: bold;
   color: $dark-color;
   padding: 2px 8px 3px;

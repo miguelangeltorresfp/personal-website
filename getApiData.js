@@ -8,7 +8,7 @@ const goodreadsKey = apiKeys.goodreads.key;
 
 
 
-const getGoodreadsData = new Promise((resolve, reject) => {
+const getGoodreadsData = () => new Promise((resolve, reject) => {
     https
         .get(
             {
@@ -148,7 +148,7 @@ async function getGithubData() {
     }
 }
 
-const getStravaData = new Promise((resolve, reject) => {
+const getStravaData = () => new Promise((resolve, reject) => {
     let stravaData = {};
     https
         .get(
@@ -201,7 +201,7 @@ const getStravaData = new Promise((resolve, reject) => {
         })
 });
 
-const getMediumData = new Promise((resolve, reject) => {
+const getMediumData = () => new Promise((resolve, reject) => {
     let mediumData = {};
     https
         .get(
@@ -225,7 +225,6 @@ const getMediumData = new Promise((resolve, reject) => {
                         let posts = parsedData["payload"]["references"]["Post"];
                         for (let i = 1; i <= 6; i++) {
                             let post = posts[Object.keys(posts)[i - 1]];
-                            console.log(post["virtuals"]["readingTime"]);
                             mediumData["readingTime" + i] = Math.ceil(post["virtuals"]["readingTime"]);
                             let tags = [];
                             post["virtuals"]["tags"].forEach( (tag) => {

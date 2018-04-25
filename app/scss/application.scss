@@ -239,6 +239,7 @@ a.button {
 .intro__title {
     color: #fff;
     font-size: 1.5em;
+    letter-spacing: 0.4px;
     font-weight: normal;
     margin: 15px 0;
     text-transform: uppercase;
@@ -246,6 +247,7 @@ a.button {
     
   @include respond-to('small') {
     font-size: 1.8em;
+      letter-spacing: 0.5px;
   }
 }
 
@@ -769,6 +771,7 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .tags__tag {
   font-family: $heading-font;
+    text-transform: lowercase;
   background-color: #cacadc;
   font-weight: bold;
   color: $dark-color;

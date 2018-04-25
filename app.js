@@ -42,7 +42,7 @@ router.get("/", (request, response) => {
 });
 
 router.get("/goodreadsData", (request, response) => {
-    getGoodreadsData
+    getGoodreadsData()
         .then(goodreadsData => {
             response.json(goodreadsData)
         })
@@ -62,7 +62,7 @@ router.get("/githubData", (request, response) => {
 });
 
 router.get("/stravaData", (request, response) => {
-    getStravaData
+    getStravaData()
         .then(stravaData => {
             response.json(stravaData)
         })
@@ -72,7 +72,7 @@ router.get("/stravaData", (request, response) => {
 });
 
 router.get("/mediumData", (request, response) => {
-    getMediumData
+    getMediumData()
         .then(mediumData => {
             response.json(mediumData)
         })

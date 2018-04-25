@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const gulp = require("gulp"),
     concat = require("gulp-concat"),
@@ -10,7 +10,7 @@ const gulp = require("gulp"),
     maps = require("gulp-sourcemaps"),
     nodemon = require("nodemon"),
     postcss = require("gulp-postcss"),
-    autoprefixer = require("autoprefixer")
+    autoprefixer = require("autoprefixer");
 
 gulp.task("concatScripts", () => {
     return gulp
@@ -24,7 +24,7 @@ gulp.task("concatScripts", () => {
         .pipe(concat("index.js"))
         .pipe(maps.write("./"))
         .pipe(gulp.dest("app/js"))
-})
+});;
 
 gulp.task("minifyScripts", ["concatScripts"], () => {
     return gulp
@@ -33,14 +33,14 @@ gulp.task("minifyScripts", ["concatScripts"], () => {
         .pipe(uglify())
         .pipe(rename("index.min.js"))
         .pipe(gulp.dest("public/js"))
-})
+});
 
 gulp.task("compileSass", () => {
     return gulp
         .src("app/scss/application.scss")
         .pipe(sass())
         .pipe(gulp.dest("app/css"))
-})
+});
 
 gulp.task("concatCss", ["compileSass"], () => {
     return gulp
@@ -54,7 +54,7 @@ gulp.task("concatCss", ["compileSass"], () => {
         .pipe(concat("main.css"))
         .pipe(maps.write("./"))
         .pipe(gulp.dest("app/css"))
-})
+});
 
 gulp.task("autoprefixer", ["concatCss"], () => {
     return gulp
@@ -63,7 +63,7 @@ gulp.task("autoprefixer", ["concatCss"], () => {
         .pipe(postcss([autoprefixer()]))
         .pipe(maps.write("./"))
         .pipe(gulp.dest("public/css"))
-})
+});
 
 gulp.task("minifyCss", ["autoprefixer"], () => {
     return gulp
@@ -71,25 +71,25 @@ gulp.task("minifyCss", ["autoprefixer"], () => {
         .pipe(minify())
         .pipe(rename("main.min.css"))
         .pipe(gulp.dest("public/css"))
-})
+});
 
 gulp.task("watchFiles", () => {
-    gulp.watch("app/scss/application.scss", ["concatCss"])
+    gulp.watch("app/scss/application.scss", ["concatCss"]);
     gulp.watch("app/js/main.js", ["concatScripts"])
-})
+});
 
 gulp.task("dev", ["concatCss", "concatScripts", "watchFiles"], () => {
     nodemon({ script: "app.js", env: { NODE_ENV: "development" } })
-})
+});
 
 gulp.task("copy", () => {
-    gulp.src("app/css/fonts/*").pipe(gulp.dest("public/css/fonts"))
-    gulp.src("app/documents/*").pipe(gulp.dest("public/documents"))
-    gulp.src("app/img/*").pipe(gulp.dest("public/img"))
-    gulp.src("app/zohoverify/*").pipe(gulp.dest("public/zohoverify"))
-    gulp.src(["app/*.ico", "app/*.html"]).pipe(gulp.dest("public"))
-})
+    gulp.src("app/css/fonts/*").pipe(gulp.dest("public/css/fonts"));
+    gulp.src("app/documents/*").pipe(gulp.dest("public/documents"));
+    gulp.src("app/img/*").pipe(gulp.dest("public/img"));
+    gulp.src("app/zohoverify/*").pipe(gulp.dest("public/zohoverify"));
+    gulp.src(["app/*.ico", "app/*.html"]).pipe(gulp.dest("public"));
+});
 
-gulp.task("build", ["copy", "minifyScripts", "minifyCss"])
+gulp.task("build", ["copy", "minifyScripts", "minifyCss"]);
 
-gulp.task("default", ["dev"])
+gulp.task("default", ["dev"]);

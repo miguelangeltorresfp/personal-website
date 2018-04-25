@@ -12961,13 +12961,15 @@ a.button {
 .intro__title {
   color: #fff;
   font-size: 1.5em;
+  letter-spacing: 0.4px;
   font-weight: normal;
   margin: 15px 0;
   text-transform: uppercase;
   word-spacing: 3px; }
   @media (min-width: 767px) {
     .intro__title {
-      font-size: 1.8em; } }
+      font-size: 1.8em;
+      letter-spacing: 0.5px; } }
 
 .content-div {
   width: 100%; }
@@ -13473,6 +13475,7 @@ section:nth-child(odd):not(:first-child) h2 {
 
 .tags__tag {
   font-family: "latoregular";
+  text-transform: lowercase;
   background-color: #cacadc;
   font-weight: bold;
   color: #2A2A72;

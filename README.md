@@ -1,5 +1,5 @@
 # Personal Website
-My own personal website used to showcase my portfolio and other neat things. The site is hosted on Digital Ocean and uses a Node backend.
+My [personal website](https://www.robertcooper.me/) used to showcase my portfolio of projects, blog posts, and some other random things. The site is hosted on Digital Ocean and uses a Node backend.
 
 ## Local Development
 To develop the application locally, first clone the repository.
@@ -22,8 +22,8 @@ Go into terminal and type `ssh robert@159.203.4.207`.
 
 3) Run `git pull` to get the most recent changes from the Github repository.
 
-4) Run `npm install` to install any new dependencies.
+4) Run `yarn` to install any new dependencies.
 
 5) Run `pm2 restart all`.
 
-The website should now be updated! Congratulations.
+The website should now be updated! Congratulations. You did good.

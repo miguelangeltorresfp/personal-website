@@ -1,0 +1,65 @@
+section.statistics
+  .max-width-container
+    h2.statistics__title Random Information
+    .statistics__columns
+      .statistics-column.statistics__column#github
+        .statistics-column__title-container
+          .keyboard.statistics-column__icon.statistics-column__icon_left
+          h3.statistics-column__title Github Commits
+          .keyboard.statistics-column__icon.statistics-column__icon_right
+        .api
+          .api__loader
+            div
+            div
+            div
+            div
+            div
+          p.api__data-container
+            span.api__data
+            span.api__data-description total commits today.
+        p.api__info
+          | Data gathered from the 
+          a(href='https://developer.github.com/v3/', target='_blank') Github
+          |  API.
+      .statistics-column.statistics__column#goodreads
+        .statistics-column__title-container
+          .book.statistics-column__icon.statistics-column__icon_left
+          h3.statistics-column__title Currently Reading
+          .book.statistics-column__icon.statistics-column__icon_right
+        .api
+          .api__loader
+            div
+            div
+            div
+            div
+            div
+          ul.api__data-container.api__data-container--list
+        p.api__info
+          | Data gathered from the 
+          a(href='https://www.goodreads.com/api', target='_blank') Goodreads
+          |  API.
+      .statistics-column.statistics__column#strava
+        .statistics-column__title-container
+          .running-man.statistics-column__icon.statistics-column__icon_left
+          h3.statistics-column__title Last Run
+          .running-man.statistics-column__icon.statistics-column__icon_right
+        .api
+          .api__loader
+            div
+            div
+            div
+            div
+            div
+          p.api__data-container.running-date
+            span.api__data
+            span.api__data-description is the date of my last run.
+          p.api__data-container.running-distance
+            span.api__data
+            span.api__data-description km ran.
+          p.api__data-container.running-duration
+            span.api__data
+            span.api__data-description in duration.
+        p.api__info
+          | Data gathered from the 
+          a(href='http://strava.com', target='_blank') Strava
+          |  API.

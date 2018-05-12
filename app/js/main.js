@@ -62,14 +62,12 @@ $(document).ready(() => {
                 $("#goodreads .api__error").text("Goodreads API Error 😢").fadeIn(500)
             })
         } else {
-            result.forEach( function(bookTitle) {
-                // Create a child element: span.api__data.api__data--books
-                $("#goodreads .api__data-container")
-                    .append("<li class='api__data  api__data--book'>" + bookTitle + "</li>");
-                $("#goodreads .api__loader").fadeOut(500, () => {
-                    $("#goodreads .api > *:not(.api__loader)").fadeIn(500)
-                })
-            });
+            let bookTitle = result[0];
+            // Create a child element: span.api__data.api__data--books
+            $("#goodreads .api__data").text(bookTitle)
+            $("#goodreads .api__loader").fadeOut(500, () => {
+                $("#goodreads .api > *:not(.api__loader)").fadeIn(500)
+            })
         }
         
     })

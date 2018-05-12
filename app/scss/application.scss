@@ -605,26 +605,10 @@ section:nth-child(odd):not(:first-child) h2 {
 }
 
 .api__data {
-    font-size: 2em;
+    font-size: 1.2em;
     padding-right: 10px;
     font-weight: bold;
     color: $dark-color;
-    
-    &--book {
-        font-size: 1.2em;
-        padding: 0;
-        text-align: left;
-        margin-bottom: 12px;
-        
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.api__data-description {
-  position: relative;
-  top: -3px;
 }
 
 .api__info {

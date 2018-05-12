@@ -490,21 +490,10 @@ section:nth-child(odd):not(:first-child) h2 {
   list-style: disc; }
 
 .api__data {
-  font-size: 2em;
+  font-size: 1.2em;
   padding-right: 10px;
   font-weight: bold;
   color: #2A2A72; }
-  .api__data--book {
-    font-size: 1.2em;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 12px; }
-    .api__data--book:last-child {
-      margin-bottom: 0; }
-
-.api__data-description {
-  position: relative;
-  top: -3px; }
 
 .api__info {
   font-size: .8em;

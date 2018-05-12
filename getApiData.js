@@ -174,7 +174,7 @@ const getStravaData = () => new Promise((resolve, reject) => {
                                 if (duration.startsWith("00:")) {
                                     duration = duration.slice(3)
                                 } else if (duration.startsWith("0")) {
-                                    duration = duration.slice(2)
+                                    duration = duration.slice(1)
                                 }
                                 let distance_meters = parsedData[i]["distance"];
                                 let distance_km = distance_meters / 1000;

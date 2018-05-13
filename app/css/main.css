@@ -12843,8 +12843,12 @@ a:hover {
   font-weight: bold; }
 
 a:focus {
-  color: #2A2A72;
-  text-decoration: none; }
+  color: #0099ff;
+  text-decoration: none;
+  outline: 0; }
+
+body.focusable a:focus {
+  box-shadow: 0px 0px 25px 5px #0099ff; }
 
 a.button {
   text-decoration: none; }
@@ -12865,13 +12869,14 @@ a.button {
   font-family: latoregular;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all .15s ease; }
-
-.button:hover {
-  background-color: #1aa3ff;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px); }
+  .button:hover {
+    background-color: #1aa3ff;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px); }
+  .button:focus {
+    color: #fff; }
 
 /*
    ==========================================================================
@@ -12973,6 +12978,11 @@ a.button {
   width: 100%;
   text-align: center; }
 
+.intro__social-icon {
+  display: inline-block;
+  height: 100%;
+  margin: 0 4px; }
+
 .fa-social {
   background: none repeat scroll 0 0 #0099ff;
   border: 0px solid #2098f5;
@@ -12981,8 +12991,6 @@ a.button {
   line-height: 45px;
   text-align: center;
   width: 42px;
-  margin-left: 2px;
-  margin-right: 2px;
   transition: all .15s ease; }
 
 .fa-social:hover {

@@ -10990,4 +10990,21 @@ $(".carousel").carousel({
     interval: false,
 });
 
+
+// Add focusable class on keyboard events to properly style outlines
+const body = document.querySelector('body');
+
+document.addEventListener('keyup', (e) => {
+    if (e.keyCode === 9 && body.contains(e.target)) {
+        body.classList.add('focusable');
+    } else {
+        body.classList.remove('focusable');
+    }
+});
+
+document.addEventListener('mousedown', (e) => {
+    if (body.contains(e.target)) {
+        body.classList.remove('focusable');
+    }
+});
 //# sourceMappingURL=index.js.map

@@ -15,7 +15,7 @@ Run `gulp` or `gulp dev` to watch for changes and automatically compile assets. 
 ## Deploy to Production
 When the live website needs to be updated, follow these steps:
 
-1) Ensure the latest verion of the website is pushed to this repository on Github. Run `gulp build` in the terminal and commit/push changes to Github in order to have the most up to date files for deployment.
+1) Ensure the latest verion of the website is pushed to this repository on Github.
 
 2) ssh into the server with `ssh robert@159.203.4.207`.
 

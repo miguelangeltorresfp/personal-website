@@ -1,6 +1,6 @@
-section.statistics
+section.statistics.section.section--light
   .max-width-container
-    h2.statistics__title Random Information
+    h2.section__title.section__title--statistics Random Information
     .statistics__columns
       .statistics-column.statistics__column#github
         .statistics-column__title-container
@@ -38,6 +38,24 @@ section.statistics
         p.api__info
           | Data gathered from the 
           a(href='https://www.goodreads.com/api', target='_blank') Goodreads
+          |  API.
+      .statistics-column.statistics__column#twitter
+        .statistics-column__title-container
+          .tweet.statistics-column__icon.statistics-column__icon_left
+          h3.statistics-column__title Latest Tweet
+          .tweet.statistics-column__icon.statistics-column__icon_right
+        .api
+          .api__loader
+            div
+            div
+            div
+            div
+            div
+          p.api__data-container
+            span.api__data.api__data--tweet
+        p.api__info
+          | Data gathered from the 
+          a(href='https://developer.twitter.com/en.html', target='_blank') Twitter
           |  API.
       .statistics-column.statistics__column#strava
         .statistics-column__title-container

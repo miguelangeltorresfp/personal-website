@@ -5,6 +5,7 @@ const getStravaData = require("./getApiData").getStravaData;
 const getMediumData = require("./getApiData").getMediumData;
 const getGithubData = require("./getApiData").getGithubData;
 const getGoodreadsData = require("./getApiData").getGoodreadsData;
+const getTwitterData = require("./getApiData").getTwitterData;
 
 let rootStaticPath;
 if (process.env.NODE_ENV === "development") {
@@ -39,6 +40,16 @@ router.all(/.*/, function(request, response, next) {
 
 router.get("/", (request, response) => {
     response.render("index", { environment: process.env.NODE_ENV })
+});
+
+router.get("/twitterData", (request, response) => {
+    getTwitterData()
+        .then(getTwitterData => {
+            response.json(getTwitterData)
+        })
+        .catch(error => {
+            response.send(error)
+        })
 });
 
 router.get("/goodreadsData", (request, response) => {

@@ -69,7 +69,20 @@ $(document).ready(() => {
                 $("#goodreads .api > *:not(.api__loader)").fadeIn(500)
             })
         }
-        
+    })
+    $.get("/twitterData", result => {
+        if (result.error) {
+            $("#twitter .api__loader").fadeOut(500, () => {
+                $("#twitter .api").append("<p class='api__error'></p>");
+                $("#twitter .api__error").text("Twitter API Error 😢").fadeIn(500)
+            })
+        } else {
+            let tweet = result;
+            $("#twitter .api__data").text(tweet);
+            $("#twitter .api__loader").fadeOut(500, () => {
+                $("#twitter .api > *:not(.api__loader)").fadeIn(500)
+            })
+        }
     })
 });
 

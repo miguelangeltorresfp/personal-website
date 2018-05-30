@@ -74,7 +74,7 @@ gulp.task("minifyCss", ["autoprefixer"], () => {
 });
 
 gulp.task("watchFiles", () => {
-    gulp.watch("app/scss/application.scss", ["concatCss"]);
+    gulp.watch("app/scss/**/*.scss", ["concatCss"]);
     gulp.watch("app/js/main.js", ["concatScripts"])
 });
 

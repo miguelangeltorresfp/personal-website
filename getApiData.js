@@ -1,12 +1,39 @@
 const https = require("https");
 const apiKeys = require("./apiKeys.json");
 const moment = require("moment-timezone");
+const Twit = require('twit');
 const githubId = apiKeys.github.id;
 const githubSecret = apiKeys.github.secret;
 const stravaToken = apiKeys.strava.token;
 const goodreadsKey = apiKeys.goodreads.key;
+const twitterOauthConsumerKey = apiKeys.twitter.twitterOauthConsumerKey;
+const twitterOauthConsumerSecret = apiKeys.twitter.twitterOauthConsumerSecret;
+const twitterOauthToken = apiKeys.twitter.twitterOauthToken;
+const twitterOauthTokenSecret = apiKeys.twitter.twitterOauthTokenSecret;
 
 
+const T = new Twit({
+    consumer_key:         twitterOauthConsumerKey,
+    consumer_secret:      twitterOauthConsumerSecret,
+    access_token:         twitterOauthToken,
+    access_token_secret:  twitterOauthTokenSecret,
+    timeout_ms:           60*1000,  // optional HTTP request timeout to apply to all requests.
+});
+
+const getTwitterData = () => new Promise((resolve, reject) => {
+    T.get('statuses/user_timeline', { screen_name: 'RobertCooper_RC' }, function (err, data, response) {
+        data.some(tweet => {
+            if (tweet.retweeted === false && tweet.in_reply_to_status_id === null && tweet.is_quote_status === false) {
+                resolve(tweet.text);
+                return true;
+            }
+            return false;
+        });
+        reject({ error: "Twitter API call fail." })
+    });
+});
+
+getTwitterData();
 
 const getGoodreadsData = () => new Promise((resolve, reject) => {
     https
@@ -38,8 +65,6 @@ const getGoodreadsData = () => new Promise((resolve, reject) => {
             }
         )
 });
-
-getGoodreadsData;
 
 const githubRecentRepos = new Promise((resolve, reject) => {
     https
@@ -256,5 +281,6 @@ module.exports = {
     getMediumData: getMediumData,
     getStravaData: getStravaData,
     getGithubData: getGithubData,
-    getGoodreadsData: getGoodreadsData
+    getGoodreadsData: getGoodreadsData,
+    getTwitterData: getTwitterData
 };

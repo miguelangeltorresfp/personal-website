@@ -1,0 +1,201 @@
+/*
+   ==========================================================================
+   Stats Section
+   ==========================================================================
+*/
+
+.statistics {
+    background-color: $light-background;
+}
+
+.statistics .max-width-container {
+    text-align: center;
+}
+
+.statistics__columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.statistics__column {
+    margin: 10px;
+}
+
+.statistics-column {
+    max-width: 440px;
+    padding: 10px 20px;
+    width: 360px;
+    border: 3px solid $dark-color;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to('small') {
+        padding: 30px 20px;
+        width: 100%;
+    }
+}
+
+.statistics-column__title {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.statistics-column__icon {
+    &.fa-clock-o {
+        color: $dark-color;
+    }
+
+    &.running-man {
+        width: 30px;
+        height: 30px;
+        background: url('../img/running-man-animation.png') left center;
+        background-size: cover;
+        animation: run .4s steps(5) infinite;
+
+        @include respond-to('small') {
+            margin-bottom: -5px;
+        }
+    }
+
+    &.keyboard {
+        width: 60px;
+        height: 30px;
+        background: url('../img/keyboard-pattern.png') left center;
+        background-size: cover;
+        animation: type 1.5s steps(10) infinite;
+
+        @include respond-to('small') {
+            margin-bottom: -7px;
+        }
+    }
+
+    @keyframes run {
+        100% { background-position: -150px; }
+    }
+
+    @keyframes type {
+        100% { background-position: -600px; }
+    }
+
+    &.book {
+        height: 30px;
+        width: 40px;
+        background: url('../img/book.png') center bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include respond-to('small') {
+            margin-bottom: -4px;
+        }
+    }
+
+    &.tweet {
+        height: 30px;
+        width: 40px;
+        background: url('../img/twitter.png') center bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include respond-to('small') {
+            margin-bottom: -4px;
+        }
+    }
+}
+
+.statistics-column__icon_left {
+    display: block;
+    margin: 10px auto;
+
+    @include respond-to('small') {
+        display: inline-block;
+        margin: 0;
+
+        &.fa-clock-o,
+        &.running-man {
+            margin-right: 20px;
+        }
+    }
+}
+
+.statistics-column__icon_right {
+    display: none;
+
+    @include respond-to('small') {
+        display: inline-block;
+        margin: 0;
+
+        &.fa-clock-o,
+        &.running-man {
+            margin-left: 20px;
+        }
+    }
+}
+
+.api {
+    text-align: center;
+    margin: 20px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.api > *:not(.api__loader) {
+    display: none;
+}
+
+.api__loader {
+    filter: url('#goo');
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(40px);
+    > div {
+        float: left;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        background-color: $c2;
+        animation: loader $t infinite;
+    }
+
+    @for $i from 1 through 5 {
+        > div:nth-child(#{$i}) {
+            animation-delay: $i * $d;
+        }
+    }
+
+    @keyframes loader {
+        50% {
+            transform: translateY(-16px);
+            background-color: $c3;
+        }
+    }
+}
+
+.api__data-container {
+    &--list {
+        padding-left: 40px;
+        list-style: disc;
+    }
+}
+
+.api__data {
+    font-size: 1.2rem;
+    padding-right: 10px;
+    font-weight: 400;
+    color: $dark-color;
+}
+
+.api__info {
+    font-size: .8rem;
+    font-style: italic;
+}
+
+.api__error {
+    margin: 0;
+}

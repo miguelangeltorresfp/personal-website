@@ -1,9 +1,3 @@
-/*
-   ==========================================================================
-   About Section
-   ==========================================================================
-*/
-
 .about__container {
     display: flex;
     align-items: center;
@@ -38,6 +32,13 @@
 .about__last-updated {
     text-align: left;
     font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.about__last-updated-icon {
+    font-size: 18px;
+    margin-right: 5px;
 }
 
 .about__description-column {

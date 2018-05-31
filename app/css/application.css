@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'latoregular';
-  src: url("/css/fonts/Lato-Regular-webfont.eot");
-  src: url("/css/fonts/Lato-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/css/fonts/Lato-Regular-webfont.woff2") format("woff2"), url("/css/fonts/Lato-Regular-webfont.woff") format("woff"), url("/css/fonts/Lato-Regular-webfont.ttf") format("truetype"), url("/css/fonts/Lato-Regular-webfont.svg#latoregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 html {
   font-size: 1rem;
   line-height: 1.4;
@@ -39,7 +32,7 @@ h5,
 h6 {
   font-weight: normal;
   color: #0099ff;
-  font-family: "latoregular"; }
+  font-family: "lato"; }
 
 h2 {
   font-size: 2rem;
@@ -127,11 +120,6 @@ section:nth-child(odd) p {
     margin: auto;
     margin-bottom: 20px; }
 
-/*
-   ==========================================================================
-   About Section
-   ==========================================================================
-*/
 .about__container {
   display: flex;
   align-items: center;
@@ -160,7 +148,13 @@ section:nth-child(odd) p {
 
 .about__last-updated {
   text-align: left;
-  font-size: 12px; }
+  font-size: 12px;
+  display: flex;
+  align-items: center; }
+
+.about__last-updated-icon {
+  font-size: 18px;
+  margin-right: 5px; }
 
 .about__description-column {
   width: 100%;
@@ -176,11 +170,6 @@ section:nth-child(odd) p {
     .about__headshot-column {
       width: 30%; } }
 
-/*
-   ==========================================================================
-   Blog Section
-   ==========================================================================
-*/
 .blog .api__loader {
   transform: translateY(80px); }
 
@@ -242,7 +231,7 @@ section:nth-child(odd) p {
   font-size: 14px;
   color: white;
   font-weight: bold;
-  font-family: "latoregular";
+  font-family: "lato";
   white-space: nowrap;
   margin-right: 15px; }
   @media (min-width: 767px) {
@@ -271,7 +260,7 @@ section:nth-child(odd) p {
   text-transform: uppercase;
   margin-top: 20px;
   display: inline-block;
-  font-family: latoregular;
+  font-family: "lato";
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all .15s ease; }
   .button:hover {
@@ -340,7 +329,7 @@ section:nth-child(odd) p {
 
 .intro__content-name {
   color: #0099ff;
-  font-family: "latoregular";
+  font-family: "lato";
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: bold;
@@ -370,16 +359,16 @@ section:nth-child(odd) p {
   width: 100%;
   text-align: center; }
 
-.intro__social-icon {
+.intro__social-icon-link {
   display: inline-block;
   height: 100%;
   margin: 0 4px;
   border: none; }
 
-.fa-social {
+.intro__social-icon {
   background: none repeat scroll 0 0 #0099ff;
-  border: 0px solid #2098f5;
-  color: white;
+  border: 0px solid #0099ff;
+  color: #fff;
   height: 42px;
   line-height: 45px;
   text-align: center;
@@ -387,19 +376,10 @@ section:nth-child(odd) p {
   transition: all .15s ease;
   font-size: 1.8rem; }
 
-.fa-social:hover {
-  color: #2098f5;
+.intro__social-icon:hover {
+  color: #0099ff;
   background: #fff; }
 
-.icon rect, .icon line {
-  fill: #0099ff;
-  stroke: #0099ff; }
-
-/*
-* ==========================================================================
-    Portfolio Section
-* ==========================================================================
-*/
 .portfolio__description {
   margin-bottom: 40px; }
 
@@ -439,7 +419,7 @@ section:nth-child(odd) p {
   flex-wrap: wrap; }
 
 .tags__tag {
-  font-family: "latoregular";
+  font-family: "lato";
   text-transform: lowercase;
   background-color: #cacadc;
   font-weight: bold;
@@ -508,23 +488,23 @@ section:nth-child(odd) p {
   .carousel-indicators li:hover {
     cursor: pointer; }
 
-.carousel-control-prev {
-  width: 100px;
-  left: -100px; }
-
-.carousel-control-next {
-  width: 100px;
-  right: -100px; }
+.carousel-control {
+  border: none; }
+  .carousel-control:hover {
+    background: none; }
+  .carousel-control:focus {
+    opacity: 0.5; }
+  .carousel-control-prev {
+    width: 100px;
+    left: -100px; }
+  .carousel-control-next {
+    width: 100px;
+    right: -100px; }
 
 .carousel-item {
   width: 100%;
   max-width: 800px; }
 
-/*
-   ==========================================================================
-   Stats Section
-   ==========================================================================
-*/
 .statistics {
   background-color: #fff; }
 
@@ -610,23 +590,23 @@ section:nth-child(odd) p {
     .statistics-column__icon.tweet {
       margin-bottom: -4px; } }
 
-.statistics-column__icon_left {
+.statistics-column__icon-left {
   display: block;
   margin: 10px auto; }
   @media (min-width: 767px) {
-    .statistics-column__icon_left {
+    .statistics-column__icon-left {
       display: inline-block;
       margin: 0; }
-      .statistics-column__icon_left.fa-clock-o, .statistics-column__icon_left.running-man {
+      .statistics-column__icon-left.fa-clock-o, .statistics-column__icon-left.running-man {
         margin-right: 20px; } }
 
-.statistics-column__icon_right {
+.statistics-column__icon-right {
   display: none; }
   @media (min-width: 767px) {
-    .statistics-column__icon_right {
+    .statistics-column__icon-right {
       display: inline-block;
       margin: 0; }
-      .statistics-column__icon_right.fa-clock-o, .statistics-column__icon_right.running-man {
+      .statistics-column__icon-right.fa-clock-o, .statistics-column__icon-right.running-man {
         margin-left: 20px; } }
 
 .api {

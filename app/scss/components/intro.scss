@@ -8,7 +8,7 @@
     z-index: 10;
     overflow: hidden;
     width: 100%;
-    color: #fff;
+    color: $white;
     transition: transform 0.6s;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 
@@ -76,7 +76,7 @@
 }
 
 .intro__title {
-    color: #fff;
+    color: $white;
     font-size: 1.4rem;
     letter-spacing: 0.4px;
     font-weight: normal;
@@ -90,8 +90,6 @@
     }
 }
 
-// Social Links
-
 .intro__social {
     bottom: 0;
     left: 0;
@@ -101,17 +99,17 @@
     text-align: center;
 }
 
-.intro__social-icon {
+.intro__social-icon-link {
     display: inline-block;
     height: 100%;
     margin: 0 4px;
     border: none;
 }
 
-.fa-social {
+.intro__social-icon {
     background: none repeat scroll 0 0 $primary-color;
-    border: 0px solid #2098f5;
-    color: rgb(255, 255, 255);
+    border: 0px solid $primary-color;
+    color: $white;
     height: 42px;
     line-height: 45px;
     text-align: center;
@@ -119,11 +117,8 @@
     transition: all .15s ease;
     font-size: 1.8rem;
 }
-.fa-social:hover {
-    color: #2098f5;
-    background: #fff;
-}
-.icon rect, .icon line {
-    fill: $primary-color;
-    stroke: $primary-color;
+
+.intro__social-icon:hover {
+    color: $primary-color;
+    background: $white;
 }

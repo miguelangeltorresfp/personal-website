@@ -23,7 +23,7 @@ section:nth-child(odd) p, {
     &--dark {
         a,
         p {
-            color: #fff;
+            color: $white;
         }
     }
     &--light {

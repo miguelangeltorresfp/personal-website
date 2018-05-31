@@ -93,6 +93,8 @@ $("a.button.screenshots").click(e => {
         .parent()
         .siblings(".carousel-wrapper")
         .css("display", "flex")
+    // Set the focus to the carousel controls to allow for changing slides using left and right arrow keys
+    $(e.target).closest('.portfolio-item').find('.carousel-control')[0].focus();
 });
 
 $(".carousel-wrapper").click(e => {

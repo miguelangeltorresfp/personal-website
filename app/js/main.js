@@ -1,5 +1,6 @@
 $(document).ready(() => {
-    $.get("/mediumData", result => {
+    $.get("/.netlify/functions/getMediumData", result => {
+        result = JSON.parse(result);
         for (let i = 1; i <= 6; i++) {
             let postId = "#post" + i;
             let title = "title" + i;
@@ -27,63 +28,63 @@ $(document).ready(() => {
             $(".blog__posts").fadeIn(500).css('display', 'flex');
         })
     });
-    $.get("/githubData", result => {
-        if (result.error) {
-            $("#github .api__loader").fadeOut(500, () => {
-                $("#github .api").append("<p class='api__error'></p>");
-                $("#github .api__error").text("Github API Error 😢").fadeIn(500)
-            })
-        } else {
+    $.get("/.netlify/functions/getGithubData", result => {
+        result = JSON.parse(result);
             $("#github .api__data").text(result.commits);
             $("#github .api__loader").fadeOut(500, () => {
                 $("#github .api > *:not(.api__loader)").fadeIn(500)
             })
-        }
-    });
-    $.get("/stravaData", result => {
-        if (result.error) {
+    })
+        .fail(function() {
+            $("#github .api__loader").fadeOut(500, () => {
+                $("#github .api").append("<p class='api__error'></p>");
+                $("#github .api__error").text("Github API Error 😢").fadeIn(500)
+            })
+        });
+    $.get("/.netlify/functions/getStravaData", result => {
+        result = JSON.parse(result);
+        $(".running-date .api__data").text(result.date);
+        $(".running-distance .api__data").text(result.distance);
+        $(".running-duration .api__data").text(result.duration);
+        $("#strava .api__loader").fadeOut(500, () => {
+            $("#strava .api > *:not(.api__loader)").fadeIn(500)
+        })
+    })
+        .fail(function() {
             $("#strava .api__loader").fadeOut(500, () => {
                 $("#strava .api").append("<p class='api__error'></p>");
                 $("#strava .api__error").text("Strava API Error 😢").fadeIn(500)
             })
-        } else {
-            $(".running-date .api__data").text(result.date);
-            $(".running-distance .api__data").text(result.distance);
-            $(".running-duration .api__data").text(result.duration);
-            $("#strava .api__loader").fadeOut(500, () => {
-                $("#strava .api > *:not(.api__loader)").fadeIn(500)
-            })
-        }
-    });
-    $.get("/goodreadsData", result => {
-        if (result.error) {
-            $("#goodreads .api__loader").fadeOut(500, () => {
-                $("#goodreads .api").append("<p class='api__error'></p>");
-                $("#goodreads .api__error").text("Goodreads API Error 😢").fadeIn(500)
-            })
-        } else {
+        });
+    $.get("/.netlify/functions/getGoodreadsData", result => {
+        result = JSON.parse(result);
             let bookTitle = result[0];
             // Create a child element: span.api__data.api__data--books
             $("#goodreads .api__data").text(bookTitle)
             $("#goodreads .api__loader").fadeOut(500, () => {
                 $("#goodreads .api > *:not(.api__loader)").fadeIn(500)
             })
-        }
     })
-    $.get("/twitterData", result => {
-        if (result.error) {
+        .fail(function() {
+            $("#goodreads .api__loader").fadeOut(500, () => {
+                $("#goodreads .api").append("<p class='api__error'></p>");
+                $("#goodreads .api__error").text("Goodreads API Error 😢").fadeIn(500)
+            })
+        });
+    $.get("/.netlify/functions/getTwitterData", result => {
+        result = JSON.parse(result);
+        let tweet = result;
+        $("#twitter .api__data").text(tweet);
+        $("#twitter .api__loader").fadeOut(500, () => {
+            $("#twitter .api > *:not(.api__loader)").fadeIn(500)
+        })
+    })
+        .fail(function() {
             $("#twitter .api__loader").fadeOut(500, () => {
                 $("#twitter .api").append("<p class='api__error'></p>");
                 $("#twitter .api__error").text("Twitter API Error 😢").fadeIn(500)
             })
-        } else {
-            let tweet = result;
-            $("#twitter .api__data").text(tweet);
-            $("#twitter .api__loader").fadeOut(500, () => {
-                $("#twitter .api > *:not(.api__loader)").fadeIn(500)
-            })
-        }
-    })
+        });
 });
 
 $("a.button.screenshots").click(e => {

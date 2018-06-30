@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "netlify-lambda build app/functions && gulp build"
+    "build": "netlify-lambda build app/functions && gulp build",
+    "dev": "concurrently \"gulp\" \"netlify-lambda serve app/functions\""
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
     "netlify-lambda": "^0.4.0",
     "node-sass": "^4.8.3",
     "nodemon": "^1.15.0",
-    "pm2": "^2.6.1",
     "pug": "^2.0.0-rc.3",
     "querystring": "^0.2.0",
     "twit": "^2.2.9",
@@ -40,6 +40,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
+    "concurrently": "^3.6.0",
     "express-http-proxy": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",

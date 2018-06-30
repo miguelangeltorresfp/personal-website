@@ -1,15 +1,15 @@
 const https = require("https");
-const apiKeys = require("./apiKeys.json");
+const ENV = process.env;
 const moment = require("moment-timezone");
 const Twit = require('twit');
-const githubId = apiKeys.github.id;
-const githubSecret = apiKeys.github.secret;
-const stravaToken = apiKeys.strava.token;
-const goodreadsKey = apiKeys.goodreads.key;
-const twitterOauthConsumerKey = apiKeys.twitter.twitterOauthConsumerKey;
-const twitterOauthConsumerSecret = apiKeys.twitter.twitterOauthConsumerSecret;
-const twitterOauthToken = apiKeys.twitter.twitterOauthToken;
-const twitterOauthTokenSecret = apiKeys.twitter.twitterOauthTokenSecret;
+const githubId = ENV.GITHUB_ID;
+const githubSecret = ENV.GITHUB_SECRET;
+const stravaToken = ENV.STRAVA_TOKEN;
+const goodreadsKey = ENV.GOODREADS_KEY;
+const twitterOauthConsumerKey = ENV.TWITTER_OAUTH_CONSUMER_KEY;
+const twitterOauthConsumerSecret = ENV.TWITTER_OAUTH_CONSUMER_SECRET;
+const twitterOauthToken = ENV.TWITTER_OAUTH_TOKEN;
+const twitterOauthTokenSecret = ENV.TWITTER_OAUTH_SECRET;
 
 
 const T = new Twit({

@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
+
+// Allow environment variables to be access through process.env
+require('dotenv').config();
+
 const getStravaData = require("./getApiData").getStravaData;
 const getMediumData = require("./getApiData").getMediumData;
 const getGithubData = require("./getApiData").getGithubData;

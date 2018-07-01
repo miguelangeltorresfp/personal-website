@@ -1,24 +1,21 @@
+const proxy = require('express-http-proxy');
 const express = require("express");
 const app = express();
 const router = express.Router();
-const getStravaData = require("./getApiData").getStravaData;
-const getMediumData = require("./getApiData").getMediumData;
-const getGithubData = require("./getApiData").getGithubData;
-const getGoodreadsData = require("./getApiData").getGoodreadsData;
-const getTwitterData = require("./getApiData").getTwitterData;
 
-let rootStaticPath;
-if (process.env.NODE_ENV === "development") {
-    rootStaticPath = "app"
-} else {
-    rootStaticPath = "public"
-}
-app.use("/documents", express.static(`${rootStaticPath}/documents`));
-app.use("/css", express.static(`${rootStaticPath}/css`));
-app.use("/js", express.static(`${rootStaticPath}/js`));
-app.use("/img", express.static(`${rootStaticPath}/img`));
-app.use("/fonts", express.static(`${rootStaticPath}/fonts`));
-app.use("/public", express.static(`${rootStaticPath}`));
+// Allow environment variables to be access through process.env
+require('dotenv').config();
+
+// Map URLs to folders
+app.use("/documents", express.static(`app/documents`));
+app.use("/css", express.static(`app/css`));
+app.use("/js", express.static(`app/js`));
+app.use("/img", express.static(`app/img`));
+app.use("/fonts", express.static(`app/fonts`));
+app.use("/public", express.static(`app`));
+
+// Proxy requests to the local lambda functions server
+app.use("/.netlify/functions", proxy("http://localhost:9000"));
 
 app.set("views");
 app.set("view engine", "pug");
@@ -42,56 +39,6 @@ router.get("/", (request, response) => {
     response.render("index", { environment: process.env.NODE_ENV })
 });
 
-router.get("/twitterData", (request, response) => {
-    getTwitterData()
-        .then(getTwitterData => {
-            response.json(getTwitterData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
-});
-
-router.get("/goodreadsData", (request, response) => {
-    getGoodreadsData()
-        .then(goodreadsData => {
-            response.json(goodreadsData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
-});
-
-router.get("/githubData", (request, response) => {
-    getGithubData()
-        .then(githubData => {
-            response.json(githubData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
-});
-
-router.get("/stravaData", (request, response) => {
-    getStravaData()
-        .then(stravaData => {
-            response.json(stravaData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
-});
-
-router.get("/mediumData", (request, response) => {
-    getMediumData()
-        .then(mediumData => {
-            response.json(mediumData)
-        })
-        .catch(error => {
-            response.send(error)
-        })
-});
-
 app.use((request, response, next) => {
     const err = new Error("Not Found");
     err.status = 404;
@@ -105,7 +52,5 @@ app.use((error, request, response) => {
 });
 
 app.listen(8080, () => {
-    process.env.NODE_ENV === "development"
-        ? console.log("The application is running on localhost:8080!")
-        : console.log("The application is running at www.robertcooper.me!")
+    console.log("The application is running on localhost:8080!");
 });

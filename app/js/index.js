@@ -2621,7 +2621,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 		cached = compilerCache[ selector + " " ];
 
 	if ( !cached ) {
-		// Generate a function of recursive functions that can be used to check each element
+		// Generate a function of recursive functionsRaw that can be used to check each element
 		if ( !match ) {
 			match = tokenize( selector );
 		}
@@ -2646,7 +2646,7 @@ compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 
 /**
  * A low-level selection function that works with Sizzle's compiled
- *  selector functions
+ *  selector functionsRaw
  * @param {String|Function} selector A selector or a pre-compiled
  *  selector function built with Sizzle.compile
  * @param {Element} context
@@ -3501,7 +3501,7 @@ function adoptValue( value, resolve, reject, noValue ) {
 	} catch ( value ) {
 
 		// Support: Android 4.0 only
-		// Strict mode functions invoked without .call/.apply get global-object context
+		// Strict mode functionsRaw invoked without .call/.apply get global-object context
 		reject.apply( undefined, [ value ] );
 	}
 }
@@ -3596,7 +3596,7 @@ jQuery.extend( {
 
 										// Support: Promises/A+ section 2.3.4
 										// https://promisesaplus.com/#point-64
-										// Only check objects and functions for thenability
+										// Only check objects and functionsRaw for thenability
 										( typeof returned === "object" ||
 											typeof returned === "function" ) &&
 										returned.then;
@@ -3916,7 +3916,7 @@ jQuery.extend( {
 			return;
 		}
 
-		// If there are functions bound, to execute
+		// If there are functionsRaw bound, to execute
 		readyList.resolveWith( document, [ jQuery ] );
 	}
 } );
@@ -4964,7 +4964,7 @@ function on( elem, types, selector, data, fn, one ) {
 }
 
 /*
- * Helper functions for managing events -- not part of the public interface.
+ * Helper functionsRaw for managing events -- not part of the public interface.
  * Props to Dean Edwards' addEvent library for many of the ideas.
  */
 jQuery.event = {
@@ -9880,7 +9880,7 @@ jQuery.fn.load = function( url, params, callback ) {
 
 
 
-// Attach a bunch of functions for handling common AJAX events
+// Attach a bunch of functionsRaw for handling common AJAX events
 jQuery.each( [
 	"ajaxStart",
 	"ajaxStop",
@@ -10899,7 +10899,8 @@ var Carousel = function ($) {
 }($);
 //# sourceMappingURL=carousel.js.map
 $(document).ready(() => {
-    $.get("/mediumData", result => {
+    $.get("/.netlify/functions/getMediumData", result => {
+        result = JSON.parse(result);
         for (let i = 1; i <= 6; i++) {
             let postId = "#post" + i;
             let title = "title" + i;
@@ -10927,63 +10928,63 @@ $(document).ready(() => {
             $(".blog__posts").fadeIn(500).css('display', 'flex');
         })
     });
-    $.get("/githubData", result => {
-        if (result.error) {
-            $("#github .api__loader").fadeOut(500, () => {
-                $("#github .api").append("<p class='api__error'></p>");
-                $("#github .api__error").text("Github API Error 😢").fadeIn(500)
-            })
-        } else {
+    $.get("/.netlify/functions/getGithubData", result => {
+        result = JSON.parse(result);
             $("#github .api__data").text(result.commits);
             $("#github .api__loader").fadeOut(500, () => {
                 $("#github .api > *:not(.api__loader)").fadeIn(500)
             })
-        }
-    });
-    $.get("/stravaData", result => {
-        if (result.error) {
+    })
+        .fail(function() {
+            $("#github .api__loader").fadeOut(500, () => {
+                $("#github .api").append("<p class='api__error'></p>");
+                $("#github .api__error").text("Github API Error 😢").fadeIn(500)
+            })
+        });
+    $.get("/.netlify/functions/getStravaData", result => {
+        result = JSON.parse(result);
+        $(".running-date .api__data").text(result.date);
+        $(".running-distance .api__data").text(result.distance);
+        $(".running-duration .api__data").text(result.duration);
+        $("#strava .api__loader").fadeOut(500, () => {
+            $("#strava .api > *:not(.api__loader)").fadeIn(500)
+        })
+    })
+        .fail(function() {
             $("#strava .api__loader").fadeOut(500, () => {
                 $("#strava .api").append("<p class='api__error'></p>");
                 $("#strava .api__error").text("Strava API Error 😢").fadeIn(500)
             })
-        } else {
-            $(".running-date .api__data").text(result.date);
-            $(".running-distance .api__data").text(result.distance);
-            $(".running-duration .api__data").text(result.duration);
-            $("#strava .api__loader").fadeOut(500, () => {
-                $("#strava .api > *:not(.api__loader)").fadeIn(500)
-            })
-        }
-    });
-    $.get("/goodreadsData", result => {
-        if (result.error) {
-            $("#goodreads .api__loader").fadeOut(500, () => {
-                $("#goodreads .api").append("<p class='api__error'></p>");
-                $("#goodreads .api__error").text("Goodreads API Error 😢").fadeIn(500)
-            })
-        } else {
+        });
+    $.get("/.netlify/functions/getGoodreadsData", result => {
+        result = JSON.parse(result);
             let bookTitle = result[0];
             // Create a child element: span.api__data.api__data--books
             $("#goodreads .api__data").text(bookTitle)
             $("#goodreads .api__loader").fadeOut(500, () => {
                 $("#goodreads .api > *:not(.api__loader)").fadeIn(500)
             })
-        }
     })
-    $.get("/twitterData", result => {
-        if (result.error) {
+        .fail(function() {
+            $("#goodreads .api__loader").fadeOut(500, () => {
+                $("#goodreads .api").append("<p class='api__error'></p>");
+                $("#goodreads .api__error").text("Goodreads API Error 😢").fadeIn(500)
+            })
+        });
+    $.get("/.netlify/functions/getTwitterData", result => {
+        result = JSON.parse(result);
+        let tweet = result;
+        $("#twitter .api__data").text(tweet);
+        $("#twitter .api__loader").fadeOut(500, () => {
+            $("#twitter .api > *:not(.api__loader)").fadeIn(500)
+        })
+    })
+        .fail(function() {
             $("#twitter .api__loader").fadeOut(500, () => {
                 $("#twitter .api").append("<p class='api__error'></p>");
                 $("#twitter .api__error").text("Twitter API Error 😢").fadeIn(500)
             })
-        } else {
-            let tweet = result;
-            $("#twitter .api__data").text(tweet);
-            $("#twitter .api__loader").fadeOut(500, () => {
-                $("#twitter .api > *:not(.api__loader)").fadeIn(500)
-            })
-        }
-    })
+        });
 });
 
 $("a.button.screenshots").click(e => {

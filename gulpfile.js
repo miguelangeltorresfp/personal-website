@@ -10,7 +10,16 @@ const gulp = require("gulp"),
     maps = require("gulp-sourcemaps"),
     nodemon = require("nodemon"),
     postcss = require("gulp-postcss"),
-    autoprefixer = require("autoprefixer");
+    autoprefixer = require("autoprefixer"),
+    pug = require('gulp-pug');
+
+gulp.task('views', function buildHTML() {
+    return gulp.src('views/*.pug')
+        .pipe(pug({
+            // Your options in here.
+        }))
+        .pipe(gulp.dest("public/"))
+});
 
 gulp.task("concatScripts", () => {
     return gulp
@@ -90,6 +99,6 @@ gulp.task("copy", () => {
     gulp.src(["app/*.ico", "app/*.html"]).pipe(gulp.dest("public"));
 });
 
-gulp.task("build", ["copy", "minifyScripts", "minifyCss"]);
+gulp.task("build", ["copy", "views", "minifyScripts", "minifyCss"]);
 
 gulp.task("default", ["dev"]);

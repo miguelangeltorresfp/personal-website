@@ -16480,8 +16480,9 @@ exports.handler = function (event, context, callback) {
     T.get('statuses/user_timeline', { screen_name: 'RobertCooper_RC' }, function (err, data) {
         data.some(tweet => {
             if (tweet.retweeted === false && tweet.in_reply_to_status_id === null && tweet.is_quote_status === false) {
+                const tweetText = tweet.text.slice(0, tweet.text.indexOf('https://t.co/'));
                 callback(null, { statusCode,
-                    headers, body: JSON.stringify(tweet.text) });
+                    headers, body: JSON.stringify(tweetText) });
                 return true;
             }
             return false;

@@ -12844,7 +12844,7 @@ section:nth-child(odd) p {
   color: #2A2A72; }
 
 .section__title {
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1px;
   word-spacing: 3px; }
   .section__title--about {

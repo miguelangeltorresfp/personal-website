@@ -1,6 +1,34 @@
 -
   var portfolio = [
     {
+      title: 'Color Namer',
+      description: 'A utility web app that provides a color name for corresponding hex and rgb values. Lists names for 15,000+ colors.',
+      tags: ['react', 'javascript', 'css', 'continuous deployment'],
+      images: [
+        {
+          url: 'img/color-namer-screenshot.png',
+          description: 'color namer displaying the color "FREE SPEECH GREEN" when the input is set with a value of "#00ef11"'
+        }
+      ],
+      links: [
+        {
+          type: 'Website',
+          url: 'https://colornamer.netlify.com/',
+          class: 'demo'
+        },
+        {
+          type: 'Screenshots',
+          url: 'javascript:void(0)',
+          class: 'screenshots'
+        },
+        {
+          type: 'Github',
+          url: 'https://github.com/robertcoopercode/color-namer',
+          class: 'github'
+        }
+      ]
+    },
+    {
       title: 'Public Wifi Speeds',
       description: 'An application that allows users to record the wifi speeds they encounter at public places and aggregates the data for others to see.',
       tags: ['react', 'firebase', 'google maps api', 'javascript', 'sass', 'authentication'],
@@ -100,42 +128,6 @@
         }
       ]
     },
-    {
-      title: 'CUTC 2017 Website',
-      description: 'The website for the 2017 Canadian Undergraduate Technology Conference. I was the director of technology for the conference and I was responsible for building the website along with another team member.',
-      tags: ['javascript', 'html', 'css'],
-      images: [
-        {
-          url: 'img/cutc-screenshot.png',
-          description: 'website\'s top section'
-        },
-        {
-          url: 'img/cutc-screenshot-2.png',
-          description: 'speaker\'s modal'
-        },
-        {
-          url: 'img/cutc-screenshot-3.png',
-          description: 'integrated google maps'
-        }
-      ],
-      links: [
-        {
-          type: 'Website',
-          url: 'http://2017.cutc.ca/',
-          class: 'demo'
-        },
-        {
-          type: 'Screenshots',
-          url: 'javascript:void(0)',
-          class: 'screenshots'
-        },
-        {
-          type: 'Github',
-          url: 'https://github.com/robertcoopercode/elevate.cutc.ca',
-          class: 'github'
-        }
-      ]
-    }
   ]
 section.portfolio.section.section--light
   .portfolio__container.max-width-container

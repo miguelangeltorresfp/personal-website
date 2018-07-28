@@ -87,25 +87,6 @@ $(document).ready(() => {
         });
 });
 
-$("a.button.screenshots").click(e => {
-    e.preventDefault();
-    $(e.target)
-        .parent()
-        .parent()
-        .siblings(".carousel-wrapper")
-        .css("display", "flex")
-    // Set the focus to the carousel controls to allow for changing slides using left and right arrow keys
-    $(e.target).closest('.portfolio-item').find('.carousel-control')[0].focus();
-});
-
-$(".carousel-wrapper").click(e => {
-    if ($(e.target).hasClass("carousel-wrapper")) $(e.target).hide()
-});
-
-$(".carousel").carousel({
-    interval: false,
-});
-
 
 // Add focusable class on keyboard events to properly style outlines
 const body = document.querySelector('body');

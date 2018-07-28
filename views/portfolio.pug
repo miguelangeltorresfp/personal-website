@@ -17,11 +17,6 @@
           class: 'demo'
         },
         {
-          type: 'Screenshots',
-          url: 'javascript:void(0)',
-          class: 'screenshots'
-        },
-        {
           type: 'Github',
           url: 'https://github.com/robertcoopercode/color-namer',
           class: 'github'
@@ -53,11 +48,6 @@
           class: 'demo'
         },
         {
-          type: 'Screenshots',
-          url: 'javascript:void(0)',
-          class: 'screenshots'
-        },
-        {
           type: 'Github',
           url: 'https://github.com/robertcoopercode/public-wifi-speeds',
           class: 'github'
@@ -83,11 +73,6 @@
           type: 'Website',
           url: 'http://nitter.herokuapp.com/',
           class: 'demo'
-        },
-        {
-          type: 'Screenshots',
-          url: 'javascript:void(0)',
-          class: 'screenshots'
         },
         {
           type: 'Github',
@@ -140,11 +125,6 @@
           class: 'demo'
         },
         {
-          type: 'Screenshots',
-          url: 'javascript:void(0)',
-          class: 'screenshots'
-        },
-        {
           type: 'Github',
           url: 'https://github.com/robertcoopercode/stranger-ipsum',
           class: 'github'
@@ -174,28 +154,3 @@ section.portfolio.section.section--light
             .portfolio-buttons
               each link in item.links
                 a(href=link.url, target='_blank', class=link.class).button= link.type
-          .carousel-wrapper
-            .carousel.slide(data-ride='carousel', id='carousel-portfolio-' + index)
-              // Indicators
-              ol.carousel-indicators
-                each image, imageIndex in item.images
-                  if imageIndex === 0
-                    li.active(data-target='#carousel-portfolio-' + index, data-slide-to=imageIndex)
-                  else
-                    li(data-target='#carousel-portfolio-' + index, data-slide-to=imageIndex)
-              // Wrapper for slides
-              .carousel-inner(role='listbox')
-                each image, imageIndex in item.images
-                  if imageIndex === 0
-                    .carousel-item.active
-                      img(src=image.url, alt=image.description)
-                  else 
-                    .carousel-item
-                      img(src=image.url, alt=image.description)
-              // Controls
-              a.carousel-control-prev.carousel-control(href='#carousel-portfolio-' + index, role='button', data-slide='prev')
-                span.carousel-control-prev-icon(aria-hidden='true')
-                span.sr-only Previous
-              a.carousel-control-next.carousel-control(href='#carousel-portfolio-' + index, role='button', data-slide='next')
-                span.carousel-control-next-icon(aria-hidden='true')
-                span.sr-only Next

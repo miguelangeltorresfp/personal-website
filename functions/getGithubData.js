@@ -16643,7 +16643,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 __webpack_require__(14).config();
 
-const statusCode = 200;
+let statusCode = 200;
 const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type"
@@ -16751,6 +16751,8 @@ exports.handler = function (event, context, callback) {
     getGithubData().then(githubData => {
         callback(null, { statusCode, headers, body: JSON.stringify(githubData) });
     }).catch(error => {
+        statusCode = 500;
+        callback(null, { statusCode, headers, body: JSON.stringify(error) });
         return;
     });
 };

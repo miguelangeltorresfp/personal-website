@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const statusCode = 200;
+let statusCode = 200;
 const headers = {
     "Access-Control-Allow-Origin" : "*",
     "Access-Control-Allow-Headers": "Content-Type"
@@ -124,6 +124,8 @@ exports.handler = function (event, context, callback) {
             callback(null, {statusCode, headers, body: JSON.stringify(githubData)})
         })
         .catch(error => {
+            statusCode = 500;
+            callback(null, {statusCode, headers, body: JSON.stringify(error)})
             return;
         })
 };

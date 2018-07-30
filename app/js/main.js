@@ -30,7 +30,8 @@ $(document).ready(() => {
     });
     $.get("/.netlify/functions/getGithubData", result => {
         result = JSON.parse(result);
-            $("#github .api__data").text(result.commits);
+        const todaysContributions = result.find((item) => item.today)
+            $("#github .api__data").text(todaysContributions.count);
             $("#github .api__loader").fadeOut(500, () => {
                 $("#github .api > *:not(.api__loader)").fadeIn(500)
             })
@@ -98,7 +99,6 @@ document.addEventListener('keyup', (e) => {
         body.classList.remove('focusable');
     }
 });
-
 document.addEventListener('mousedown', (e) => {
     if (body.contains(e.target)) {
         body.classList.remove('focusable');

@@ -1,16 +1,28 @@
+$contribution-color-0: #e0e0ff;
+$contribution-color-1: #9999db;
+$contribution-color-2: #6969b2;
+$contribution-color-3: #464693;
+$contribution-color-4: #2a2a72;
+
 $primary-color: #0099ff;
-$dark-color: #2A2A72;
+$dark-color: #2a2a72;
 $white: #fff;
-$heading-font: 'lato';
+$heading-font: "lato";
 $heading-weight: normal;
-$body-font: 'Open Sans', sans-serif;
+$body-font: "Open Sans", sans-serif;
 $light-background: #fff;
 $gutter-width: 20px;
 $title-spacing: 20px;
 $breakpoints: (
-        'small'  : ( min-width:  767px ),
-        'medium' : ( min-width:  992px ),
-        'large'  : ( min-width: 1200px )
+  "small": (
+    min-width: 767px
+  ),
+  "medium": (
+    min-width: 992px
+  ),
+  "large": (
+    min-width: 1200px
+  )
 );
 
 // Loading Animation

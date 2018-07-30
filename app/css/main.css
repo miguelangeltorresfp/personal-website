@@ -12830,18 +12830,18 @@ section:not(.intro) {
   padding: 80px 0; }
 
 section:nth-child(even) {
-  background-color: #2A2A72; }
+  background-color: #2a2a72; }
 
 section:nth-child(odd) h3,
 section:nth-child(odd) p {
-  color: #2A2A72; }
+  color: #2a2a72; }
 
 .section--dark a,
 .section--dark p {
   color: #fff; }
 
 .section--light a {
-  color: #2A2A72; }
+  color: #2a2a72; }
 
 .section__title {
   font-weight: 500;
@@ -13169,7 +13169,7 @@ section:nth-child(odd) p {
   text-transform: lowercase;
   background-color: #cacadc;
   font-weight: bold;
-  color: #2A2A72;
+  color: #2a2a72;
   padding: 2px 8px 3px;
   font-size: 12px;
   margin-top: 5px;
@@ -13187,7 +13187,7 @@ section:nth-child(odd) p {
 
 .portfolio-buttons {
   width: 100%;
-  background: #2A2A72;
+  background: #2a2a72;
   padding: 10px 0;
   display: flex;
   justify-content: space-around; }
@@ -13220,7 +13220,7 @@ section:nth-child(odd) p {
   max-width: 440px;
   padding: 10px 20px;
   width: 360px;
-  border: 3px solid #2A2A72;
+  border: 3px solid #2a2a72;
   border-radius: 4px;
   text-align: center;
   display: flex;
@@ -13236,7 +13236,7 @@ section:nth-child(odd) p {
   margin-right: 10px; }
 
 .statistics-column__icon.fa-clock-o {
-  color: #2A2A72; }
+  color: #2a2a72; }
 
 .statistics-column__icon.running-man {
   width: 30px;
@@ -13354,13 +13354,52 @@ section:nth-child(odd) p {
   font-size: 1.2rem;
   padding-right: 10px;
   font-weight: 400;
-  color: #2A2A72; }
+  color: #2a2a72; }
 
 .api__info {
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-style: italic; }
 
 .api__error {
   margin: 0; }
+
+.api--github {
+  margin: 40px 0; }
+
+.github-contributions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; }
+
+.github-contributions__weekday {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px;
+  font-weight: 400;
+  margin-bottom: 3px; }
+
+.contribution-square {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: #2a2a72; }
+  .contribution-square--intensity-0 {
+    background-color: #e0e0ff; }
+  .contribution-square--intensity-1 {
+    background-color: #9999db; }
+  .contribution-square--intensity-2 {
+    background-color: #6969b2; }
+  .contribution-square--intensity-3 {
+    background-color: #464693; }
+  .contribution-square--intensity-4 {
+    background-color: #2a2a72; }
+
+.github-contributions__tooltip {
+  font-weight: 600;
+  margin: 0; }
+
+.github-contributions__tooltip-date {
+  font-weight: 300; }
 
 /*# sourceMappingURL=main.css.map */

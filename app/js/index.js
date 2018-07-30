@@ -10391,6 +10391,8 @@ var Util = function ($) {
   return Util;
 }($);
 //# sourceMappingURL=util.js.map
+const WEEKDAYS = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+
 $(document).ready(() => {
     $.get("/.netlify/functions/getMediumData", result => {
         result = JSON.parse(result);
@@ -10423,10 +10425,44 @@ $(document).ready(() => {
     });
     $.get("/.netlify/functions/getGithubData", result => {
         result = JSON.parse(result);
+        result.forEach((item, index) => {
+            const elementId = `contribution-${index}`
+            const $div = $("<div>")
+            const $weekday = $("<span>").text(WEEKDAYS[index]).addClass('github-contributions__weekday')
+            const [y, m, d] = item.date.split('-')
+            let date = dateFns.format(new Date(y, m - 1, d),'MMMM Do')
+            let contributionText;
+            if (item.count > 1) {
+                contributionText = `${item.count} countributions`
+            } else {
+                contributionText = `${item.count} countribution`
+            }
+            const $square = $("<span>").attr('data-intensity', item.intensity).addClass(`contribution-square contribution-square--intensity-${item.intensity}`).attr('title', `${contributionText}${date}`).attr('id', elementId)
+            $div.append($weekday)
+            $div.append($square)
+            $(".github-contributions").append($div)
+
+            // Tooltip template
+            const tooltipTemplate = document.createElement('div')
+            tooltipTemplate.innerHTML = `<p class="github-contributions__tooltip">${contributionText}<span class="github-contributions__tooltip-date"> on ${date}</span></p>`
+
+            tippy(`#${elementId}`, {
+                arrow: true,
+                arrowType: 'round',
+                placement: 'bottom',
+                animation: 'scale',
+                size: 'small',
+                duration: [200, 100],
+                html: tooltipTemplate
+              });
+        })
+
+
         const todaysContributions = result.find((item) => item.today)
             $("#github .api__data").text(todaysContributions.count);
             $("#github .api__loader").fadeOut(500, () => {
                 $("#github .api > *:not(.api__loader)").fadeIn(500)
+                $(".github-contributions").css('display', 'flex')
             })
     })
         .fail(function() {

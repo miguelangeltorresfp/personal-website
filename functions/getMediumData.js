@@ -60,37 +60,37 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 619);
+/******/ 	return __webpack_require__(__webpack_require__.s = 256);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 13:
+/***/ 10:
 /***/ (function(module, exports) {
 
 module.exports = require("fs");
 
 /***/ }),
 
-/***/ 14:
-/***/ (function(module, exports) {
-
-module.exports = require("https");
-
-/***/ }),
-
-/***/ 16:
+/***/ 12:
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
 
-/***/ 23:
+/***/ 13:
+/***/ (function(module, exports) {
+
+module.exports = require("https");
+
+/***/ }),
+
+/***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
-const fs = __webpack_require__(13)
-const path = __webpack_require__(16)
+const fs = __webpack_require__(10)
+const path = __webpack_require__(12)
 
 /*
  * Parses a string or buffer into an object
@@ -170,13 +170,13 @@ module.exports.parse = parse
 
 /***/ }),
 
-/***/ 619:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(23).config();
+__webpack_require__(14).config();
 
 const statusCode = 200;
 const headers = {
@@ -184,7 +184,7 @@ const headers = {
     "Access-Control-Allow-Headers": "Content-Type"
 };
 
-const https = __webpack_require__(14);
+const https = __webpack_require__(13);
 
 exports.handler = function (event, context, callback) {
     let mediumData = {};

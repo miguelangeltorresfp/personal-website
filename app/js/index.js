@@ -10502,9 +10502,9 @@ $(document).ready(() => {
             })
         });
     $.get("/.netlify/functions/getTwitterData", result => {
-        result = JSON.parse(result);
-        let tweet = result;
-        $("#twitter .api__data").text(tweet);
+        const {text, link} = JSON.parse(result);
+        console.log(text, link);
+        $("#twitter .api__data").text(text).attr('href', link).attr('target', '_blank');
         $("#twitter .api__loader").fadeOut(500, () => {
             $("#twitter .api > *:not(.api__loader)").fadeIn(500)
         })

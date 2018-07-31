@@ -16480,12 +16480,10 @@ exports.handler = function (event, context, callback) {
     T.get('statuses/user_timeline', { screen_name: 'RobertCooper_RC', tweet_mode: 'extended' }, function (err, data) {
         data.some(tweet => {
             if (tweet.retweeted === false && tweet.in_reply_to_status_id === null && tweet.is_quote_status === false) {
-                console.log(tweet);
-                // To remove the twitter link at the end of the tweet, uncomment the line below
-                // const tweetText = tweet.full_text.slice(0, tweet.full_text.indexOf('https://t.co/'));
-                const tweetText = tweet.full_text;
+                const tweetText = tweet.full_text.slice(0, tweet.display_text_range[1]);
+                const tweetLink = tweet.full_text.slice(tweet.display_text_range[1] + 1);
                 callback(null, { statusCode,
-                    headers, body: JSON.stringify(tweetText) });
+                    headers, body: JSON.stringify({ text: tweetText, link: tweetLink }) });
                 return true;
             }
             return false;

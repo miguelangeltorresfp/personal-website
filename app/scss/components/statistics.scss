@@ -264,4 +264,9 @@
   padding: 0;
   white-space: pre-line;
   font-weight: 300;
+  border: none;
+
+  &:hover {
+    background-color: lighten($primary-color, 40%);
+  }
 }

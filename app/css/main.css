@@ -13414,6 +13414,9 @@ section:nth-child(odd) p {
   line-height: 1.8;
   padding: 0;
   white-space: pre-line;
-  font-weight: 300; }
+  font-weight: 300;
+  border: none; }
+  .api__data--tweet:hover {
+    background-color: #ccebff; }
 
 /*# sourceMappingURL=main.css.map */

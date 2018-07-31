@@ -1,5 +1,9 @@
 .statistics {
   background-color: $light-background;
+
+  @include respond-to("small") {
+    margin-bottom: -40px;
+  }
 }
 
 .statistics .max-width-container {
@@ -30,6 +34,7 @@
   @include respond-to("small") {
     padding: 30px 20px;
     width: 100%;
+    margin-bottom: 40px;
   }
 }
 
@@ -246,5 +251,17 @@
 }
 
 .github-contributions__tooltip-date {
+  font-weight: 300;
+}
+
+.api__data-container--twitter {
+  line-height: 1;
+}
+
+.api__data--tweet {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 0;
+  white-space: pre-line;
   font-weight: 300;
 }

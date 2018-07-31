@@ -458,6 +458,9 @@ section:nth-child(odd) p {
 
 .statistics {
   background-color: #fff; }
+  @media (min-width: 767px) {
+    .statistics {
+      margin-bottom: -40px; } }
 
 .statistics .max-width-container {
   text-align: center; }
@@ -483,7 +486,8 @@ section:nth-child(odd) p {
   @media (min-width: 767px) {
     .statistics-column {
       padding: 30px 20px;
-      width: 100%; } }
+      width: 100%;
+      margin-bottom: 40px; } }
 
 .statistics-column__title {
   display: inline-block;
@@ -655,4 +659,14 @@ section:nth-child(odd) p {
   margin: 0; }
 
 .github-contributions__tooltip-date {
+  font-weight: 300; }
+
+.api__data-container--twitter {
+  line-height: 1; }
+
+.api__data--tweet {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 0;
+  white-space: pre-line;
   font-weight: 300; }

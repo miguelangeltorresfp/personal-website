@@ -22,12 +22,13 @@ const T = new Twit({
 });
 
 exports.handler = function (event, context, callback) {
-    T.get('statuses/user_timeline', { screen_name: 'RobertCooper_RC' }, function (err, data) {
+    T.get('statuses/user_timeline', { screen_name: 'RobertCooper_RC', tweet_mode: 'extended' }, function (err, data) {
         data.some(tweet => {
             if (tweet.retweeted === false && tweet.in_reply_to_status_id === null && tweet.is_quote_status === false) {
+                console.log(tweet)
                 // To remove the twitter link at the end of the tweet, uncomment the line below
-                // const tweetText = tweet.text.slice(0, tweet.text.indexOf('https://t.co/'));
-                const tweetText = tweet.text;
+                // const tweetText = tweet.full_text.slice(0, tweet.full_text.indexOf('https://t.co/'));
+                const tweetText = tweet.full_text;
                 callback(null, {statusCode,
                     headers,body: JSON.stringify(tweetText)});
                 return true;

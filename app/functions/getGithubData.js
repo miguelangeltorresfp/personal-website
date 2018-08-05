@@ -7,7 +7,6 @@ const headers = {
 };
 
 const https = require("https");
-const moment = require("moment-timezone");
 const githubId = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
 

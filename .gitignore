@@ -2,3 +2,5 @@ node_modules
 public
 .env
 app/js/index.js*
+app/css/main.css*
+app/css/application.css*

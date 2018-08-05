@@ -15,9 +15,7 @@ const gulp = require("gulp"),
 
 gulp.task('views', function buildHTML() {
     return gulp.src('views/*.pug')
-        .pipe(pug({
-            // Your options in here.
-        }))
+        .pipe(pug())
         .pipe(gulp.dest("public/"))
 });
 

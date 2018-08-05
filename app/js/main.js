@@ -75,7 +75,7 @@ $(document).ready(() => {
         .fail(function() {
             $("#github .api__loader").fadeOut(500, () => {
                 $("#github .api").append("<p class='api__error'></p>");
-                $("#github .api__error").text("Github API Error 😢").fadeIn(500)
+                $("#github .api__error").text("API Error 😢").fadeIn(500)
             })
         });
     $.get("/.netlify/functions/getStravaData", result => {
@@ -110,7 +110,6 @@ $(document).ready(() => {
         });
     $.get("/.netlify/functions/getTwitterData", result => {
         const {text, link} = JSON.parse(result);
-        console.log(text, link);
         $("#twitter .api__data").text(text).attr('href', link).attr('target', '_blank');
         $("#twitter .api__loader").fadeOut(500, () => {
             $("#twitter .api > *:not(.api__loader)").fadeIn(500)

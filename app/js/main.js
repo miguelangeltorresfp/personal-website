@@ -64,7 +64,6 @@ $(document).ready(() => {
               });
         })
 
-
         const todaysContributions = result.find((item) => item.today)
             $("#github .api__data").text(todaysContributions.count);
             $("#github .api__loader").fadeOut(500, () => {

@@ -60,37 +60,90 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 256);
+/******/ 	return __webpack_require__(__webpack_require__.s = 127);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 12:
+/***/ 11:
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
 
-/***/ 13:
+/***/ 12:
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
 
-/***/ 14:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
-const fs = __webpack_require__(10)
-const path = __webpack_require__(12)
+"use strict";
+
+
+__webpack_require__(13).config();
+
+const statusCode = 200;
+const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type"
+};
+
+const https = __webpack_require__(12);
+
+exports.handler = function (event, context, callback) {
+    let mediumData = {};
+    https.get({
+        host: "medium.com",
+        path: "/@robertcooper_rc/latest",
+        headers: {
+            Accept: "application/json"
+        }
+    }, res => {
+        res.setEncoding("utf8");
+        let rawData = "";
+        res.on("data", chunk => {
+            rawData += chunk;
+        });
+        res.on("end", () => {
+            rawData = rawData.replace("])}while(1);</x>", "");
+            try {
+                let parsedData = JSON.parse(rawData);
+                let posts = parsedData["payload"]["references"]["Post"];
+                for (let i = 1; i <= 6; i++) {
+                    let post = posts[Object.keys(posts)[i - 1]];
+                    mediumData["readingTime" + i] = Math.ceil(post["virtuals"]["readingTime"]);
+                    let tags = [];
+                    post["virtuals"]["tags"].forEach(tag => {
+                        tags.push(tag);
+                    });
+                    mediumData["tags" + i] = tags;
+                    mediumData["title" + i] = post["title"];
+                    mediumData["excerpt" + i] = post["content"]["subtitle"];
+                    mediumData["url" + i] = "https://medium.com/@robertcooper_18384/" + post["uniqueSlug"];
+                    mediumData["claps" + i] = post["virtuals"]["totalClapCount"];
+                }
+            } catch (error) {
+                return;
+            }
+            callback(null, { statusCode, headers, body: JSON.stringify(mediumData) });
+        });
+    }).on("error", error => {
+        return;
+    });
+};
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+const fs = __webpack_require__(9)
+const path = __webpack_require__(11)
 
 /*
  * Parses a string or buffer into an object
@@ -170,63 +223,10 @@ module.exports.parse = parse
 
 /***/ }),
 
-/***/ 256:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 9:
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-__webpack_require__(14).config();
-
-const statusCode = 200;
-const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type"
-};
-
-const https = __webpack_require__(13);
-
-exports.handler = function (event, context, callback) {
-    let mediumData = {};
-    https.get({
-        host: "medium.com",
-        path: "/@robertcooper_rc/latest",
-        headers: {
-            Accept: "application/json"
-        }
-    }, res => {
-        res.setEncoding("utf8");
-        let rawData = "";
-        res.on("data", chunk => {
-            rawData += chunk;
-        });
-        res.on("end", () => {
-            rawData = rawData.replace("])}while(1);</x>", "");
-            try {
-                let parsedData = JSON.parse(rawData);
-                let posts = parsedData["payload"]["references"]["Post"];
-                for (let i = 1; i <= 6; i++) {
-                    let post = posts[Object.keys(posts)[i - 1]];
-                    mediumData["readingTime" + i] = Math.ceil(post["virtuals"]["readingTime"]);
-                    let tags = [];
-                    post["virtuals"]["tags"].forEach(tag => {
-                        tags.push(tag);
-                    });
-                    mediumData["tags" + i] = tags;
-                    mediumData["title" + i] = post["title"];
-                    mediumData["excerpt" + i] = post["content"]["subtitle"];
-                    mediumData["url" + i] = "https://medium.com/@robertcooper_18384/" + post["uniqueSlug"];
-                    mediumData["claps" + i] = post["virtuals"]["totalClapCount"];
-                }
-            } catch (error) {
-                return;
-            }
-            callback(null, { statusCode, headers, body: JSON.stringify(mediumData) });
-        });
-    }).on("error", error => {
-        return;
-    });
-};
+module.exports = require("fs");
 
 /***/ })
 

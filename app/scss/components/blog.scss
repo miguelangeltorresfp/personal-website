@@ -11,7 +11,7 @@
 .post {
     margin: 40px 0;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         width: 50%;
 
         &:nth-child(even) {
@@ -29,7 +29,7 @@
     margin: 0 auto 10px;
     text-align: justify;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         max-width: 100%;
         text-align: left;
     }
@@ -41,7 +41,7 @@
     align-items: center;
     margin-bottom: 0;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         flex-direction: row;
         justify-content: flex-start;
     }
@@ -67,11 +67,10 @@
         background: $white;
     }
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         font-size: 24px;
         text-align: left;
     }
-
 }
 
 .post__claps,
@@ -83,7 +82,7 @@
     white-space: nowrap;
     margin-right: 15px;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         display: inline-block;
     }
 }
@@ -95,7 +94,7 @@
 .post__tags {
     justify-content: center;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         justify-content: flex-start;
     }
 }

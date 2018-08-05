@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 html {
   font-size: 1rem;
   line-height: 1.4;
@@ -262,7 +265,7 @@ section:nth-child(odd) p {
   display: inline-block;
   font-family: "lato";
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all .15s ease; }
+  transition: all 0.15s ease; }
   .button:hover {
     background-color: #1aa3ff;
     color: #fff;
@@ -373,7 +376,7 @@ section:nth-child(odd) p {
   line-height: 45px;
   text-align: center;
   width: 42px;
-  transition: all .15s ease;
+  transition: all 0.15s ease;
   font-size: 1.8rem; }
 
 .intro__social-icon:hover {

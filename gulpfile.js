@@ -52,7 +52,6 @@ gulp.task("concatCss", ["compileSass"], () => {
         .src([
             "app/css/normalize.css",
             "app/css/font-awesome.css",
-            "app/css/bootstrap.css",
             "app/css/application.css",
         ])
         .pipe(maps.init())

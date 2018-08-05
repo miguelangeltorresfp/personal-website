@@ -60,37 +60,76 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 238);
+/******/ 	return __webpack_require__(__webpack_require__.s = 114);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 12:
+/***/ 11:
 /***/ (function(module, exports) {
 
 module.exports = require("path");
 
 /***/ }),
 
-/***/ 13:
+/***/ 114:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+__webpack_require__(13).config();
+
+let statusCode = 200;
+const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type"
+};
+
+const https = __webpack_require__(12);
+const githubId = process.env.GITHUB_ID;
+const githubSecret = process.env.GITHUB_SECRET;
+
+exports.handler = function (event, context, callback) {
+    let fetchWeekContributions = (() => {
+        var _ref = _asyncToGenerator(function* (username, format = '') {
+            https.get('https://robertcooper-github-contributions-api.now.sh/v1/robertcoopercode', function (res) {
+                res.headers['content-type'];
+                res.setEncoding('utf8');
+                let rawData = "";
+                res.on("data", function (chunk) {
+                    rawData += chunk;
+                });
+                res.on("end", function () {
+                    callback(null, { statusCode, headers, body: rawData });
+                });
+            });
+        });
+
+        return function fetchWeekContributions(_x) {
+            return _ref.apply(this, arguments);
+        };
+    })();
+
+    fetchWeekContributions('robertcoopercode');
+};
+
+/***/ }),
+
+/***/ 12:
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
 
-/***/ 14:
+/***/ 13:
 /***/ (function(module, exports, __webpack_require__) {
 
-const fs = __webpack_require__(10)
-const path = __webpack_require__(12)
+const fs = __webpack_require__(9)
+const path = __webpack_require__(11)
 
 /*
  * Parses a string or buffer into an object
@@ -170,49 +209,10 @@ module.exports.parse = parse
 
 /***/ }),
 
-/***/ 238:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 9:
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-__webpack_require__(14).config();
-
-let statusCode = 200;
-const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type"
-};
-
-const https = __webpack_require__(13);
-const githubId = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
-
-exports.handler = function (event, context, callback) {
-    let fetchWeekContributions = (() => {
-        var _ref = _asyncToGenerator(function* (username, format = '') {
-            https.get('https://robertcooper-github-contributions-api.now.sh/v1/robertcoopercode', function (res) {
-                res.headers['content-type'];
-                res.setEncoding('utf8');
-                let rawData = "";
-                res.on("data", function (chunk) {
-                    rawData += chunk;
-                });
-                res.on("end", function () {
-                    callback(null, { statusCode, headers, body: rawData });
-                });
-            });
-        });
-
-        return function fetchWeekContributions(_x) {
-            return _ref.apply(this, arguments);
-        };
-    })();
-
-    fetchWeekContributions('robertcoopercode');
-};
+module.exports = require("fs");
 
 /***/ })
 

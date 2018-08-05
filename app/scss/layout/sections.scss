@@ -1,7 +1,7 @@
 section {
     text-align: center;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         text-align: inherit;
     }
 }
@@ -15,7 +15,7 @@ section:nth-child(even) {
 }
 
 section:nth-child(odd) h3,
-section:nth-child(odd) p, {
+section:nth-child(odd) p {
     color: $dark-color;
 }
 
@@ -42,7 +42,7 @@ section:nth-child(odd) p, {
         text-align: center;
         margin-bottom: $title-spacing;
 
-        @include respond-to('small') {
+        @include respond-to("small") {
             text-align: left;
         }
     }

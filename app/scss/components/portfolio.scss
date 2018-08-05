@@ -1,96 +1,96 @@
 .portfolio__description {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .portfolio__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .portfolio__item {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 
-  @include respond-to("small") {
-    margin-bottom: 80px;
-  }
+    @include respond-to("small") {
+        margin-bottom: 80px;
+    }
 }
 
 .portfolio-item {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
 
-  @include respond-to("small") {
-    width: 50%;
+    @include respond-to("small") {
+        width: 50%;
 
-    &:nth-child(odd) {
-      padding-right: $gutter-width;
+        &:nth-child(odd) {
+            padding-right: $gutter-width;
+        }
+
+        &:nth-child(even) {
+            padding-left: $gutter-width;
+        }
     }
-
-    &:nth-child(even) {
-      padding-left: $gutter-width;
-    }
-  }
 }
 
 .portfolio-item__description {
-  text-align: justify;
+    text-align: justify;
 }
 
 .portfolio-item__tags {
-  margin-bottom: 20px;
-  justify-content: center;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .tags__tag {
-  font-family: $heading-font;
-  text-transform: lowercase;
-  background-color: #cacadc;
-  font-weight: bold;
-  color: $dark-color;
-  padding: 2px 8px 3px;
-  font-size: 12px;
-  margin-top: 5px;
-  margin-right: 10px;
-  white-space: nowrap;
+    font-family: $heading-font;
+    text-transform: lowercase;
+    background-color: #cacadc;
+    font-weight: bold;
+    color: $dark-color;
+    padding: 2px 8px 3px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
 .portfolio-image-wrapper {
-  position: relative;
-  max-width: 500px;
-  margin: auto;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .portfolio-buttons {
-  width: 100%;
-  background: $dark-color;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-around;
+    width: 100%;
+    background: $dark-color;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
 
-  .button {
-    margin: 0;
-    padding: 5px 10px;
-    color: $white;
+    .button {
+        margin: 0;
+        padding: 5px 10px;
+        color: $white;
 
-    &.screenshots {
-      display: none;
+        &.screenshots {
+            display: none;
 
-      @include respond-to("small") {
-        display: inline-block;
-      }
+            @include respond-to("small") {
+                display: inline-block;
+            }
+        }
     }
-  }
 }

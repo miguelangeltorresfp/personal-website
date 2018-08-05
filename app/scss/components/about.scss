@@ -4,14 +4,14 @@
     flex-wrap: wrap;
     text-align: center;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         text-align: left;
     }
 }
 
 .about__description {
     text-align: justify;
-    @include respond-to('small') {
+    @include respond-to("small") {
         text-align: left;
     }
 }
@@ -23,7 +23,7 @@
     border: 10px solid $primary-color;
     max-width: 100%;
 
-    @include respond-to('small') {
+    @include respond-to("small") {
         margin-top: 0;
         width: auto;
     }
@@ -45,8 +45,7 @@
     width: 100%;
     padding-right: 0;
 
-
-    @include respond-to('small') {
+    @include respond-to("small") {
         width: 70%;
         padding-right: 30px;
     }
@@ -54,7 +53,7 @@
 
 .about__headshot-column {
     width: 100%;
-    @include respond-to('small') {
+    @include respond-to("small") {
         width: 30%;
     }
 }

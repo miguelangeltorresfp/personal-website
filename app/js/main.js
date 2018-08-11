@@ -123,11 +123,9 @@ $(document).ready(() => {
     });
   });
   $.get("/.netlify/functions/getTwitterData", result => {
-    const { text, link } = JSON.parse(result);
-    $("#twitter .api__data")
-      .text(text)
-      .attr("href", link)
-      .attr("target", "_blank");
+    const text = JSON.parse(result);
+    const linkifiedText = replaceURLWithHTMLLinks(text);
+    $("#twitter .api__data").html(linkifiedText);
     $("#twitter .api__loader").fadeOut(500, () => {
       $("#twitter .api > *:not(.api__loader)").fadeIn(500);
     });
@@ -156,3 +154,8 @@ document.addEventListener("mousedown", e => {
     body.classList.remove("focusable");
   }
 });
+
+function replaceURLWithHTMLLinks(text) {
+  const exp = /(\b(http|ftp|https):\/\/([\w-]+\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?)/gi;
+  return text.replace(exp, "<a href='$1' target='_blank'>[link]</a>");
+}

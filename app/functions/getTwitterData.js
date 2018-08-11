@@ -36,13 +36,10 @@ exports.handler = function(event, context, callback) {
             0,
             tweet.display_text_range[1]
           );
-          const tweetLink = tweet.full_text.slice(
-            tweet.display_text_range[1] + 1
-          );
           callback(null, {
             statusCode,
             headers,
-            body: JSON.stringify({ text: tweetText, link: tweetLink })
+            body: JSON.stringify(tweetText)
           });
           return true;
         }

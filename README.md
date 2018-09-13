@@ -1,6 +1,6 @@
 # Personal Website
 
-My [personal website](https://www.robertcooper.me/) used to showcase my portfolio of projects, blog posts, and some other random things. The site is hosted on Netlify and is easily updated with Netlify's continuous deployment.
+My [personal website](https://www.robertcooper.me/) used to display blog posts, portfolio items, and some other random things. The site is hosted on Netlify and is easily updated with Netlify's continuous deployment system.
 
 The information for the API used to display the recent github activity is found [in this repository](https://github.com/robertcoopercode/github-contributions).
 
@@ -18,4 +18,4 @@ Now you can run `yarn dev` to automatically watch and compile assets, start a lo
 
 ## Deploy to Production
 
-Deploying to production is as easy as pushing you local changes to Github's `master` branch for the repository 🙌.
+Deploying to production is as easy as pushing local changes to Github's `master` branch on the repository 🙌.

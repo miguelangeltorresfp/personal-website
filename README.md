@@ -16,6 +16,8 @@ Next, install the project dependencies using `yarn`.
 
 Now you can run `yarn dev` to automatically watch and compile assets, start a local Express server at `localhost:8080`, and start a Lambda functions server at `localhost:9000`. The Express server is setup to proxy Lambda function requests to `localhost:9000`.
 
+In order to run the API calls in the app, an `.env` file will need to be created with all of the appropriate keys & values. The `.env.example` contains all the environment variable keys.
+
 ## Deploy to Production
 
 Deploying to production is as easy as pushing local changes to Github's `master` branch on the repository 🙌.

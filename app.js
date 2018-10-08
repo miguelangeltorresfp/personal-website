@@ -39,6 +39,12 @@ router.get("/", (request, response) => {
   response.render("index", { environment: process.env.NODE_ENV });
 });
 
+router.get("/meat-journal-privacy-policy", (request, response) => {
+  response.render("meatJournalPrivacyPolicy", {
+    environment: process.env.NODE_ENV
+  });
+});
+
 app.use((request, response, next) => {
   const err = new Error("Not Found");
   err.status = 404;

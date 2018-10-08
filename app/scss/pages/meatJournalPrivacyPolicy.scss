@@ -1,0 +1,37 @@
+.meatJournalPrivacyPolicy {
+    width: 900px;
+    max-width: 100%;
+    margin: auto;
+    color: #011936;
+    padding: 0 20px;
+
+    &__title {
+        color: #011936;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__lastUpdated {
+        margin: 0 0 20px;
+        text-align: center;
+    }
+
+    &__sectionHeading {
+        color: #011936;
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    a {
+        border: none;
+        color: #011936;
+        text-decoration: underline;
+
+        &:hover {
+            background: none;
+        }
+    }
+}

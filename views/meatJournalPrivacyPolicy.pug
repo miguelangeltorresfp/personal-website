@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Robert Cooper
+    meta(name='author', content='Robert Cooper')
+    // Facebook Open Graph & Twitter meta tags
+    meta(property='og:title', content='MeatJournal | Privacy Policy')
+    meta(property='og:description', content='MeatJournal privacy policy')
+    meta(property='og:image', content='https://www.robertcooper.me/img/robert-typing.jpg')
+    meta(property='og:url', content='https://www.robertcooper.me/meat-journal-privacy-policy')
+    meta(name='twitter:card', content='summary_large_image')
+    // Responsive view meta tag
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // Place favicon.ico in the root directory
+    link(rel='icon', href='https://www.robertcooper.me/favicon.ico', type='image/x-icon')
+    // iOS Saved Website App Icon
+    link(rel='apple-touch-icon', href='img/ios-icon.png')
+    // iOS Saved Website App Title
+    meta(name='apple-mobile-web-app-title', content='Robert Cooper')
+    // Fonts
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet")
+    // Concatenated and minified stylesheet
+    if (environment === "development")
+      link(rel='stylesheet', href='css/main.css')
+    else
+      link(rel='stylesheet', href='css/main.min.css')
+  body
+    main
+      article.meatJournalPrivacyPolicy
+        h1.meatJournalPrivacyPolicy__title Privacy Policy
+        p.meatJournalPrivacyPolicy__lastUpdated Last Updated: 02/10/2018
+        h2.meatJournalPrivacyPolicy__sectionHeading Overview
+        p
+          | This Privacy Policy describes the information collected by Robert Cooper (’we’, 'our’, ‘us’) through the Meat Journal application we use that information.
+        h2.meatJournalPrivacyPolicy__sectionHeading We Don’t Collect Your Data
+        p
+          | We don’t collect any of the data associated with activities in the application. All data is stored locally on the user’s device and therefore all app data is deleted if a user deletes the application.
+        p
+          | If you have any questions or concerns regarding this Privacy Policy, please send us an email at 
+          a(href="mailto:hi@robertcooper.me") hi@robertcooper.me
+          | .
+    // Concatenated and Minified JS File
+    if (environment === "development")
+      script(src='js/index.js')
+    else
+      script(src='js/index.min.js?v=1.1')
+    // Google Analytics tracking code
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-80196253-8','auto');ga('send','pageview');

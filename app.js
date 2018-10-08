@@ -40,7 +40,7 @@ router.get("/", (request, response) => {
 });
 
 router.get("/meat-journal-privacy-policy", (request, response) => {
-  response.render("meatJournalPrivacyPolicy", {
+  response.render("meat-journal-privacy-policy", {
     environment: process.env.NODE_ENV
   });
 });

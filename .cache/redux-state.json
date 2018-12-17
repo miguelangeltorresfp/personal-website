@@ -1,0 +1,3203 @@
+{
+  "nodes": {
+    "SitePage /dev-404-page/": {
+      "jsonName": "dev-404-page-5f9",
+      "internalComponentName": "ComponentDev404Page",
+      "path": "/dev-404-page/",
+      "component": "/Users/robertcooper/Projects/personal-website/.cache/dev-404-page.js",
+      "componentChunkName": "component---cache-dev-404-page-js",
+      "context": {},
+      "pluginCreator___NODE": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "pluginCreatorId": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/.cache/dev-404-page.js",
+      "id": "SitePage /dev-404-page/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "4adffe6a7b098ca5efe2839c0b67abd7",
+        "description": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "id": "d48d1c52-fe48-53cb-8f08-aa4b47dde5a5",
+      "name": "dev-404-page",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "packageJson": {
+        "name": "dev-404-page",
+        "description": "Internal plugin to add a 404 page in development with helpful information",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "a7e22013878f738b22a2ca1afcc0067f",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "1fc32581-893a-55e8-8927-bcd667e2b700": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "id": "1fc32581-893a-55e8-8927-bcd667e2b700",
+      "name": "load-babel-config",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onPreBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "packageJson": {
+        "name": "load-babel-config",
+        "description": "Internal plugin that handles loading Babel configs",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "93d6d5bd888661f9aee1cf6272529c6c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "a5079d69-ba80-53dc-82f9-0f440bd5448c": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "id": "a5079d69-ba80-53dc-82f9-0f440bd5448c",
+      "name": "internal-data-bridge",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "packageJson": {
+        "name": "internal-data-bridge",
+        "description": "An internal Gatsby plugin which creates data nodes from internal data",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "8412c14b867997b561a7c0988800908b",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "f795702c-a3b8-5a88-88ee-5d06019d44fa": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "id": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "name": "prod-404",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "packageJson": {
+        "name": "prod-404",
+        "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "14309eaa6f3db42125935ec08028833b",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "84dad27f-1d44-51fc-ac56-4db2e5222995": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "id": "84dad27f-1d44-51fc-ac56-4db2e5222995",
+      "name": "query-runner",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreatePage"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "packageJson": {
+        "name": "query-runner",
+        "description": "Internal plugin for running queries",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "5976a49cfb53da78eb8f3648749f2eb5",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "6f4b2fa9-66b5-5205-a03f-140005a2cfe5": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
+      "id": "6f4b2fa9-66b5-5205-a03f-140005a2cfe5",
+      "name": "webpack-theme-component-shadowing",
+      "version": "1.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateWebpackConfig"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby/dist/internal-plugins/webpack-theme-component-shadowing",
+      "packageJson": {
+        "name": "webpack-theme-component-shadowing",
+        "description": "An internal Gatsby plugin which handles configuring webpack to ensure theme components fall back from the user's site to theme modules.",
+        "version": "1.0.0",
+        "main": "index.js",
+        "author": "Chris Biscardi <chris@christopherbiscardi.com>",
+        "license": "MIT",
+        "dependencies": [],
+        "devDependencies": [],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "b539ce4e1e47e532ecd320b8db0c3027",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "f1937fad-5b8f-55fd-ad6a-dadf6740f27f": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-source-filesystem",
+      "id": "f1937fad-5b8f-55fd-ad6a-dadf6740f27f",
+      "name": "gatsby-source-filesystem",
+      "version": "2.0.12",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/robertcooper/Projects/personal-website/content/blog",
+        "name": "blog"
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-source-filesystem",
+      "packageJson": {
+        "name": "gatsby-source-filesystem",
+        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
+        "version": "2.0.12",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "better-queue",
+            "version": "^3.8.7"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "file-type",
+            "version": "^10.2.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "got",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "md5-file",
+            "version": "^3.1.1"
+          },
+          {
+            "name": "mime",
+            "version": "^2.2.0"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "read-chunk",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "valid-url",
+            "version": "^1.0.9"
+          },
+          {
+            "name": "xstate",
+            "version": "^3.1.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "6d43d6d18bacadeaa30d1599f20cf36f",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "a8e13ad1-a043-5beb-abb7-41c19ad3ddfd": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-source-filesystem",
+      "id": "a8e13ad1-a043-5beb-abb7-41c19ad3ddfd",
+      "name": "gatsby-source-filesystem",
+      "version": "2.0.12",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/robertcooper/Projects/personal-website/content/assets",
+        "name": "assets"
+      },
+      "nodeAPIs": [
+        "sourceNodes",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-source-filesystem",
+      "packageJson": {
+        "name": "gatsby-source-filesystem",
+        "description": "Gatsby plugin which parses files within a directory for further parsing by other plugins",
+        "version": "2.0.12",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "better-queue",
+            "version": "^3.8.7"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "file-type",
+            "version": "^10.2.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "got",
+            "version": "^7.1.0"
+          },
+          {
+            "name": "md5-file",
+            "version": "^3.1.1"
+          },
+          {
+            "name": "mime",
+            "version": "^2.2.0"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "read-chunk",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "valid-url",
+            "version": "^1.0.9"
+          },
+          {
+            "name": "xstate",
+            "version": "^3.1.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "abfa447a64f07ce3c7305c1645eb9dcc",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "93281ac2-15e7-56db-9c5a-2acd601b7d51": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-transformer-remark",
+      "id": "93281ac2-15e7-56db-9c5a-2acd601b7d51",
+      "name": "gatsby-transformer-remark",
+      "version": "2.1.15",
+      "pluginOptions": {
+        "plugins": [
+          {
+            "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-images",
+            "id": "4a359a36-fef3-5c49-a0f9-45c24a5fd434",
+            "name": "gatsby-remark-images",
+            "version": "2.0.6",
+            "pluginOptions": {
+              "plugins": [],
+              "maxWidth": 590
+            },
+            "nodeAPIs": [],
+            "browserAPIs": [],
+            "ssrAPIs": [],
+            "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-images"
+          },
+          {
+            "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-responsive-iframe",
+            "id": "1a3d9dbf-c3c7-50dc-9f59-97f0cf8bb163",
+            "name": "gatsby-remark-responsive-iframe",
+            "version": "2.0.7",
+            "pluginOptions": {
+              "plugins": [],
+              "wrapperStyle": "margin-bottom: 1.0725rem"
+            },
+            "nodeAPIs": [],
+            "browserAPIs": [],
+            "ssrAPIs": [],
+            "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-responsive-iframe"
+          },
+          {
+            "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-prismjs",
+            "id": "b8d3a2f5-5540-5699-b862-153e57b2c618",
+            "name": "gatsby-remark-prismjs",
+            "version": "3.1.4",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "nodeAPIs": [],
+            "browserAPIs": [],
+            "ssrAPIs": [],
+            "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-prismjs"
+          },
+          {
+            "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-copy-linked-files",
+            "id": "80533a5b-ad2d-50ff-af51-726674869458",
+            "name": "gatsby-remark-copy-linked-files",
+            "version": "2.0.7",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "nodeAPIs": [],
+            "browserAPIs": [],
+            "ssrAPIs": [],
+            "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-copy-linked-files"
+          },
+          {
+            "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-smartypants",
+            "id": "90305615-131b-5991-a708-2c2d1c43d946",
+            "name": "gatsby-remark-smartypants",
+            "version": "2.0.7",
+            "pluginOptions": {
+              "plugins": []
+            },
+            "nodeAPIs": [],
+            "browserAPIs": [],
+            "ssrAPIs": [],
+            "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-smartypants"
+          }
+        ]
+      },
+      "nodeAPIs": [
+        "onCreateNode",
+        "setFieldsOnGraphQLNodeType"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-transformer-remark",
+      "packageJson": {
+        "name": "gatsby-transformer-remark",
+        "description": "Gatsby transformer plugin for Markdown using the Remark library and ecosystem",
+        "version": "2.1.15",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "markdown",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "gray-matter",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "hast-util-raw",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "hast-util-to-html",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "mdast-util-to-hast",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "mdast-util-toc",
+            "version": "^2.0.1"
+          },
+          {
+            "name": "remark",
+            "version": "^9.0.0"
+          },
+          {
+            "name": "remark-parse",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "remark-retext",
+            "version": "^3.1.0"
+          },
+          {
+            "name": "remark-stringify",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "retext-english",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "sanitize-html",
+            "version": "^1.18.2"
+          },
+          {
+            "name": "underscore.string",
+            "version": "^3.3.4"
+          },
+          {
+            "name": "unified",
+            "version": "^6.1.5"
+          },
+          {
+            "name": "unist-util-remove-position",
+            "version": "^1.1.2"
+          },
+          {
+            "name": "unist-util-select",
+            "version": "^1.5.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.33"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "490e3111d93e0ee53a2069835be1ad18",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "4a359a36-fef3-5c49-a0f9-45c24a5fd434": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-images",
+      "id": "4a359a36-fef3-5c49-a0f9-45c24a5fd434",
+      "name": "gatsby-remark-images",
+      "version": "2.0.6",
+      "pluginOptions": {
+        "plugins": [],
+        "maxWidth": 590
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-images",
+      "packageJson": {
+        "name": "gatsby-remark-images",
+        "description": "Processes images in markdown so they can be used in the production build.",
+        "version": "2.0.6",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "image",
+          "markdown",
+          "remark",
+          "responsive images"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.2"
+          },
+          {
+            "name": "is-relative-url",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "unist-util-select",
+            "version": "^1.5.0"
+          },
+          {
+            "name": "unist-util-visit-parents",
+            "version": "^2.0.1"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.2"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^2.0.0-beta.5"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "dfe91bd1b5cdad3237d59bbf6de4140e",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "1a3d9dbf-c3c7-50dc-9f59-97f0cf8bb163": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-responsive-iframe",
+      "id": "1a3d9dbf-c3c7-50dc-9f59-97f0cf8bb163",
+      "name": "gatsby-remark-responsive-iframe",
+      "version": "2.0.7",
+      "pluginOptions": {
+        "plugins": [],
+        "wrapperStyle": "margin-bottom: 1.0725rem"
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-responsive-iframe",
+      "packageJson": {
+        "name": "gatsby-remark-responsive-iframe",
+        "description": "Make iframes in Markdown processed by Remark responsive",
+        "version": "2.0.7",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.2"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          },
+          {
+            "name": "remark",
+            "version": "^9.0.0"
+          },
+          {
+            "name": "unist-util-find",
+            "version": "^1.0.1"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "9f0397594582e83b9c6432e6f2368e95",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "b8d3a2f5-5540-5699-b862-153e57b2c618": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-prismjs",
+      "id": "b8d3a2f5-5540-5699-b862-153e57b2c618",
+      "name": "gatsby-remark-prismjs",
+      "version": "3.1.4",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-prismjs",
+      "packageJson": {
+        "name": "gatsby-remark-prismjs",
+        "description": "Adds syntax highlighting to code blocks at build time using PrismJS",
+        "version": "3.1.4",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "prismjs",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "parse-numeric-range",
+            "version": "^0.0.2"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          },
+          {
+            "name": "prismjs",
+            "version": "^1.15.0"
+          },
+          {
+            "name": "remark",
+            "version": "^9.0.0"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          },
+          {
+            "name": "prismjs",
+            "version": "^1.15.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "fadbd01896da57e9dea2a5982e6f207b",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "80533a5b-ad2d-50ff-af51-726674869458": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-copy-linked-files",
+      "id": "80533a5b-ad2d-50ff-af51-726674869458",
+      "name": "gatsby-remark-copy-linked-files",
+      "version": "2.0.7",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-copy-linked-files",
+      "packageJson": {
+        "name": "gatsby-remark-copy-linked-files",
+        "description": "Find files which are linked to from markdown and copy them to the public directory",
+        "version": "2.0.7",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "prismjs",
+          "remark"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.2"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^4.0.1"
+          },
+          {
+            "name": "is-relative-url",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "path-is-inside",
+            "version": "^1.0.2"
+          },
+          {
+            "name": "probe-image-size",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "e2c89122b5f653c363371db6fa27dcf5",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "90305615-131b-5991-a708-2c2d1c43d946": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-smartypants",
+      "id": "90305615-131b-5991-a708-2c2d1c43d946",
+      "name": "gatsby-remark-smartypants",
+      "version": "2.0.7",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-remark-smartypants",
+      "packageJson": {
+        "name": "gatsby-remark-smartypants",
+        "description": "Use retext-smartypants to auto-enhance typography of markdown",
+        "version": "2.0.7",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "smartypants"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "retext",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "retext-smartypants",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.3.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "aa15a628321ee3b5c0d4c70523ade3aa",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-transformer-sharp",
+      "id": "da3d06eb-685e-5c77-ae1d-750eb6a2e4a9",
+      "name": "gatsby-transformer-sharp",
+      "version": "2.1.9",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateNode",
+        "setFieldsOnGraphQLNodeType",
+        "onPreExtractQueries"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-transformer-sharp",
+      "packageJson": {
+        "name": "gatsby-transformer-sharp",
+        "description": "Gatsby transformer plugin for images using Sharp",
+        "version": "2.1.9",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "image",
+          "sharp"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^4.0.2"
+          },
+          {
+            "name": "potrace",
+            "version": "^2.1.1"
+          },
+          {
+            "name": "probe-image-size",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": "^2.0.33"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^2.0.0-beta.3"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "12866dc522db1f31a4763b57ec698360",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "84d6154d-4241-556c-a679-cc8339cac100": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-sharp",
+      "id": "84d6154d-4241-556c-a679-cc8339cac100",
+      "name": "gatsby-plugin-sharp",
+      "version": "2.0.15",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onPreInit"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-sharp",
+      "packageJson": {
+        "name": "gatsby-plugin-sharp",
+        "description": "Wrapper of the Sharp image manipulation library for Gatsby plugins",
+        "version": "2.0.15",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "image",
+          "sharp"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "async",
+            "version": "^2.1.2"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "fs-exists-cached",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "imagemin",
+            "version": "^6.0.0"
+          },
+          {
+            "name": "imagemin-mozjpeg",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "imagemin-pngquant",
+            "version": "^6.0.0"
+          },
+          {
+            "name": "imagemin-webp",
+            "version": "^4.1.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "mini-svg-data-uri",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "potrace",
+            "version": "^2.1.1"
+          },
+          {
+            "name": "probe-image-size",
+            "version": "^4.0.0"
+          },
+          {
+            "name": "progress",
+            "version": "^1.1.8"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.0"
+          },
+          {
+            "name": "svgo",
+            "version": "^0.7.2"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "98c34b55945793f89f92958787ac40ed",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "624c196c-30dd-59e4-bcdd-a6f980c0396f": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-google-analytics",
+      "id": "624c196c-30dd-59e4-bcdd-a6f980c0396f",
+      "name": "gatsby-plugin-google-analytics",
+      "version": "2.0.8",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [
+        "onRouteUpdate"
+      ],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-google-analytics",
+      "packageJson": {
+        "name": "gatsby-plugin-google-analytics",
+        "description": "Gatsby plugin to add google analytics onto a site",
+        "version": "2.0.8",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "google analytics"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "40938c0348844f26b38d126d33e58f3e",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "e1a9b6ff-843f-5a8b-b9fa-7ab223df58a2": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-feed",
+      "id": "e1a9b6ff-843f-5a8b-b9fa-7ab223df58a2",
+      "name": "gatsby-plugin-feed",
+      "version": "2.0.11",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onPostBuild"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-feed",
+      "packageJson": {
+        "name": "gatsby-plugin-feed",
+        "description": "Creates an RSS feed for your Gatsby site.",
+        "version": "2.0.11",
+        "main": "index.js",
+        "keywords": [
+          "atom",
+          "feed",
+          "gatsby",
+          "gatsby-plugin",
+          "rss"
+        ],
+        "author": "Nicholas Young <nicholas@nicholaswyoung.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "lodash.merge",
+            "version": "^4.6.0"
+          },
+          {
+            "name": "mkdirp",
+            "version": "^0.5.1"
+          },
+          {
+            "name": "pify",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "rss",
+            "version": "^1.2.2"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "1aa4e0a8c3201e87c4e7ca62a5644f81",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "dee44986-459d-5a9c-bea6-1de7842285fd": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-manifest",
+      "id": "dee44986-459d-5a9c-bea6-1de7842285fd",
+      "name": "gatsby-plugin-manifest",
+      "version": "2.0.12",
+      "pluginOptions": {
+        "plugins": [],
+        "name": "Gatsby Starter Blog",
+        "short_name": "GatsbyJS",
+        "start_url": "/",
+        "background_color": "#ffffff",
+        "theme_color": "#663399",
+        "display": "minimal-ui",
+        "icon": "content/assets/gatsby-icon.png"
+      },
+      "nodeAPIs": [
+        "onPostBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-manifest",
+      "packageJson": {
+        "name": "gatsby-plugin-manifest",
+        "description": "Gatsby plugin which adds a manifest.webmanifest to make sites progressive web apps",
+        "version": "2.0.12",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "favicon",
+          "icons",
+          "manifest.webmanifest",
+          "progressive-web-app",
+          "pwa"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "sharp",
+            "version": "^0.21.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "2fecfe86a5b09338656940589731100d",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "63e5f7ff-e5f1-58f7-8e2c-55872ac42281": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-offline",
+      "id": "63e5f7ff-e5f1-58f7-8e2c-55872ac42281",
+      "name": "gatsby-plugin-offline",
+      "version": "2.0.19",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "createPages",
+        "onPostBuild"
+      ],
+      "browserAPIs": [
+        "registerServiceWorker",
+        "onServiceWorkerActive",
+        "onPostPrefetchPathname"
+      ],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-offline",
+      "packageJson": {
+        "name": "gatsby-plugin-offline",
+        "description": "Gatsby plugin which sets up a site to be able to run offline",
+        "version": "2.0.19",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "offline",
+          "precache",
+          "service-worker"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "cheerio",
+            "version": "^1.0.0-rc.2"
+          },
+          {
+            "name": "idb-keyval",
+            "version": "^3.1.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "workbox-build",
+            "version": "^3.6.3"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">=2.0.53"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "eff0553f42fb4eb7551ae914d81eacc1",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "1943ff2f-9c0c-558d-8d0c-006603e8106a": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-react-helmet",
+      "id": "1943ff2f-9c0c-558d-8d0c-006603e8106a",
+      "name": "gatsby-plugin-react-helmet",
+      "version": "3.0.4",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-react-helmet",
+      "packageJson": {
+        "name": "gatsby-plugin-react-helmet",
+        "description": "Manage document head data with react-helmet. Provides drop-in server rendering support for Gatsby.",
+        "version": "3.0.4",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "favicon",
+          "react-helmet",
+          "seo",
+          "document",
+          "head",
+          "title",
+          "meta",
+          "link",
+          "script",
+          "base",
+          "noscript",
+          "style"
+        ],
+        "author": "Kyle Mathews <matthews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          },
+          {
+            "name": "react-helmet",
+            "version": ">=5.1.3"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "a21ee047da13291024d236818a314109",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "64059fc2-eafe-53ab-a542-ad6d70a5c7ff": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-typography",
+      "id": "64059fc2-eafe-53ab-a542-ad6d70a5c7ff",
+      "name": "gatsby-plugin-typography",
+      "version": "2.2.2",
+      "pluginOptions": {
+        "plugins": [],
+        "pathToConfigModule": "src/utils/typography"
+      },
+      "nodeAPIs": [
+        "onPreBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-typography",
+      "packageJson": {
+        "name": "gatsby-plugin-typography",
+        "description": "Gatsby plugin to setup server rendering of Typography.js' CSS",
+        "version": "2.2.2",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "typography",
+          "typography.js"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          },
+          {
+            "name": "react-typography",
+            "version": "^0.16.1 || ^1.0.0-alpha.0"
+          },
+          {
+            "name": "typography",
+            "version": "^0.16.0 || ^1.0.0-alpha.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "bb8b664d3ccd6ec6693548c1a2a49d19",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "6baed434-a608-5e80-ba69-fa94fef95ec5": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-typescript",
+      "id": "6baed434-a608-5e80-ba69-fa94fef95ec5",
+      "name": "gatsby-plugin-typescript",
+      "version": "2.0.3",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "resolvableExtensions",
+        "onCreateBabelConfig",
+        "onCreateWebpackConfig"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-typescript",
+      "packageJson": {
+        "name": "gatsby-plugin-typescript",
+        "description": "Adds TypeScript support to Gatsby",
+        "version": "2.0.3",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "typescript"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/preset-typescript",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-plugin-remove-graphql-queries",
+            "version": "^2.5.2"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.1.4"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "fe70a3da377b989f0d3441932f7b5e1c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "3c58431d-10e7-5ee3-90e4-fb9bc1e2d9c1": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-mdx",
+      "id": "3c58431d-10e7-5ee3-90e4-fb9bc1e2d9c1",
+      "name": "gatsby-mdx",
+      "version": "0.2.0",
+      "pluginOptions": {
+        "plugins": [],
+        "extensions": [
+          ".mdx",
+          ".md"
+        ]
+      },
+      "nodeAPIs": [
+        "onCreateNode",
+        "setFieldsOnGraphQLNodeType",
+        "onCreatePage",
+        "onCreateWebpackConfig",
+        "resolvableExtensions",
+        "preprocessSource",
+        "onCreateBabelConfig",
+        "onPreBootstrap"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-mdx",
+      "packageJson": {
+        "name": "gatsby-mdx",
+        "description": "mdx integration for gatsby",
+        "version": "0.2.0",
+        "main": "index.js",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/plugin-proposal-object-rest-spread",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-plugin-gather-exports",
+            "version": "0.0.1"
+          },
+          {
+            "name": "babel-plugin-pluck-exports",
+            "version": "0.0.1"
+          },
+          {
+            "name": "babel-plugin-pluck-imports",
+            "version": "0.0.1"
+          },
+          {
+            "name": "debug",
+            "version": "^4.0.1"
+          },
+          {
+            "name": "escape-string-regexp",
+            "version": "^1.0.5"
+          },
+          {
+            "name": "fs-extra",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "gray-matter",
+            "version": "^4.0.1"
+          },
+          {
+            "name": "htmltojsx",
+            "version": "^0.3.0"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "mdast-util-to-string",
+            "version": "^1.0.4"
+          },
+          {
+            "name": "mdast-util-toc",
+            "version": "^2.0.1"
+          },
+          {
+            "name": "mime",
+            "version": "^2.3.1"
+          },
+          {
+            "name": "pretty-bytes",
+            "version": "^5.1.0"
+          },
+          {
+            "name": "remark",
+            "version": "^9.0.0"
+          },
+          {
+            "name": "retext",
+            "version": "^5.0.0"
+          },
+          {
+            "name": "slash",
+            "version": "^2.0.0"
+          },
+          {
+            "name": "strip-markdown",
+            "version": "^3.0.1"
+          },
+          {
+            "name": "underscore.string",
+            "version": "^3.3.4"
+          },
+          {
+            "name": "unist-util-map",
+            "version": "^1.0.4"
+          },
+          {
+            "name": "unist-util-remove",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "unist-util-visit",
+            "version": "^1.4.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "jest",
+            "version": "^23.4.2"
+          },
+          {
+            "name": "js-combinatorics",
+            "version": "^0.5.3"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "@mdx-js/mdx",
+            "version": "^0.15.0"
+          },
+          {
+            "name": "@mdx-js/tag",
+            "version": "^0.15.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "dc8cab0b99430c39cea8457ec053c3a0",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "7374ebf2-d961-52ee-92a2-c25e7cb387a9": {
+      "resolve": "/Users/robertcooper/Projects/personal-website",
+      "id": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "name": "default-site-plugin",
+      "version": "0101419c2112e36f4e612c371ef7bdf9",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "createPages",
+        "onCreateNode"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website",
+      "packageJson": {
+        "name": "personal-website",
+        "description": "Personal Website of Robert Cooper",
+        "version": "2.0.0",
+        "main": "n/a",
+        "keywords": [
+          "gatsby",
+          "portfolio",
+          "blog"
+        ],
+        "author": "Robert Cooper <hi@robertcooper.me>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@mdx-js/mdx",
+            "version": "^0.16.6"
+          },
+          {
+            "name": "@mdx-js/tag",
+            "version": "^0.16.6"
+          },
+          {
+            "name": "@types/react-helmet",
+            "version": "^5.0.7"
+          },
+          {
+            "name": "gatsby",
+            "version": "^2.0.19"
+          },
+          {
+            "name": "gatsby-image",
+            "version": "^2.0.22"
+          },
+          {
+            "name": "gatsby-mdx",
+            "version": "^0.2.0"
+          },
+          {
+            "name": "gatsby-plugin-feed",
+            "version": "^2.0.8"
+          },
+          {
+            "name": "gatsby-plugin-google-analytics",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-plugin-manifest",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-plugin-offline",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-plugin-react-helmet",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "gatsby-plugin-sharp",
+            "version": "^2.0.6"
+          },
+          {
+            "name": "gatsby-plugin-typescript",
+            "version": "^2.0.3"
+          },
+          {
+            "name": "gatsby-plugin-typography",
+            "version": "^2.2.0"
+          },
+          {
+            "name": "gatsby-remark-copy-linked-files",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-remark-images",
+            "version": "^2.0.4"
+          },
+          {
+            "name": "gatsby-remark-prismjs",
+            "version": "^3.0.0"
+          },
+          {
+            "name": "gatsby-remark-responsive-iframe",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-remark-smartypants",
+            "version": "^2.0.5"
+          },
+          {
+            "name": "gatsby-source-filesystem",
+            "version": "^2.0.2"
+          },
+          {
+            "name": "gatsby-transformer-remark",
+            "version": "^2.1.6"
+          },
+          {
+            "name": "gatsby-transformer-sharp",
+            "version": "^2.1.3"
+          },
+          {
+            "name": "prismjs",
+            "version": "^1.15.0"
+          },
+          {
+            "name": "react",
+            "version": "^16.5.1"
+          },
+          {
+            "name": "react-dom",
+            "version": "^16.5.1"
+          },
+          {
+            "name": "react-helmet",
+            "version": "^5.2.0"
+          },
+          {
+            "name": "react-typography",
+            "version": "^0.16.13"
+          },
+          {
+            "name": "typeface-merriweather",
+            "version": "0.0.43"
+          },
+          {
+            "name": "typeface-montserrat",
+            "version": "0.0.43"
+          },
+          {
+            "name": "typography",
+            "version": "^0.16.17"
+          },
+          {
+            "name": "typography-theme-wordpress-2016",
+            "version": "^0.15.10"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "eslint",
+            "version": "^4.19.1"
+          },
+          {
+            "name": "eslint-plugin-react",
+            "version": "^7.11.1"
+          },
+          {
+            "name": "prettier",
+            "version": "^1.14.2"
+          }
+        ],
+        "peerDependencies": [],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "4832cc338f576b653da17713355d105c",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "3305c66e-ad01-5b9a-b0c5-dbb85583a15b": {
+      "resolve": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-page-creator",
+      "id": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+      "name": "gatsby-plugin-page-creator",
+      "version": "2.0.5",
+      "pluginOptions": {
+        "plugins": [],
+        "path": "/Users/robertcooper/Projects/personal-website/src/pages",
+        "pathCheck": false
+      },
+      "nodeAPIs": [
+        "createPagesStatefully"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [],
+      "pluginFilepath": "/Users/robertcooper/Projects/personal-website/node_modules/gatsby-plugin-page-creator",
+      "packageJson": {
+        "name": "gatsby-plugin-page-creator",
+        "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
+        "version": "2.0.5",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin"
+        ],
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "bluebird",
+            "version": "^3.5.0"
+          },
+          {
+            "name": "chokidar",
+            "version": "^1.7.0"
+          },
+          {
+            "name": "fs-exists-cached",
+            "version": "^1.0.0"
+          },
+          {
+            "name": "glob",
+            "version": "^7.1.1"
+          },
+          {
+            "name": "lodash",
+            "version": "^4.17.10"
+          },
+          {
+            "name": "micromatch",
+            "version": "^3.1.10"
+          },
+          {
+            "name": "parse-filepath",
+            "version": "^1.0.1"
+          },
+          {
+            "name": "slash",
+            "version": "^1.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "babel-preset-gatsby-package",
+            "version": "^0.1.3"
+          },
+          {
+            "name": "cross-env",
+            "version": "^5.0.5"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "f4ed05c7ee69ca4d31f6ca490781cd68",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Site": {
+      "siteMetadata": {
+        "title": "Gatsby Starter Blog",
+        "author": "Kyle Mathews",
+        "description": "A starter blog demonstrating what Gatsby can do.",
+        "siteUrl": "https://gatsby-starter-blog-demo.netlify.com/",
+        "social": {
+          "twitter": "kylemathews"
+        }
+      },
+      "port": "8000",
+      "host": "localhost",
+      "pathPrefix": "",
+      "polyfill": true,
+      "buildTime": "2018-12-16T23:15:07.214Z",
+      "id": "Site",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "d23e462cc4112b0ae3d530f76ffd2c7d",
+        "type": "Site",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "b7231b42-f446-5f14-805c-937e4e07b38a": {
+      "id": "b7231b42-f446-5f14-805c-937e4e07b38a",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "4a6c520714dc3378a31caf5b437097d9",
+        "type": "Directory",
+        "description": "Directory \"content/blog\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog",
+      "relativePath": "",
+      "extension": "",
+      "size": 160,
+      "prettySize": "160 B",
+      "modifiedTime": "2018-12-16T21:20:51.351Z",
+      "accessTime": "2018-12-16T23:15:12.492Z",
+      "changeTime": "2018-12-16T21:20:51.351Z",
+      "birthTime": "2018-12-16T21:20:51.349Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content",
+      "base": "blog",
+      "ext": "",
+      "name": "blog",
+      "relativeDirectory": "..",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 5,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638766,
+      "blocks": 0,
+      "atimeMs": 1545002112491.935,
+      "mtimeMs": 1544995251351.4885,
+      "ctimeMs": 1544995251351.4885,
+      "birthtimeMs": 1544995251348.7598,
+      "atime": "2018-12-16T23:15:12.492Z",
+      "mtime": "2018-12-16T21:20:51.351Z",
+      "ctime": "2018-12-16T21:20:51.351Z",
+      "birthtime": "2018-12-16T21:20:51.349Z"
+    },
+    "15c3f3b5-5591-542e-9e48-ae34183b5d1c": {
+      "id": "15c3f3b5-5591-542e-9e48-ae34183b5d1c",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "f86fce33225ec0ef1c0e56823694c552",
+        "type": "Directory",
+        "description": "Directory \"content/blog/hello-world\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world",
+      "relativePath": "hello-world",
+      "extension": "",
+      "size": 160,
+      "prettySize": "160 B",
+      "modifiedTime": "2018-12-16T22:22:06.679Z",
+      "accessTime": "2018-12-16T23:15:12.494Z",
+      "changeTime": "2018-12-16T22:22:06.679Z",
+      "birthTime": "2018-12-16T21:20:51.349Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog",
+      "base": "hello-world",
+      "ext": "",
+      "name": "hello-world",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 5,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638767,
+      "blocks": 0,
+      "atimeMs": 1545002112493.9705,
+      "mtimeMs": 1544998926679.0042,
+      "ctimeMs": 1544998926679.0042,
+      "birthtimeMs": 1544995251348.8132,
+      "atime": "2018-12-16T23:15:12.494Z",
+      "mtime": "2018-12-16T22:22:06.679Z",
+      "ctime": "2018-12-16T22:22:06.679Z",
+      "birthtime": "2018-12-16T21:20:51.349Z"
+    },
+    "320dddc9-493d-5044-b555-0fb2c6cfbeee": {
+      "id": "320dddc9-493d-5044-b555-0fb2c6cfbeee",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "7b72dffe6b13b705c7a42bd0868857fc",
+        "type": "Directory",
+        "description": "Directory \"content/blog/hi-folks\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hi-folks",
+      "relativePath": "hi-folks",
+      "extension": "",
+      "size": 96,
+      "prettySize": "96 B",
+      "modifiedTime": "2018-12-16T21:20:51.351Z",
+      "accessTime": "2018-12-16T23:15:12.494Z",
+      "changeTime": "2018-12-16T21:20:51.351Z",
+      "birthTime": "2018-12-16T21:20:51.351Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog",
+      "base": "hi-folks",
+      "ext": "",
+      "name": "hi-folks",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 3,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638770,
+      "blocks": 0,
+      "atimeMs": 1545002112494.0618,
+      "mtimeMs": 1544995251351.3088,
+      "ctimeMs": 1544995251351.3088,
+      "birthtimeMs": 1544995251351.238,
+      "atime": "2018-12-16T23:15:12.494Z",
+      "mtime": "2018-12-16T21:20:51.351Z",
+      "ctime": "2018-12-16T21:20:51.351Z",
+      "birthtime": "2018-12-16T21:20:51.351Z"
+    },
+    "3ffec5a7-3643-5e2f-9359-31b6d213eda6": {
+      "id": "3ffec5a7-3643-5e2f-9359-31b6d213eda6",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "016a0134b3a041b2a98e01d97a26994c",
+        "type": "Directory",
+        "description": "Directory \"content/blog/my-second-post\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/my-second-post",
+      "relativePath": "my-second-post",
+      "extension": "",
+      "size": 96,
+      "prettySize": "96 B",
+      "modifiedTime": "2018-12-16T21:20:51.352Z",
+      "accessTime": "2018-12-16T23:15:12.494Z",
+      "changeTime": "2018-12-16T21:20:51.352Z",
+      "birthTime": "2018-12-16T21:20:51.351Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog",
+      "base": "my-second-post",
+      "ext": "",
+      "name": "my-second-post",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 3,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638772,
+      "blocks": 0,
+      "atimeMs": 1545002112493.8953,
+      "mtimeMs": 1544995251351.5435,
+      "ctimeMs": 1544995251351.5435,
+      "birthtimeMs": 1544995251351.482,
+      "atime": "2018-12-16T23:15:12.494Z",
+      "mtime": "2018-12-16T21:20:51.352Z",
+      "ctime": "2018-12-16T21:20:51.352Z",
+      "birthtime": "2018-12-16T21:20:51.351Z"
+    },
+    "0f9ae6b4-e6c5-5cac-b1ec-d5b8c15ffd76": {
+      "id": "0f9ae6b4-e6c5-5cac-b1ec-d5b8c15ffd76",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "5bb7589484d8d49825fa0e02ef9d31b7",
+        "type": "File",
+        "mediaType": "application/octet-stream",
+        "description": "File \"content/blog/hello-world/donut.tsx\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world/donut.tsx",
+      "relativePath": "hello-world/donut.tsx",
+      "extension": "tsx",
+      "size": 147,
+      "prettySize": "147 B",
+      "modifiedTime": "2018-12-16T22:19:24.199Z",
+      "accessTime": "2018-12-16T23:13:18.623Z",
+      "changeTime": "2018-12-16T22:19:24.199Z",
+      "birthTime": "2018-12-16T22:18:01.880Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world",
+      "base": "donut.tsx",
+      "ext": ".tsx",
+      "name": "donut",
+      "relativeDirectory": "hello-world",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636686844,
+      "blocks": 8,
+      "atimeMs": 1545001998623.3901,
+      "mtimeMs": 1544998764198.8608,
+      "ctimeMs": 1544998764198.8608,
+      "birthtimeMs": 1544998681879.57,
+      "atime": "2018-12-16T23:13:18.623Z",
+      "mtime": "2018-12-16T22:19:24.199Z",
+      "ctime": "2018-12-16T22:19:24.199Z",
+      "birthtime": "2018-12-16T22:18:01.880Z"
+    },
+    "2cbd0b16-d7c5-5bb3-ac67-1cfa32bf1721": {
+      "id": "2cbd0b16-d7c5-5bb3-ac67-1cfa32bf1721",
+      "children": [
+        "b10fe255-2371-5325-8442-51b8695418bf"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "b1ebb3ad63596c127c13f27d0e88abb4",
+        "type": "File",
+        "mediaType": "application/octet-stream",
+        "description": "File \"content/blog/hello-world/index.mdx\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world/index.mdx",
+      "relativePath": "hello-world/index.mdx",
+      "extension": "mdx",
+      "size": 857,
+      "prettySize": "857 B",
+      "modifiedTime": "2018-12-16T23:01:46.185Z",
+      "accessTime": "2018-12-16T23:13:18.623Z",
+      "changeTime": "2018-12-16T23:01:46.185Z",
+      "birthTime": "2018-12-16T21:20:51.349Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world",
+      "base": "index.mdx",
+      "ext": ".mdx",
+      "name": "index",
+      "relativeDirectory": "hello-world",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638768,
+      "blocks": 8,
+      "atimeMs": 1545001998623.4187,
+      "mtimeMs": 1545001306184.9258,
+      "ctimeMs": 1545001306184.9258,
+      "birthtimeMs": 1544995251348.888,
+      "atime": "2018-12-16T23:13:18.623Z",
+      "mtime": "2018-12-16T23:01:46.185Z",
+      "ctime": "2018-12-16T23:01:46.185Z",
+      "birthtime": "2018-12-16T21:20:51.349Z"
+    },
+    "f0628311-5354-5f1f-8382-62a54588c4e5": {
+      "id": "f0628311-5354-5f1f-8382-62a54588c4e5",
+      "children": [
+        "2214d9e4-8b64-533f-8916-21e668b599cd",
+        "1609e501-7db0-5d73-950a-e0bcd9f8121b"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "f717290bdf9850facd9406bed12bba4c",
+        "type": "File",
+        "mediaType": "text/markdown",
+        "description": "File \"content/blog/my-second-post/index.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/my-second-post/index.md",
+      "relativePath": "my-second-post/index.md",
+      "extension": "md",
+      "size": 378,
+      "prettySize": "378 B",
+      "modifiedTime": "2018-12-16T21:20:51.352Z",
+      "accessTime": "2018-12-16T23:13:18.624Z",
+      "changeTime": "2018-12-16T21:20:51.352Z",
+      "birthTime": "2018-12-16T21:20:51.352Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog/my-second-post",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "relativeDirectory": "my-second-post",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638773,
+      "blocks": 8,
+      "atimeMs": 1545001998623.6338,
+      "mtimeMs": 1544995251351.5977,
+      "ctimeMs": 1544995251351.5977,
+      "birthtimeMs": 1544995251351.5378,
+      "atime": "2018-12-16T23:13:18.624Z",
+      "mtime": "2018-12-16T21:20:51.352Z",
+      "ctime": "2018-12-16T21:20:51.352Z",
+      "birthtime": "2018-12-16T21:20:51.352Z"
+    },
+    "25a6feee-37ba-5bae-8fdf-8432500bcbd0": {
+      "id": "25a6feee-37ba-5bae-8fdf-8432500bcbd0",
+      "children": [
+        "69a0b790-b774-5480-89e7-89091f751540",
+        "1bd5d9b1-6b71-50b6-901c-d6de6f1b5d49"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "66c2cf03869f73febeb491640f87af5d",
+        "type": "File",
+        "mediaType": "text/markdown",
+        "description": "File \"content/blog/hi-folks/index.md\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hi-folks/index.md",
+      "relativePath": "hi-folks/index.md",
+      "extension": "md",
+      "size": 5460,
+      "prettySize": "5.46 kB",
+      "modifiedTime": "2018-12-16T21:20:51.351Z",
+      "accessTime": "2018-12-16T23:13:18.624Z",
+      "changeTime": "2018-12-16T21:20:51.351Z",
+      "birthTime": "2018-12-16T21:20:51.351Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog/hi-folks",
+      "base": "index.md",
+      "ext": ".md",
+      "name": "index",
+      "relativeDirectory": "hi-folks",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638771,
+      "blocks": 16,
+      "atimeMs": 1545001998623.5396,
+      "mtimeMs": 1544995251351.4167,
+      "ctimeMs": 1544995251351.4167,
+      "birthtimeMs": 1544995251351.3027,
+      "atime": "2018-12-16T23:13:18.624Z",
+      "mtime": "2018-12-16T21:20:51.351Z",
+      "ctime": "2018-12-16T21:20:51.351Z",
+      "birthtime": "2018-12-16T21:20:51.351Z"
+    },
+    "2214d9e4-8b64-533f-8916-21e668b599cd": {
+      "id": "2214d9e4-8b64-533f-8916-21e668b599cd",
+      "children": [],
+      "parent": "f0628311-5354-5f1f-8382-62a54588c4e5",
+      "internal": {
+        "content": "\nWow! I love blogging so much already.\n\nDid you know that \"despite its name, salted duck eggs can also be made from\nchicken eggs, though the taste and texture will be somewhat different, and the\negg yolk will be less rich.\"?\n([Wikipedia Link](http://en.wikipedia.org/wiki/Salted_duck_egg))\n\nYeah, I didn't either.\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "ec2b83ab3dbe6c78919fe2634085267f",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "My Second Post!",
+        "date": "2015-05-06T23:46:37.121Z",
+        "_PARENT": "f0628311-5354-5f1f-8382-62a54588c4e5"
+      },
+      "excerpt": "",
+      "rawMarkdownBody": "\nWow! I love blogging so much already.\n\nDid you know that \"despite its name, salted duck eggs can also be made from\nchicken eggs, though the taste and texture will be somewhat different, and the\negg yolk will be less rich.\"?\n([Wikipedia Link](http://en.wikipedia.org/wiki/Salted_duck_egg))\n\nYeah, I didn't either.\n",
+      "fileAbsolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/my-second-post/index.md"
+    },
+    "69a0b790-b774-5480-89e7-89091f751540": {
+      "id": "69a0b790-b774-5480-89e7-89091f751540",
+      "children": [],
+      "parent": "25a6feee-37ba-5bae-8fdf-8432500bcbd0",
+      "internal": {
+        "content": "\nFar far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove\nright at the coast of the Semantics, a large language ocean. A small river named\nDuden flows by their place and supplies it with the necessary regelialia.\n\n## On deer horse aboard tritely yikes and much\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n* This however showed weasel\n* Well uncritical so misled\n  * this is very interesting\n* Goodness much until that fluid owl\n\nWhen she reached the first hills of the **Italic Mountains**, she had a last\nview back on the skyline of her hometown _Bookmarksgrove_, the headline of\n[Alphabet Village](http://google.com) and the subline of her own road, the Line\nLane. Pityful a rethoric question ran over her cheek, then she continued her\nway. On her way she met a copy.\n\n### Overlaid the jeepers uselessly much excluding\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with\n[Longe and Parole](http://google.com) and dragged her into their agency, where\nthey abused her for their projects again and again. And if she hasn’t been\nrewritten, then they are still using her.\n\n> Far far away, behind the word mountains, far from the countries Vokalia and\n> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove\n> right at the coast of the Semantics, a large language ocean.\n\nIt is a paradisematic country, in which roasted parts of sentences fly into your\nmouth. Even the all-powerful Pointing has no control about the blind texts it is\nan almost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar.\n\n### According a funnily until pre-set or arrogant well cheerful\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n1.  So baboon this\n2.  Mounted militant weasel gregariously admonishingly straightly hey\n3.  Dear foresaw hungry and much some overhung\n4.  Rash opossum less because less some amid besides yikes jeepers frenetic\n    impassive fruitlessly shut\n\nWhen she reached the first hills of the Italic Mountains, she had a last view\nback on the skyline of her hometown Bookmarksgrove, the headline of Alphabet\nVillage and the subline of her own road, the Line Lane. Pityful a rethoric\nquestion ran over her cheek, then she continued her way. On her way she met a\ncopy.\n\n> The copy warned the Little Blind Text, that where it came from it would have\n> been rewritten a thousand times and everything that was left from its origin\n> would be the word \"and\" and the Little Blind Text should turn around and\n> return to its own, safe country.\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with Longe and Parole\nand dragged her into their agency, where they abused her for their projects\nagain and again. And if she hasn’t been rewritten, then they are still using\nher. Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts.\n\n#### Silent delightfully including because before one up barring chameleon\n\nSeparated they live in Bookmarksgrove right at the coast of the Semantics, a\nlarge language ocean. A small river named Duden flows by their place and\nsupplies it with the necessary regelialia. It is a paradisematic country, in\nwhich roasted parts of sentences fly into your mouth.\n\nEven the all-powerful Pointing has no control about the blind texts it is an\nalmost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox\nadvised her not to do so, because there were thousands of bad Commas, wild\nQuestion Marks and devious Semikoli, but the Little Blind Text didn’t listen.\n\n##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along\n\nShe packed her seven versalia, put her initial into the belt and made herself on\nthe way. When she reached the first hills of the Italic Mountains, she had a\nlast view back on the skyline of her hometown Bookmarksgrove, the headline of\nAlphabet Village and the subline of her own road, the Line Lane. Pityful a\nrethoric question ran over her cheek, then she continued her way. On her way she\nmet a copy.\n\n###### Slapped cozy a that lightheartedly and far\n\nThe copy warned the Little Blind Text, that where it came from it would have\nbeen rewritten a thousand times and everything that was left from its origin\nwould be the word \"and\" and the Little Blind Text should turn around and return\nto its own, safe country. But nothing the copy said could convince her and so it\ndidn’t take long until a few insidious Copy Writers ambushed her, made her drunk\nwith Longe and Parole and dragged her into their agency, where they abused her\nfor their projects again and again.\n",
+        "type": "MarkdownRemark",
+        "contentDigest": "331803b3dc301c2db0fff8d76926e432",
+        "owner": "gatsby-transformer-remark"
+      },
+      "frontmatter": {
+        "title": "New Beginnings",
+        "date": "2015-05-28T22:40:32.169Z",
+        "_PARENT": "25a6feee-37ba-5bae-8fdf-8432500bcbd0"
+      },
+      "excerpt": "",
+      "rawMarkdownBody": "\nFar far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove\nright at the coast of the Semantics, a large language ocean. A small river named\nDuden flows by their place and supplies it with the necessary regelialia.\n\n## On deer horse aboard tritely yikes and much\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n* This however showed weasel\n* Well uncritical so misled\n  * this is very interesting\n* Goodness much until that fluid owl\n\nWhen she reached the first hills of the **Italic Mountains**, she had a last\nview back on the skyline of her hometown _Bookmarksgrove_, the headline of\n[Alphabet Village](http://google.com) and the subline of her own road, the Line\nLane. Pityful a rethoric question ran over her cheek, then she continued her\nway. On her way she met a copy.\n\n### Overlaid the jeepers uselessly much excluding\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with\n[Longe and Parole](http://google.com) and dragged her into their agency, where\nthey abused her for their projects again and again. And if she hasn’t been\nrewritten, then they are still using her.\n\n> Far far away, behind the word mountains, far from the countries Vokalia and\n> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove\n> right at the coast of the Semantics, a large language ocean.\n\nIt is a paradisematic country, in which roasted parts of sentences fly into your\nmouth. Even the all-powerful Pointing has no control about the blind texts it is\nan almost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar.\n\n### According a funnily until pre-set or arrogant well cheerful\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n1.  So baboon this\n2.  Mounted militant weasel gregariously admonishingly straightly hey\n3.  Dear foresaw hungry and much some overhung\n4.  Rash opossum less because less some amid besides yikes jeepers frenetic\n    impassive fruitlessly shut\n\nWhen she reached the first hills of the Italic Mountains, she had a last view\nback on the skyline of her hometown Bookmarksgrove, the headline of Alphabet\nVillage and the subline of her own road, the Line Lane. Pityful a rethoric\nquestion ran over her cheek, then she continued her way. On her way she met a\ncopy.\n\n> The copy warned the Little Blind Text, that where it came from it would have\n> been rewritten a thousand times and everything that was left from its origin\n> would be the word \"and\" and the Little Blind Text should turn around and\n> return to its own, safe country.\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with Longe and Parole\nand dragged her into their agency, where they abused her for their projects\nagain and again. And if she hasn’t been rewritten, then they are still using\nher. Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts.\n\n#### Silent delightfully including because before one up barring chameleon\n\nSeparated they live in Bookmarksgrove right at the coast of the Semantics, a\nlarge language ocean. A small river named Duden flows by their place and\nsupplies it with the necessary regelialia. It is a paradisematic country, in\nwhich roasted parts of sentences fly into your mouth.\n\nEven the all-powerful Pointing has no control about the blind texts it is an\nalmost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox\nadvised her not to do so, because there were thousands of bad Commas, wild\nQuestion Marks and devious Semikoli, but the Little Blind Text didn’t listen.\n\n##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along\n\nShe packed her seven versalia, put her initial into the belt and made herself on\nthe way. When she reached the first hills of the Italic Mountains, she had a\nlast view back on the skyline of her hometown Bookmarksgrove, the headline of\nAlphabet Village and the subline of her own road, the Line Lane. Pityful a\nrethoric question ran over her cheek, then she continued her way. On her way she\nmet a copy.\n\n###### Slapped cozy a that lightheartedly and far\n\nThe copy warned the Little Blind Text, that where it came from it would have\nbeen rewritten a thousand times and everything that was left from its origin\nwould be the word \"and\" and the Little Blind Text should turn around and return\nto its own, safe country. But nothing the copy said could convince her and so it\ndidn’t take long until a few insidious Copy Writers ambushed her, made her drunk\nwith Longe and Parole and dragged her into their agency, where they abused her\nfor their projects again and again.\n",
+      "fileAbsolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hi-folks/index.md"
+    },
+    "b10fe255-2371-5325-8442-51b8695418bf": {
+      "id": "b10fe255-2371-5325-8442-51b8695418bf",
+      "children": [],
+      "parent": "2cbd0b16-d7c5-5bb3-ac67-1cfa32bf1721",
+      "internal": {
+        "content": "---\ntitle: Hello World\ndate: '2015-05-01T22:12:03.284Z'\n---\n\nThis is my first post on my new fake blog! How exciting!\n\nI'm sure I'll write a lot more interesting things in the future.\n\nOh, and here's a great quote from this Wikipedia on\n[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).\n\n> A salted duck egg is a Chinese preserved food product made by soaking duck\n> eggs in brine, or packing each egg in damp, salted charcoal. In Asian\n> supermarkets, these eggs are sometimes sold covered in a thick layer of salted\n> charcoal paste. The eggs may also be sold with the salted paste removed,\n> wrapped in plastic, and vacuum packed. From the salt curing process, the\n> salted duck eggs have a briny aroma, a gelatin-like egg white and a\n> firm-textured, round yolk that is bright orange-red in color.\n\n![Chinese Salty Egg](./salty_egg.jpg)\n",
+        "type": "Mdx",
+        "contentDigest": "60b685abdbe84a39597052ee8e9673d4",
+        "owner": "gatsby-mdx",
+        "fieldOwners": {
+          "slug": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "Hello World",
+        "date": "2015-05-01T22:12:03.284Z",
+        "_PARENT": "2cbd0b16-d7c5-5bb3-ac67-1cfa32bf1721"
+      },
+      "exports": {},
+      "rawBody": "---\ntitle: Hello World\ndate: '2015-05-01T22:12:03.284Z'\n---\n\nThis is my first post on my new fake blog! How exciting!\n\nI'm sure I'll write a lot more interesting things in the future.\n\nOh, and here's a great quote from this Wikipedia on\n[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).\n\n> A salted duck egg is a Chinese preserved food product made by soaking duck\n> eggs in brine, or packing each egg in damp, salted charcoal. In Asian\n> supermarkets, these eggs are sometimes sold covered in a thick layer of salted\n> charcoal paste. The eggs may also be sold with the salted paste removed,\n> wrapped in plastic, and vacuum packed. From the salt curing process, the\n> salted duck eggs have a briny aroma, a gelatin-like egg white and a\n> firm-textured, round yolk that is bright orange-red in color.\n\n![Chinese Salty Egg](./salty_egg.jpg)\n",
+      "fileAbsolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world/index.mdx",
+      "fields": {
+        "slug": "/hello-world/"
+      }
+    },
+    "1609e501-7db0-5d73-950a-e0bcd9f8121b": {
+      "id": "1609e501-7db0-5d73-950a-e0bcd9f8121b",
+      "children": [],
+      "parent": "f0628311-5354-5f1f-8382-62a54588c4e5",
+      "internal": {
+        "content": "---\ntitle: My Second Post!\ndate: \"2015-05-06T23:46:37.121Z\"\n---\n\nWow! I love blogging so much already.\n\nDid you know that \"despite its name, salted duck eggs can also be made from\nchicken eggs, though the taste and texture will be somewhat different, and the\negg yolk will be less rich.\"?\n([Wikipedia Link](http://en.wikipedia.org/wiki/Salted_duck_egg))\n\nYeah, I didn't either.\n",
+        "type": "Mdx",
+        "contentDigest": "99878bb0f0b42accfae918e9c0976782",
+        "owner": "gatsby-mdx",
+        "fieldOwners": {
+          "slug": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "My Second Post!",
+        "date": "2015-05-06T23:46:37.121Z",
+        "_PARENT": "f0628311-5354-5f1f-8382-62a54588c4e5"
+      },
+      "exports": {},
+      "rawBody": "---\ntitle: My Second Post!\ndate: \"2015-05-06T23:46:37.121Z\"\n---\n\nWow! I love blogging so much already.\n\nDid you know that \"despite its name, salted duck eggs can also be made from\nchicken eggs, though the taste and texture will be somewhat different, and the\negg yolk will be less rich.\"?\n([Wikipedia Link](http://en.wikipedia.org/wiki/Salted_duck_egg))\n\nYeah, I didn't either.\n",
+      "fileAbsolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/my-second-post/index.md",
+      "fields": {
+        "slug": "/my-second-post/"
+      }
+    },
+    "1bd5d9b1-6b71-50b6-901c-d6de6f1b5d49": {
+      "id": "1bd5d9b1-6b71-50b6-901c-d6de6f1b5d49",
+      "children": [],
+      "parent": "25a6feee-37ba-5bae-8fdf-8432500bcbd0",
+      "internal": {
+        "content": "---\ntitle: New Beginnings\ndate: \"2015-05-28T22:40:32.169Z\"\n---\n\nFar far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove\nright at the coast of the Semantics, a large language ocean. A small river named\nDuden flows by their place and supplies it with the necessary regelialia.\n\n## On deer horse aboard tritely yikes and much\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n* This however showed weasel\n* Well uncritical so misled\n  * this is very interesting\n* Goodness much until that fluid owl\n\nWhen she reached the first hills of the **Italic Mountains**, she had a last\nview back on the skyline of her hometown _Bookmarksgrove_, the headline of\n[Alphabet Village](http://google.com) and the subline of her own road, the Line\nLane. Pityful a rethoric question ran over her cheek, then she continued her\nway. On her way she met a copy.\n\n### Overlaid the jeepers uselessly much excluding\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with\n[Longe and Parole](http://google.com) and dragged her into their agency, where\nthey abused her for their projects again and again. And if she hasn’t been\nrewritten, then they are still using her.\n\n> Far far away, behind the word mountains, far from the countries Vokalia and\n> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove\n> right at the coast of the Semantics, a large language ocean.\n\nIt is a paradisematic country, in which roasted parts of sentences fly into your\nmouth. Even the all-powerful Pointing has no control about the blind texts it is\nan almost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar.\n\n### According a funnily until pre-set or arrogant well cheerful\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n1.  So baboon this\n2.  Mounted militant weasel gregariously admonishingly straightly hey\n3.  Dear foresaw hungry and much some overhung\n4.  Rash opossum less because less some amid besides yikes jeepers frenetic\n    impassive fruitlessly shut\n\nWhen she reached the first hills of the Italic Mountains, she had a last view\nback on the skyline of her hometown Bookmarksgrove, the headline of Alphabet\nVillage and the subline of her own road, the Line Lane. Pityful a rethoric\nquestion ran over her cheek, then she continued her way. On her way she met a\ncopy.\n\n> The copy warned the Little Blind Text, that where it came from it would have\n> been rewritten a thousand times and everything that was left from its origin\n> would be the word \"and\" and the Little Blind Text should turn around and\n> return to its own, safe country.\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with Longe and Parole\nand dragged her into their agency, where they abused her for their projects\nagain and again. And if she hasn’t been rewritten, then they are still using\nher. Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts.\n\n#### Silent delightfully including because before one up barring chameleon\n\nSeparated they live in Bookmarksgrove right at the coast of the Semantics, a\nlarge language ocean. A small river named Duden flows by their place and\nsupplies it with the necessary regelialia. It is a paradisematic country, in\nwhich roasted parts of sentences fly into your mouth.\n\nEven the all-powerful Pointing has no control about the blind texts it is an\nalmost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox\nadvised her not to do so, because there were thousands of bad Commas, wild\nQuestion Marks and devious Semikoli, but the Little Blind Text didn’t listen.\n\n##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along\n\nShe packed her seven versalia, put her initial into the belt and made herself on\nthe way. When she reached the first hills of the Italic Mountains, she had a\nlast view back on the skyline of her hometown Bookmarksgrove, the headline of\nAlphabet Village and the subline of her own road, the Line Lane. Pityful a\nrethoric question ran over her cheek, then she continued her way. On her way she\nmet a copy.\n\n###### Slapped cozy a that lightheartedly and far\n\nThe copy warned the Little Blind Text, that where it came from it would have\nbeen rewritten a thousand times and everything that was left from its origin\nwould be the word \"and\" and the Little Blind Text should turn around and return\nto its own, safe country. But nothing the copy said could convince her and so it\ndidn’t take long until a few insidious Copy Writers ambushed her, made her drunk\nwith Longe and Parole and dragged her into their agency, where they abused her\nfor their projects again and again.\n",
+        "type": "Mdx",
+        "contentDigest": "063f7b5d8369742f69f1e71e34a9d9d3",
+        "owner": "gatsby-mdx",
+        "fieldOwners": {
+          "slug": "default-site-plugin"
+        }
+      },
+      "frontmatter": {
+        "title": "New Beginnings",
+        "date": "2015-05-28T22:40:32.169Z",
+        "_PARENT": "25a6feee-37ba-5bae-8fdf-8432500bcbd0"
+      },
+      "exports": {},
+      "rawBody": "---\ntitle: New Beginnings\ndate: \"2015-05-28T22:40:32.169Z\"\n---\n\nFar far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts. Separated they live in Bookmarksgrove\nright at the coast of the Semantics, a large language ocean. A small river named\nDuden flows by their place and supplies it with the necessary regelialia.\n\n## On deer horse aboard tritely yikes and much\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n* This however showed weasel\n* Well uncritical so misled\n  * this is very interesting\n* Goodness much until that fluid owl\n\nWhen she reached the first hills of the **Italic Mountains**, she had a last\nview back on the skyline of her hometown _Bookmarksgrove_, the headline of\n[Alphabet Village](http://google.com) and the subline of her own road, the Line\nLane. Pityful a rethoric question ran over her cheek, then she continued her\nway. On her way she met a copy.\n\n### Overlaid the jeepers uselessly much excluding\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with\n[Longe and Parole](http://google.com) and dragged her into their agency, where\nthey abused her for their projects again and again. And if she hasn’t been\nrewritten, then they are still using her.\n\n> Far far away, behind the word mountains, far from the countries Vokalia and\n> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove\n> right at the coast of the Semantics, a large language ocean.\n\nIt is a paradisematic country, in which roasted parts of sentences fly into your\nmouth. Even the all-powerful Pointing has no control about the blind texts it is\nan almost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar.\n\n### According a funnily until pre-set or arrogant well cheerful\n\nThe Big Oxmox advised her not to do so, because there were thousands of bad\nCommas, wild Question Marks and devious Semikoli, but the Little Blind Text\ndidn’t listen. She packed her seven versalia, put her initial into the belt and\nmade herself on the way.\n\n1.  So baboon this\n2.  Mounted militant weasel gregariously admonishingly straightly hey\n3.  Dear foresaw hungry and much some overhung\n4.  Rash opossum less because less some amid besides yikes jeepers frenetic\n    impassive fruitlessly shut\n\nWhen she reached the first hills of the Italic Mountains, she had a last view\nback on the skyline of her hometown Bookmarksgrove, the headline of Alphabet\nVillage and the subline of her own road, the Line Lane. Pityful a rethoric\nquestion ran over her cheek, then she continued her way. On her way she met a\ncopy.\n\n> The copy warned the Little Blind Text, that where it came from it would have\n> been rewritten a thousand times and everything that was left from its origin\n> would be the word \"and\" and the Little Blind Text should turn around and\n> return to its own, safe country.\n\nBut nothing the copy said could convince her and so it didn’t take long until a\nfew insidious Copy Writers ambushed her, made her drunk with Longe and Parole\nand dragged her into their agency, where they abused her for their projects\nagain and again. And if she hasn’t been rewritten, then they are still using\nher. Far far away, behind the word mountains, far from the countries Vokalia and\nConsonantia, there live the blind texts.\n\n#### Silent delightfully including because before one up barring chameleon\n\nSeparated they live in Bookmarksgrove right at the coast of the Semantics, a\nlarge language ocean. A small river named Duden flows by their place and\nsupplies it with the necessary regelialia. It is a paradisematic country, in\nwhich roasted parts of sentences fly into your mouth.\n\nEven the all-powerful Pointing has no control about the blind texts it is an\nalmost unorthographic life One day however a small line of blind text by the\nname of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox\nadvised her not to do so, because there were thousands of bad Commas, wild\nQuestion Marks and devious Semikoli, but the Little Blind Text didn’t listen.\n\n##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along\n\nShe packed her seven versalia, put her initial into the belt and made herself on\nthe way. When she reached the first hills of the Italic Mountains, she had a\nlast view back on the skyline of her hometown Bookmarksgrove, the headline of\nAlphabet Village and the subline of her own road, the Line Lane. Pityful a\nrethoric question ran over her cheek, then she continued her way. On her way she\nmet a copy.\n\n###### Slapped cozy a that lightheartedly and far\n\nThe copy warned the Little Blind Text, that where it came from it would have\nbeen rewritten a thousand times and everything that was left from its origin\nwould be the word \"and\" and the Little Blind Text should turn around and return\nto its own, safe country. But nothing the copy said could convince her and so it\ndidn’t take long until a few insidious Copy Writers ambushed her, made her drunk\nwith Longe and Parole and dragged her into their agency, where they abused her\nfor their projects again and again.\n",
+      "fileAbsolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hi-folks/index.md",
+      "fields": {
+        "slug": "/hi-folks/"
+      }
+    },
+    "b5c02ae5-4d3d-5564-960b-4fdbe29ee1e9": {
+      "id": "b5c02ae5-4d3d-5564-960b-4fdbe29ee1e9",
+      "children": [
+        "6a36d659-b6f4-5c21-9c25-646176b219bb"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "8058f3f26913fea3b6a89a73344fe94a",
+        "type": "File",
+        "mediaType": "image/jpeg",
+        "description": "File \"content/blog/hello-world/salty_egg.jpg\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "blog",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world/salty_egg.jpg",
+      "relativePath": "hello-world/salty_egg.jpg",
+      "extension": "jpg",
+      "size": 684322,
+      "prettySize": "684 kB",
+      "modifiedTime": "2018-12-16T21:20:51.351Z",
+      "accessTime": "2018-12-16T23:13:18.623Z",
+      "changeTime": "2018-12-16T21:20:51.351Z",
+      "birthTime": "2018-12-16T21:20:51.349Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/blog/hello-world",
+      "base": "salty_egg.jpg",
+      "ext": ".jpg",
+      "name": "salty_egg",
+      "relativeDirectory": "hello-world",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638769,
+      "blocks": 1344,
+      "atimeMs": 1545001998623.4446,
+      "mtimeMs": 1544995251351.1013,
+      "ctimeMs": 1544995251351.1013,
+      "birthtimeMs": 1544995251349.051,
+      "atime": "2018-12-16T23:13:18.623Z",
+      "mtime": "2018-12-16T21:20:51.351Z",
+      "ctime": "2018-12-16T21:20:51.351Z",
+      "birthtime": "2018-12-16T21:20:51.349Z"
+    },
+    "6a36d659-b6f4-5c21-9c25-646176b219bb": {
+      "id": "6a36d659-b6f4-5c21-9c25-646176b219bb",
+      "children": [],
+      "parent": "b5c02ae5-4d3d-5564-960b-4fdbe29ee1e9",
+      "internal": {
+        "contentDigest": "8058f3f26913fea3b6a89a73344fe94a",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "c12e4870-0ae5-5415-9324-814105384bcc": {
+      "id": "c12e4870-0ae5-5415-9324-814105384bcc",
+      "children": [],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "373c0b8af2e5279eb59efb8a245a9240",
+        "type": "Directory",
+        "description": "Directory \"content/assets\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "assets",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/assets",
+      "relativePath": "",
+      "extension": "",
+      "size": 128,
+      "prettySize": "128 B",
+      "modifiedTime": "2018-12-16T21:20:51.348Z",
+      "accessTime": "2018-12-16T23:15:12.705Z",
+      "changeTime": "2018-12-16T21:20:51.348Z",
+      "birthTime": "2018-12-16T21:20:51.348Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content",
+      "base": "assets",
+      "ext": "",
+      "name": "assets",
+      "relativeDirectory": "..",
+      "dev": 16777220,
+      "mode": 16877,
+      "nlink": 4,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638763,
+      "blocks": 0,
+      "atimeMs": 1545002112705.4448,
+      "mtimeMs": 1544995251348.4204,
+      "ctimeMs": 1544995251348.4204,
+      "birthtimeMs": 1544995251347.914,
+      "atime": "2018-12-16T23:15:12.705Z",
+      "mtime": "2018-12-16T21:20:51.348Z",
+      "ctime": "2018-12-16T21:20:51.348Z",
+      "birthtime": "2018-12-16T21:20:51.348Z"
+    },
+    "4d611eac-88fb-5631-b1c9-eef5819d10a1": {
+      "id": "4d611eac-88fb-5631-b1c9-eef5819d10a1",
+      "children": [
+        "dca97afd-cb0b-5537-a467-30d164b9f94a"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "4a9773549091c227cd2eb82ccd9c5e3a",
+        "type": "File",
+        "mediaType": "image/png",
+        "description": "File \"content/assets/gatsby-icon.png\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "assets",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/assets/gatsby-icon.png",
+      "relativePath": "gatsby-icon.png",
+      "extension": "png",
+      "size": 21212,
+      "prettySize": "21.2 kB",
+      "modifiedTime": "2018-12-16T21:20:51.348Z",
+      "accessTime": "2018-12-16T23:13:18.623Z",
+      "changeTime": "2018-12-16T21:20:51.348Z",
+      "birthTime": "2018-12-16T21:20:51.348Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/assets",
+      "base": "gatsby-icon.png",
+      "ext": ".png",
+      "name": "gatsby-icon",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638764,
+      "blocks": 48,
+      "atimeMs": 1545001998623.1768,
+      "mtimeMs": 1544995251348.297,
+      "ctimeMs": 1544995251348.297,
+      "birthtimeMs": 1544995251348.0342,
+      "atime": "2018-12-16T23:13:18.623Z",
+      "mtime": "2018-12-16T21:20:51.348Z",
+      "ctime": "2018-12-16T21:20:51.348Z",
+      "birthtime": "2018-12-16T21:20:51.348Z"
+    },
+    "dca97afd-cb0b-5537-a467-30d164b9f94a": {
+      "id": "dca97afd-cb0b-5537-a467-30d164b9f94a",
+      "children": [],
+      "parent": "4d611eac-88fb-5631-b1c9-eef5819d10a1",
+      "internal": {
+        "contentDigest": "4a9773549091c227cd2eb82ccd9c5e3a",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "95c24511-2dba-5cba-817b-04fec96d8d6a": {
+      "id": "95c24511-2dba-5cba-817b-04fec96d8d6a",
+      "children": [
+        "41c70d55-5221-5bd3-addc-2d666a47e8a5"
+      ],
+      "parent": "___SOURCE___",
+      "internal": {
+        "contentDigest": "4f27694bd7811d13157e5e488ad64f43",
+        "type": "File",
+        "mediaType": "image/jpeg",
+        "description": "File \"content/assets/profile-pic.jpg\"",
+        "owner": "gatsby-source-filesystem"
+      },
+      "sourceInstanceName": "assets",
+      "absolutePath": "/Users/robertcooper/Projects/personal-website/content/assets/profile-pic.jpg",
+      "relativePath": "profile-pic.jpg",
+      "extension": "jpg",
+      "size": 21714,
+      "prettySize": "21.7 kB",
+      "modifiedTime": "2018-12-16T21:20:51.349Z",
+      "accessTime": "2018-12-16T23:13:18.623Z",
+      "changeTime": "2018-12-16T21:20:51.349Z",
+      "birthTime": "2018-12-16T21:20:51.348Z",
+      "root": "/",
+      "dir": "/Users/robertcooper/Projects/personal-website/content/assets",
+      "base": "profile-pic.jpg",
+      "ext": ".jpg",
+      "name": "profile-pic",
+      "relativeDirectory": "",
+      "dev": 16777220,
+      "mode": 33188,
+      "nlink": 1,
+      "uid": 501,
+      "gid": 20,
+      "rdev": 0,
+      "blksize": 4096,
+      "ino": 8636638765,
+      "blocks": 48,
+      "atimeMs": 1545001998623.2068,
+      "mtimeMs": 1544995251348.6475,
+      "ctimeMs": 1544995251348.6475,
+      "birthtimeMs": 1544995251348.413,
+      "atime": "2018-12-16T23:13:18.623Z",
+      "mtime": "2018-12-16T21:20:51.349Z",
+      "ctime": "2018-12-16T21:20:51.349Z",
+      "birthtime": "2018-12-16T21:20:51.348Z"
+    },
+    "41c70d55-5221-5bd3-addc-2d666a47e8a5": {
+      "id": "41c70d55-5221-5bd3-addc-2d666a47e8a5",
+      "children": [],
+      "parent": "95c24511-2dba-5cba-817b-04fec96d8d6a",
+      "internal": {
+        "contentDigest": "4f27694bd7811d13157e5e488ad64f43",
+        "type": "ImageSharp",
+        "owner": "gatsby-transformer-sharp"
+      }
+    },
+    "SitePage /blog/index": {
+      "jsonName": "blog-index-7e1",
+      "internalComponentName": "ComponentBlogIndex",
+      "path": "/blog/index",
+      "component": "/Users/robertcooper/Projects/personal-website/.cache/gatsby-mdx/mdx-wrappers-dir/0d2e803f78a8c958e5edc0759f89cd5f--scope-hash-3010b3badc54a9dfa4a4c80e419a41b2.js",
+      "componentChunkName": "component---cache-gatsby-mdx-mdx-wrappers-dir-0-d-2-e-803-f-78-a-8-c-958-e-5-edc-0759-f-89-cd-5-f-scope-hash-3010-b-3-badc-54-a-9-dfa-4-a-4-c-80-e-419-a-41-b-2-js",
+      "context": {
+        "id": "b10fe255-2371-5325-8442-51b8695418bf",
+        "previous": null,
+        "next": {
+          "id": "1609e501-7db0-5d73-950a-e0bcd9f8121b",
+          "parent": {
+            "name": "index",
+            "sourceInstanceName": "blog"
+          },
+          "code": {
+            "scope": "/Users/robertcooper/Projects/personal-website/.cache/gatsby-mdx/mdx-scopes-dir/3010b3badc54a9dfa4a4c80e419a41b2.js"
+          }
+        }
+      },
+      "pluginCreator___NODE": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "pluginCreatorId": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/.cache/gatsby-mdx/mdx-wrappers-dir/0d2e803f78a8c958e5edc0759f89cd5f--scope-hash-3010b3badc54a9dfa4a4c80e419a41b2.js",
+      "id": "SitePage /blog/index",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "bcbe5f7ca657f0c21b680416b3309692",
+        "description": "7374ebf2-d961-52ee-92a2-c25e7cb387a9",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404/": {
+      "jsonName": "404-22d",
+      "internalComponentName": "Component404",
+      "path": "/404/",
+      "component": "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx",
+      "componentChunkName": "component---src-pages-404-tsx",
+      "context": {},
+      "pluginCreator___NODE": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+      "pluginCreatorId": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx",
+      "id": "SitePage /404/",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "6ccfe42325ecd3ca5f650829cbf8f151",
+        "description": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /": {
+      "jsonName": "index",
+      "internalComponentName": "ComponentIndex",
+      "path": "/",
+      "component": "/Users/robertcooper/Projects/personal-website/src/pages/index.tsx",
+      "componentChunkName": "component---src-pages-index-tsx",
+      "context": {},
+      "pluginCreator___NODE": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+      "pluginCreatorId": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/src/pages/index.tsx",
+      "id": "SitePage /",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "fece0e4ac928bfa7193d259f97251d40",
+        "description": "3305c66e-ad01-5b9a-b0c5-dbb85583a15b",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "SitePage /404.html": {
+      "jsonName": "404-html-516",
+      "internalComponentName": "Component404Html",
+      "path": "/404.html",
+      "component": "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx",
+      "componentChunkName": "component---src-pages-404-tsx",
+      "context": {},
+      "pluginCreator___NODE": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "pluginCreatorId": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx",
+      "id": "SitePage /404.html",
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "type": "SitePage",
+        "contentDigest": "d6f76c4b84964cfa55dffb4f7f903125",
+        "description": "f795702c-a3b8-5a88-88ee-5d06019d44fa",
+        "owner": "internal-data-bridge"
+      }
+    }
+  },
+  "status": {
+    "plugins": {},
+    "PLUGINS_HASH": "27c8c655346e0364c98228836be139b6"
+  },
+  "componentDataDependencies": {
+    "nodes": {},
+    "connections": {
+      "Mdx": [
+        null
+      ]
+    }
+  },
+  "jsonDataPaths": {
+    "sq--src-components-seo-tsx": 1025518380,
+    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
+    "hi-folks-a2b": "405/path---hi-folks-a-2-b-1cc-SBqDu7sNG1cwHanO06Hr63SJ0",
+    "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
+    "sq--src-components-bio-tsx": 4007731267,
+    "404-22d": "44/path---404-22-d-bce-NZuapzHg3X9TaN1iIixfv1W23E",
+    "my-second-post-2aa": "798/path---my-second-post-2-aa-e94-DImCfjTsEhtjU0D0l8Z3ZvbUylA",
+    "404-html-516": "164/path---404-html-516-62a-NZuapzHg3X9TaN1iIixfv1W23E",
+    "hello-world-8bc": "359/path---hello-world-8-bc-b62-6dsMPdCNxoGDBipgERXEdzlal8",
+    "blog-index-7e1": "373/path---blog-index-7-e-1-284-wHeIX0zF1gkuFwNweMsuqut7cJA"
+  },
+  "components": {
+    "/Users/robertcooper/Projects/personal-website/.cache/gatsby-mdx/mdx-wrappers-dir/0d2e803f78a8c958e5edc0759f89cd5f--scope-hash-3010b3badc54a9dfa4a4c80e419a41b2.js": {
+      "query": "",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/.cache/gatsby-mdx/mdx-wrappers-dir/0d2e803f78a8c958e5edc0759f89cd5f--scope-hash-3010b3badc54a9dfa4a4c80e419a41b2.js"
+    },
+    "/Users/robertcooper/Projects/personal-website/.cache/dev-404-page.js": {
+      "query": "",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/.cache/dev-404-page.js"
+    },
+    "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx": {
+      "query": "",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/src/pages/404.tsx"
+    },
+    "/Users/robertcooper/Projects/personal-website/src/pages/index.tsx": {
+      "query": "",
+      "componentPath": "/Users/robertcooper/Projects/personal-website/src/pages/index.tsx"
+    }
+  },
+  "staticQueryComponents": {}
+}

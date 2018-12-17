@@ -1,8 +1,5 @@
 {
-  "overrides": [
-    {
-      "files": "*.scss",
-      "options": { "tabWidth": 4 }
-    }
-  ]
+  "trailingComma": "all",
+  "semi": true,
+  "singleQuote": true
 }

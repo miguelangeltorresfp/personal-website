@@ -1,7 +1,0 @@
-.env
-app/css/application.css*
-app/css/main.css*
-app/js/index.js*
-functions
-node_modules
-public
